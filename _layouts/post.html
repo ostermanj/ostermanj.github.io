@@ -5,19 +5,32 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-      {% if page.tags %}<div class="tags-div">{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>{% endif %}
+      <div class="tags-div">{% if page.tags %}{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+      
       <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}<p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
-    
- {% if page.link %}<a href="{{ page.link }}">{% endif %}
-{% if page.image %} 
-    
-    <img class="page-image" src="/assets/{{ page.image }}" />
+      {% endif %}{% if page.repo %}<p class="repo-link">
+    <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">https://github.com/ostermanj/{{ page.repo }}</a></p>
 {% endif %}
-    {% if page.link %}</a>{% endif %}
+    
+    {% if page.link %}<p>In situ: <a href="{{ page.link }}">{{ page.link }}</a></p>{% endif %}  
+{% if page.embed == null %}
+{% if page.image %} 
+   {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
+    <img class="page-image" src="/assets/{{ page.image }}" />
+   {% if page.link %}</a></p>{% endif %}
+{% endif %}
+{% endif %}
+{% if page.embed != null %}
+    <p>Demo:</p>
+<div class="embed-wrapper" style=" position: relative; overflow: auto; height: {{ page.embed[1] | plus: 10 }}px">
+   <iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] }}px;height: {{ page.embed[1] }}px;" src="https://ostermanj.github.io/{{ page.repo }}/"></iframe>   
+</div>    
+{% endif %}
+
 
 </article>

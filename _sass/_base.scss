@@ -99,7 +99,7 @@ a {
     .site-footer &, .site-header & {
         border-width: 0;
     }
-    &.site-title:hover {
+    &.site-title:hover, &.menu-icon:hover {
         
             border-width: 0;
         
@@ -222,7 +222,10 @@ pre {
  */
 .icon {
     
-    
+    p.repo-link & {
+        position: relative;
+        bottom: 2px;
+    }
 
     > svg {
         display: inline-block;

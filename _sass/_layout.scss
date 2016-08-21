@@ -90,7 +90,7 @@
             display: none;
         }
 
-        &:hover .trigger {
+        &:hover .trigger, &:focus .trigger {
             display: block;
             padding-bottom: 5px;
         }
