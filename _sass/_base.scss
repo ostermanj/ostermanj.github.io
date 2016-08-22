@@ -222,7 +222,7 @@ pre {
  */
 .icon {
     
-    p.repo-link & {
+    p.repo-link &, p.www-link &, p.demo & {
         position: relative;
         bottom: 2px;
     }
