@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Bubble chart plotting countries' income, energy use, and population"
+date:   2016-03-20 15:38:06 -0400
+categories: portfolio
+image: "income-energy.png"
+tags: ['Highcharts.js', 'dataviz']
+link: 'http://www.cgdev.org/media/income-categories-and-proposed-energy-categories'
+fiddle: 21wrk5a5
+embed: [700, 872]
+---
+
+This is a four-series bubble chart showing that energy use is highly correlated with a country's income. One of the main points of the accompanying research was to propose energy-use categories (low energy, middle energy, etc.) just as we have income categories  (low income, middle income, high income). No high-income countries use less than 5,000 kWh per capita per year.
+
+Size of the bubbles indicate population size.

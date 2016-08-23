@@ -27,9 +27,14 @@ layout: default
 {% endif %}
 {% if page.embed != null %}
     <p class="demo"><span class="icon icon--demo">{% include icon-demo.svg %}</span> Demo:</p>
+
 <div class="embed-wrapper" style=" position: relative; overflow: auto; height: {{ page.embed[1] | plus: 10 }}px">
-   <iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] }}px;height: {{ page.embed[1] }}px;" src="https://ostermanj.github.io/{{ page.repo }}/"></iframe>   
-</div>    
+   {% if page.repo %}<iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] }}px;height: {{ page.embed[1] }}px;" src="https://ostermanj.github.io/{{ page.repo }}/"></iframe> {% endif %}
+    
+    {% if page.fiddle %}<iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] | plus: 10 }}px;height: {{ page.embed[1] }}px;" src="//jsfiddle.net/ostermanj/{{ page.fiddle }}/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> {% endif %}
+</div>  
+
+   
 {% endif %}
 
 
