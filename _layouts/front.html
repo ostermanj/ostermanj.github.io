@@ -17,14 +17,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% include header.html %}
 
     <div id="hero">
-    <div class="wrapper">
-        {% for tagline in site.taglines %}
-        <div class="hero-tagline hidden">{{ tagline }}</div>
-        {% endfor %}
-    </div>
+      <div id="hero-tagline">
+        {% for tagline in site.taglines %}<div class="hidden">{{ tagline }}</div>{% endfor %}
+    </div>      
+    
     <div id="arrow-down" class="arrow-down off"></div>
 </div>
- <div class="wrapper">
+ <div id="front-content" class="wrapper">
         {{ content }}
       </div>
  

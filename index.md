@@ -2,7 +2,7 @@
 layout: front
 ---
 
-{:.front-h1}
+{:#first-head.front-h1}
 Policy organizations have unique communication challenges
 =========================================================
 

@@ -29,6 +29,7 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+$on-big:           1200px; 
 
 $hero-image:       '/assets/dc-at-night.jpg';
 
@@ -41,6 +42,12 @@ $hero-image:       '/assets/dc-at-night.jpg';
 // }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin media-query-min($device) {
+    @media screen and (min-width: $device) {
         @content;
     }
 }
