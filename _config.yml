@@ -7,10 +7,11 @@
 
 # Site settings
 title: John Osterman
-email: john@ostermancommunications.com
+email: john@osterman.io
 description: > # this means to ignore newlines until "baseurl:"
-  Freelance digital publications, data visualization, front-end development, and communications services.
+  Digital-first publishing, data visualization, and communications services.
 baseurl: "" # the subpath of your site, e.g. /blog
+taglines: ['Strategic comms for policy organizations','Copy editing and other support','Digital-first publishing','Data visualization']
 url: "" # the base hostname & protocol for your site
 twitter_username: JohnAOsterman
 github_username:  ostermanj
