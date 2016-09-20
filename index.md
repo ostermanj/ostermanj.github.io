@@ -3,18 +3,15 @@ layout: front
 ---
 
 {:#first-head.front-h1}
-Policy organizations have unique communication challenges
-=========================================================
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo neque neque, vel venenatis nisi tempus quis. In euismod interdum nisl, ut mollis urna. Aliquam erat volutpat. Integer sagittis leo sed quam pulvinar pharetra vitae in orci. Aliquam interdum metus et magna rutrum, vitae condimentum elit scelerisque. Etiam bibendum a mauris id tincidunt. Maecenas sagittis maximus auctor. Phasellus orci enim, varius et finibus at, semper vel urna. Nullam convallis pretium ante, et pellentesque diam facilisis porttitor.
-
-
-{:.front-h1}
-John Osterman Communications can help you meet them
+Your content needs to work for all of your audience
 ===================================================
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo neque neque, vel venenatis nisi tempus quis. In euismod interdum nisl, ut mollis urna. Aliquam erat volutpat. Integer sagittis leo sed quam pulvinar pharetra vitae in orci
+Most of your audience isn't reading your blog. Or your report. Or your About Us page. The're skimming.
 
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+You do it and I do it—we're all skimmers on the internet, but many organizations still publish for a world of readers. Buried ledes. Long paragraphs. No interactives. PDFs.
+
+Turning skimmers into readers, readers into sharers, and sharers into advocates takes content that engages all levels of your audience, from the casual retweeter to serious researcher or policymaker.
+
+You don't need a large budget or digital team to do it. It takes some planning and changing how you think about your outputs. I can help with the planning and execution of online communications projects tailored for your organization, your audience, and your goals.
+
+Get it touch today!

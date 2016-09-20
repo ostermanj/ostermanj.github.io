@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Interactive datatable with custom filtering"
+title:  "Interactive datatable of scraped OPIC data"
 date:   2016-04-21 15:37:06 -0400
 categories: portfolio
 image: "datatable.png"

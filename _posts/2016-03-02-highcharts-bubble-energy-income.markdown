@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bubble chart plotting countries' income, energy use, and population"
+title:  "Plotting countries' income, energy use, and population: highchart.js"
 date:   2016-03-20 15:38:06 -0400
 categories: portfolio
 image: "income-energy.png"

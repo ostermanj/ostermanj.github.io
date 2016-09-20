@@ -1,8 +1,8 @@
-console.log(window.innerHeight);
+/*console.log(window.innerHeight);
 var hero = document.getElementById('hero');
 hero.style.height = window.innerHeight - 94 + 'px';
 hero.style.paddingBottom = 0;
-
+*/
 var tags = document.querySelectorAll('#hero-tagline div');
 for (i = 0; i < tags.length; i++){
     
@@ -16,7 +16,7 @@ for (i = 0; i < tags.length; i++){
         
      }
     tags[i].className = '';
-    tags[i].style.right = i * 5 + 'px';
+  
     
 }
 
@@ -29,7 +29,7 @@ function processTaglines() {
     }
 }
 
-function toggleArrow(){
+/*function toggleArrow(){
     ar = document.getElementById('arrow-down');
     setInterval(function(){
         if (ar.className.indexOf('off') !== -1){
@@ -38,13 +38,13 @@ function toggleArrow(){
             ar.className = 'arrow-down off'
         }
     },1000);
-}
+} */
 
 window.setTimeout(function(){
     processTaglines();
 },200);
 
-window.setTimeout(function(){
+/*window.setTimeout(function(){
     toggleArrow();
 },2000);
 
@@ -73,3 +73,4 @@ var checkScroll = setInterval(function(){
     console.log('checking');
     timer(); 
 },200);
+*/

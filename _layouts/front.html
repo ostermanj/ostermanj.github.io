@@ -21,14 +21,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {% for tagline in site.taglines %}<div class="hidden">{{ tagline }}</div>{% endfor %}
     </div>      
     
-    <div id="arrow-down" class="arrow-down off"></div>
+  
 </div>
- <div id="front-content" class="wrapper">
-        {{ content }}
-      </div>
- 
-    
-
+      <section class="red">
+         <div id="front-content" class="wrapper">
+            {{ content }}
+          </div>
+       </section>
+   <div class="wrapper contact">
+       <h2>Email me</h2>
+    {% include contact.html %}
+      </div> 
     {% include footer.html %}
 <script src="/js/front.js" type="text/javascript"></script>
   </body>

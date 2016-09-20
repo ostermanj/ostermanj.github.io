@@ -8,4 +8,7 @@ I am a freelance consultant helping policy and advocacy organizations gain influ
 
 As the director of digital communications at the [Center for Global Development](http://www.cgdev.org/), I oversaw the communication team’s work on publications, multimedia, and online engagement and worked with vendors and freelancers on the editing, design, layout, and production of CGD's print and interactive products.
 
-I carved out the time for several productive side projects, including an AngularJS web app for interactive reports ([example](http://www.cgdev.org/app/reader/3124016)), a Highcharts platform for branded and shareable data visualizations ([example](http://www.cgdev.org/media/income-categories-and-proposed-energy-categories)), and similar work for making static data tables interactive, using the Datatable.js platform ([example](http://www.cgdev.org/media/opic-scraped-portfolio-dataset)).
+My experience includes communications strategy writ large, including crafting messages, identifying targets, and setting SMART goals; project management on a daily or longer basis, with proficiency on Asana, Trello, Basecamp, and other tools; design with Adobe InDesign and Illustrator; and hands-on coding with JavaScript (plain-vanilla, JQuery, Backbone, Angular, Chart.js, Highcharts.js), HTML, and CSS.
+
+{:#about-image}
+![John Osterman]({{ site.url }}/assets/john-osterman.jpg)

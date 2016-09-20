@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SVG chart of economic resilience in emerging-market countries"
+title:  "Custom chart of economic resilience in emerging-market countries"
 date:   2015-02-24 15:38:06 -0400
 categories: portfolio
 image: "resilience-indicator.png"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Single-page app for digital-first publications"
+title:  "Digital-first publication of African energy report"
 date:   2016-04-12 15:38:06 -0400
 categories: portfolio
 image: "more-than-lightbulb.png"
