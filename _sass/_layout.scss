@@ -301,11 +301,8 @@ section {
     
     
     @include media-query($on-palm) {
-        font-size: 13px;
+        font-size: 24px;
         right:20px;
-    }
-    @include media-query-min($on-big) {
-        font-size: 36px;
     }
     
     &.hidden {
@@ -378,12 +375,12 @@ section {
     margin-bottom: 30px;
 
   & input, & textarea {
-    width: 100%;
+    width: 96%;
     border: none;
     background-color: $very-light-brand;
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
-    padding: 10px;
+    padding: 10px 2%;
     margin: 10px 0;
 }
 
