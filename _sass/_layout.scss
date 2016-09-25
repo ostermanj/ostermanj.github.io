@@ -371,13 +371,15 @@ section {
 }
 
 
+
 .contact {
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    background-color: $very-light-brand;
 
   & input, & textarea {
     width: 96%;
     border: none;
-    background-color: $very-light-brand;
+    background-color: #fff;
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     padding: 10px 2%;
@@ -498,3 +500,9 @@ section {
     margin-bottom: 0;
 }
 
+
+
+
+.latest {
+    padding-bottom: 0;
+}
