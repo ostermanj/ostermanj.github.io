@@ -3,7 +3,7 @@ layout: post
 title:  "2016 Commitment to Development Index (in progress)"
 date:   2016-08-19 15:39:06 -0400
 categories: portfolio
-image: "cdi-2016.png"
+image: "CDI-proto-2016.gif"
 tags: ['dataviz','Backbone.js','MCV framework']
 repo: 'commitment-development'
 ---
