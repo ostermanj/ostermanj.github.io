@@ -11,7 +11,7 @@ email: john@osterman.io
 description: > # this means to ignore newlines until "baseurl:"
   Digital-first publishing, data visualization, and communications services.
 baseurl: "" # the subpath of your site, e.g. /blog
-taglines: ['Digital-first publications', 'Interactive data visualization', 'Website analytics','Copy editing and other support']
+taglines: ['Digital-first publications', 'Publication design and typesetting', 'Interactive data visualization', 'Copy editing and other support']
 url: "" # the base hostname & protocol for your site
 twitter_username: JohnAOsterman
 github_username:  ostermanj
