@@ -22,4 +22,34 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Passion+One" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+  <script type="application/ld+json">
+  
+  {
+    "@context": "http://schema.org",
+    "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebPage{% endif %}",
+    "mainEntityOfPage": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+    "headline": "{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}",
+    "datePublished": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% endif %}",
+    "dateModified": "{% if page.modified %}{{ page.modified | date_to_xmlschema }}{% endif %}",
+    "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 500 }}{% else %}{{ site.description }}{% endif %}",
+    "author": {
+      "@type": "Person",
+      "name": "John Osterman"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "John Osterman",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://osterman.io/assets/ostercomms-amp.png",
+        "width": 115,
+        "height": 60
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "{% if page.image %}{{ site.url }}/assets/{{ page.image}}{% else %}{{ site.url }}/assets/ostercomms-og.png{% endif %}"
+    }
+  }
+  </script>
 </head>
