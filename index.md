@@ -3,11 +3,14 @@ layout: front
 ---
 
 {:#first-head.front-h1}
-Making websites work for your audience
-======================================
+Big-picture strategy, technical expertise.
+==========================================
 
-From casual skimmers to high-value stakeholders, all of your visitors are important. Skimmers become readers, readers become sharers, sharers become advocates, and advocates can drive action.
+John Osterman Communications can help you get a handle on big communications challenges while getting the details right, whether you need an overall digital strategy or help with the nuts and bolts of good writing, data visualization, or front-end web development.
 
-Priming that process doesn't take a large budget or digital team; it takes some planning and some changes to how you think about your content. I can help. 
-
-Get it touch today!
+- Digital-first publishing / longform
+- Distributed content delivery
+  - Accelerated Mobile Pages
+  - Facebook Instant Articles
+- Data-driven apps and visualizations
+- Effective blogging and writing for the web
