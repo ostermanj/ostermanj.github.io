@@ -11,7 +11,7 @@
   <meta property="og:image" content="{% if page.image %}{{ site.url }}/assets/{{ page.image}}{% else %}{{ site.url }}/assets/ostercomms-og.png{% endif %}" />
   <meta property="og:site_name" content="John Osterman Communications" />
   <meta property="og:description" content="{% if page.layout == 'post' || page.layout == 'default' %}{{ page.excerpt | strip_html | strip_newlines | truncate: 300 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}" />
   <meta name="twitter:site" content="@johnaosterman" />
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}" />
