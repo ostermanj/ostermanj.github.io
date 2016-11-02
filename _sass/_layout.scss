@@ -29,7 +29,7 @@
 }
 
 .site-title {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 300;
     line-height: 56px;
     letter-spacing: -1px;
@@ -136,7 +136,7 @@
 }
 
 .footer-heading {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: $spacing-unit / 2;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
+    font-size: 1.5rem;
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
@@ -205,7 +205,7 @@
 }
 
 .page-heading {
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .post-list {
@@ -215,8 +215,8 @@
     > li {
         margin-bottom: $spacing-unit;
         vertical-align: top;
-        width: -webkit-calc(50% - 17px);
-        width:         calc(50% - 17px);
+        width: -webkit-calc(50% - 18px);
+        width:         calc(50% - 18px);
        /* border: 1px solid $grey-color;*/
         padding: 0;
         display: inline-block;
@@ -243,7 +243,7 @@
 
 .post-link {
     display: block;
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
 
@@ -295,14 +295,13 @@ section {
    
     color: $text-color;
     font-family: 'Passion One';
-    font-size: 36px;
+   
     text-align: center;
     
     
     
     @include media-query($on-palm) {
-        font-size: 24px;
-        right:20px;
+       right:20px;
     }
     
     &.hidden {
@@ -357,13 +356,20 @@ section {
     
 }
 
+h1, .heading-1 {
+    font-size: 4rem;
+}
 
+h2, .heading-2 {
+    font-size: 3.2rem
+        
+}
 
 .front-h1 {
-    text-align: center;
+   
     margin: 30px auto;
     letter-spacing: 2px;
-    font-size: 32px;
+    
     .red & {
         color: #fff;
     }
@@ -417,7 +423,7 @@ section {
     padding: 10px;
     margin-bottom: 20px;
     background-color: $very-light-brand;
-    font-size: 18px;
+    font-size: 1.8rem;
     
     display: none;
     opacity: 0;
@@ -437,12 +443,12 @@ section {
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 4.2rem;
     letter-spacing: -1px;
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        
     }
 }
 
@@ -450,26 +456,26 @@ section {
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
+        font-size: 3.2rem;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            
         }
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 2.6rem;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+           
         }
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 2rem;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+           
         }
     }
 }
@@ -488,7 +494,7 @@ section {
     padding: $spacing-unit / 8;
     color: $light-brand;
     border-radius: 4px;
-    font-size: 10px;
+    font-size: 1rem;
     white-space: nowrap;
     
     .post-meta & {
