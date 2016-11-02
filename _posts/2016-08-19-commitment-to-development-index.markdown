@@ -13,7 +13,7 @@ The [Commitment to Development Index][commitment-development-index] ranks the wo
 
 The current tool, built originally by [Creative Science][creative-science] in 2015, allows users to drill down into each component and their indicators, see trends over time, and compare countries to one another. The tool parses data from an XML file into JavaScript objects and is built on a Backbone.js framework with help from chart.js for rendering drill-down graphs.
 
-Look for the updated tool to go live in September 2016.
+Look for the updated tool to go live in <del>September 2016</del> <ins datetime="2016-11-02">soon</ins>.
 
 [commitment-development-index]: http://www.cgdev.org/cdi
 [creative-science]: http://creativesci.co
