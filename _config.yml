@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: John Osterman
+title: John Osterman Communications
 email: john@osterman.io
 description: > # this means to ignore newlines until "baseurl:"
   Digital-first publishing, data visualization, and communications services.
 baseurl: "" # the subpath of your site, e.g. /blog
 taglines: ['Digital-first publications', 'Interactive data visualization', 'Design and typesetting', 'Copy editing and other support']
-url: "" # the base hostname & protocol for your site
+url: "http://osterman.io" # the base hostname & protocol for your site
 twitter_username: JohnAOsterman
 github_username:  ostermanj
 linkedin_username: john-osterman-32714012
