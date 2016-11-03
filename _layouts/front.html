@@ -25,36 +25,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        </section>
        <section class="latest">
           <div class="wrapper">
-      <h2>Featured project</h2>
-        <ul class="post-list">   
-    {% for post in site.posts %}
-        {% if post.featured %}
-       
-            <li>
-    
+{% assign featured = site.posts | where: "featured", true %}              
+      <h2>Featured project{% if featured.size > 1 %}s{% endif %}</h2>
+        
+    {% for feature in featured %}
+              <div class="featured">
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ feature.url | prepend: site.baseurl }}">{{ feature.title }}</a>
         </h2>
             
-            {% if post.image %}
-    <a href="{{ post.url | prepend: site.baseurl }}">        
-        <img class="front-image" src="/assets/{{ post.image }}" />  
-            </a>
+            {% if feature.image %}
+    <a href="{{ feature.url | prepend: site.baseurl }}"><img class="front-image" src="/assets/{{ feature.image }}" /></a>
             {% endif %}
-            {% if post.tags %}
-                {% for tag in post.tags %}
+            {% if feature.tags %}
+              <br />
+                {% for tag in feature.tags %}
         <span class="tag">{{ tag }}</span>    
                 {% endfor %}
             
             {% endif %}
-      
-            </li>
-    
-  <li><p>{{ post.excerpt }}</p></li>
-            
-              {% endif %}
+  <p>{{ feature.excerpt }}</p>
+                   {% if forloop.index < forloop.length %}
+              <hr />
+                   {% endif %}
+              </div>
+             
+             
+                                                  
               {% endfor %}
-              </ul>
+            
           </div>
       </section>
       <section class="contact">

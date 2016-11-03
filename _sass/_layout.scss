@@ -15,7 +15,7 @@
 }
 
 .site-title {
-    font-size: 2rem;
+    font-size: 2px;
     font-weight: 300;
     line-height: 56px;
     letter-spacing: -1px;
@@ -39,7 +39,13 @@
     width: -webkit-calc(100% - 40px);
     width:         calc(100% - 40px);
     max-width: 351px;
+    height:55px;
     
+    @include media-query($on-palm) {
+        height: 35px;
+        top: 8px;
+        position: relative;
+    }
 }
 
 .site-nav {
@@ -190,6 +196,9 @@
  */
 .page-content {
     padding: ($spacing-unit * 2) 0;
+    @include media-query($on-palm) {
+        padding: $spacing-unit 0;
+    }
 }
 
 .page-heading {
@@ -263,16 +272,18 @@ section {
     overflow-x: hidden;
     position: relative;
     width:100%;
+    z-index: -9;
     
     background: url(/assets/tongariro.jpg) no-repeat;
     background-size: cover;
-    height: 513px;
+    padding-bottom: 40%;
     display: flex;
     
     @include media-query($on-palm) {
         
+        padding-bottom: 60%;
+        background-position-x: 34%;
         
-        background-position-x: 11%;
         
     }
     
@@ -331,6 +342,9 @@ h2, .heading-2 {
     font-size: 3rem;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
+     @include media-query($on-palm) {
+       font-size:2rem;
+    }
 }
 
 .contact {
@@ -375,9 +389,13 @@ h2, .heading-2 {
     }
 }
 
+.featured hr {
+    margin-bottom: $base-line-height * $base-font-size;
+}
+
 button {
     font-family: $heading-font-family;
-    font-size: 3rem;
+    font-size: 2.3rem;
     letter-spacing: 1px;
 }
 
@@ -456,8 +474,16 @@ button {
     }
 }
 
-.front-image {
+.front-image, .page-image {
     margin-bottom: $spacing-unit / 4;
+    border: 1px solid #828282;
+    padding: 5px;
+    background-color: #fff;
+    transition: border-color 0.2s linear;
+}
+
+.front-image:hover, .front-image:focus {
+  border-color: $highlight-color;   
 }
 
 .tags-div {

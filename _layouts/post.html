@@ -14,7 +14,7 @@ layout: default
     {{ content }}
   </div>
       {% endif %}{% if page.repo %}<p class="repo-link">
-    <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">https://github.com/ostermanj/{{ page.repo }}</a></p>
+    <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">github.com/ostermanj/{{ page.repo | truncate: 7 }}</a></p>
 {% endif %}
     
     {% if page.link %}<p class="www-link"><span class="icon icon--www">{% include icon-www.svg %}</span> In situ: <a href="{{ page.link }}">{{ page.link }}</a></p>{% endif %}  
