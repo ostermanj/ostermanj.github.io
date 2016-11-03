@@ -4,10 +4,10 @@ layout: default
 
 <div class="home">
 
-  <h1 class="post-title">Projects</h1>
-{% assign projects = site.posts | where: "type", "project" %} 
+  <h1 class="post-title">Blog Posts</h1>
+{% assign blogs = site.posts | where: "type", "blog" %} 
   <ul class="post-list">
-    {% for post in projects %}
+    {% for post in blogs %}
     
         <li>
             

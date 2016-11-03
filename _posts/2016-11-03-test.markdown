@@ -1,9 +1,9 @@
 ---
 layout: post
-type: project
-title:  "Plotting countries' income, energy use, and population: highchart.js"
-date:   2016-03-20 15:38:06 -0400
-categories: portfolio
+type: blog
+category: blog
+title:  "Test blog post"
+date:   2016-11-03 15:38:06 -0400
 image: "income-energy.png"
 tags: ['Highcharts.js', 'dataviz']
 link: 'http://www.cgdev.org/media/income-categories-and-proposed-energy-categories'

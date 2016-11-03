@@ -1,5 +1,6 @@
 ---
 layout: post
+type: project
 title:  "Mapping African electricity rates: highcharts.js"
 date:   2016-03-20 15:38:06 -0400
 categories: portfolio

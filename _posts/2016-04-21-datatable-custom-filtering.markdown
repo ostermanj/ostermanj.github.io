@@ -1,5 +1,6 @@
 ---
 layout: post
+type: project
 title:  "Interactive datatable of scraped OPIC data"
 date:   2016-04-21 15:37:06 -0400
 categories: portfolio

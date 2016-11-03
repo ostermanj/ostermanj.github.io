@@ -1,5 +1,6 @@
 ---
 layout: post
+type: project
 title:  "Custom chart of economic resilience in emerging-market countries"
 date:   2015-02-24 15:38:06 -0400
 categories: portfolio
