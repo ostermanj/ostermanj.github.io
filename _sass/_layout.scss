@@ -53,6 +53,7 @@
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
+        font-family: $heading-font-family;
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
@@ -119,6 +120,7 @@
     border-top: 1px solid $grey-color-dark;
     padding: $spacing-unit 0;
     background-color: $grey-color-light;
+    font-family: $sans;
 }
 
 .footer-heading {
@@ -187,7 +189,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding: ($spacing-unit * 2) 0;
 }
 
 .page-heading {
@@ -225,6 +227,7 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    font-family: $sans;
 }
 
 .post-link {
@@ -315,6 +318,7 @@ h2, .heading-2 {
     margin: 0px auto 30px;
     letter-spacing: 2px;
     text-align: center;
+    font-size: 5rem;
     
     .red & {
         color: #f3f3f3;
@@ -322,7 +326,12 @@ h2, .heading-2 {
    
 }
 
-
+#front-content {
+    font-family: $heading-font-family;
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
 
 .contact {
     margin-bottom: 0;
@@ -336,6 +345,7 @@ h2, .heading-2 {
     color: $text-color;
     padding: 10px 2%;
     margin: 10px 0;
+      font-family: $sans;
 }
 
     & textarea {
@@ -359,10 +369,16 @@ h2, .heading-2 {
         padding: 10px 20px;
         color: #fff;
         border-radius: 5px;
-        font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+        
         text-transform: uppercase
 
     }
+}
+
+button {
+    font-family: $heading-font-family;
+    font-size: 3rem;
+    letter-spacing: 1px;
 }
 
 #thanks {
@@ -385,12 +401,12 @@ h2, .heading-2 {
  * Posts
  */
 .post-header {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit * 2;
 }
 
 .post-title {
     font-size: 4.2rem;
-    letter-spacing: -1px;
+    margin-bottom: 10px;
     line-height: 1;
 
     @include media-query($on-laptop) {
@@ -424,6 +440,16 @@ h2, .heading-2 {
            
         }
     }
+    
+    p:first-child::first-letter {
+        font-family: $heading-font-family;
+        color: $brand-color;
+        float: left;
+        font-size: 8.5rem;
+        line-height: 4.5rem;
+        margin-right: 0.5rem;
+      
+    }
 }
 
 .front-image {
@@ -443,6 +469,7 @@ h2, .heading-2 {
     border-radius: 4px;
     font-size: 1rem;
     white-space: nowrap;
+    font-family: $sans;
     
     .post-meta & {
         margin-right: $spacing-unit / 8;
