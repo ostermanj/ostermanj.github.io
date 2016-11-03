@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $brand-color;
     text-decoration: none;
-    border-bottom: 2px dotted #fff;
+    border-bottom: 2px solid rgba($brand-color, 0.3);
     .site-footer &, .site-header & {
         border-width: 0;
     }
@@ -113,8 +113,8 @@ a {
   
 
     &:visited {
-        color: darken($brand-color, 15%);
-        border-bottom: 2px dotted lighten( desaturate($brand-color, 70%), 35%);
+        color: $dark-brand;
+        border-bottom: 2px solid $grey-color;
         .site-footer &, .site-header & {
             border-width: 0;
         }
@@ -122,9 +122,9 @@ a {
     }
 
     &:hover {
-        color: $text-color;
+        color: $dark-brand;
         text-decoration: none;
-        border-bottom: 2px solid desaturate($brand-color, 70%);
+        border-bottom: 2px solid $dark-brand;
         
 
     }
