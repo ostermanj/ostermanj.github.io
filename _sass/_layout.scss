@@ -253,6 +253,8 @@
 
 .red {
     background-color: $dark-brand;
+    border-top: 60px solid $very-light-brand;
+    border-bottom: 60px solid $very-light-brand;
     & p, & li, & blockquote {
         color: #fff;
     }
@@ -371,7 +373,7 @@ h2, .heading-2 {
     letter-spacing: 2px;
     
     .red & {
-        color: #fff;
+        color: #f3f3f3;
     }
    
 }
@@ -408,10 +410,10 @@ h2, .heading-2 {
     }
 
     & button {
-        background: none;
-        border: 1px solid $brand-color;
+        background: $highlight-color;
+        border: 1px solid $highlight-color;
         padding: 10px 20px;
-        color: $brand-color;
+        color: #fff;
         border-radius: 5px;
         font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
         text-transform: uppercase
@@ -490,9 +492,10 @@ h2, .heading-2 {
 }
 
 .tag {
-    border: 1px solid $light-brand;
+    border: 1px solid $highlight-color;
+    background-color: $highlight-color;
     padding: $spacing-unit / 8;
-    color: $light-brand;
+    color: #fff;
     border-radius: 4px;
     font-size: 1rem;
     white-space: nowrap;
@@ -505,6 +508,7 @@ h2, .heading-2 {
 .demo {
     margin-bottom: 0;
 }
+
 
 
 
