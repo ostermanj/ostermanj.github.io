@@ -127,6 +127,7 @@
     padding: $spacing-unit 0;
     background-color: $grey-color-light;
     font-family: $sans;
+    font-weight: 300;
 }
 
 .footer-heading {
@@ -316,7 +317,10 @@ section {
 
 
 h1, .heading-1 {    
-    font-size: 4rem;
+    font-size: 5rem;
+    font-family: $sans;
+    line-height: 1.2;
+    font-weight: 100;
 }
 
 h2, .heading-2 {
@@ -325,7 +329,7 @@ h2, .heading-2 {
 }
 
 .front-h1 {
-   
+    font-family: $heading-font-family;
     margin: 0px auto 30px;
     letter-spacing: 2px;
     text-align: center;
@@ -423,13 +427,10 @@ button {
  * Posts
  */
 .post-header {
-    margin-bottom: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 1.5;
 }
 
 .post-title {
-    font-size: 4.2rem;
-    margin-bottom: 10px;
-    line-height: 1;
 
     @include media-query($on-laptop) {
         
@@ -472,6 +473,14 @@ button {
         margin-right: 0.5rem;
       
     }
+}
+
+.tweet-this.processed {
+    
+    padding-right: 1.5em;
+    background: url(/assets/Twitter_Logo_Blue.svg) no-repeat right;
+    
+    background-size: 31px;
 }
 
 .front-image, .page-image {

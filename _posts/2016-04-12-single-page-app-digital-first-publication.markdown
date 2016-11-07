@@ -2,8 +2,7 @@
 layout: post
 type: project
 title:  "Digital-first publication of African energy report"
-date:   2016-04-12 15:38:06 -0400
-categories: portfolio
+categories: project
 image: "more-than-lightbulb.png"
 tags: ['publication design','AngularJS','dataviz']
 link: 'http://www.cgdev.org/app/reader/3124016'

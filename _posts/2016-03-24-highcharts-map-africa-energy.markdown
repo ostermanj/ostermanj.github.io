@@ -2,8 +2,7 @@
 layout: post
 type: project
 title:  "Mapping African electricity rates: highcharts.js"
-date:   2016-03-20 15:38:06 -0400
-categories: portfolio
+categories: project
 image: "africa-electricity.png"
 tags: ['map','Highcharts.js', 'dataviz']
 link: 'http://www.cgdev.org/media/energy-poverty-sub-saharan-africa'

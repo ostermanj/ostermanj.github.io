@@ -2,8 +2,7 @@
 layout: post
 type: project
 title:  "Custom chart of economic resilience in emerging-market countries"
-date:   2015-02-24 15:38:06 -0400
-categories: portfolio
+categories: project
 image: "resilience-indicator.png"
 tags: ['SVG','vanilla JavaScript', 'dataviz']
 link: 'http://www.cgdev.org/blog/could-you-take-another-2008-resilience-test-emerging-economies'

@@ -36,7 +36,15 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
+h1 {
+    margin-bottom: 0.3em;
+    color: $dark-brand;
+}
+h2, h3, h4, h5, h6 {
+    position: relative;
+    top: 1rem;
+}
+h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
@@ -87,10 +95,11 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     font-weight: $base-font-weight;
     color: $dark-brand;
+    letter-spacing: 0.5px;
 }
 
 
@@ -137,6 +146,14 @@ a {
             border-width: 0;
         }
        
+    }
+    
+    .tweet-this & {
+        color: $text-color;
+        border-bottom: 2px dotted #1DA1F2;
+        &:hover {
+            color: #1DA1F2;
+        }
     }
 }
 

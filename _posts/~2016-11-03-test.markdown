@@ -1,9 +1,8 @@
 ---
 layout: post
 type: blog
-category: blog
+categories: blog
 title:  "Test blog post"
-date:   2016-11-03 15:38:06 -0400
 image: "income-energy.png"
 tags: ['Highcharts.js', 'dataviz']
 link: 'http://www.cgdev.org/media/income-categories-and-proposed-energy-categories'
