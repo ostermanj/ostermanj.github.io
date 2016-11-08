@@ -19,6 +19,7 @@ $spacing-unit:     30px;
 
 $text-color:       #171919;
 $background-color: #fdfdfd;
+$background-screen: transparentize($background-color, 0.05);
 $brand-color:      #ff5600;
 $dark-brand:       darken($brand-color, 15%);
 $light-brand:      lighten((desaturate($brand-color, 70%)),20%);

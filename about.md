@@ -10,5 +10,7 @@ As the director of digital communications at the [Center for Global Development]
 
 My experience includes communications strategy writ large, including crafting messages, identifying targets, and setting SMART goals; project management on a daily or longer basis, with proficiency on Asana, Trello, Basecamp, and other tools; design with Adobe InDesign and Illustrator; and hands-on coding with JavaScript (plain-vanilla, JQuery, Backbone, Angular, Chart.js, Highcharts.js), HTML, and CSS.
 
+My resume: [PDF](../assets/osterman-resume-081916.pdf).
+
 {:#about-image}
 ![John Osterman]({{ site.url }}/assets/john-osterman.jpg)

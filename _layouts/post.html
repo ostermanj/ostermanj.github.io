@@ -17,11 +17,11 @@ layout: default
     <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">github.com/ostermanj/{{ page.repo | truncate: 7 }}</a></p>
 {% endif %}
     
-    {% if page.link %}<p class="www-link"><span class="icon icon--www">{% include icon-www.svg %}</span> In situ: <a href="{{ page.link }}">{{ page.link }}</a></p>{% endif %}  
+    {% if page.link %}<p class="www-link"><span class="icon icon--www">{% include icon-www.svg %}</span> In situ: <a href="{{ page.link }}">{{ page.link | replace: 'http://', '' | truncate: 17 }}</a></p>{% endif %}  
 {% if page.embed == null %}
 {% if page.image %} 
    {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
-    <img class="page-image" src="/assets/{{ page.image }}" />
+    <img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
    {% if page.link %}</a></p>{% endif %}
 {% endif %}
 {% endif %}
@@ -39,3 +39,13 @@ layout: default
 
 
 </article>
+{% if page.contact %}
+<section class="contact in-content">
+    <div class="wrapper">
+        
+          <h3>If you need help with {{ page.tags[0] }}, I can help. Get in touch today.</h3>
+            {% include contact.html %}
+        
+    </div>
+</section>
+{% endif %}

@@ -39,6 +39,9 @@ body {
 h1 {
     margin-bottom: 0.3em;
     color: $dark-brand;
+    @include media-query($on-palm) {
+       margin-bottom: 0.5em;   
+    }
 }
 h2, h3, h4, h5, h6 {
     position: relative;
@@ -132,9 +135,9 @@ a {
     }
 
     &:hover {
-        color: $dark-brand;
+        color: $highlight-color;
         text-decoration: none;
-        border-bottom: 2px solid $dark-brand;
+        border-bottom: 2px solid $highlight-color;
         
 
     }
