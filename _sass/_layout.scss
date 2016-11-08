@@ -263,6 +263,7 @@
 }
 
 .footer-heading {
+    font-size: 18px;
     font-size: 1.8rem;
     margin-bottom: $spacing-unit / 2;
 }
@@ -274,6 +275,7 @@
 }
 
 .footer-col-wrapper {
+    font-size: 15px;
     font-size: 1.5rem;
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
@@ -340,7 +342,8 @@
 }
 
 .page-heading {
-    font-size: 2rem;
+    font-size: 20px;
+    font-size: 2.0rem;
 }
 
 .post-list {
@@ -382,6 +385,7 @@
 
 .post-link {
     display: block;
+    font-size: 24px;
     font-size: 2.4rem;
 }
 
@@ -457,12 +461,14 @@ section {
 
 
 h1, .heading-1 {    
-    font-size: 5rem;
+    font-size: 50px;
+    font-size: 5.0rem;
     font-family: $sans;
     line-height: 1.2;
     font-weight: 100;
     @include media-query($on-palm) {
-       font-size: 3rem;
+       font-size: 30px;
+       font-size: 3.0rem;
         font-weight: 300;
         position: relative;
         bottom: 3px;
@@ -470,6 +476,7 @@ h1, .heading-1 {
 }
 
 h2, .heading-2 {
+    font-size: 32px;
     font-size: 3.2rem
         
 }
@@ -479,7 +486,8 @@ h2, .heading-2 {
     margin: 0px auto 30px;
     letter-spacing: 2px;
     text-align: center;
-    font-size: 5rem;
+    font-size: 50px;
+    font-size: 5.0rem;
     
     .red & {
         color: #f3f3f3;
@@ -489,11 +497,13 @@ h2, .heading-2 {
 
 #front-content {
     font-family: $heading-font-family;
-    font-size: 3rem;
+    font-size: 30px;
+    font-size: 3.0rem;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
      @include media-query($on-palm) {
-       font-size:2rem;
+       font-size: 20px;
+       font-size: 2.0rem;
     }
 }
 
@@ -549,6 +559,7 @@ h2, .heading-2 {
 
 button {
     font-family: $heading-font-family;
+    font-size: 23px;
     font-size: 2.3rem;
     letter-spacing: 1px;
 }
@@ -556,6 +567,7 @@ button {
 #thanks {
     padding: 20px;
     margin-bottom: 20px;
+    font-size: 18px;
     font-size: 1.8rem;
     border: 2px solid $highlight-color;
     border-radius: 15px;
@@ -605,6 +617,7 @@ button {
     }
 
     h2 {
+        font-size: 32px;
         font-size: 3.2rem;
 
         @include media-query($on-laptop) {
@@ -613,6 +626,7 @@ button {
     }
 
     h3 {
+        font-size: 26px;
         font-size: 2.6rem;
 
         @include media-query($on-laptop) {
@@ -621,7 +635,8 @@ button {
     }
 
     h4 {
-        font-size: 2rem;
+        font-size: 20px;
+        font-size: 2.0rem;
 
         @include media-query($on-laptop) {
            
@@ -632,8 +647,9 @@ button {
         font-family: $heading-font-family;
         color: $brand-color;
         float: left;
+        font-size: 85px;
         font-size: 8.5rem;
-        line-height: 4.5rem;
+        line-height: 0.55em;
         margin-right: 0.5rem;
       
     }
@@ -677,7 +693,8 @@ button {
     padding: $spacing-unit / 8;
     color: #fff;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 10px;
+    font-size: 1.0rem;
     white-space: nowrap;
     font-family: $sans;
     
