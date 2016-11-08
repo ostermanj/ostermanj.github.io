@@ -55,13 +55,15 @@
 
 
 
-// plain vanilla animated scrolltop courtesy http://stackoverflow.com/a/24559613/5701184
+// plain vanilla animated scrolltop courtesy http://stackoverflow.com/a/24559613/5701184 but changed scrollY to pageYOffset for better IE support
 
     function scrollToTop(e, scrollDuration) {
+        console.log('click');
+        console.log(e);
         e.preventDefault();
-             var scrollStep = -window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function(){
-            if ( window.scrollY != 0 ) {
+         var scrollStep = -window.pageYOffset / (scrollDuration / 15),
+        scrollInterval = setInterval(function(){
+            if ( window.pageYOffset != 0 ) {
                 window.scrollBy( 0, scrollStep );
             }
             else clearInterval(scrollInterval); 

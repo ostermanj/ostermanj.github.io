@@ -16,10 +16,14 @@ dl, dd, ol, ul, figure {
 html {
     font-size: 62.5%;
 }
-
+// changed shorthand font to longhand because of lte IE10 bug won't parse it with rem unit present
 body {
-    font: $base-font-weight 18px/#{$base-line-height} $base-font-family;
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    font-size: 18px;
+    font-size: 1.8rem;
+    
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
