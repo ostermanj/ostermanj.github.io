@@ -4,7 +4,8 @@ type: blog
 categories: blog
 title: "Writing for the web: why you should encourage skimming and scanning"
 image: "web-writing-scan.png"
-tags: ['writing','blogging', 'content strategy']
+tags: ['content strategy','writing','blogging']
+contact: true
 ---
 
 People don’t read online so much as they skim and scan, and unless your content is crafted with that fact in mind, your readers are going to jump ship.

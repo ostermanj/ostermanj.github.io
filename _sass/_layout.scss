@@ -6,7 +6,7 @@
     border-bottom: 1px solid $brand-color;
     background-color: $grey-color-light;
     min-height: 56px;
-    
+    z-index: 9;
     // Positioning context for the mobile navigation icon
     position: relative;
     & .wrapper {
@@ -33,19 +33,143 @@
 }
 
 .site-title-wrapper {
-    background: url(../assets/ostercomms.png) no-repeat;
+    background: url(../assets/ostercomms.png) no-repeat 0 4px;
     background-size: contain;
     display: inline-block;
     width: -webkit-calc(100% - 40px);
     width:         calc(100% - 40px);
-    max-width: 351px;
+    max-width: 275px;
     height:55px;
     
     @include media-query($on-palm) {
         height: 35px;
         top: 8px;
         position: relative;
+        background-position: 0 0;
     }
+}
+
+#sharer-outer-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    &.sharer-second {
+        position: relative;
+        background-color: $background-color;
+        z-index: 2;
+    }
+    
+    &.sharer-first {
+        position: fixed;
+        height: 20px;
+     //   box-shadow: $background-screen 0 5px 5px;
+    //    background-color: $background-screen;
+        padding: 10px 0 2px;
+        z-index: 1;
+        @include media-query($on-laptop) {
+            height: 30px;
+            padding-top: 0;
+        }
+        
+    
+    }
+}
+
+#sharer-inner-wrapper {
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+    .sharer-second & {
+       padding: $spacing-unit 0 80px;
+        
+        height: 20px;
+        max-width: 740px;
+        @include media-query($on-laptop) {
+            max-width: 100%;
+            padding-left: $spacing-unit / 2;
+            padding-right: $spacing-unit / 2;
+            padding-bottom: 109px;
+            width: calc(100% - 30px);
+            height: 30px;
+        }
+        @include media-query($on-palm) {
+            padding-top: 20px;
+            opacity: 0.5;
+        }
+        
+    }
+    .sharer-first & {
+        max-width: 840px;
+    }
+}
+#back-to-top {
+    display: none;
+}
+#sharers {
+    
+    position: absolute;
+    
+    display: flex;
+    
+    background-color: rgba(255,255,255,0.5);
+  
+    justify-content: space-between;
+    .sharer-first & {
+        flex-direction: column;
+        width: 20px;
+        height: 70px;
+        @include media-query($on-laptop) {
+            right:0;
+            width: 30px;
+            height: 130px;
+            padding: 0 0 5px 5px;
+            & #back-to-top {
+                display: block;
+            }
+
+        }
+    }
+    .sharer-second  & {
+        height: 20px;
+        width: 70px;
+        @include media-query($on-laptop) {
+            height: 30px;
+            width: 100px;
+        }
+    }
+}
+
+.social-sharer {
+    display: block;
+   
+    flex-grow: 1;
+    background-size: contain!important;
+    border-bottom-width: 0;
+    &:hover {
+        border-bottom-width: 0 !important;
+    }
+    
+}
+
+
+.facebook-share {
+     background: url(/assets/facebook-white-on-blue.svg) no-repeat center;
+    
+    
+}
+
+.twitter-share {
+     background: url(/assets/Twitter_Logo_White_On_Blue.svg) no-repeat center;
+    
+}
+
+.linkedin-share {
+    background: url(/assets/linked-in.svg) no-repeat center;
+    
+}
+
+#back-to-top {
+    background: url(/assets/back-to-top.svg) no-repeat center;
+    
 }
 
 .site-nav {
@@ -60,6 +184,12 @@
         color: $text-color;
         line-height: $base-line-height;
         font-family: $heading-font-family;
+        &:hover {
+                border-bottom-width: 0;
+                color: $highlight-color;
+            
+                
+            }
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
@@ -100,7 +230,7 @@
             display: none;
         }
 
-        &:hover .trigger, &:focus .trigger {
+        &.open .trigger {
             display: block;
             padding-bottom: 5px;
         }
@@ -113,7 +243,9 @@
                 margin-right: 0;
             }
             margin-left: 20px;
+            
         }
+        
     }
 }
 
@@ -196,10 +328,15 @@
  * Page content
  */
 .page-content {
-    padding: ($spacing-unit * 2) 0;
-    @include media-query($on-palm) {
-        padding: $spacing-unit 0;
+   margin-top: -50px;
+    position: relative;
+    @include media-query($on-laptop) {
+        margin-top: -79px;
     }
+    @include media-query($on-palm) {
+        margin-top: -95px;
+    }
+   
 }
 
 .page-heading {
@@ -223,8 +360,11 @@
             margin-right: $spacing-unit;
         }
         @include media-query($on-palm) {
-            width: -webkit-calc(100% - #{$spacing-unit} - 2px);
-            width:         calc(100% - #{$spacing-unit} - 2px);
+          width: 100%;
+            &:nth-of-type(odd){
+            margin-right: 0;
+        }
+    
         }
 & h2 {
     min-height: 72px;
@@ -321,6 +461,12 @@ h1, .heading-1 {
     font-family: $sans;
     line-height: 1.2;
     font-weight: 100;
+    @include media-query($on-palm) {
+       font-size: 3rem;
+        font-weight: 300;
+        position: relative;
+        bottom: 3px;
+    }
 }
 
 h2, .heading-2 {
@@ -391,6 +537,10 @@ h2, .heading-2 {
         text-transform: uppercase
 
     }
+    
+    &.in-content {
+        margin: $spacing-unit 0;
+    }
 }
 
 .featured hr {
@@ -428,9 +578,18 @@ button {
  */
 .post-header {
     margin-bottom: $spacing-unit * 1.5;
+    z-index: 3;
+    position: relative;
+}
+
+.post-meta {
+    z-index: 2;
+    position: relative;
 }
 
 .post-title {
+  z-index: 2;
+    position: relative;
 
     @include media-query($on-laptop) {
         
@@ -439,6 +598,11 @@ button {
 
 .post-content {
     margin-bottom: $spacing-unit;
+    
+    .layout-page & p:first-child {
+        position: relative;
+        z-index: 2;
+    }
 
     h2 {
         font-size: 3.2rem;
@@ -489,10 +653,17 @@ button {
     padding: 5px;
     background-color: #fff;
     transition: border-color 0.2s linear;
+    width: calc(100% - 12px);
 }
+
+    
 
 .front-image:hover, .front-image:focus {
   border-color: $highlight-color;   
+}
+
+.project-image {
+    max-width: 495px;
 }
 
 .tags-div {
