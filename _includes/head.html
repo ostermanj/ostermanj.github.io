@@ -49,8 +49,8 @@
     "image": {
       "@type": "ImageObject",
       "url": "{% if page.image %}{{ site.url }}/assets/{{ page.image}}{% else %}{{ site.url }}/assets/ostercomms-og.png{% endif %}",
-      "width": {% if page.layout == 'post' %}483{% else %}952{% endif %},
-      "height": {% if page.layout == 'post' %}338{% else %}498{% endif %}
+      "width": {% if page.type == 'project' %}483{% else %}696{% endif %},
+      "height": {% if page.type == 'project' %}338{% else %}364{% endif %}
     }
   }
   </script>
