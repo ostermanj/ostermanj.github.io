@@ -1,8 +1,10 @@
 // js onclick for menu to avoid sticky hover on mobile    
     
     var menu = document.querySelector('.site-nav');
+    var icon = document.querySelector('.menu-icon');
     
-    menu.onclick = function(){
+    icon.onclick = function(e){
+        e.preventDefault(); // prevents 
     
         if (menu.className.indexOf('open') == -1){
             menu.className += ' open';
