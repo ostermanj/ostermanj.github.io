@@ -20,15 +20,11 @@ Accelerated Mobile Pages benefit from appearing in Google's mobile news carousel
 
 Accelerated Mobile Pages are essentially stricter versions of your regular pages. They disallow some of the more resource-intensive features and coding practices that can slow pages down, like synchronous JavaScript, external stylesheet, and images without explicitly defined heights and widths.
 
-The [Open Society Foundations](https://www.opensocietyfoundations.org/) are making use of AMP pages. To see the difference in load times, try out the following experiment (it will work whether you're on desktop or mobile, but use your smartphone for the most realistic results).
+The [Open Society Foundations](https://www.opensocietyfoundations.org/) are making use of AMP pages. To see the difference in load times, try out the following experiment on your smartphone (try it over your network's data instead of Wi-Fi).
 
 1. Open [this regular post](https://www.opensocietyfoundations.org/voices/fight-against-human-trafficking-child-soldiers-get-ignored).  
 2. Open [the AMP version of the same post](https://cdn.ampproject.org/c/s/apps.opensocietyfoundations.org/amp/voices/fight-against-human-trafficking-child-soldiers-get-ignored).
 3. Observe the difference.
-
-<!-- 1. Open [this regular post](https://www.brookings.edu/blog/order-from-chaos/2016/11/09/what-will-foreign-policy-look-like-under-president-trump/).  
-2. Open [the AMP version of the same post](https://cdn.ampproject.org/c/s/www.brookings.edu/blog/order-from-chaos/2016/11/09/what-will-foreign-policy-look-like-under-president-trump/amp/).
-3. Observe the difference. -->
 
 ## Some data
 
