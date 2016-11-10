@@ -26,9 +26,15 @@ The [Open Society Foundations](https://www.opensocietyfoundations.org/) are maki
 2. Open [the AMP version of the same post](https://cdn.ampproject.org/c/s/apps.opensocietyfoundations.org/amp/voices/fight-against-human-trafficking-child-soldiers-get-ignored).
 3. Observe the difference.
 
+<!-- 1. Open [this regular post](https://www.brookings.edu/blog/order-from-chaos/2016/11/09/what-will-foreign-policy-look-like-under-president-trump/).  
+2. Open [the AMP version of the same post](https://cdn.ampproject.org/c/s/www.brookings.edu/blog/order-from-chaos/2016/11/09/what-will-foreign-policy-look-like-under-president-trump/amp/).
+3. Observe the difference. -->
+
 ## Some data
 
-A quick survey of the websites of the [top five US think tanks](http://www.thinktankwatch.com/2016/01/2016-think-tank-rankings-cheat-sheet.html) shows that loading a blog post takes XX seconds. (If you're interested, you can [download my data][link to data].) That, unfortunately, is longer than we want to wait on mobile. According to a study about mobile load times for an e-commerce site, [bounce rates rose sharply after 2.7 seconds](https://www.soasta.com/blog/mobile-web-performance-monitoring-conversion-rate/). After 2.7 seconds, each additional second accounted for roughly an eight percentage-point increase in the bounce rate.
+A quick survey of the websites of the [top five US think tanks](http://www.thinktankwatch.com/2016/01/2016-think-tank-rankings-cheat-sheet.html) shows that loading a blog post takes just over four seconds, as emulated at normal 4G speeds on a high-end device. (Results in the real world could be a bit quicker or much slower, depending on your device and network connectivity. If you're interested, you can [download my data][link to data].)
+
+Four seconds is not bad, but unfortunately it is longer than we want to wait on mobile. According to a study about mobile load times for an e-commerce site, [bounce rates rose sharply after 2.7 seconds](https://www.soasta.com/blog/mobile-web-performance-monitoring-conversion-rate/). After 2.7 seconds, each additional second accounted for roughly an eight percentage-point increase in the bounce rate.
 
 Big publishers were the first to enable AMP pages on their websites. Some have expressed [concern over decreased ad revenue](https://searchenginewatch.com/2016/10/31/publishers-are-struggling-with-amp-page-monetization/) on their AMP pages, but overall [the response has been positive](http://digiday.com/publishers/publishers-excited-google-amp-traffic-wonder-revenue-will-follow/). According to [Google's own case studies](https://www.ampproject.org/case-studies/), 
 
@@ -45,3 +51,5 @@ If your website is on Drupal or Wordpress, there are frameworks available to ena
 [Sixty percent of web searches](http://www.codefuel.com/blog/60-percent-searches-now-mobile-devices/) are now from mobile device and [more than half of web traffic](http://business.newsfactor.com/story.xhtml?story_id=022001GSLLSU) is now mobile. Google, in response, is [prioritizing speed and mobile-friendliness](https://www.wired.com/2016/02/google-will-now-favor-pages-use-fast-loading-tech/) in its search results. 
 
 Now is the time make sure your webpages are keeping up. 
+
+[link to data]:/assets/page-load-speeds.csv
