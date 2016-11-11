@@ -19,6 +19,9 @@
   <meta name="twitter:image" content="{% if page.image %}{{ site.url }}/assets/{{ page.image}}{% else %}{{ site.url }}/assets/ostercomms-og.png{% endif %}" />
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+{% if page.amp %}
+  <link rel="amphtml" href="{{ page.url | replace: '/blog','/amp' }}" />
+{% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Passion+One|Roboto:100,300" rel="stylesheet" />
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />

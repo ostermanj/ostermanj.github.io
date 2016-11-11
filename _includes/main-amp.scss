@@ -61,6 +61,8 @@ $hero-image:       '/assets/dc-at-night.jpg';
 @import
         "base",
         "layout",
+{% if page.layout != 'amp-post' %}
         "non-amp-only",
+{% endif %}
         "syntax-highlighting"
 ;

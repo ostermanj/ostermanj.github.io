@@ -316,16 +316,9 @@
 /**
  * Page content
  */
+
 .page-content {
-   margin-top: -50px;
-    position: relative;
-    @include media-query($on-laptop) {
-        margin-top: -79px;
-    }
-    @include media-query($on-palm) {
-        margin-top: -95px;
-    }
-   
+   margin-top: 20px;
 }
 
 .page-heading {

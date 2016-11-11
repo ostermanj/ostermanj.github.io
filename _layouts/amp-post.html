@@ -20,7 +20,7 @@ layout: amp-default
 {% if page.embed == null %}
 {% if page.image %} 
    {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
-    <amp-img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" height=364 width=696 />
+    <amp-img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" height="364" width="696" layout="responsive" />
    {% if page.link %}</a></p>{% endif %}
 {% endif %}
 {% endif %}
