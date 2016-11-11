@@ -1,0 +1,51 @@
+---
+layout: amp-default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+      <div class="tags-div">{% if page.tags %}{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+      
+      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" >{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span><span >{{ page.author }}</span></span>{% endif %}<p>
+  </header>
+
+  <div class="post-content" >
+    {{ content }}
+  </div>
+      {% endif %}{% if page.repo %}<p class="repo-link">
+    <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">github.com/ostermanj/{{ page.repo | truncate: 7 }}</a></p>
+{% endif %}
+    
+    {% if page.link %}<p class="www-link"><span class="icon icon--www">{% include icon-www.svg %}</span> In situ: <a href="{{ page.link }}">{{ page.link | replace: 'http://', '' | truncate: 17 }}</a></p>{% endif %}  
+{% if page.embed == null %}
+{% if page.image %} 
+   {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
+    <img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
+   {% if page.link %}</a></p>{% endif %}
+{% endif %}
+{% endif %}
+{% if page.embed != null %}
+    <p class="demo"><span class="icon icon--demo">{% include icon-demo.svg %}</span> Demo:</p>
+
+<div class="embed-wrapper" style=" position: relative; overflow: auto; height: {{ page.embed[1] | plus: 10 }}px">
+   {% if page.repo %}<iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] }}px;height: {{ page.embed[1] }}px;" src="https://ostermanj.github.io/{{ page.repo }}/"></iframe> {% endif %}
+    
+    {% if page.fiddle %}<iframe style="border-width:0;position: absolute;top: 0;left: 0;width: {{ page.embed[0] | plus: 10 }}px;height: {{ page.embed[1] }}px;" src="//jsfiddle.net/ostermanj/{{ page.fiddle }}/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> {% endif %}
+</div>  
+
+   
+{% endif %}
+
+
+</article>
+{% if page.contact %}
+<section class="contact in-content">
+    <div class="wrapper">
+        
+          <h3>If you need help with {{ page.tags[0] }}, I can help. Get in touch today.</h3>
+            {% include contact.html %}
+        
+    </div>
+</section>
+{% endif %}
