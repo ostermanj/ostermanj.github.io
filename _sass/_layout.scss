@@ -33,7 +33,7 @@
 }
 
 .site-title-wrapper {
-    background: url(../assets/ostercomms.png) no-repeat 0 4px;
+    background: url(/assets/ostercomms.png) no-repeat 0 4px;
     background-size: contain;
     display: inline-block;
     width: -webkit-calc(100% - 40px);
@@ -137,19 +137,6 @@
         }
     }
 }
-
-.social-sharer {
-    display: block;
-   
-    flex-grow: 1;
-    background-size: contain!important;
-    border-bottom-width: 0;
-    &:hover {
-        border-bottom-width: 0 !important;
-    }
-    
-}
-
 
 .facebook-share {
      background: url(/assets/facebook-white-on-blue.svg) no-repeat center;

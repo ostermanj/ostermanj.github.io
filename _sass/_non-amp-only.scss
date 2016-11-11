@@ -1,0 +1,11 @@
+.social-sharer {
+    display: block;
+   
+    flex-grow: 1;
+    background-size: contain!important;
+    border-bottom-width: 0;
+    &:hover {
+        border-bottom-width: 0 !important;
+    }
+    
+}

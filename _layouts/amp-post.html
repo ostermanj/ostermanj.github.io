@@ -5,15 +5,14 @@ layout: amp-default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-      <div class="tags-div">{% if page.tags %}{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+      <div class="tags-div">{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
       
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" >{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span><span >{{ page.author }}</span></span>{% endif %}<p>
   </header>
 
   <div class="post-content" >
     {{ content }}
   </div>
-      {% endif %}{% if page.repo %}<p class="repo-link">
+      {% if page.repo %}<p class="repo-link">
     <span class="icon icon--github">{% include icon-github.svg %}</span> Code: <a class="repo-link" href="https://github.com/ostermanj/{{ page.repo }}">github.com/ostermanj/{{ page.repo | truncate: 7 }}</a></p>
 {% endif %}
     
@@ -21,7 +20,7 @@ layout: amp-default
 {% if page.embed == null %}
 {% if page.image %} 
    {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
-    <img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
+    <amp-img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" height=364 width=696 />
    {% if page.link %}</a></p>{% endif %}
 {% endif %}
 {% endif %}
@@ -44,7 +43,7 @@ layout: amp-default
     <div class="wrapper">
         
           <h3>If you need help with {{ page.tags[0] }}, I can help. Get in touch today.</h3>
-            {% include contact.html %}
+            
         
     </div>
 </section>

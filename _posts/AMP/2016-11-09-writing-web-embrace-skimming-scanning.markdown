@@ -1,8 +1,8 @@
 ---
-layout: AMP
-type: blog
-categories: blog
-title: "Writing for the web: why you should encourage skimming and scanning"
+layout: amp-post
+type: amp
+categories: amp
+title: "AMP post test   "
 image: "web-writing-scan.png"
 tags: ['content strategy','writing','blogging']
 contact: true
