@@ -663,7 +663,7 @@ button {
     background-size: 31px;
 }
 
-.front-image, .page-image {
+.front-image, .page-image, .image-small img {
     margin-bottom: $spacing-unit / 4;
     border: 1px solid #828282;
     padding: 5px;
@@ -672,6 +672,12 @@ button {
     width: calc(100% - 12px);
 }
 
+.image-small {
+     width: calc(50% - #{$spacing-unit + 12});
+    min-width:225px;
+    display: inline-block;
+    margin-right: $spacing-unit;
+}
     
 
 .front-image:hover, .front-image:focus {
