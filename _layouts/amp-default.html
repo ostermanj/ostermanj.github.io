@@ -2,14 +2,36 @@
 <html amp lang="en">
   {% include amp-head.html %}
   <body>
+      <amp-sidebar id='sidebar1' layout='nodisplay' side='right'>
+          <div id="amp-social-wrapper">
+              <amp-social-share width="30" height="30" type="twitter"></amp-social-share>
+              <amp-social-share width="30" height="30" type="facebook" data-param-app_id="1292810250771019"></amp-social-share>
+              <amp-social-share width="30" height="30" type="linkedin"></amp-social-share>
+          </div>
+          <div>
+              <div class="item">
+                  <a href="/">Home</li>
+              </div>
+              {% for page in site.pages %}
+              {% if page.title %}
+              <div class="item">
+                  <a href="{{ page.url}}">{{ page.title }}</a>
+              </div>
+              {% endif %}
+              {% endfor %}
+              <div class="item">
+                  <a on="tap:sidebar1.close">Close <span class="highlight">(X)</span></a>
+              </div>  
+          </div>
+        
+    </amp-sidebar>
     
-    {% include header.html %}
+    {% include amp-header.html %}
     
     <div class="page-content">
       <div class="wrapper">
           {% include ie-message.html %}
-        
-        {{ content }}
+          {{ content }}
       </div>
     </div>
 

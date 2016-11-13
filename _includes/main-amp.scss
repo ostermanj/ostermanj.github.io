@@ -63,6 +63,8 @@ $hero-image:       '/assets/dc-at-night.jpg';
         "layout",
 {% if page.layout != 'amp-post' %}
         "non-amp-only",
+{% else %}
+        "amp-only",
 {% endif %}
         "syntax-highlighting"
 ;
