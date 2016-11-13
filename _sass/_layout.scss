@@ -33,7 +33,7 @@
 }
 
 .site-title-wrapper {
-    background: url(../assets/ostercomms.png) no-repeat 0 4px;
+    background: url(/assets/ostercomms.png) no-repeat 0 4px;
     background-size: contain;
     display: inline-block;
     width: -webkit-calc(100% - 40px);
@@ -137,19 +137,6 @@
         }
     }
 }
-
-.social-sharer {
-    display: block;
-   
-    flex-grow: 1;
-    background-size: contain!important;
-    border-bottom-width: 0;
-    &:hover {
-        border-bottom-width: 0 !important;
-    }
-    
-}
-
 
 .facebook-share {
      background: url(/assets/facebook-white-on-blue.svg) no-repeat center;
@@ -329,16 +316,9 @@
 /**
  * Page content
  */
+
 .page-content {
-   margin-top: -50px;
-    position: relative;
-    @include media-query($on-laptop) {
-        margin-top: -79px;
-    }
-    @include media-query($on-palm) {
-        margin-top: -95px;
-    }
-   
+   margin-top: 20px;
 }
 
 .page-heading {
@@ -721,4 +701,12 @@ button {
 
 .latest {
     padding-bottom: 0;
+}
+
+.highlight {
+    color: $highlight-color;
+}
+
+.display-none {
+    display: none;
 }

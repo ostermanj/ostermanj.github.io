@@ -1,0 +1,62 @@
+/*
+ *  AMP styles only
+ */
+
+amp-sidebar {
+    background-color: whitesmoke;
+    color: $dark-brand;
+    font-family: $heading-font-family;
+    padding-top: 22px;
+    width: 135px;
+    border-left: 1px solid $highlight-color;
+    box-shadow: rgba(0, 0, 0, 0.2) -4px 0 4px;
+}
+
+.site-nav {
+    box-shadow: rgba(0,0,0,0.2) 0 4px 4px;
+    position: fixed;
+    top: 16px;
+    right: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #ff5600;
+    border-radius: 5px;
+    text-align: right;
+    & .menu-icon {
+        display: block;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center;
+    
+    
+        & > svg {
+            width: 18px;
+            height: 15px;
+        }
+    }
+}
+
+.item {
+    line-height: 2em;
+    padding: 0 $spacing-unit;
+    
+    background-color: $background-color;
+    border-bottom: 1px solid $highlight-color;
+    &:first-child {
+        border-top: 1px solid $highlight-color;
+    }
+    & a {
+        border-width: 0;
+        &:active, &:visited {
+            color: $brand-color;
+        }
+    }
+}
+
+#amp-social-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 18px;
+}
