@@ -11,6 +11,10 @@ amp: true
 
 People don’t read online so much as they skim and scan, and unless your content is crafted with that in mind, your readers are going to jump ship.
 
+{% include figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" class="figure-small" caption="Google's news carousel feature AMP page on search result pages." %}
+
+{% include figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" class="figure-small" caption="Google's news carousel feature AMP page on search result pages." %}
+
 There’s nothing new in this observation. Jakob Nielsen’s research [demonstrated it back in 1997][link to Nielsen], and his findings hold up nearly 20 years later. Readers scan webpages, looking for keywords and main points. If you think about how you read on the web (and are honest with yourself), you’ll probably find the same is true for you. So while you may wish your content was being read word by word, it’s time to accept that it isn’t.
 
 <span class="tweet-this">
