@@ -1,0 +1,27 @@
+/*
+ *  non-AMP styles only
+ */
+
+.social-sharer {
+    display: block;
+   
+    flex-grow: 1;
+    background-size: contain!important;
+    border-bottom-width: 0;
+    &:hover {
+        border-bottom-width: 0 !important;
+    }
+    
+}
+
+.page-content {
+   margin-top: -50px;
+    position: relative;
+    @include media-query($on-laptop) {
+        margin-top: -79px;
+    }
+    @include media-query($on-palm) {
+        margin-top: -95px;
+    }
+   
+}
