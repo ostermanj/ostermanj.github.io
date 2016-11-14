@@ -14,11 +14,9 @@ The basic problem is this: browsers rendering modern webpages have to deal with 
 
 Accelerated Mobile Pages benefit from appearing in Google's mobile news carousel in search results and from being tagged with the AMP lightning bolt, which serves as a signal to mobile users that page in question is optimized for them.
 
-{:.image-small}
-![AMP news carousel](/assets/amp-news-carousel.png)
+{% include figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" class="figure-small" caption="Google's news carousel feature AMP page on search result pages." %}
 
-{:.image-small}
-![AMP search result](/assets/amp-search-result.png)
+{% include figure.html src="/assets/amp-search-result.png" alt="Accelerate Mobile Pages search results" class="figure-small" caption="AMP pages are marked with a lightning bolt icon." %}
 
 ## See the difference
 
