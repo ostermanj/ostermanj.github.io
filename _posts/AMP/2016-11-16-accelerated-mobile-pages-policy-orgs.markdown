@@ -45,9 +45,9 @@ Organizations that aren't seeking ad revenue from their blogs and webpages can r
 
 Accelerated Mobile Pages appear prominently in Google's mobile news carousel in search results and the AMP lightning bolt indicates to mobile users that page is optimized for them. Posts that are pegged to or on the front edge of the news cycle are most likely to benefit from the AMP. I suspect, too, that posts that consistently send relatively high volumes of search traffic to your site will benefit as well.
 
-{% include figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" class="figure-small" caption="Google's news carousel feature AMP page on search result pages." %}
+{% include amp-figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" caption="Google's news carousel feature AMP page on search result pages." width="640" height="1146" %}
 
-{% include figure.html src="/assets/amp-search-result.png" alt="Accelerate Mobile Pages search results" class="figure-small" caption="AMP pages are marked with a lightning bolt icon." %}
+{% include amp-figure.html src="/assets/amp-search-result.png" alt="Accelerate Mobile Pages search results" caption="AMP pages are marked with a lightning bolt icon." width="640" height="1136" %}
 
 ## What you can do
 

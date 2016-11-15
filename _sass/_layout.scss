@@ -650,7 +650,12 @@ button {
 figure {
     display: inline-table;
     border-bottom-width: 0;
+    &.amp-figure {
+        width: 100%;
+    }
 }
+
+
 
 figcaption {
     font-family: $heading-font-family;
