@@ -3,14 +3,14 @@ layout: amp-post
 type: amp
 categories: amp
 title: "Why policy organizations and think tanks should implement Accelerated Mobile Pages"
-image: "amp-image.png"
+image: "amp-image-bolt.png"
 tags: ['mobile optimization', 'content strategy','digital strategy']
 contact: true
 ---
 
 Accelerated Mobile Pages provide mobile visitors coming to your website from searches with lightning-fast load times and a consistently good experience. While many if not most policy organizations and think tanks now have responsive, mobile-ready websites, the actual experience of loading and interacting with them on mobile devices can be a slow and frustrating experience. That leads to high bounce rates and lackluster interaction.
 
-The basic problem is this: browsers rendering modern webpages have to deal with with numerous stylesheets, loads of JavaScript, web fonts, and images—all the stuff that makes your webpage rich, beautiful, and great. That's not such a big deal on a desktop or laptop, where good Wi-Fi and loads of computing power make quick work of it all. On mobile, no matter how great websites may look, the load times are often just too long and browsing experieng too clunky to satisfy our mobile surfing habits.
+The basic problem is this: browsers rendering modern webpages have to deal with with numerous stylesheets, loads of JavaScript, web fonts, and images—all the stuff that makes your webpage rich, beautiful, and great. That's not such a big deal on a desktop or laptop, where good Wi-Fi and loads of computing power make quick work of it all. On mobile, no matter how great websites may look, the load times are often just too long and the browsing experieng too clunky to satisfy our mobile surfing habits.
 
 ## Some data on speed and bounce rates
 
@@ -43,7 +43,7 @@ Organizations that aren't seeking ad revenue from their blogs and webpages can r
 
 [Sixty percent of web searches](http://www.codefuel.com/blog/60-percent-searches-now-mobile-devices/) are now from mobile device and [more than half of web traffic](http://business.newsfactor.com/story.xhtml?story_id=022001GSLLSU) is now mobile. Google, in response, is [prioritizing speed and mobile-friendliness](https://www.wired.com/2016/02/google-will-now-favor-pages-use-fast-loading-tech/) in its search results. 
 
-Accelerated Mobile Pages appear prominently in Google's mobile news carousel in search results and the AMP lightning bolt indicates to mobile users that page is optimized for them. Posts that are pegged to or on the front edge of the news cycle are most likely to benefit from the AMP. I suspect, too, that posts that consistently send relatively high volumes of search traffic to your site will benefit as well.
+Accelerated Mobile Pages appear prominently in Google's mobile news carousel in search results and the AMP lightning bolt indicates to mobile users that page is optimized for them. Posts that are pegged to or on the front edge of the news cycle are most likely to benefit from the AMP. I suspect, too, that your evergreen content that consistently sends relatively high volumes of search traffic to your site will benefit as well.
 
 {% include amp-figure.html src="/assets/amp-news-carousel.png" alt="Accelerate Mobile Pages news carousel on Google" caption="Google's news carousel feature AMP page on search result pages." width="640" height="1146" %}
 
