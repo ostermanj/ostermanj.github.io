@@ -5,6 +5,7 @@ title:  "Interactive digital-first brief for the 2013 Commitment to Development 
 categories: project
 image: "cdi-2013.png"
 tags: ['dataviz','publication design','vanilla JavaScript']
+link: 'http://www.cgdev.org/sites/default/files/CDI2013/cdi-brief-2013.html'
 ---
 
 This was the first digital brief for the Commitment to Development Index that was more than just a PDF of the print version. A carousel of cards for each country in the index features a rethought visualization for the data.
