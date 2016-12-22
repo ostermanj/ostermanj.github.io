@@ -10,7 +10,7 @@ contact: true
 
 Accelerated Mobile Pages provide mobile visitors coming to your website from searches with lightning-fast load times and a consistently good experience. While many if not most policy organizations and think tanks now have responsive, mobile-ready websites, the actual experience of loading and interacting with them on mobile devices can be a slow and frustrating experience. That leads to high bounce rates and lackluster interaction.
 
-The basic problem is this: browsers rendering modern webpages have to deal with with numerous stylesheets, loads of JavaScript, web fonts, and images—all the stuff that makes your webpage rich, beautiful, and great. That's not such a big deal on a desktop or laptop, where good Wi-Fi and loads of computing power make quick work of it all. On mobile, no matter how great websites may look, the load times are often just too long and the browsing experieng too clunky to satisfy our mobile surfing habits.
+The basic problem is this: browsers rendering modern webpages have to deal with with numerous stylesheets, loads of JavaScript, web fonts, and images—all the stuff that makes your webpage rich, beautiful, and great. That's not such a big deal on a desktop or laptop, where good Wi-Fi and loads of computing power make quick work of it all. On mobile, no matter how great websites may look, the load times are often just too long and the browsing experience too clunky to satisfy our mobile surfing habits.
 
 ## Some data on speed and bounce rates
 
