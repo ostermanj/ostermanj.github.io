@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-permalink: /contact/
+permalink: /get-in-touch/
 ---
 <section class="contact in-content">
     <div class="wrapper">

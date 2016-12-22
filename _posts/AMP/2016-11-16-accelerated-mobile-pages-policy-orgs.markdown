@@ -20,7 +20,7 @@ Four seconds is not bad, but unfortunately it is longer than we want to wait on 
 
 ## See the difference
 
-Accelerated Mobile Pages are essentially stricter versions of your regular pages. They disallow some of the more resource-intensive features and coding practices that can slow pages down, like synchronous JavaScript, external stylesheet, and images without explicitly defined heights and widths (which we leave undefined for good reason).
+Accelerated Mobile Pages are essentially stricter versions of your regular pages. They disallow some of the more resource-intensive features and coding practices that can slow pages down, like synchronous JavaScript, external stylesheets, and images without explicitly defined heights and widths (which we leave undefined for good reason).
 
 The [Open Society Foundations](https://www.opensocietyfoundations.org/) are making use of AMP pages. To see the difference in load times, try out the following experiment on your smartphone (turn off Wi-Fi for the best demonstration).
 
