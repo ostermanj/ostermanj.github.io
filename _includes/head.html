@@ -5,6 +5,11 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  {% if page.custom_css %}
+    {% for stylesheet in page.custom_css %}
+  <link rel="stylesheet" href="/css/{{ stylesheet }}.css" media="screen" type="text/css">
+    {% endfor %}
+  {% endif %}
   <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url | replace: '.html', '' }}">
 {% if page.amp %}
   <link rel="amphtml" href="{{ page.url | replace: '/blog','/amp' | replace: '.html', ''}}" />
