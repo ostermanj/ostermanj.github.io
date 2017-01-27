@@ -3,75 +3,110 @@
 
     var Chart,
         app,
-
-        SQUARE_WIDTH = 10, // symbolic constants all caps following convention. removing from options object below
-        SQUARE_SPACER = 2,
-        COLUMNS = 7,
         DATA_FILE = 'data/informality-concept.csv';
 
-    Chart = function(el,field,sortField,asc) {
-        this.setup(el,field,sortField,asc);
+    Chart = function() {
+        this.setup();
         //this.update();  placeholder
         //this.resize();  placeholder
     };
 
+    /*d3.selection.prototype.last = function(){
+      //var last = this.size() - 1;
+      //return this[0][last];
+      console.log(this);
+    }*/
+
     Chart.prototype = {
-        setup: function(el,field,sortField,asc) {
-            var chart = this,
-                tool_tip = d3.tip()
+        setup: function() {
+            var svgWidth = 120,
+                svgHeight = 100;
+
+            console.log(app.data);
+
+            var tool_tip = d3.tip()
                   .attr("class", "d3-tip")
                   .offset([-8, 0])
                   .direction('e')
                   .html(function(d){
-                      return "Percentage of vacant housing units for rent: " + d[field];
-                    });
-                //here the text of the tooltip is hard coded in but we'll need a human-readable field in the data to provide that text
-                
+                      return '<b>' + d.firm_type.replace(/\d-/,'').toUpperCase() + '</b><br>'
+                           + '(' + d.country + ')<br>'
+                           + 'Yes: ' + d3.format(",.1%")(d.mean) + '<br>'
+                           + '(n = ' + d.n + ')';
+                    })
+                  .style('opacity', 1);
+
+            var categoryDiv = d3.select('.post-content')
+              .append('div')
+              .attr('id','viz-container')
+              .selectAll('div')
+              .data(app.data)
+              .enter().append('div')
+              .attr('id', function(d,i){ return 'viz-category-' + (i + 1); })
+              .attr('class', function(d){
+                 return 'viz-category ' + d.key;
+              });
               
-            app.data.sort(function(a, b) { //sorting with JS prototype sort function
-                if (asc) return a[sortField] - b[sortField]; // if options abov was to sort ascending
-                return b[sortField] - a[sortField]; // if not
-              }); 
+              categoryDiv.append('h4')
+              .text(function(d){
+                return d.key.toUpperCase();
+              });
 
-            chart.svg = d3.select(el)
-                .attr('width', 100)
-                .attr('height', 100); // d3 v4 requires setting attributes one at a time. no native support for setting attr or style with objects as in v3. this library would make it possible: mini library D3-selection-mult
+            var questionDiv = categoryDiv.selectAll('div')
+              .data(function(d){ return d.values; })
+              .enter().append('div')
+              .attr('id', function(d,i){ return 'question-' + (i + 1); })
+              .attr('class', function(d,i,array){
+                var str = i === array.length - 1 ? 'viz-question last-question' : 'viz-question';
+                return str;
+              });
+              
+              questionDiv.append('h5')
+              .text(function(d){
+                return d.key.toUpperCase().replace('_', ' ');
+              });
 
-            chart.minValue = d3.min(app.data, function(d) {
-                return d[field]
-            });
+             
 
-            chart.maxValue = d3.max(app.data, function(d) {
-                return d[field]
-            });
 
-            chart.scale = d3.scaleLinear().domain([chart.minValue, chart.maxValue]).range([0.1, 1]); // in v3 this was d3.scale.linear()
-            chart.svg.selectAll('rect')
-                .data(app.data)
-                .enter() // for all `rect`s that don't yet exist
-                .append('rect')
-                .attr('width', SQUARE_WIDTH)
-                .attr('height', SQUARE_WIDTH)
-                .attr('fill', '#325d88')
-                .attr('fill-opacity', function(d) { // fill-opacity is a function of the value
-                    return chart.scale(d[field]); // takes the field value and maps it according to the scaling function defined above
+              var svgs = questionDiv.selectAll('svg')
+              .data(function(d){ return d.values; })
+              .enter().append('div')
+              .attr('class','svg-wrapper')
+              .append('svg')
+              .attr('width', svgWidth)
+              .attr('height', svgHeight)
+              .attr('class', function(d){
+                return  d.key;
+              })
+              .selectAll('rect')
+              .data(function(d){ return d.values; })
+              .enter().append('rect')
+              .sort(function(a,b){
+                    return d3.ascending(a.firm_type, b.firm_type);
                 })
-                .attr('x', function(d, i) {
-                    return (i * SQUARE_WIDTH + SQUARE_SPACER * i) - Math.floor(i / COLUMNS) * (SQUARE_WIDTH + SQUARE_SPACER) * COLUMNS;
-                }) // horizontal placement is function of the index and the number of columns desired
-                .attr('y', function(d, i) {
-                    return Math.floor(i / COLUMNS) * SQUARE_WIDTH + (Math.floor(i / COLUMNS) * SQUARE_SPACER);
-                }) // vertical placement function of index and number of columns. Math.floor rounds down to nearest integer
-                .on('mouseover', tool_tip.show)
-                .on('mouseout', tool_tip.hide)
+              .attr('x', function(d,i){ return svgWidth / 24 + ( 6 * svgWidth * i ) / 24 } )
+              .attr('y', function(d){ return svgHeight - d.mean * 100; })
+              .attr('width', svgWidth / 6)
+              .attr('height', function(d){ return d.mean * 100; })
+              .attr('class', function(d){
+                return d.firm_type;
+              })
+              .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
+                .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
 
+             d3.selectAll('.last-question .svg-wrapper')
+               .append('p')
+               .attr('class', 'country-label')
+               .text(function(d){
+                 return d.key;
+               });
 
-                  
-                
 
-        }// end setup()
-    }; // end prototype
+       
+        } // end setup()
+    }; // end prototype 
 
     app = {
         data: [],
@@ -86,29 +121,11 @@
             var nested = d3.nest()
               .key(function(d) { return d.category; })
               .key(function(d) { return d.question; })
+              .key(function(d) { return d.country; })
               .entries(json);
             app.data = nested;
 
-            console.log(app.data);
-            d3.select('.post-content')
-              .append('div')
-              .attr('id','viz-container');
-            
-            for (var i = 0; i < app.data.length; i++){
-              d3.select('#viz-container')
-              .append('div')
-              .attr('id', 'viz-category-' + (i + 1) )
-              .attr('class', 'viz-category');
-              for (var j = 0; j < app.data[i].values.length; j++){
-                d3.select('#viz-category-' + (i + 1))
-                .append('div')
-                .attr('id', 'question-' + (j + 1))
-                .attr('class', 'viz-question');
-              }
-            }
-
-                        
-      //      app.chart = new Chart();
+            app.chart = new Chart();
 
         }
     }

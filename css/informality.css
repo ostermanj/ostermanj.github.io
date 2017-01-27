@@ -3,23 +3,105 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px dotted magenta;
+ 
 }
 
 .viz-category {
     display: flex;
     flex-direction: column;
-    border: 1px dotted magenta;
+   /*border: 1px solid magenta;*/
     width: 98%;
     align-items: center;
      margin: 5px 0;
+     padding: 10px;
 }
 
 .viz-question {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width:98%;
-    border: 1px dotted magenta;
+ /*  border: 1px dotted magenta;  */
     min-height: 100px;
     margin: 5px 0;
     
+}
+
+.electricity {
+    color: #296976;
+    background-color: rgba(93, 231, 255, 0.2)
+}
+
+.finance {
+    color: rgba(80, 67, 47, 0.87);
+    background-color: rgba(245, 214, 169, 0.15);
+}
+
+.svg-wrapper svg {
+
+  /*  border: 1px dotted cyan;  */
+    margin: 5px;
+
+
+}
+
+.DRC rect {
+    fill: #0E3B43;
+    stroke: #0E3B43;
+}
+
+.Ghana rect {
+    fill: #5B2333;
+    stroke: #5B2333;
+}
+
+.Kenya rect {
+    fill: #296976;
+    stroke: #296976;
+}
+.Myanmar rect {
+    fill: #564B3D;
+    stroke: #564B3D;
+}
+.Rwanda rect {
+    fill: #647275;
+    stroke: #647275;
+}
+
+rect {
+    fill-opacity: 0.6;
+    cursor: pointer;
+
+}
+
+.svg-wrapper {
+   /* width:120px; */
+    /*border: 1px dotted magenta; */
+    display: flex;
+    flex-direction: column;
+}
+
+.viz-category h4, .viz-category h5, .country-label {
+    width: 100%;
+    color: inherit;
+}
+
+.country-label {
+    font-family: "Passion One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    margin:0;
+
+}
+
+.d3-tip {
+    background-color: rgba(255,255,255, 0.9);
+    color: #000;
+    font-family: "Passion One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+
+
 }
