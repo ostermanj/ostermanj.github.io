@@ -68,25 +68,25 @@
     fill: #69583e;
 } 
 
-.DRC rect {
+.DRC rect, rect.DRC {
     fill: #0E3B43;
   
 }
 
-.Ghana rect {
+.Ghana rect, rect.Ghana {
     fill: #5B2333;
   
 }
 
-.Kenya rect {
+.Kenya rect, rect.Kenya {
     fill: #296976;
   
 }
-.Myanmar rect {
+.Myanmar rect, rect.Myanmar {
     fill: #564B3D;
   
 }
-.Rwanda rect {
+.Rwanda rect, rect.Rwanda {
     fill: #647275;
   
 }
