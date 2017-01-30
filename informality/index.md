@@ -3,8 +3,7 @@ layout: page
 permalink: /informality/
 custom_css: informality
 ---
-# Informality Dataviz Concept
-
+<p></p>
 **View 1** (grouped by country)
 <div id="chart-0"></div>
 
