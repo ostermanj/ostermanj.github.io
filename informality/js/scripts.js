@@ -27,7 +27,7 @@
             
             
             var x = d3.scaleBand()
-                      .domain(['1-informal','2-small', '3-medium', '4-large'])
+                      .domain(['informal','small', 'medium', 'large'])
                       .range([0, svgWidth])
                       .padding(0.33);  
 
@@ -79,7 +79,7 @@
               .enter().append('div')
               .attr('id', function(d,i){ return 'question-' + (i + 1); })
               .attr('class', function(d,i,array){
-                var str = i === 0 ? 'viz-question first-question' : i === array.length - 1 ? 'viz-question last-question' : 'viz-question';
+                var str = array.length === 1 ? 'viz-question first-question last-question' : i === 0 ? 'viz-question first-question' : i === array.length - 1 ? 'viz-question last-question' : 'viz-question';
                 return str;
               });
               
@@ -108,9 +108,9 @@
               .selectAll('rect')
               .data(function(d){ return d.values; })
               .enter().append('rect')
-              .sort(function(a,b){
+         /*     .sort(function(a,b){
                     return d3.ascending(a.firm_type, b.firm_type);
-                })
+                })*/
          //     .attr('x', function(d,i){ return svgWidth / 24 + ( 6 * svgWidth * i ) / 24 } )
               .attr('x', function(d){ return x(d.firm_type); })
               .attr('y', function(d){ return svgHeight - y(d.mean); })
