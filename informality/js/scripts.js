@@ -19,17 +19,38 @@
 
     Chart.prototype = {
         setup: function() {
-            var svgWidth = 120,
-                svgHeight = 100;
+            var margin = { top: 5, right: 15, bottom: 5, left: 0 },
+                svgWidth = 95 - margin.right - margin.left,
+                svgHeight = 70 - margin.top - margin.bottom;
 
             console.log(app.data);
+            
+            
+            var x = d3.scaleBand()
+                      .domain(['1-informal','2-small', '3-medium', '4-large'])
+                      .range([0, svgWidth])
+                      .padding(0.33);  
+
+            var y = d3.scaleLinear()
+                      .domain([0,1])
+                      .range([0, svgHeight]);
+
+            var yAxisScale = d3.scaleLinear()
+                      .domain([0,1])
+                      .range([svgHeight, 0]);
+
+            var xAxis = d3.axisBottom().scale(x).tickSize(0);
+
+            var yAxis = d3.axisRight().scale(yAxisScale).ticks(5).tickSize(0);
+
+            
 
             var tool_tip = d3.tip()
                   .attr("class", "d3-tip")
                   .offset([-8, 0])
                   .direction('e')
                   .html(function(d){
-                      return '<b>' + d.firm_type.replace(/\d-/,'').toUpperCase() + '</b><br>'
+                      return '<b>' + d.firm_type.toUpperCase() + '</b><br>'
                            + '(' + d.country + ')<br>'
                            + 'Yes: ' + d3.format(",.1%")(d.mean) + '<br>'
                            + '(n = ' + d.n + ')';
@@ -43,13 +64,14 @@
               .data(app.data)
               .enter().append('div')
               .attr('id', function(d,i){ return 'viz-category-' + (i + 1); })
-              .attr('class', function(d){
-                 return 'viz-category ' + d.key;
+              .attr('class', function(d,i,array){
+                 var str = i === 0 ? 'first-category ' : i === array.length - 1 ? 'last-category ' : '';
+                 return 'viz-category ' + str + d.key;
               });
               
               categoryDiv.append('h4')
               .text(function(d){
-                return d.key.toUpperCase();
+                return d.key.toUpperCase().replace(/_/g,' ');
               });
 
             var questionDiv = categoryDiv.selectAll('div')
@@ -57,13 +79,14 @@
               .enter().append('div')
               .attr('id', function(d,i){ return 'question-' + (i + 1); })
               .attr('class', function(d,i,array){
-                var str = i === array.length - 1 ? 'viz-question last-question' : 'viz-question';
+                var str = i === 0 ? 'viz-question first-question' : i === array.length - 1 ? 'viz-question last-question' : 'viz-question';
                 return str;
               });
               
               questionDiv.append('h5')
+
               .text(function(d){
-                return d.key.toUpperCase().replace('_', ' ');
+                return d.key.toUpperCase().replace(/_/g, ' ');
               });
 
              
@@ -74,21 +97,26 @@
               .enter().append('div')
               .attr('class','svg-wrapper')
               .append('svg')
-              .attr('width', svgWidth)
-              .attr('height', svgHeight)
-              .attr('class', function(d){
-                return  d.key;
+              .attr('width', svgWidth + margin.left + margin.right)
+              .attr('height', svgHeight + margin.top + margin.bottom)
+              .attr('class', function(d,i,array){
+                var str = i === 0 ? ' first-chart' : i === array.length - 1 ? ' last-chart' : '';
+                return  d.key + str;
               })
+              .append('g')
+              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
               .selectAll('rect')
               .data(function(d){ return d.values; })
               .enter().append('rect')
               .sort(function(a,b){
                     return d3.ascending(a.firm_type, b.firm_type);
                 })
-              .attr('x', function(d,i){ return svgWidth / 24 + ( 6 * svgWidth * i ) / 24 } )
-              .attr('y', function(d){ return svgHeight - d.mean * 100; })
-              .attr('width', svgWidth / 6)
-              .attr('height', function(d){ return d.mean * 100; })
+         //     .attr('x', function(d,i){ return svgWidth / 24 + ( 6 * svgWidth * i ) / 24 } )
+              .attr('x', function(d){ return x(d.firm_type); })
+              .attr('y', function(d){ return svgHeight - y(d.mean); })
+         //     .attr('width', svgWidth / 6)
+              .attr('width', x.bandwidth())
+              .attr('height', function(d){ return y(d.mean); })
               .attr('class', function(d){
                 return d.firm_type;
               })
@@ -102,6 +130,24 @@
                .text(function(d){
                  return d.key;
                });
+
+               questionDiv.selectAll('svg')
+               .append('g')
+              .attr('class', 'x-axis')
+              .attr('transform', 'translate(0,' + (svgHeight + margin.top) + ')')
+              .call(xAxis)
+              .selectAll("text")
+              .attr("y", 0)
+              .attr("x", 10)
+              .attr("dy", ".35em")
+              .attr("transform", "rotate(-90)")
+              .style("text-anchor", "start");
+
+              questionDiv.selectAll('svg')
+              .append('g')
+              .attr('transform', 'translate(' +  svgWidth + ', ' + (margin.top) + ')')
+              .attr('class', 'y-axis')
+              .call(yAxis)
 
 
        
