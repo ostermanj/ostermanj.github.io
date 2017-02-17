@@ -11,8 +11,64 @@
     position: relative;
     & .wrapper {
         max-width: 1910px;
+        display: flex;
+        justify-content: space-between;
+        &::after{
+            content:'';
+            display: none;
+        }
     }
 }
+
+#tagline {
+    font-family: $heading-font-family; 
+    font-style: italic;
+    line-height: 63px;
+    font-size: 2.5rem;
+         position: absolute;
+    top: -57px;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.work-category {
+    
+    width: 240px;
+    padding: 20px;
+
+    border-right: 10px solid $very-light-brand;
+    flex-grow: 1;
+   
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+            
+                
+                position: relative;
+                margin-bottom: 0;
+
+    
+    h2 {
+        color: #fff;
+        
+    }
+   
+}
+
+.category-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 545px;
+    
+}
+    
+    
+
 
 .site-title {
     font-size: 2px;
@@ -371,6 +427,7 @@
 .red {
     background-color: $dark-brand;
     border-bottom: 60px solid $very-light-brand;
+    border-top: 60px solid $very-light-brand;
     & p, & li, & blockquote {
         color: #fff;
     }
@@ -387,6 +444,20 @@ section {
     margin-bottom: 30px;
 }
 
+#front-content-section{
+    padding: 0;
+    border-top-width:50px;
+    position: relative;
+       
+
+
+}
+
+#hero-spacer {
+    background-color: $very-light-brand;
+    height: 50px;
+}
+
 #hero {
     overflow-x: hidden;
     position: relative;
@@ -395,13 +466,14 @@ section {
     
     background: url(/assets/tongariro.jpg) no-repeat;
     background-size: cover;
-    padding-bottom: 40%;
+    padding-bottom: 20%;
     display: flex;
+    background-position:0 -28px;
     
     @include media-query($on-palm) {
         
         padding-bottom: 60%;
-        background-position-x: 34%;
+        background-position: 34% 0;
         
         
     }
@@ -462,6 +534,7 @@ h2, .heading-2 {
     text-align: center;
     font-size: 50px;
     font-size: 5.0rem;
+    position: absolute;
     
     .red & {
         color: #f3f3f3;
@@ -470,15 +543,31 @@ h2, .heading-2 {
 }
 
 #front-content {
-    font-family: $heading-font-family;
-    font-size: 30px;
-    font-size: 3.0rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
+    
+     -webkit-transform: skew(-5deg);
+       -moz-transform: skew(-5deg);
+         -o-transform: skew(-5deg);
+    
+    
+    max-width: 100%;
      @include media-query($on-palm) {
        font-size: 20px;
        font-size: 2.0rem;
+       -webkit-transform: skew(0deg);
+       -moz-transform: skew(-0deg);
+         -o-transform: skew(-0deg);
     }
+}
+
+#front-content-inner {
+    border-left: 10px solid #ede3de;
+    border-top: 10px solid $very-light-brand;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: -10px;
+    position: relative;
+    margin-bottom: -10px;
 }
 
 .contact {
