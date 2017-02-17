@@ -4,8 +4,8 @@ layout: default
 
 <div class="home">
 
-  <h1 class="post-title">Projects</h1>
-{% assign projects = site.posts | where: "type", "project" %} 
+  <h1 class="post-title">Posts and Projects</h1>
+{% assign projects = site.posts | where_exp: "item", "item.type != 'amp'" %} 
 
     {% for post in projects %}
  {% capture pattern %}{% cycle 'odd', 'even' %}{% endcapture %}
