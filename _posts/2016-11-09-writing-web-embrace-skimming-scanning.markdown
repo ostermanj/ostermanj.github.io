@@ -4,7 +4,7 @@ type: blog
 categories: blog
 title: "Writing for the web: why you should encourage skimming and scanning"
 image: "web-writing-scan.png"
-tags: ['content strategy','writing','blogging']
+tags: ['content strategy','writing + editing','blogging']
 contact: true
 amp: true
 ---

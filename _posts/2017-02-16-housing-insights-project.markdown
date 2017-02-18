@@ -4,7 +4,7 @@ type: project
 title:  "Housing Insights: Preserving affordable housing in Washington DC"
 categories: project
 image: "housing-insights.png"
-tags: ['D3','open data', 'dataviz']
+tags: ['D3','open data', 'dataviz','front-end']
 link: 'http://housinginsights.org/'
 repo: 'housing-insights'
 featured: true

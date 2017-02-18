@@ -4,7 +4,7 @@ type: project
 title:  "Digital-first publication of African energy report"
 categories: project
 image: "more-than-lightbulb.png"
-tags: ['publication design','AngularJS','dataviz']
+tags: ['publications','AngularJS','dataviz','front-end']
 link: 'http://www.cgdev.org/app/reader/3124016'
 ---
 

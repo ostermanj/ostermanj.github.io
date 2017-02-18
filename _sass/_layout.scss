@@ -51,7 +51,9 @@ body {
                 position: relative;
                 margin-bottom: 0;
 
-    
+    a {
+        color:$highlight-color;
+    }
     h2 {
         color: #fff;
         
@@ -504,8 +506,6 @@ section {
 }
 
 
-
-
 h1, .heading-1 {    
     font-size: 50px;
     font-size: 5.0rem;
@@ -615,21 +615,31 @@ h2, .heading-2 {
         }
     }
 
-    & button {
-        background: $highlight-color;
-        border: 1px solid $highlight-color;
-        padding: 10px 20px;
-        color: #fff;
-        border-radius: 5px;
-        
-        text-transform: uppercase
-
-    }
+    
     
     &.in-content {
         margin: $spacing-unit 0;
     }
 }
+.tag-filtered {
+    display: none;
+}
+button {
+        background: $highlight-color;
+        border: 1px solid $highlight-color;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;        
+        text-transform: uppercase;
+        .tag-filtered & {
+            padding:5px 10px;
+            font-size: 1.8rem;
+            bottom: 20px;
+            position: relative;
+        }
+
+    }
 
 .featured {
     flex-grow:1;

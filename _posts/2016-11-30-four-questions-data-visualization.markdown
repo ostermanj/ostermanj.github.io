@@ -4,7 +4,7 @@ type: blog
 categories: blog
 title: "Four questions to ask about your data visualization"
 image: "charts-image.png"
-tags: ['data viz', 'content strategy','digital strategy']
+tags: ['dataviz', 'content strategy','digital strategy']
 contact: true
 ---
 

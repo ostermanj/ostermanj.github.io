@@ -54,8 +54,39 @@
         }
     }
 
+// hide/show filter by tags on projects page
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, "-"));
+}
 
+window.onload = function(){
+  if (location.pathname === '/projects/'){
+    var filter = getParameterByName('tag');
+    if (filter){
+        console.log(filter);
+        document.querySelector('.home').style.display = 'none';
+        var filteredDivs = document.querySelectorAll('.tag-filtered');
+        for (i = 0; i < filteredDivs.length; i++){
+            filteredDivs[i].style.display = 'none';
+          }
+          document.getElementById('tag-' + filter).style.display = 'block';
+      }
+    }
+}
 
+function showAll(){
+  if (location.pathname === '/projects/'){
+    window.location.href = '/projects/';
+  }
+}
 
 // plain vanilla animated scrolltop courtesy http://stackoverflow.com/a/24559613/5701184 but changed scrollY to pageYOffset for better IE support
 
