@@ -5,7 +5,7 @@ title:  "The Commitment to Development Index"
 modified: 2017-01-16
 categories: project
 image: "CDI-live-2016.gif"
-tags: ['dataviz','Backbone.js','MCV framework']
+tags: ['dataviz','front-end',Backbone.js','MCV framework']
 repo: 'commitment-development'
 featured: true
 contact: true

@@ -4,7 +4,7 @@ type: blog
 categories: blog
 title: "Why policy organizations and think tanks should implement Accelerated Mobile Pages"
 image: "amp-image-bolt.png"
-tags: ['mobile optimization', 'content strategy','digital strategy']
+tags: ['mobile optimization', 'content strategy','digital strategy','front-end']
 contact: true
 amp: true
 ---
