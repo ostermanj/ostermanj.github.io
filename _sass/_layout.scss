@@ -570,6 +570,21 @@ h2, .heading-2 {
     margin-bottom: -10px;
 }
 
+.full-width {
+    max-width: 100%;
+    
+}
+
+.full-width > h2 {
+    text-align: center;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .contact {
     margin-bottom: 0;
     background-color: $very-light-brand;
@@ -616,8 +631,24 @@ h2, .heading-2 {
     }
 }
 
-.featured hr {
-    margin-bottom: $base-line-height * $base-font-size;
+.featured {
+    flex-grow:1;
+    max-width:507px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+}
+
+p.read-more {
+    a {
+        font-family: $heading-font-family;
+    }
+    margin-top: 10px;
+
 }
 
 button {

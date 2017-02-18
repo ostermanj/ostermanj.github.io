@@ -7,6 +7,7 @@ image: "housing-insights.png"
 tags: ['D3','open data', 'dataviz']
 link: 'http://housinginsights.org/'
 repo: 'housing-insights'
+featured: true
 ---
 
 Housing Insights is a [Code for DC](http://codefordc.org/) project to help the city government and affordable-housing analysts and advocates better prioritize their efforts and budget expenditure on preserving the existing stock of affordable housing. Like many cities, Washington is facing ever-rising rents that are forcing many long-time residents to flee the city for more affordable areas.

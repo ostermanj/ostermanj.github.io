@@ -51,16 +51,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
        </section>
        <section class="latest">
-          <div class="wrapper">
+          <div class="wrapper full-width">
 {% assign featured = site.posts | where: "featured", true %}              
       <h2>Featured project{% if featured.size > 1 %}s{% endif %}</h2>
-        
+        <div class="flex-box">
     {% for feature in featured %}
               <div class="featured">
+       <div>
         <h2>
           <a class="post-link" href="{{ feature.url | prepend: site.baseurl }}">{{ feature.title }}</a>
         </h2>
-            
+        </div>
+           <div> 
             {% if feature.image %}
     <a href="{{ feature.url | prepend: site.baseurl }}"><img class="front-image project-image" src="/assets/{{ feature.image }}" /></a>
             {% endif %}
@@ -71,21 +73,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {% endfor %}
             
             {% endif %}
-  <p>{{ feature.excerpt }}</p>
-                   {% if forloop.index < forloop.length %}
-              <hr />
-                   {% endif %}
-              </div>
-             
-             
+             <p class="read-more"><a title="{{ feature.title }}" href="{{ feature.url | prepend: site.baseurl }}">Read more</a></p>
+                            </div>
+             </div>
                                                   
               {% endfor %}
+              </div>
             
           </div>
       </section>
       <section class="contact">
        <div class="wrapper">
-           <h2>What's your challenge? Get in touch now.</h2>
+           <h2>Looking for help? Get in touch today!</h2>
         {% include contact.html %}
           </div> 
       </section>
