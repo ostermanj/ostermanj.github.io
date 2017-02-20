@@ -18,7 +18,7 @@ As the director of digital communications at the [Center for Global Development]
 
 I'm most familar with Drupal and WordPress content management systems.
 
-My resume: [PDF](../assets/osterman-resume-081916.pdf).
+My resume: [PDF](../assets/osterman-resume-022017.pdf).
 
 My other website (sculpture): [www.johnaosterman.com](http://www.johnaosterman.com)
 
