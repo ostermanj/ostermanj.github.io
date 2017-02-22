@@ -1,0 +1,2043 @@
+var teal = ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"];
+var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5"];
+/*
+ * CHART 1
+ *
+ *
+ *
+ *
+ */
+
+
+    $(function() {
+        Highcharts.setOptions(Highcharts.theme);
+      $('#chart-0').highcharts({
+        chart: {
+          type: 'bubble',
+          zoomType: 'xy',
+
+        },
+        title: {
+          text: 'Low-Income Countries Are More Vulnerable to Natural Disasters, and Disasters Help Keep Them Poor'
+        },
+        subtitle: {
+          text: 'Figure shows data for 133 countries, excluding high-income countries. Source: CGD analysis; data for average number of deaths per year proportional to population from EM-DAT (Guha-Sapir et al., 2015) and World Bank (2015) with CGD analysis; data for GDP per capita from World Bank (2015); data for vulnerability from INFORM (2017), normalised so that 1 represents the highest vulnerability. Some of the index subcomponents include national income (such as Net ODA received as a percentage of GNI).',
+
+        },
+        series: [{
+
+          regression: true,
+          regressionSettings: {
+            type: 'exponential',
+            color: '#cccccc'
+
+          },
+          data: [{
+            "name": "Afghanistan",
+            "x": 6.387423038,
+            "y": 0.840909064,
+            "z": 17.75072861
+          }, {
+            "name": "Albania",
+            "x": 8.280259132,
+            "y": 0.272727281,
+            "z": 2.355627298
+          }, {
+            "name": "Algeria",
+            "x": 8.344274521,
+            "y": 0.454545468,
+            "z": 1.709142685
+          }, {
+            "name": "Angola",
+            "x": 8.319101334,
+            "y": 0.511363626,
+            "z": 19.11488533
+          }, {
+            "name": "Armenia",
+            "x": 8.157406807,
+            "y": 0.375,
+            "z": 0
+          }, {
+            "name": "Azerbaijan",
+            "x": 8.611838341,
+            "y": 0.488636374,
+            "z": 1.007475019
+          }, {
+            "name": "Bangladesh",
+            "x": 7.099781036,
+            "y": 0.613636374,
+            "z": 6.665419579
+          }, {
+            "name": "Belarus",
+            "x": 8.655294418,
+            "y": 0.181818187,
+            "z": 0.104916833
+          }, {
+            "name": "Belize",
+            "x": 8.492638588,
+            "y": 0.329545468,
+            "z": 3.338178635
+          }, {
+            "name": "Benin",
+            "x": 6.636013985,
+            "y": 0.454545468,
+            "z": 3.216551542
+          }, {
+            "name": "Bhutan",
+            "x": 7.884575844,
+            "y": 0.284090906,
+            "z": 3.078121901
+          }, {
+            "name": "Bolivia",
+            "x": 8.031642914,
+            "y": 0.409090906,
+            "z": 8.548664093
+          }, {
+            "name": "Bosnia and Herzegovina",
+            "x": 8.354516983,
+            "y": 0.420454532,
+            "z": 1.211632967
+          }, {
+            "name": "Botswana",
+            "x": 8.757805824,
+            "y": 0.284090906,
+            "z": 23.13300514
+          }, {
+            "name": "Brazil",
+            "x": 9.052350998,
+            "y": 0.340909094,
+            "z": 1.685128808
+          }, {
+            "name": "Bulgaria",
+            "x": 8.852733612,
+            "y": 0.25,
+            "z": 2.23045516
+          }, {
+            "name": "Burkina Faso",
+            "x": 6.379740238,
+            "y": 0.568181813,
+            "z": 27.8090477
+          }, {
+            "name": "Burundi",
+            "x": 5.62426424,
+            "y": 0.670454562,
+            "z": 4.07776165
+          }, {
+            "name": "Cabo Verde",
+            "x": 8.0327425,
+            "y": 0.23863636,
+            "z": 16.63971901
+          }, {
+            "name": "Cambodia",
+            "x": 7.055045128,
+            "y": 0.465909094,
+            "z": 7.352732182
+          }, {
+            "name": "Cameroon",
+            "x": 7.104358196,
+            "y": 0.659090936,
+            "z": 9.586594582
+          }, {
+            "name": "Central African Republic",
+            "x": 5.778276443,
+            "y": 0.909090936,
+            "z": 7.813418865
+          }, {
+            "name": "Chad",
+            "x": 6.65375948,
+            "y": 0.829545438,
+            "z": 9.969040871
+          }, {
+            "name": "China",
+            "x": 8.990651131,
+            "y": 0.420454532,
+            "z": 7.835836887
+          }, {
+            "name": "Colombia",
+            "x": 8.708828926,
+            "y": 0.568181813,
+            "z": 5.609391212
+          }, {
+            "name": "Comoros",
+            "x": 6.575701714,
+            "y": 0.375,
+            "z": 73.21868896
+          }, {
+            "name": "Congo",
+            "x": 7.523589134,
+            "y": 0.556818187,
+            "z": 18.25159836
+          }, {
+            "name": "Congo DR",
+            "x": 6.122608662,
+            "y": 0.75,
+            "z": 7.794198036
+          }, {
+            "name": "Costa Rica",
+            "x": 9.3290205,
+            "y": 0.284090906,
+            "z": 2.531666517
+          }, {
+            "name": "Croatia",
+            "x": 9.35321331,
+            "y": 0.204545453,
+            "z": 0.889651179
+          }, {
+            "name": "Cuba",
+            "x": 8.823184013,
+            "y": 0.25,
+            "z": 2.092007875
+          }, {
+            "name": "Côte d'Ivoire",
+            "x": 7.243505955,
+            "y": 0.602272749,
+            "z": 2.193514347
+          }, {
+            "name": "Djibouti",
+            "x": 7.573081017,
+            "y": 0.556818187,
+            "z": 17.33374023
+          }, {
+            "name": "Dominica",
+            "x": 8.870155334,
+            "y": 0.295454532,
+            "z": 40.09262848
+          }, {
+            "name": "Dominican Republic",
+            "x": 8.774695396,
+            "y": 0.340909094,
+            "z": 7.181687832
+          }, {
+            "name": "Ecuador",
+            "x": 8.733120918,
+            "y": 0.431818187,
+            "z": 2.942335844
+          }, {
+            "name": "Egypt",
+            "x": 8.19277668,
+            "y": 0.465909094,
+            "z": 3.176731348
+          }, {
+            "name": "El Salvador",
+            "x": 8.347435951,
+            "y": 0.556818187,
+            "z": 8.228894234
+          }, {
+            "name": "Eritrea",
+            "x": 6.299798965,
+            "y": 0.568181813,
+            "z": 1.214645028
+          }, {
+            "name": "Ethiopia",
+            "x": 6.428379059,
+            "y": 0.681818187,
+            "z": 2.302283764
+          }, {
+            "name": "Fiji",
+            "x": 8.5092659,
+            "y": 0.306818187,
+            "z": 5.429983616
+          }, {
+            "name": "Gabon",
+            "x": 9.01995945,
+            "y": 0.397727281,
+            "z": 5.189202785
+          }, {
+            "name": "Gambia",
+            "x": 6.15599823,
+            "y": 0.363636374,
+            "z": 3.324355841
+          }, {
+            "name": "Georgia",
+            "x": 8.241696358,
+            "y": 0.397727281,
+            "z": 1.271469235
+          }, {
+            "name": "Ghana",
+            "x": 7.222347736,
+            "y": 0.363636374,
+            "z": 4.871054173
+          }, {
+            "name": "Grenada",
+            "x": 9.128264427,
+            "y": 0.102272727,
+            "z": 0.88303262
+          }, {
+            "name": "Guatemala",
+            "x": 8.269623756,
+            "y": 0.579545438,
+            "z": 18.84893227
+          }, {
+            "name": "Guinea",
+            "x": 6.275365829,
+            "y": 0.522727251,
+            "z": 26.61805534
+          }, {
+            "name": "Guinea-Bissau",
+            "x": 6.350865364,
+            "y": 0.5,
+            "z": 48.71257401
+          }, {
+            "name": "Guyana",
+            "x": 8.325390816,
+            "y": 0.340909094,
+            "z": 4.1628685
+          }, {
+            "name": "Haiti",
+            "x": 6.707282066,
+            "y": 0.693181813,
+            "z": 2040.755615
+          }, {
+            "name": "Honduras",
+            "x": 7.835536957,
+            "y": 0.511363626,
+            "z": 10.33538628
+          }, {
+            "name": "Hungary",
+            "x": 9.422507286,
+            "y": 0.193181813,
+            "z": 5.932254314
+          }, {
+            "name": "India",
+            "x": 7.376670361,
+            "y": 0.602272749,
+            "z": 2.473259211
+          }, {
+            "name": "Indonesia",
+            "x": 8.115666389,
+            "y": 0.443181813,
+            "z": 6.599462509
+          }, {
+            "name": "Iran",
+            "x": 8.602062225,
+            "y": 0.522727251,
+            "z": 3.533709764
+          }, {
+            "name": "Iraq",
+            "x": 8.50588131,
+            "y": 0.738636374,
+            "z": 5.217938423
+          }, {
+            "name": "Jamaica",
+            "x": 8.562553406,
+            "y": 0.23863636,
+            "z": 1.496770501
+          }, {
+            "name": "Jordan",
+            "x": 8.505129814,
+            "y": 0.420454532,
+            "z": 0.696241796
+          }, {
+            "name": "Kazakhstan",
+            "x": 9.260080338,
+            "y": 0.193181813,
+            "z": 1.510962129
+          }, {
+            "name": "Kenya",
+            "x": 7.227453709,
+            "y": 0.647727251,
+            "z": 5.941697121
+          }, {
+            "name": "Kiribati",
+            "x": 7.261422157,
+            "y": 0.363636374,
+            "z": 0
+          }, {
+            "name": "Kyrgyzstan",
+            "x": 7.005984306,
+            "y": 0.352272719,
+            "z": 2.757754803
+          }, {
+            "name": "Lao PDR",
+            "x": 7.505734921,
+            "y": 0.443181813,
+            "z": 3.609772444
+          }, {
+            "name": "Lebanon",
+            "x": 8.993134499,
+            "y": 0.568181813,
+            "z": 2.942929268
+          }, {
+            "name": "Lesotho",
+            "x": 6.972592831,
+            "y": 0.431818187,
+            "z": 3.022072077
+          }, {
+            "name": "Liberia",
+            "x": 6.122216225,
+            "y": 0.534090936,
+            "z": 100.7423706
+          }, {
+            "name": "Libya",
+            "x": 8.615731239,
+            "y": 0.647727251,
+            "z": 29.64449883
+          }, {
+            "name": "Madagascar",
+            "x": 5.996044159,
+            "y": 0.522727251,
+            "z": 4.056933403
+          }, {
+            "name": "Malawi",
+            "x": 5.918855667,
+            "y": 0.5,
+            "z": 4.160292149
+          }, {
+            "name": "Malaysia",
+            "x": 9.186900139,
+            "y": 0.340909094,
+            "z": 2.088070154
+          }, {
+            "name": "Maldives",
+            "x": 9.035485268,
+            "y": 0.193181813,
+            "z": 0.964552701
+          }, {
+            "name": "Mali",
+            "x": 6.585145473,
+            "y": 0.647727251,
+            "z": 3.548070908
+          }, {
+            "name": "Marshall Islands",
+            "x": 8.127394676,
+            "y": 0.386363626,
+            "z": 0
+          }, {
+            "name": "Mauritania",
+            "x": 7.223284721,
+            "y": 0.602272749,
+            "z": 7.039425373
+          }, {
+            "name": "Mauritius",
+            "x": 9.132606506,
+            "y": 0.193181813,
+            "z": 1.739635825
+          }, {
+            "name": "Mexico",
+            "x": 9.105538368,
+            "y": 0.5,
+            "z": 1.456831932
+          }, {
+            "name": "Moldova Republic of",
+            "x": 7.521892548,
+            "y": 0.261363626,
+            "z": 0.9678846
+          }, {
+            "name": "Mongolia",
+            "x": 8.285974503,
+            "y": 0.386363626,
+            "z": 3.34421277
+          }, {
+            "name": "Montenegro",
+            "x": 8.765001297,
+            "y": 0.227272734,
+            "z": 2.048940182
+          }, {
+            "name": "Morocco",
+            "x": 7.964920998,
+            "y": 0.397727281,
+            "z": 2.540683746
+          }, {
+            "name": "Mozambique",
+            "x": 6.271446705,
+            "y": 0.636363626,
+            "z": 5.253964424
+          }, {
+            "name": "Myanmar",
+            "x": 7.057457447,
+            "y": 0.715909064,
+            "z": 248.6993866
+          }, {
+            "name": "Namibia",
+            "x": 8.449678421,
+            "y": 0.375,
+            "z": 14.00346851
+          }, {
+            "name": "Nepal",
+            "x": 6.611130714,
+            "y": 0.568181813,
+            "z": 39.87917709
+          }, {
+            "name": "Nicaragua",
+            "x": 7.643432617,
+            "y": 0.431818187,
+            "z": 7.589557648
+          }, {
+            "name": "Niger",
+            "x": 5.883205891,
+            "y": 0.784090936,
+            "z": 6.426112652
+          }, {
+            "name": "Nigeria",
+            "x": 7.878644466,
+            "y": 0.670454562,
+            "z": 6.640343189
+          }, {
+            "name": "Pakistan",
+            "x": 7.268708706,
+            "y": 0.704545438,
+            "z": 49.45932388
+          }, {
+            "name": "Palestine",
+            "x": 7.960951805,
+            "y": 0.5,
+            "z": 0.343125403
+          }, {
+            "name": "Papua New Guinea",
+            "x": 7.72672987,
+            "y": 0.613636374,
+            "z": 10.49371719
+          }, {
+            "name": "Paraguay",
+            "x": 8.314085007,
+            "y": 0.284090906,
+            "z": 1.757870317
+          }, {
+            "name": "Peru",
+            "x": 8.704025269,
+            "y": 0.420454532,
+            "z": 13.13273144
+          }, {
+            "name": "Philippines",
+            "x": 7.973914146,
+            "y": 0.511363626,
+            "z": 20.30426025
+          }, {
+            "name": "Romania",
+            "x": 9.101966858,
+            "y": 0.25,
+            "z": 3.057680845
+          }, {
+            "name": "Russian Federation",
+            "x": 9.115214348,
+            "y": 0.454545468,
+            "z": 37.57993317
+          }, {
+            "name": "Rwanda",
+            "x": 6.54728508,
+            "y": 0.556818187,
+            "z": 2.009607315
+          }, {
+            "name": "Saint Lucia",
+            "x": 8.95362854,
+            "y": 0.147727266,
+            "z": 10.70074749
+          }, {
+            "name": "Saint Vincent and the Grenadines",
+            "x": 8.815692902,
+            "y": 0.147727266,
+            "z": 9.978404999
+          }, {
+            "name": "Samoa",
+            "x": 8.278567314,
+            "y": 0.272727281,
+            "z": 83.16770935
+          }, {
+            "name": "Sao Tome and Principe",
+            "x": 7.420017719,
+            "y": 0.090909094,
+            "z": 33.33759689
+          }, {
+            "name": "Senegal",
+            "x": 6.801928043,
+            "y": 0.534090936,
+            "z": 5.069311619
+          }, {
+            "name": "Serbia",
+            "x": 8.563149452,
+            "y": 0.431818187,
+            "z": 1.141863227
+          }, {
+            "name": "Sierra Leone",
+            "x": 6.481779099,
+            "y": 0.545454562,
+            "z": 73.53516388
+          }, {
+            "name": "Solomon Islands",
+            "x": 7.567788124,
+            "y": 0.522727251,
+            "z": 24.63837051
+          }, {
+            "name": "Somalia",
+            "x": 6.30858469,
+            "y": 1,
+            "z": 209.5885162
+          }, {
+            "name": "South Africa",
+            "x": 8.652418137,
+            "y": 0.443181813,
+            "z": 2.670026541
+          }, {
+            "name": "South Sudan",
+            "x": 6.593838692,
+            "y": 0.954545438,
+            "z": 4.411718845
+          }, {
+            "name": "Sri Lanka",
+            "x": 8.275421143,
+            "y": 0.386363626,
+            "z": 6.072457314
+          }, {
+            "name": "Sudan",
+            "x": 7.789340019,
+            "y": 0.75,
+            "z": 10.61271095
+          }, {
+            "name": "Suriname",
+            "x": 9.157500267,
+            "y": 0.261363626,
+            "z": 4.497348785
+          }, {
+            "name": "Swaziland",
+            "x": 8.070950508,
+            "y": 0.340909094,
+            "z": 1.877121687
+          }, {
+            "name": "Syria",
+            "x": 7.640117168,
+            "y": 0.738636374,
+            "z": 1.23863101
+          }, {
+            "name": "Tajikistan",
+            "x": 6.830779076,
+            "y": 0.454545468,
+            "z": 3.881585836
+          }, {
+            "name": "Tanzania",
+            "x": 6.778756618,
+            "y": 0.602272749,
+            "z": 3.48759222
+          }, {
+            "name": "Thailand",
+            "x": 8.668156624,
+            "y": 0.409090906,
+            "z": 3.235871315
+          }, {
+            "name": "The former Yugoslav Republic of Macedonia",
+            "x": 8.487281799,
+            "y": 0.261363626,
+            "z": 1.669955969
+          }, {
+            "name": "Timor-Leste",
+            "x": 7.054443359,
+            "y": 0.431818187,
+            "z": 2.282208443
+          }, {
+            "name": "Togo",
+            "x": 6.327286243,
+            "y": 0.420454532,
+            "z": 4.480598927
+          }, {
+            "name": "Tonga",
+            "x": 8.318387032,
+            "y": 0.261363626,
+            "z": 74.7022171
+          }, {
+            "name": "Tunisia",
+            "x": 8.261658669,
+            "y": 0.306818187,
+            "z": 2.944574356
+          }, {
+            "name": "Turkey",
+            "x": 9.118848801,
+            "y": 0.522727251,
+            "z": 2.732480764
+          }, {
+            "name": "Turkmenistan",
+            "x": 8.805746078,
+            "y": 0.318181813,
+            "z": 0.267030358
+          }, {
+            "name": "Tuvalu",
+            "x": 8.10016346,
+            "y": 0.397727281,
+            "z": 0
+          }, {
+            "name": "Uganda",
+            "x": 6.558612823,
+            "y": 0.625,
+            "z": 5.329753876
+          }, {
+            "name": "Ukraine",
+            "x": 7.656788826,
+            "y": 0.556818187,
+            "z": 3.378254414
+          }, {
+            "name": "Uzbekistan",
+            "x": 7.664848804,
+            "y": 0.306818187,
+            "z": 0.118399024
+          }, {
+            "name": "Vanuatu",
+            "x": 7.939270973,
+            "y": 0.397727281,
+            "z": 7.992454529
+          }, {
+            "name": "Venezuela",
+            "x": 9.414507866,
+            "y": 0.465909094,
+            "z": 2.048371792
+          }, {
+            "name": "Viet Nam",
+            "x": 7.654982567,
+            "y": 0.352272719,
+            "z": 3.463821173
+          }, {
+            "name": "Yemen",
+            "x": 7.248711586,
+            "y": 0.818181813,
+            "z": 5.482543468
+          }, {
+            "name": "Zambia",
+            "x": 7.173865795,
+            "y": 0.420454532,
+            "z": 4.983534336
+          }, {
+            "name": "Zimbabwe",
+            "x": 6.828867912,
+            "y": 0.511363626,
+            "z": 34.07693481
+          }],
+          name: 'Countries',
+          type: 'bubble',
+          enableMouseTracking:true
+          
+        }],
+        plotOptions: {
+        series: {
+        enableMouseTracking:false
+        },
+          bubble: {
+            maxSize: 100,
+            dataLabels: {
+              enabled: true,
+              formatter: function() {
+                label = this.point.z > 100 ? this.point.name : '';
+                return label;
+              }
+            },
+
+          }
+        },
+       tooltip: {
+                  formatter: function() {
+
+               
+                    return '<b>' + this.point.name + '</b><br />GDP per capita (log): ' + Highcharts.numberFormat(this.point.x, 2, '.', ',') + '<br/>Vulnerability index: ' + Highcharts.numberFormat(this.point.y, 2, '.', ',') + '<br />Deaths (in proportion to population): ' +Highcharts.numberFormat(this.point.z, 0, '.', ',') + '<br/>';
+                
+
+                  }
+                },
+        yAxis: {
+          type: 'linear',
+          title: {
+            text: 'Vulnerability index'
+          },
+          tickWidth: 0,
+          max: 1,
+          gridLineWidth: 0,
+          labels: {
+            enabled: true
+          },
+        },
+        xAxis: {
+          title: {
+            text: 'GDP per capita (logs)'
+          },
+          minPadding: 0.02,
+          type: 'linear',
+          tickWidth: 0,
+          labels: {
+            enabled: true
+          },
+
+        },
+        legend: {
+          enabled: false
+        }
+
+      });
+
+
+Highcharts.charts["0"].series[1].options.stickyTracking = false;
+Highcharts.charts["0"].series[1].options.tooltip.enabled = false;
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CHART 2
+ *
+ *
+ *
+ *
+ */
+
+    $(function() {
+
+var categories = ['Before disaster', 'After disaster','Before disaster', 'After disaster']  
+  $('#chart-1').highcharts({
+    chart: {
+      type: 'line'
+    },
+
+    title: {
+      text: 'Disasters Damage Credit Ratings, Raising Borrowing Costs',
+      margin:50
+    },
+    subtitle: {
+        text: 'Source: CGD analysis; data from S&P, 2015'
+    },
+  
+    series: [{
+        name: 'Cyclone',
+        data: [{y:0,
+                        dataLabels: {
+                    enabled: true,
+                  y: -35,
+                  x: 10
+                }
+               }, {
+
+          y: -0.908,
+          dataLabels: {
+            enabled: true
+            
+          }
+        },null,null],
+        color:'#438390'
+      }, {
+        name: 'Earthquake',
+        data: [0,{
+          y: -0.352857142857143,
+          dataLabels: {
+            enabled: true
+          }
+        },null,null],
+        color:'#438390'
+      }, {
+        name: 'Flood',
+        data: [0, {
+          y: -0.12,
+          dataLabels: {
+            enabled: true
+          }
+        },null,null],
+        color:'#438390'
+      }, {
+        name: 'Cyclone',
+        data: [null,null,{y:0, dataLabels: {
+                    enabled: true,
+                  y: -35,
+                  x: 10,
+                  align: 'left'
+                }
+                }, {
+          y: -0.7875,
+          dataLabels: {
+            enabled: true,
+            y: 0
+           
+          }
+        }],
+        color:'#564e34'
+      }, {
+        name: 'Earthquake',
+        data: [null,null,0, {
+          y: -0.857,
+          dataLabels: {
+            enabled: true,
+            y:30
+          }
+        }],
+        color:'#564e34'
+      }, {
+        name: 'Flood',
+        data: [null,null,0, {
+          y: -0.87,
+          dataLabels: {
+            enabled: true
+          }
+        }],
+        color:'#564e34'
+      }
+
+    ],
+    tooltip: {
+      formatter: function(){
+//      return this.x;
+          if (this.x == 1 || this.x == 3) {
+             return '<span style="color:' + this.color + '">\u25CF</span>' + this.series.name + ': <b>' + Highcharts.numberFormat(this.y,2,'.',',') + '</b><br/>Expected credit downgrade after disaster';
+             } else {
+                return 'Before disaster';
+             }
+        }
+     },
+    plotOptions: {
+      series: {
+        showInLegend: false,
+        marker: {
+          symbol: 'circle'
+        }
+      },
+      line: {
+        dataLabels: {
+          formatter: function(){
+          if (this.x == 1 || this.x == 3) {
+            return this.series.name;
+          } else if (this.x == 0) {
+            return 'Lower Middle Income';
+          } else {
+            return 'Upper Middle Income';
+            }
+           },
+          align: 'right'
+        }
+      }
+
+
+    },
+    yAxis: {
+    
+      gridLineWidth: 0,
+    
+      title: {
+      
+        text: 'Expected credit downgrade'
+
+      }
+
+
+    },
+    xAxis: {
+
+      labels: {
+
+        
+        formatter: function() {
+          return categories[this.value];
+        }
+      },
+
+      tickInterval: 0.1,
+      tickLength: 0,
+      minPadding: 0.1,
+      maxPadding: 0.1,
+
+      startOnTick: true,
+      endOnTick: true
+    }
+    
+  });
+});
+
+/*
+ * CHART 3
+ *
+ *
+ *
+ *
+ */
+
+    $(function () {
+ 
+    $('#chart-2').highcharts({
+        chart: {
+            type: 'column',
+           
+        },
+
+      
+        series: [
+{
+    name: 'New displacement',
+    data: [
+  [Date.UTC(2008, 0, 1),36.5],
+  [Date.UTC(2009, 0, 1),16.7],
+  [Date.UTC(2010, 0, 1),42.4],
+  [Date.UTC(2011, 0, 1),15.0],
+  [Date.UTC(2012, 0, 1),32.4],
+  [Date.UTC(2013, 0, 1),22.1],
+  [Date.UTC(2014, 0, 1),19.1],
+  [Date.UTC(2015, 0, 1),19.2]
+],
+
+},
+{
+  type: 'line',
+  marker: {
+    enabled:false
+  },
+  enableMouseTracking: false,
+  dataLabels: {
+   enabled: true,
+   formatter: function(){
+     if (this.x == 1388534400000) {
+     return 'Average 25.4 million';
+    }
+    }
+  },
+    name: 'Average',
+    data: [
+  [Date.UTC(2008, 0, 1),25.4],
+  [Date.UTC(2009, 0, 1),25.4],
+  [Date.UTC(2010, 0, 1),25.4],
+  [Date.UTC(2011, 0, 1),25.4],
+  [Date.UTC(2012, 0, 1),25.4],
+  [Date.UTC(2013, 0, 1),25.4],
+  [Date.UTC(2014, 0, 1),25.4],
+  [Date.UTC(2015, 0, 1),25.4]
+]
+}],
+        tooltip: {
+        
+          
+          valueSuffix: ' million',
+          
+         
+         
+        },
+        title: {
+            text: 'Disasters Displace Millions of People Each Year'
+        },
+        subtitle:{
+          text: 'Source: CGD analysis; data from Internal Displacement Monitoring Centre (IDMC).'
+            
+        },
+
+        yAxis: {
+            title: {
+                text: 'millions of people'
+            },
+           
+        },
+        xAxis: {
+            type: 'datetime'
+
+           
+        }
+
+
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function () {
+
+
+    $('#chart-3').highcharts({
+        chart: {
+            type: 'line',
+           marker: {
+           enabled:false
+           }
+        },
+colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
+      
+        series: [
+{
+    dataLabels: {
+   enabled: true,
+   formatter: function(){
+    if (this.x == 946684800000){
+      return this.series.name;
+      }
+   }
+  },
+  name: 'High income',
+    data: [
+  [Date.UTC(1980, 0, 1),  47],
+  [Date.UTC(1981, 0, 1),  41],
+  [Date.UTC(1982, 0, 1),  39],
+  [Date.UTC(1983, 0, 1),  61],
+  [Date.UTC(1984, 0, 1),  48],
+  [Date.UTC(1985, 0, 1),  64],
+  [Date.UTC(1986, 0, 1),  49],
+  [Date.UTC(1987, 0, 1),  65],
+  [Date.UTC(1988, 0, 1),  39],
+  [Date.UTC(1989, 0, 1),  58],
+  [Date.UTC(1990, 0, 1),  84],
+  [Date.UTC(1991, 0, 1),  74],
+  [Date.UTC(1992, 0, 1),  60],
+  [Date.UTC(1993, 0, 1),  65],
+  [Date.UTC(1994, 0, 1),  59],
+  [Date.UTC(1995, 0, 1),  79],
+  [Date.UTC(1996, 0, 1),  63],
+  [Date.UTC(1997, 0, 1),  79],
+  [Date.UTC(1998, 0, 1),  72],
+  [Date.UTC(1999, 0, 1),  89],
+  [Date.UTC(2000, 0, 1),  92],
+  [Date.UTC(2001, 0, 1),  80],
+  [Date.UTC(2002, 0, 1),  91],
+  [Date.UTC(2003, 0, 1),  100],
+  [Date.UTC(2004, 0, 1),  80],
+  [Date.UTC(2005, 0, 1),  94],
+  [Date.UTC(2006, 0, 1),  66],
+  [Date.UTC(2007, 0, 1),  80],
+  [Date.UTC(2008, 0, 1),  58],
+  [Date.UTC(2009, 0, 1),  71],
+  [Date.UTC(2010, 0, 1),  82],
+  [Date.UTC(2011, 0, 1),  56],
+  [Date.UTC(2012, 0, 1),  65],
+  [Date.UTC(2013, 0, 1),  69],
+  [Date.UTC(2014, 0, 1),  66],
+  [Date.UTC(2015, 0, 1),  52]
+],
+
+},
+{
+  dataLabels: {
+   enabled: true,
+   formatter: function(){
+    if (this.x == 1041379200000){
+      return this.series.name;
+      }
+   },
+      y:30,
+      x:15
+  },
+    name: 'Upper middle income and lower',
+    data: [
+  [Date.UTC(1980, 0, 1),  85],
+  [Date.UTC(1981, 0, 1),  94],
+  [Date.UTC(1982, 0, 1),  104],
+  [Date.UTC(1983, 0, 1),  129],
+  [Date.UTC(1984, 0, 1),  102],
+  [Date.UTC(1985, 0, 1),  109],
+  [Date.UTC(1986, 0, 1),  124],
+  [Date.UTC(1987, 0, 1),  166],
+  [Date.UTC(1988, 0, 1),  184],
+  [Date.UTC(1989, 0, 1),  170],
+  [Date.UTC(1990, 0, 1),  167],
+  [Date.UTC(1991, 0, 1),  213],
+  [Date.UTC(1992, 0, 1),  172],
+  [Date.UTC(1993, 0, 1),  176],
+  [Date.UTC(1994, 0, 1),  185],
+  [Date.UTC(1995, 0, 1),  198],
+  [Date.UTC(1996, 0, 1),  215],
+  [Date.UTC(1997, 0, 1),  226],
+  [Date.UTC(1998, 0, 1),  262],
+  [Date.UTC(1999, 0, 1),  275],
+  [Date.UTC(2000, 0, 1),  320],
+  [Date.UTC(2001, 0, 1),  287],
+  [Date.UTC(2002, 0, 1),  309],
+  [Date.UTC(2003, 0, 1),  259],
+  [Date.UTC(2004, 0, 1),  292],
+  [Date.UTC(2005, 0, 1),  303],
+  [Date.UTC(2006, 0, 1),  259],
+  [Date.UTC(2007, 0, 1),  283],
+  [Date.UTC(2008, 0, 1),  282],
+  [Date.UTC(2009, 0, 1),  273],
+  [Date.UTC(2010, 0, 1),  282],
+  [Date.UTC(2011, 0, 1),  251],
+  [Date.UTC(2012, 0, 1),  250],
+  [Date.UTC(2013, 0, 1),  230],
+  [Date.UTC(2014, 0, 1),  209],
+  [Date.UTC(2015, 0, 1),  241]
+]
+},
+{
+dataLabels: {
+   enabled: true,
+   formatter: function(){
+    if (this.x == 946684800000){
+      return this.series.name;
+      }
+   }
+
+  },
+name: 'Total',
+data: [
+  [Date.UTC(1980, 0, 1),  132],
+  [Date.UTC(1981, 0, 1),  135],
+  [Date.UTC(1982, 0, 1),  143],
+  [Date.UTC(1983, 0, 1),  190],
+  [Date.UTC(1984, 0, 1),  150],
+  [Date.UTC(1985, 0, 1),  173],
+  [Date.UTC(1986, 0, 1),  173],
+  [Date.UTC(1987, 0, 1),  231],
+  [Date.UTC(1988, 0, 1),  223],
+  [Date.UTC(1989, 0, 1),  228],
+  [Date.UTC(1990, 0, 1),  251],
+  [Date.UTC(1991, 0, 1),  287],
+  [Date.UTC(1992, 0, 1),  232],
+  [Date.UTC(1993, 0, 1),  241],
+  [Date.UTC(1994, 0, 1),  244],
+  [Date.UTC(1995, 0, 1),  277],
+  [Date.UTC(1996, 0, 1),  278],
+  [Date.UTC(1997, 0, 1),  305],
+  [Date.UTC(1998, 0, 1),  334],
+  [Date.UTC(1999, 0, 1),  364],
+  [Date.UTC(2000, 0, 1),  412],
+  [Date.UTC(2001, 0, 1),  367],
+  [Date.UTC(2002, 0, 1),  400],
+  [Date.UTC(2003, 0, 1),  359],
+  [Date.UTC(2004, 0, 1),  372],
+  [Date.UTC(2005, 0, 1),  397],
+  [Date.UTC(2006, 0, 1),  325],
+  [Date.UTC(2007, 0, 1),  363],
+  [Date.UTC(2008, 0, 1),  340],
+  [Date.UTC(2009, 0, 1),  344],
+  [Date.UTC(2010, 0, 1),  364],
+  [Date.UTC(2011, 0, 1),  307],
+  [Date.UTC(2012, 0, 1),  315],
+  [Date.UTC(2013, 0, 1),  299],
+  [Date.UTC(2014, 0, 1),  275],
+  [Date.UTC(2015, 0, 1),  293]
+]
+}
+],
+        
+        title: {
+            text: 'Natural Disasters Are Increasing, Especially in Poorer Countries'
+        },
+        subtitle:{
+          text: 'Source: CGD analysis; data from EM-DAT (Guha-Sapir et al., 2015).'
+            
+        },
+
+        yAxis: {
+            title: 'Number of disasters'
+           
+        },
+        xAxis: {
+            type: 'datetime'
+
+           
+        },
+        plotOptions: {
+         series: {
+         marker: {
+         enabled:false
+         }
+         }
+        }
+
+
+    });
+
+});
+
+
+
+
+
+
+$(function() {
+
+  $('#chart-4').highcharts({
+    chart: {
+      type: 'line',
+      marker: {
+        enabled: false
+      }
+    },
+colors: teal,
+
+    series: [{
+            dataLabels: {
+            enabled: true,
+          formatter: function(){
+            if (this.x == 1293840000000){
+              return this.series.name;
+            }
+          }
+        },
+        name: 'Other',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.96745],
+          [Date.UTC(2006, 0, 1), 0.84904],
+          [Date.UTC(2007, 0, 1), 0.65493],
+          [Date.UTC(2008, 0, 1), 0.78867],
+          [Date.UTC(2009, 0, 1), 1.00002],
+          [Date.UTC(2010, 0, 1), 1.86090],
+          [Date.UTC(2011, 0, 1), 2.07775],
+          [Date.UTC(2012, 0, 1), 1.35092],
+          [Date.UTC(2013, 0, 1), 1.07705]
+        ]
+      },
+
+      {
+
+        name: 'Humanitarian',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.01458],
+          [Date.UTC(2006, 0, 1), 0.00000],
+          [Date.UTC(2007, 0, 1), 0.00000],
+          [Date.UTC(2008, 0, 1), 0.01051],
+          [Date.UTC(2009, 0, 1), 0.00000],
+          [Date.UTC(2010, 0, 1), 0.06584],
+          [Date.UTC(2011, 0, 1), 0.01505],
+          [Date.UTC(2012, 0, 1), 0.00469],
+          [Date.UTC(2013, 0, 1), 0.00000]
+        ],
+
+      }, {
+
+        name: 'Emergency',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.09107],
+          [Date.UTC(2006, 0, 1), 0.02630],
+          [Date.UTC(2007, 0, 1), 0.02310],
+          [Date.UTC(2008, 0, 1), 0.15745],
+          [Date.UTC(2009, 0, 1), 0.09601],
+          [Date.UTC(2010, 0, 1), 1.52585],
+          [Date.UTC(2011, 0, 1), 0.30837],
+          [Date.UTC(2012, 0, 1), 0.16798],
+          [Date.UTC(2013, 0, 1), 0.13196]
+        ]
+      }, {
+
+        name: 'Reconstruction',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.12330],
+          [Date.UTC(2006, 0, 1), 0.00010],
+          [Date.UTC(2007, 0, 1), 0.04081],
+          [Date.UTC(2008, 0, 1), 0.02522],
+          [Date.UTC(2009, 0, 1), 0.05753],
+          [Date.UTC(2010, 0, 1), 0.30310],
+          [Date.UTC(2011, 0, 1), 0.14802],
+          [Date.UTC(2012, 0, 1), 0.01580],
+          [Date.UTC(2013, 0, 1), 0.01950]
+        ]
+      }, {
+
+        name: 'Prevention',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.01578],
+          [Date.UTC(2006, 0, 1), 0.00245],
+          [Date.UTC(2007, 0, 1), 0.01480],
+          [Date.UTC(2008, 0, 1), 0.00608],
+          [Date.UTC(2009, 0, 1), 0.04916],
+          [Date.UTC(2010, 0, 1), 0.03368],
+          [Date.UTC(2011, 0, 1), 0.00532],
+          [Date.UTC(2012, 0, 1), 0.02768],
+          [Date.UTC(2013, 0, 1), 0.02291]
+        ]
+      }
+    ],
+
+    title: {
+      text: 'Aid Reporting Codes Likely Omit Relevant Flows: Haiti, Post-Earthquake'
+
+    },
+    subtitle: {
+      text: 'Source: CGD analysis; data from the OECD’s Creditor Reporting System (CRS), 2016.'
+
+    },
+
+    yAxis: {
+      title:{
+        text:   'USD billions'
+}
+    },
+    xAxis: {
+      type: 'datetime'
+
+
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        }
+      }
+    },
+    tooltip: {
+        valueDecimals: 2,
+      valueSuffix: ' billion',
+      valuePrefix: '$'
+    }
+    
+
+
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function () {
+ 
+    $('#chart-5').highcharts({
+        chart: {
+            type: 'column',
+           
+        },
+
+      
+        series: [
+{
+    name: 'Natural disaster allocations',
+    data: [
+  [Date.UTC(2000, 0, 1),  0.55],
+  [Date.UTC(2001, 0, 1),  0.59],
+  [Date.UTC(2002, 0, 1),  0.34],
+  [Date.UTC(2003, 0, 1),  0.07],
+  [Date.UTC(2004, 0, 1),  0.61],
+  [Date.UTC(2005, 0, 1),  7.61],
+  [Date.UTC(2006, 0, 1),  0.34],
+  [Date.UTC(2007, 0, 1),  0.9],
+  [Date.UTC(2008, 0, 1),  1.32],
+  [Date.UTC(2009, 0, 1),  0.32],
+  [Date.UTC(2010, 0, 1),  6.39],
+  [Date.UTC(2011, 0, 1),  1.47],
+  [Date.UTC(2012, 0, 1),  0.1],
+  [Date.UTC(2013, 0, 1),  0.07],
+  [Date.UTC(2014, 0, 1),  3.97],
+  [Date.UTC(2015, 0, 1),  0.57]
+],
+
+},
+{
+  type: 'line',
+  marker: {
+    enabled:false
+  },
+  enableMouseTracking: false,
+  dataLabels: {
+   enabled: true,
+   formatter: function(){
+     if (this.x == 1325376000000) {
+     return 'Average ' + this.y + ' billion';
+    }
+    }
+  },
+    name: 'Average',
+    data: [
+  [Date.UTC(2000, 0, 1),  1.6],
+  [Date.UTC(2001, 0, 1),  1.6],
+  [Date.UTC(2002, 0, 1),  1.6],
+  [Date.UTC(2003, 0, 1),  1.6],
+  [Date.UTC(2004, 0, 1),  1.6],
+  [Date.UTC(2005, 0, 1),  1.6],
+  [Date.UTC(2006, 0, 1),  1.6],
+  [Date.UTC(2007, 0, 1), 1.6],
+  [Date.UTC(2008, 0, 1),  1.6],
+  [Date.UTC(2009, 0, 1),  1.6],
+  [Date.UTC(2010, 0, 1),  1.6],
+  [Date.UTC(2011, 0, 1),  1.6],
+  [Date.UTC(2012, 0, 1), 1.6],
+  [Date.UTC(2013, 0, 1),  1.6],
+  [Date.UTC(2014, 0, 1),  1.6],
+  [Date.UTC(2015, 0, 1),  1.6]
+]
+}],
+        tooltip: {
+        
+          
+          valueSuffix: ' billion',
+          valuePrefix: '$'
+          
+         
+         
+        },
+        title: {
+            text: 'Donors Allocated $1.6 Billion a Year on Average, 2000–2015'
+        },
+        subtitle:{
+          text: 'Source: CGD analysis; Data from UN OCHA Financial Tracking Service (FTS), 2015'
+            
+        },
+
+        yAxis: {
+            title: {
+                text: 'USD(2010) billions'
+            },
+           
+        },
+        xAxis: {
+            type: 'datetime'
+
+           
+        }
+
+
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+$(function() {
+
+  $('#chart-6').highcharts({
+    chart: {
+      type: 'column',
+
+    },
+
+
+    series: [{
+      
+     
+      yAxis: 1,
+      name: 'Excess deaths',
+      data: [
+        [Date.UTC(2010, 9, 1), 5500],
+        [Date.UTC(2010, 10, 1), 4800],
+        [Date.UTC(2010, 11, 1), 4100],
+        [Date.UTC(2011, 0, 1), 7300],
+        [Date.UTC(2011, 1, 1), 9600],
+        [Date.UTC(2011, 2, 1), 12400],
+        [Date.UTC(2011, 3, 1), 10600],
+        [Date.UTC(2011, 4, 1), 29800],
+        [Date.UTC(2011, 5, 1), 31400],
+        [Date.UTC(2011, 6, 1), 31700],
+        [Date.UTC(2011, 7, 1), 28700],
+        [Date.UTC(2011, 8, 1), 2700],
+        [Date.UTC(2011, 9, 1), 17400],
+        [Date.UTC(2011, 10, 1), 15300],
+        [Date.UTC(2011, 11, 1), 9500],
+        [Date.UTC(2012, 0, 1), 5700],
+        [Date.UTC(2012, 1, 1), 5300],
+        [Date.UTC(2012, 2, 1), 1400]
+      ]
+    }, {
+        type: 'line',
+       marker: {
+        enabled: false
+      },
+      yAxis: 0,
+      name: 'Funding to Somalia CAP appeal',
+      data: [
+        [Date.UTC(2010, 9, 1), 16],
+        [Date.UTC(2010, 10, 1), 2],
+        [Date.UTC(2010, 11, 1), 54],
+        [Date.UTC(2011, 0, 1), 112],
+        [Date.UTC(2011, 1, 1), 35],
+        [Date.UTC(2011, 2, 1), 21],
+        [Date.UTC(2011, 3, 1), 16],
+        [Date.UTC(2011, 4, 1), 37],
+        [Date.UTC(2011, 5, 1), 34],
+        [Date.UTC(2011, 6, 1), 242],
+        [Date.UTC(2011, 7, 1), 175],
+        [Date.UTC(2011, 8, 1), 102],
+        [Date.UTC(2011, 9, 1), 38],
+        [Date.UTC(2011, 10, 1), 51],
+        [Date.UTC(2011, 11, 1), 76],
+        [Date.UTC(2012, 0, 1), 61],
+        [Date.UTC(2012, 1, 1), 55],
+        [Date.UTC(2012, 2, 1), 42]
+      ]
+
+    }],
+    tooltip: {
+
+
+      valueSuffix: ' million'
+
+
+
+    },
+    title: {
+      text: 'Funding Follows Deaths: Famine in Somalia'
+    },
+    subtitle: {
+      text: 'Source: Data from Development Initiatives Global Humanitarian Assistance 2013 report, based on UN OCHA FTS data and data analysis done by Checchi (2013) on original survey data from Food Security and Nutrition Analysis Unit–Somalia (FSNAU).'
+
+    },
+    yAxis: [{
+
+      title: {
+        text: 'USD millions'
+      },
+      max:250
+    }, {
+      title: {
+        text: 'Excess deaths',
+        style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+      },
+      labels: {
+      style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+      },
+     max:32000,
+
+      opposite: true
+
+    }],
+
+      xAxis: {
+      type: 'datetime'
+
+
+    }
+
+
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+$(function() {
+  $('#chart-7').highcharts({
+      chart: {
+        type: 'scatter'
+
+      },
+      plotOptions: {
+     
+        series: {
+        enableMouseTracking:false
+        },
+        scatter: {
+          dataLabels: {
+            allowOverlap: true,
+            format: '{point.country}',
+            enabled: true,
+            style: {
+              fontWeight: 'normal',
+              opacity: 0.5
+            }
+          }
+        }
+      },
+      title: {
+        text: 'More Donors Mean More Fragmentation'
+      },
+      subtitle: {
+        text: 'Source: CGD analysis; data from UN OCHA Financial Tracking Service (FTS), 2015. Reversed y-axis: lower concentration means greater fragmentation.'
+      },
+      series: [{
+      enableMouseTracking:true,
+      regression: true,
+          regressionSettings: {
+            type: 'logarithmic',
+            color: '#cccccc'
+
+          },
+          showInLegend: false,
+          name: 'countries',
+          data: [
+  {
+     name:"Honduras",
+     x:5,
+     y:0.570394576,
+     country:"Honduras"
+  },
+  {
+     name:"Guatemala",
+     x:7,
+     y:0.583721817,
+     country:"Guatemala"
+  },
+  {
+     name:"Dominica Tropical Storm Erika",
+     x:8,
+     y:0.197395205,
+     country:"Dominica"
+  },
+  {
+     name:"Mozambique Floods",
+     x:16,
+     y:0.186625138,
+     country:"Mozambique"
+  },
+  {
+     name:"Vanuatu Tropical Cyclone Pam",
+     x:26,
+     y:0.102202974,
+     country:"Vanuatu"
+  },
+  {
+     name:"Malawi Floods",
+     x:29,
+     y:0.081027478,
+     country:"Malawi"
+  },
+  {
+     name:"Nepal Earthquake",
+     x:52,
+     y:0.126833886,
+     country:"Nepal"
+  }]
+        }],
+
+    yAxis: {
+      title: {
+        text: 'Concentration (Herfindahl index)',
+
+      },
+      reversed: true,
+      gridLineWidth: 0
+    },
+    xAxis: {
+      title: {
+        text: 'Number of donors'
+      }
+    },
+    tooltip: {
+      formatter: function(){
+        return '<b>' + this.point.name + '</b><br />Donors: ' + this.x + '<br />Concentration: ' + this.y;
+      }
+    }
+  }
+);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function() {
+
+  $('#chart-8').highcharts({
+    chart: {
+      type: 'area',
+      marker: {
+        enabled: false
+      }
+    },
+colors: ["#F37924","#438390", "#564e34", "#296976   ", "#898167", "#5ED6E4"],
+
+    series: [ {
+
+        name: 'Reduction',
+        data: [
+  [Date.UTC(1990, 0, 1),  0.01],
+  [Date.UTC(1991, 0, 1),  0.00],
+  [Date.UTC(1992, 0, 1),  0.01],
+  [Date.UTC(1993, 0, 1),  0.02],
+  [Date.UTC(1994, 0, 1),  0.01],
+  [Date.UTC(1995, 0, 1),  0.05],
+  [Date.UTC(1996, 0, 1),  0.01],
+  [Date.UTC(1997, 0, 1),  0.34],
+  [Date.UTC(1998, 0, 1),  0.12],
+  [Date.UTC(1999, 0, 1),  0.13],
+  [Date.UTC(2000, 0, 1),  0.74],
+  [Date.UTC(2001, 0, 1),  0.12],
+  [Date.UTC(2002, 0, 1),  0.19],
+  [Date.UTC(2003, 0, 1),  0.42],
+  [Date.UTC(2004, 0, 1),  0.31],
+  [Date.UTC(2005, 0, 1),  1.11],
+  [Date.UTC(2006, 0, 1),  0.39],
+  [Date.UTC(2007, 0, 1),  0.63],
+  [Date.UTC(2008, 0, 1),  1.40],
+  [Date.UTC(2009, 0, 1),  1.31],
+  [Date.UTC(2010, 0, 1),  1.05],
+  [Date.UTC(2011, 0, 1),  1.15],
+  [Date.UTC(2012, 0, 1),  1.73],
+  [Date.UTC(2013, 0, 1),  1.33]
+]
+      },{
+            
+        name: 'Humanitarian',
+        data: [
+        [Date.UTC(1990, 0, 1),  0.05],
+  [Date.UTC(1991, 0, 1),  0.39],
+  [Date.UTC(1992, 0, 1),  0.65],
+  [Date.UTC(1993, 0, 1),  0.13],
+  [Date.UTC(1994, 0, 1),  0.08],
+  [Date.UTC(1995, 0, 1),  0.00],
+  [Date.UTC(1996, 0, 1),  0.00],
+  [Date.UTC(1997, 0, 1),  0.80],
+  [Date.UTC(1998, 0, 1),  1.31],
+  [Date.UTC(1999, 0, 1),  0.79],
+  [Date.UTC(2000, 0, 1),  0.22],
+  [Date.UTC(2001, 0, 1),  0.09],
+  [Date.UTC(2002, 0, 1),  0.11],
+  [Date.UTC(2003, 0, 1),  0.34],
+  [Date.UTC(2004, 0, 1),  0.14],
+  [Date.UTC(2005, 0, 1),  0.87],
+  [Date.UTC(2006, 0, 1),  0.11],
+  [Date.UTC(2007, 0, 1),  0.09],
+  [Date.UTC(2008, 0, 1),  0.37],
+  [Date.UTC(2009, 0, 1),  0.07],
+  [Date.UTC(2010, 0, 1),  0.64],
+  [Date.UTC(2011, 0, 1),  0.26],
+  [Date.UTC(2012, 0, 1),  0.21],
+  [Date.UTC(2013, 0, 1),  0.02]
+]
+      },
+
+      {
+
+        name: 'Emergency',
+        data: [
+  [Date.UTC(1990, 0, 1),  1.19],
+  [Date.UTC(1991, 0, 1),  1.32],
+  [Date.UTC(1992, 0, 1),  1.60],
+  [Date.UTC(1993, 0, 1),  1.63],
+  [Date.UTC(1994, 0, 1),  1.88],
+  [Date.UTC(1995, 0, 1),  2.95],
+  [Date.UTC(1996, 0, 1),  3.71],
+  [Date.UTC(1997, 0, 1),  3.60],
+  [Date.UTC(1998, 0, 1),  4.48],
+  [Date.UTC(1999, 0, 1),  8.98],
+  [Date.UTC(2000, 0, 1),  4.64],
+  [Date.UTC(2001, 0, 1),  4.75],
+  [Date.UTC(2002, 0, 1),  6.65],
+  [Date.UTC(2003, 0, 1),  7.86],
+  [Date.UTC(2004, 0, 1),  8.56],
+  [Date.UTC(2005, 0, 1),  10.29],
+  [Date.UTC(2006, 0, 1),  7.65],
+  [Date.UTC(2007, 0, 1),  8.34],
+  [Date.UTC(2008, 0, 1),  9.95],
+  [Date.UTC(2009, 0, 1),  11.71],
+  [Date.UTC(2010, 0, 1),  11.70],
+  [Date.UTC(2011, 0, 1),  11.91],
+  [Date.UTC(2012, 0, 1),  10.53],
+  [Date.UTC(2013, 0, 1),  13.16]
+]
+
+      }, {
+
+        name: 'Reconstruction',
+        data: [
+  [Date.UTC(1990, 0, 1),  0.91],
+  [Date.UTC(1991, 0, 1),  0.24],
+  [Date.UTC(1992, 0, 1),  0.86],
+  [Date.UTC(1993, 0, 1),  1.23],
+  [Date.UTC(1994, 0, 1),  0.73],
+  [Date.UTC(1995, 0, 1),  1.56],
+  [Date.UTC(1996, 0, 1),  0.49],
+  [Date.UTC(1997, 0, 1),  0.58],
+  [Date.UTC(1998, 0, 1),  2.08],
+  [Date.UTC(1999, 0, 1),  2.48],
+  [Date.UTC(2000, 0, 1),  2.23],
+  [Date.UTC(2001, 0, 1),  2.97],
+  [Date.UTC(2002, 0, 1),  5.67],
+  [Date.UTC(2003, 0, 1),  3.78],
+  [Date.UTC(2004, 0, 1),  3.01],
+  [Date.UTC(2005, 0, 1),  4.64],
+  [Date.UTC(2006, 0, 1),  2.34],
+  [Date.UTC(2007, 0, 1),  3.02],
+  [Date.UTC(2008, 0, 1),  1.36],
+  [Date.UTC(2009, 0, 1),  1.77],
+  [Date.UTC(2010, 0, 1),  2.94],
+  [Date.UTC(2011, 0, 1),  1.27],
+  [Date.UTC(2012, 0, 1),  1.50],
+  [Date.UTC(2013, 0, 1),  1.25]
+]
+      }
+    ],
+
+    title: {
+      text: 'Finance for Reducing Losses Is a Small Share of Total Aid'
+
+    },
+    subtitle: {
+      text: 'Source: CGD analysis; data on total disaster-related aid from OECD (2016); subset of all aid flows using coalesced purpose codes 70000, 74010, 72000–72050, 73010, corresponding to emergency, reconstruction and prevention / preparedness only. '
+
+    },
+
+    yAxis: {
+      title:{
+        text:   'percentage of total'
+},
+reversedStacks:false
+    },
+    xAxis: {
+      type: 'datetime'
+
+
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        },
+        stacking: 'percent'
+      }
+    },
+    tooltip: {
+        valueDecimals: 2,
+      valueSuffix: ' billion',
+      valuePrefix: '$'
+    }
+    
+
+
+  });
+
+});
+
+
+
+
+
+
+
+
+
+$(function() {
+
+      $('#chart-9').highcharts({
+        chart: {
+          type: 'column',
+          marker: {
+            enabled: false
+          }
+        },
+
+
+        series: [
+
+          {
+
+            name: 'Global insured losses',
+            data: [
+              [Date.UTC(2004, 0, 1), 48],
+              [Date.UTC(2005, 0, 1), 100],
+              [Date.UTC(2006, 0, 1), 15],
+              [Date.UTC(2007, 0, 1), 26],
+              [Date.UTC(2008, 0, 1), 45],
+              [Date.UTC(2009, 0, 1), 22],
+              [Date.UTC(2010, 0, 1), 38],
+              [Date.UTC(2011, 0, 1), 105],
+              [Date.UTC(2012, 0, 1), 70],
+              [Date.UTC(2013, 0, 1), 35]
+            ]
+          },
+          {
+type:'line',
+            name: 'Disaster-related aid',
+            data: [
+              [Date.UTC(2004, 0, 1), 8.63],
+              [Date.UTC(2005, 0, 1), 13.27],
+              [Date.UTC(2006, 0, 1), 8.02],
+              [Date.UTC(2007, 0, 1), 8.75],
+              [Date.UTC(2008, 0, 1), 10.35],
+              [Date.UTC(2009, 0, 1), 11.08],
+              [Date.UTC(2010, 0, 1), 11.57],
+              [Date.UTC(2011, 0, 1), 9.45],
+              [Date.UTC(2012, 0, 1), 8.72],
+              [Date.UTC(2013, 0, 1), 10.89]
+            ]
+          }
+        ],
+
+        title: {
+          text: 'Insurance Payouts Are Much Larger Than Ex-Post Aid'
+
+        },
+        subtitle: {
+          text: 'Source: CGD analysis; data on disaster-related aid is from OECD (2016); data on insurance payouts from Munich Re (2015).'
+
+        },
+
+        yAxis: {
+          title: {
+            text: 'billions USD'
+          },
+          reversedStacks: false
+        },
+        xAxis: {
+          type: 'datetime'
+
+
+        },
+        plotOptions: {
+          series: {
+            marker: {
+              enabled: false
+            },
+            tooltip: {
+            valueDecimals: 2,
+            valueSuffix: ' billion',
+            valuePrefix: '$'
+          }
+          }
+          
+        }
+
+
+      });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
