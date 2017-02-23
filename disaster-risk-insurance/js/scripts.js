@@ -1132,14 +1132,7 @@ $(function() {
 
 colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
     series: [{
-        dataLabels: {
-          enabled: true,
-          formatter: function(){
-            if (this.x == 1293840000000){
-              return this.series.name;
-            }
-          }
-        },
+       
         name: 'Other',
         data: [
           [Date.UTC(2005, 0, 1), 0.96745],
