@@ -1,3 +1,13 @@
 .hc-chart {
     height: 540px;
 }
+
+.post-content {
+    max-width: 700px;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+h2

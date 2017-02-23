@@ -3,6 +3,8 @@ layout: page
 permalink: /disaster-risk-insurance/
 custom_css: disaster
 ---
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 
 ## Figure 1
 <div class="hc-chart" id="chart-0"></div>
@@ -53,6 +55,7 @@ TK
 <script src="js/highcharts-theme-r.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://www.cgdev.org/sites/all/themes/entity_iframe/js/highcharts-exporting-4.js"></script><script src="https://www.cgdev.org/sites/all/themes/entity_iframe/js/export-csv.js"></script>
+<script src="js/pattern-fill-v2.js"></script>
 
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="//www.cgdev.org/sites/all/themes/entity_iframe/js/highcharts-regression-static.js"></script>

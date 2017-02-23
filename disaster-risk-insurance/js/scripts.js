@@ -8,8 +8,7 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
  *
  */
 
-
-    $(function() {
+ $(function() {
         Highcharts.setOptions(Highcharts.theme);
       $('#chart-0').highcharts({
         chart: {
@@ -21,7 +20,7 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
           text: 'Low-Income Countries Are More Vulnerable to Natural Disasters, and Disasters Help Keep Them Poor'
         },
         subtitle: {
-          text: 'Figure shows data for 133 countries, excluding high-income countries. Source: CGD analysis; data for average number of deaths per year proportional to population from EM-DAT (Guha-Sapir et al., 2015) and World Bank (2015) with CGD analysis; data for GDP per capita from World Bank (2015); data for vulnerability from INFORM (2017), normalised so that 1 represents the highest vulnerability. Some of the index subcomponents include national income (such as Net ODA received as a percentage of GNI).',
+          text: 'Notes: Data for average number of deaths per year from EM-DAT (Guha-Sapir et al., 2015), data on GDP per capita and population form World Bank (2015), vulnerability measured by INFORM (2017), rescaled from zero to one. CGD analysis.',
 
         },
         series: [{
@@ -731,7 +730,7 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
         yAxis: {
           type: 'linear',
           title: {
-            text: 'Vulnerability index'
+            text: 'vulnerability (INFORM Index)'
           },
           tickWidth: 0,
           max: 1,
@@ -759,11 +758,10 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
       });
 
 
-Highcharts.charts["0"].series[1].options.stickyTracking = false;
-Highcharts.charts["0"].series[1].options.tooltip.enabled = false;
-
-
     });
+
+
+
 
 
 
@@ -792,164 +790,65 @@ Highcharts.charts["0"].series[1].options.tooltip.enabled = false;
  *
  *
  */
-
-    $(function() {
-
-var categories = ['Before disaster', 'After disaster','Before disaster', 'After disaster']  
+$(function() {
+var categories = ['Lower middle', 'Upper middle'];  
   $('#chart-1').highcharts({
     chart: {
-      type: 'line'
+      type: 'column'
     },
-
-    title: {
-      text: 'Disasters Damage Credit Ratings, Raising Borrowing Costs',
-      margin:50
-    },
-    subtitle: {
-        text: 'Source: CGD analysis; data from S&P, 2015'
-    },
-  
     series: [{
         name: 'Cyclone',
-        data: [{y:0,
-                        dataLabels: {
-                    enabled: true,
-                  y: -35,
-                  x: 10
-                }
-               }, {
-
-          y: -0.908,
-          dataLabels: {
-            enabled: true
-            
-          }
-        },null,null],
-        color:'#438390'
+        data: [
+          ['Lower middle', -0.9],
+          ['Upper middle', -0.8]
+        ],
+        color: '#bd2d37'
       }, {
         name: 'Earthquake',
-        data: [0,{
-          y: -0.352857142857143,
-          dataLabels: {
-            enabled: true
-          }
-        },null,null],
-        color:'#438390'
+        data: [
+          ['Lower middle', -0.9],
+          ['Upper middle', -0.9]
+        ],
+         color: '#d95e66'
+       
       }, {
         name: 'Flood',
-        data: [0, {
-          y: -0.12,
-          dataLabels: {
-            enabled: true
-          }
-        },null,null],
-        color:'#438390'
-      }, {
-        name: 'Cyclone',
-        data: [null,null,{y:0, dataLabels: {
-                    enabled: true,
-                  y: -35,
-                  x: 10,
-                  align: 'left'
-                }
-                }, {
-          y: -0.7875,
-          dataLabels: {
-            enabled: true,
-            y: 0
-           
-          }
-        }],
-        color:'#564e34'
-      }, {
-        name: 'Earthquake',
-        data: [null,null,0, {
-          y: -0.857,
-          dataLabels: {
-            enabled: true,
-            y:30
-          }
-        }],
-        color:'#564e34'
-      }, {
-        name: 'Flood',
-        data: [null,null,0, {
-          y: -0.87,
-          dataLabels: {
-            enabled: true
-          }
-        }],
-        color:'#564e34'
+        data: [
+          ['Lower middle', -0.1],
+          ['Upper middle', -0.9]
+        ],
+        color: '#e58f95'
       }
 
     ],
-    tooltip: {
-      formatter: function(){
-//      return this.x;
-          if (this.x == 1 || this.x == 3) {
-             return '<span style="color:' + this.color + '">\u25CF</span>' + this.series.name + ': <b>' + Highcharts.numberFormat(this.y,2,'.',',') + '</b><br/>Expected credit downgrade after disaster';
-             } else {
-                return 'Before disaster';
-             }
-        }
-     },
-    plotOptions: {
-      series: {
-        showInLegend: false,
-        marker: {
-          symbol: 'circle'
-        }
-      },
-      line: {
-        dataLabels: {
-          formatter: function(){
-          if (this.x == 1 || this.x == 3) {
-            return this.series.name;
-          } else if (this.x == 0) {
-            return 'Lower Middle Income';
-          } else {
-            return 'Upper Middle Income';
-            }
-           },
-          align: 'right'
-        }
-      }
-
-
+    
+    title: {
+      text: 'Disasters Damage Credit Ratings, Raising Borrowing Costs'
     },
-    yAxis: {
-    
-      gridLineWidth: 0,
-    
-      title: {
-      
-        text: 'Expected credit downgrade'
-
-      }
-
-
+    subtitle: {
+      text: 'Notes: data from S&P, 2015. CGD analysis.'
     },
     xAxis: {
-
       labels: {
-
-        
         formatter: function() {
           return categories[this.value];
         }
       },
-
-      tickInterval: 0.1,
-      tickLength: 0,
-      minPadding: 0.1,
-      maxPadding: 0.1,
-
-      startOnTick: true,
-      endOnTick: true
+      opposite:true
+      },
+    yAxis: {
+      title: {
+        text: 'expected downgrade (notches)'
+      },
+      max: 0,
+      min: -1,
+      tickInterval:0.5
     }
-    
   });
+
+
 });
+
 
 /*
  * CHART 3
@@ -959,7 +858,7 @@ var categories = ['Before disaster', 'After disaster','Before disaster', 'After 
  *
  */
 
-    $(function () {
+ $(function () {
  
     $('#chart-2').highcharts({
         chart: {
@@ -970,8 +869,9 @@ var categories = ['Before disaster', 'After disaster','Before disaster', 'After 
       
         series: [
 {
-    name: 'New displacement',
-    data: [
+  showInLegend: false,
+  name: 'New displacement',
+  data: [
   [Date.UTC(2008, 0, 1),36.5],
   [Date.UTC(2009, 0, 1),16.7],
   [Date.UTC(2010, 0, 1),42.4],
@@ -988,17 +888,19 @@ var categories = ['Before disaster', 'After disaster','Before disaster', 'After 
   marker: {
     enabled:false
   },
+  dashStyle: 'longDash',
   enableMouseTracking: false,
   dataLabels: {
    enabled: true,
    formatter: function(){
      if (this.x == 1388534400000) {
-     return 'Average 25.4 million';
+     return 'Average 25.4';
     }
     }
   },
-    name: 'Average',
-    data: [
+  showInLegend:false,
+  name: 'Average',
+  data: [
   [Date.UTC(2008, 0, 1),25.4],
   [Date.UTC(2009, 0, 1),25.4],
   [Date.UTC(2010, 0, 1),25.4],
@@ -1021,13 +923,13 @@ var categories = ['Before disaster', 'After disaster','Before disaster', 'After 
             text: 'Disasters Displace Millions of People Each Year'
         },
         subtitle:{
-          text: 'Source: CGD analysis; data from Internal Displacement Monitoring Centre (IDMC).'
+          text: 'Notes: Data from Internal Displacement Monitoring Centre (IDMC). CGD analysis'
             
         },
 
         yAxis: {
             title: {
-                text: 'millions of people'
+                text: 'new displacement (millions)'
             },
            
         },
@@ -1055,12 +957,12 @@ var categories = ['Before disaster', 'After disaster','Before disaster', 'After 
 
 
 
+
 $(function () {
-
-
+ 
     $('#chart-3').highcharts({
         chart: {
-            type: 'line',
+            type: 'area',
            marker: {
            enabled:false
            }
@@ -1068,57 +970,8 @@ $(function () {
 colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
       
         series: [
-{
-    dataLabels: {
-   enabled: true,
-   formatter: function(){
-    if (this.x == 946684800000){
-      return this.series.name;
-      }
-   }
-  },
-  name: 'High income',
-    data: [
-  [Date.UTC(1980, 0, 1),  47],
-  [Date.UTC(1981, 0, 1),  41],
-  [Date.UTC(1982, 0, 1),  39],
-  [Date.UTC(1983, 0, 1),  61],
-  [Date.UTC(1984, 0, 1),  48],
-  [Date.UTC(1985, 0, 1),  64],
-  [Date.UTC(1986, 0, 1),  49],
-  [Date.UTC(1987, 0, 1),  65],
-  [Date.UTC(1988, 0, 1),  39],
-  [Date.UTC(1989, 0, 1),  58],
-  [Date.UTC(1990, 0, 1),  84],
-  [Date.UTC(1991, 0, 1),  74],
-  [Date.UTC(1992, 0, 1),  60],
-  [Date.UTC(1993, 0, 1),  65],
-  [Date.UTC(1994, 0, 1),  59],
-  [Date.UTC(1995, 0, 1),  79],
-  [Date.UTC(1996, 0, 1),  63],
-  [Date.UTC(1997, 0, 1),  79],
-  [Date.UTC(1998, 0, 1),  72],
-  [Date.UTC(1999, 0, 1),  89],
-  [Date.UTC(2000, 0, 1),  92],
-  [Date.UTC(2001, 0, 1),  80],
-  [Date.UTC(2002, 0, 1),  91],
-  [Date.UTC(2003, 0, 1),  100],
-  [Date.UTC(2004, 0, 1),  80],
-  [Date.UTC(2005, 0, 1),  94],
-  [Date.UTC(2006, 0, 1),  66],
-  [Date.UTC(2007, 0, 1),  80],
-  [Date.UTC(2008, 0, 1),  58],
-  [Date.UTC(2009, 0, 1),  71],
-  [Date.UTC(2010, 0, 1),  82],
-  [Date.UTC(2011, 0, 1),  56],
-  [Date.UTC(2012, 0, 1),  65],
-  [Date.UTC(2013, 0, 1),  69],
-  [Date.UTC(2014, 0, 1),  66],
-  [Date.UTC(2015, 0, 1),  52]
-],
-
-},
-{
+        {
+  showInLegend:false,
   dataLabels: {
    enabled: true,
    formatter: function(){
@@ -1129,8 +982,8 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
       y:30,
       x:15
   },
-    name: 'Upper middle income and lower',
-    data: [
+  name: 'Upper middle income and lower',
+  data: [
   [Date.UTC(1980, 0, 1),  85],
   [Date.UTC(1981, 0, 1),  94],
   [Date.UTC(1982, 0, 1),  104],
@@ -1170,68 +1023,71 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
 ]
 },
 {
-dataLabels: {
+  showInLegend:false,
+  dataLabels: {
    enabled: true,
    formatter: function(){
     if (this.x == 946684800000){
       return this.series.name;
       }
    }
-
   },
-name: 'Total',
-data: [
-  [Date.UTC(1980, 0, 1),  132],
-  [Date.UTC(1981, 0, 1),  135],
-  [Date.UTC(1982, 0, 1),  143],
-  [Date.UTC(1983, 0, 1),  190],
-  [Date.UTC(1984, 0, 1),  150],
-  [Date.UTC(1985, 0, 1),  173],
-  [Date.UTC(1986, 0, 1),  173],
-  [Date.UTC(1987, 0, 1),  231],
-  [Date.UTC(1988, 0, 1),  223],
-  [Date.UTC(1989, 0, 1),  228],
-  [Date.UTC(1990, 0, 1),  251],
-  [Date.UTC(1991, 0, 1),  287],
-  [Date.UTC(1992, 0, 1),  232],
-  [Date.UTC(1993, 0, 1),  241],
-  [Date.UTC(1994, 0, 1),  244],
-  [Date.UTC(1995, 0, 1),  277],
-  [Date.UTC(1996, 0, 1),  278],
-  [Date.UTC(1997, 0, 1),  305],
-  [Date.UTC(1998, 0, 1),  334],
-  [Date.UTC(1999, 0, 1),  364],
-  [Date.UTC(2000, 0, 1),  412],
-  [Date.UTC(2001, 0, 1),  367],
-  [Date.UTC(2002, 0, 1),  400],
-  [Date.UTC(2003, 0, 1),  359],
-  [Date.UTC(2004, 0, 1),  372],
-  [Date.UTC(2005, 0, 1),  397],
-  [Date.UTC(2006, 0, 1),  325],
-  [Date.UTC(2007, 0, 1),  363],
-  [Date.UTC(2008, 0, 1),  340],
-  [Date.UTC(2009, 0, 1),  344],
-  [Date.UTC(2010, 0, 1),  364],
-  [Date.UTC(2011, 0, 1),  307],
-  [Date.UTC(2012, 0, 1),  315],
-  [Date.UTC(2013, 0, 1),  299],
-  [Date.UTC(2014, 0, 1),  275],
-  [Date.UTC(2015, 0, 1),  293]
-]
+  name: 'High income',
+  data: [
+  [Date.UTC(1980, 0, 1),  47],
+  [Date.UTC(1981, 0, 1),  41],
+  [Date.UTC(1982, 0, 1),  39],
+  [Date.UTC(1983, 0, 1),  61],
+  [Date.UTC(1984, 0, 1),  48],
+  [Date.UTC(1985, 0, 1),  64],
+  [Date.UTC(1986, 0, 1),  49],
+  [Date.UTC(1987, 0, 1),  65],
+  [Date.UTC(1988, 0, 1),  39],
+  [Date.UTC(1989, 0, 1),  58],
+  [Date.UTC(1990, 0, 1),  84],
+  [Date.UTC(1991, 0, 1),  74],
+  [Date.UTC(1992, 0, 1),  60],
+  [Date.UTC(1993, 0, 1),  65],
+  [Date.UTC(1994, 0, 1),  59],
+  [Date.UTC(1995, 0, 1),  79],
+  [Date.UTC(1996, 0, 1),  63],
+  [Date.UTC(1997, 0, 1),  79],
+  [Date.UTC(1998, 0, 1),  72],
+  [Date.UTC(1999, 0, 1),  89],
+  [Date.UTC(2000, 0, 1),  92],
+  [Date.UTC(2001, 0, 1),  80],
+  [Date.UTC(2002, 0, 1),  91],
+  [Date.UTC(2003, 0, 1),  100],
+  [Date.UTC(2004, 0, 1),  80],
+  [Date.UTC(2005, 0, 1),  94],
+  [Date.UTC(2006, 0, 1),  66],
+  [Date.UTC(2007, 0, 1),  80],
+  [Date.UTC(2008, 0, 1),  58],
+  [Date.UTC(2009, 0, 1),  71],
+  [Date.UTC(2010, 0, 1),  82],
+  [Date.UTC(2011, 0, 1),  56],
+  [Date.UTC(2012, 0, 1),  65],
+  [Date.UTC(2013, 0, 1),  69],
+  [Date.UTC(2014, 0, 1),  66],
+  [Date.UTC(2015, 0, 1),  52]
+],
+
 }
+
 ],
         
         title: {
-            text: 'Natural Disasters Are Increasing, Especially in Poorer Countries'
+            text: 'Natural Disasters Are Increasingly, Especially in Poorer Countries'
         },
         subtitle:{
-          text: 'Source: CGD analysis; data from EM-DAT (Guha-Sapir et al., 2015).'
+          text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). CGD analysis.'
             
         },
 
         yAxis: {
-            title: 'Number of disasters'
-           
+            title: {
+               text: 'number of disasters'
+               }          
         },
         xAxis: {
             type: 'datetime'
@@ -1242,7 +1098,8 @@ data: [
          series: {
          marker: {
          enabled:false
-         }
+         }/*,
+         stacking:'normal'*/
          }
         }
 
@@ -1256,20 +1113,27 @@ data: [
 
 
 
+
+
+
+
+
+
+
 $(function() {
 
   $('#chart-4').highcharts({
     chart: {
-      type: 'line',
+      type: 'area',
       marker: {
         enabled: false
       }
     },
-colors: teal,
 
+colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
     series: [{
-            dataLabels: {
-            enabled: true,
+        dataLabels: {
+          enabled: true,
           formatter: function(){
             if (this.x == 1293840000000){
               return this.series.name;
@@ -1287,9 +1151,55 @@ colors: teal,
           [Date.UTC(2011, 0, 1), 2.07775],
           [Date.UTC(2012, 0, 1), 1.35092],
           [Date.UTC(2013, 0, 1), 1.07705]
+        ],
+        color: 'url(#highcharts-default-pattern-1)',
+        lineColor: '#564e34',
+        lineWidth:1
+      },
+        {
+
+        name: 'Emergency',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.09107],
+          [Date.UTC(2006, 0, 1), 0.02630],
+          [Date.UTC(2007, 0, 1), 0.02310],
+          [Date.UTC(2008, 0, 1), 0.15745],
+          [Date.UTC(2009, 0, 1), 0.09601],
+          [Date.UTC(2010, 0, 1), 1.52585],
+          [Date.UTC(2011, 0, 1), 0.30837],
+          [Date.UTC(2012, 0, 1), 0.16798],
+          [Date.UTC(2013, 0, 1), 0.13196]
+        ]
+      },{
+
+        name: 'Reconstruction',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.12330],
+          [Date.UTC(2006, 0, 1), 0.00010],
+          [Date.UTC(2007, 0, 1), 0.04081],
+          [Date.UTC(2008, 0, 1), 0.02522],
+          [Date.UTC(2009, 0, 1), 0.05753],
+          [Date.UTC(2010, 0, 1), 0.30310],
+          [Date.UTC(2011, 0, 1), 0.14802],
+          [Date.UTC(2012, 0, 1), 0.01580],
+          [Date.UTC(2013, 0, 1), 0.01950]
+        ]
+      }, 
+       {
+
+        name: 'Prevention',
+        data: [
+          [Date.UTC(2005, 0, 1), 0.01578],
+          [Date.UTC(2006, 0, 1), 0.00245],
+          [Date.UTC(2007, 0, 1), 0.01480],
+          [Date.UTC(2008, 0, 1), 0.00608],
+          [Date.UTC(2009, 0, 1), 0.04916],
+          [Date.UTC(2010, 0, 1), 0.03368],
+          [Date.UTC(2011, 0, 1), 0.00532],
+          [Date.UTC(2012, 0, 1), 0.02768],
+          [Date.UTC(2013, 0, 1), 0.02291]
         ]
       },
-
       {
 
         name: 'Humanitarian',
@@ -1305,48 +1215,6 @@ colors: teal,
           [Date.UTC(2013, 0, 1), 0.00000]
         ],
 
-      }, {
-
-        name: 'Emergency',
-        data: [
-          [Date.UTC(2005, 0, 1), 0.09107],
-          [Date.UTC(2006, 0, 1), 0.02630],
-          [Date.UTC(2007, 0, 1), 0.02310],
-          [Date.UTC(2008, 0, 1), 0.15745],
-          [Date.UTC(2009, 0, 1), 0.09601],
-          [Date.UTC(2010, 0, 1), 1.52585],
-          [Date.UTC(2011, 0, 1), 0.30837],
-          [Date.UTC(2012, 0, 1), 0.16798],
-          [Date.UTC(2013, 0, 1), 0.13196]
-        ]
-      }, {
-
-        name: 'Reconstruction',
-        data: [
-          [Date.UTC(2005, 0, 1), 0.12330],
-          [Date.UTC(2006, 0, 1), 0.00010],
-          [Date.UTC(2007, 0, 1), 0.04081],
-          [Date.UTC(2008, 0, 1), 0.02522],
-          [Date.UTC(2009, 0, 1), 0.05753],
-          [Date.UTC(2010, 0, 1), 0.30310],
-          [Date.UTC(2011, 0, 1), 0.14802],
-          [Date.UTC(2012, 0, 1), 0.01580],
-          [Date.UTC(2013, 0, 1), 0.01950]
-        ]
-      }, {
-
-        name: 'Prevention',
-        data: [
-          [Date.UTC(2005, 0, 1), 0.01578],
-          [Date.UTC(2006, 0, 1), 0.00245],
-          [Date.UTC(2007, 0, 1), 0.01480],
-          [Date.UTC(2008, 0, 1), 0.00608],
-          [Date.UTC(2009, 0, 1), 0.04916],
-          [Date.UTC(2010, 0, 1), 0.03368],
-          [Date.UTC(2011, 0, 1), 0.00532],
-          [Date.UTC(2012, 0, 1), 0.02768],
-          [Date.UTC(2013, 0, 1), 0.02291]
-        ]
       }
     ],
 
@@ -1355,13 +1223,13 @@ colors: teal,
 
     },
     subtitle: {
-      text: 'Source: CGD analysis; data from the OECD’s Creditor Reporting System (CRS), 2016.'
+      text: 'Notes: Data from the OECD’s Creditor Reporting System (CRS), 2016. CGD analysis.'
 
     },
 
     yAxis: {
       title:{
-        text:   'USD billions'
+        text:   'billions USD'
 }
     },
     xAxis: {
@@ -1373,11 +1241,12 @@ colors: teal,
       series: {
         marker: {
           enabled: false
-        }
+        },
+        stacking:'normal'
       }
     },
     tooltip: {
-        valueDecimals: 2,
+      valueDecimals: 2,
       valueSuffix: ' billion',
       valuePrefix: '$'
     }
@@ -1420,8 +1289,9 @@ $(function () {
       
         series: [
 {
-    name: 'Natural disaster allocations',
-    data: [
+  showInLegend:false,
+  name: 'Natural disaster allocations',
+  data: [
   [Date.UTC(2000, 0, 1),  0.55],
   [Date.UTC(2001, 0, 1),  0.59],
   [Date.UTC(2002, 0, 1),  0.34],
@@ -1438,7 +1308,7 @@ $(function () {
   [Date.UTC(2013, 0, 1),  0.07],
   [Date.UTC(2014, 0, 1),  3.97],
   [Date.UTC(2015, 0, 1),  0.57]
-],
+]
 
 },
 {
@@ -1446,6 +1316,8 @@ $(function () {
   marker: {
     enabled:false
   },
+  showInLegend: false,
+  dashStyle:'longDash',
   enableMouseTracking: false,
   dataLabels: {
    enabled: true,
@@ -1455,8 +1327,8 @@ $(function () {
     }
     }
   },
-    name: 'Average',
-    data: [
+  name: 'Average',
+  data: [
   [Date.UTC(2000, 0, 1),  1.6],
   [Date.UTC(2001, 0, 1),  1.6],
   [Date.UTC(2002, 0, 1),  1.6],
@@ -1488,13 +1360,13 @@ $(function () {
             text: 'Donors Allocated $1.6 Billion a Year on Average, 2000–2015'
         },
         subtitle:{
-          text: 'Source: CGD analysis; Data from UN OCHA Financial Tracking Service (FTS), 2015'
+          text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis.'
             
         },
 
         yAxis: {
             title: {
-                text: 'USD(2010) billions'
+                text: 'billions USD(2010)'
             },
            
         },
@@ -1519,7 +1391,6 @@ $(function () {
 
 
 
-
 $(function() {
 
   $('#chart-6').highcharts({
@@ -1532,7 +1403,7 @@ $(function() {
     series: [{
       
      
-      yAxis: 1,
+      yAxis: 0,
       name: 'Excess deaths',
       data: [
         [Date.UTC(2010, 9, 1), 5500],
@@ -1555,12 +1426,21 @@ $(function() {
         [Date.UTC(2012, 2, 1), 1400]
       ]
     }, {
-        type: 'line',
+      type: 'line',
        marker: {
         enabled: false
       },
-      yAxis: 0,
+      yAxis: 1,
       name: 'Funding to Somalia CAP appeal',
+      tooltip: {
+
+
+      valueSuffix: ' million',
+      valuePrefix: '$'
+
+
+
+    },
       data: [
         [Date.UTC(2010, 9, 1), 16],
         [Date.UTC(2010, 10, 1), 2],
@@ -1583,30 +1463,17 @@ $(function() {
       ]
 
     }],
-    tooltip: {
-
-
-      valueSuffix: ' million'
-
-
-
-    },
+    
     title: {
       text: 'Funding Follows Deaths: Famine in Somalia'
     },
     subtitle: {
-      text: 'Source: Data from Development Initiatives Global Humanitarian Assistance 2013 report, based on UN OCHA FTS data and data analysis done by Checchi (2013) on original survey data from Food Security and Nutrition Analysis Unit–Somalia (FSNAU).'
+      text: 'Notes: Data from Development Initiatives Global Humanitarian Assistance 2013 report, based on UN OCHA FTS data and data analysis done by Checchi (2013) on original survey data from Food Security and Nutrition Analysis Unit—Somalia (FSNAU).'
 
     },
-    yAxis: [{
-
+    yAxis: [ {
       title: {
-        text: 'USD millions'
-      },
-      max:250
-    }, {
-      title: {
-        text: 'Excess deaths',
+        text: 'thousands of excess deaths',
         style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -1614,12 +1481,23 @@ $(function() {
       labels: {
       style: {
                     color: Highcharts.getOptions().colors[0]
+                },
+                formatter: function(){
+                  return this.value / 1000;
                 }
       },
-     max:32000,
+     max:32000
 
-      opposite: true
+     
 
+    },
+    {
+
+      title: {
+        text: 'millions USD'
+      },
+      max:250,
+       opposite: true
     }],
 
       xAxis: {
@@ -1643,110 +1521,133 @@ $(function() {
 
 
 $(function() {
+  var categories = ['Honduras', 'Guatemala', 'Dominica', 'Mozambique', 'Vanuatu', 'Malawi', 'Nepal'];
   $('#chart-7').highcharts({
-      chart: {
-        type: 'scatter'
+    chart: {
+      type: 'column'
+    },
+    series: [{
+        yAxis: 0,
+        name: 'Donors',
+        data: [{
+          disaster: "Honduras",
+          y: 5,
+          name: "Honduras"
+        }, {
+          disaster: "Guatemala",
+          y: 7,
+          name: "Guatemala"
+        }, {
+          disaster: "Dominica Tropical Storm Erika",
+          y: 8,
+          name: "Dominica"
+        }, {
+          disaster: "Mozambique Floods",
+          y: 16,
+          name: "Mozambique"
+        }, {
+          disaster: "Vanuatu Tropical Cyclone Pam",
+          y: 26,
+          name: "Vanuatu"
+        }, {
+          disaster: "Malawi Floods",
+          y: 29,
+          name: "Malawi"
+        }, {
+          disaster: "Nepal Earthquake",
+          y: 52,
+          name: "Nepal"
+        }]
 
+      }, {
+        
+        yAxis: 1,
+        name: 'Concentration',
+        data: [{
+          disaster: "Honduras",
+          y: 0.570394576,
+          name: "Honduras"
+        }, {
+          disaster: "Guatemala",
+          y: 0.583721817,
+          name: "Guatemala"
+        }, {
+          disaster: "Dominica Tropical Storm Erika",
+          y: 0.197395205,
+          name: "Dominica"
+        }, {
+          disaster: "Mozambique Floods",
+          y: 0.186625138,
+          name: "Mozambique"
+        }, {
+          disaster: "Vanuatu Tropical Cyclone Pam",
+          y: 0.102202974,
+          name: "Vanuatu"
+        }, {
+          disaster: "Malawi Floods",
+          y: 0.081027478,
+          name: "Malawi"
+        }, {
+          disaster: "Nepal Earthquake",
+          y: 0.126833886,
+          name: "Nepal"
+        }]
+
+
+      }
+
+    ],
+
+    title: {
+      text: 'More Donors Mean More Fragmentation'
+    },
+    subtitle: {
+      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis.'
+    },
+    xAxis: {
+      labels: {
+        formatter: function() {
+          return categories[this.value];
+        }
+      }
+    },
+    yAxis: [{
+      title: {
+        text: 'number of donors',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
       },
-      plotOptions: {
-     
-        series: {
-        enableMouseTracking:false
-        },
-        scatter: {
-          dataLabels: {
-            allowOverlap: true,
-            format: '{point.country}',
-            enabled: true,
-            style: {
-              fontWeight: 'normal',
-              opacity: 0.5
+
+
+      labels: {
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      }
+
+    }, {
+      title: {
+        text: 'concentration'
+      },
+      opposite: true,
+      max: 0.6
+    }],
+    tooltip: {
+          formatter: function() {
+            if (Number.isInteger(this.y)) {
+              return '<b>' + this.point.disaster + '</b><br />' + this.point.series.name + ': ' + this.y;
+            } else {
+              return '<b>' + this.point.disaster + '</b><br />' + this.point.series.name + ': ' + Highcharts.numberFormat(this.y, 2, '.', ',');
             }
           }
         }
-      },
-      title: {
-        text: 'More Donors Mean More Fragmentation'
-      },
-      subtitle: {
-        text: 'Source: CGD analysis; data from UN OCHA Financial Tracking Service (FTS), 2015. Reversed y-axis: lower concentration means greater fragmentation.'
-      },
-      series: [{
-      enableMouseTracking:true,
-      regression: true,
-          regressionSettings: {
-            type: 'logarithmic',
-            color: '#cccccc'
 
-          },
-          showInLegend: false,
-          name: 'countries',
-          data: [
-  {
-     name:"Honduras",
-     x:5,
-     y:0.570394576,
-     country:"Honduras"
-  },
-  {
-     name:"Guatemala",
-     x:7,
-     y:0.583721817,
-     country:"Guatemala"
-  },
-  {
-     name:"Dominica Tropical Storm Erika",
-     x:8,
-     y:0.197395205,
-     country:"Dominica"
-  },
-  {
-     name:"Mozambique Floods",
-     x:16,
-     y:0.186625138,
-     country:"Mozambique"
-  },
-  {
-     name:"Vanuatu Tropical Cyclone Pam",
-     x:26,
-     y:0.102202974,
-     country:"Vanuatu"
-  },
-  {
-     name:"Malawi Floods",
-     x:29,
-     y:0.081027478,
-     country:"Malawi"
-  },
-  {
-     name:"Nepal Earthquake",
-     x:52,
-     y:0.126833886,
-     country:"Nepal"
-  }]
-        }],
+  });
 
-    yAxis: {
-      title: {
-        text: 'Concentration (Herfindahl index)',
 
-      },
-      reversed: true,
-      gridLineWidth: 0
-    },
-    xAxis: {
-      title: {
-        text: 'Number of donors'
-      }
-    },
-    tooltip: {
-      formatter: function(){
-        return '<b>' + this.point.name + '</b><br />Donors: ' + this.x + '<br />Concentration: ' + this.y;
-      }
-    }
-  }
-);
 });
+
 
 
 
@@ -1770,127 +1671,128 @@ $(function() {
         enabled: false
       }
     },
-colors: ["#F37924","#438390", "#564e34", "#296976   ", "#898167", "#5ED6E4"],
-
-    series: [ {
-
+    colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
+    series: [{
+        color: 'url(#highcharts-default-pattern-1)',
+        lineColor: '#564e34',
+        lineWidth: 1,
         name: 'Reduction',
         data: [
-  [Date.UTC(1990, 0, 1),  0.01],
-  [Date.UTC(1991, 0, 1),  0.00],
-  [Date.UTC(1992, 0, 1),  0.01],
-  [Date.UTC(1993, 0, 1),  0.02],
-  [Date.UTC(1994, 0, 1),  0.01],
-  [Date.UTC(1995, 0, 1),  0.05],
-  [Date.UTC(1996, 0, 1),  0.01],
-  [Date.UTC(1997, 0, 1),  0.34],
-  [Date.UTC(1998, 0, 1),  0.12],
-  [Date.UTC(1999, 0, 1),  0.13],
-  [Date.UTC(2000, 0, 1),  0.74],
-  [Date.UTC(2001, 0, 1),  0.12],
-  [Date.UTC(2002, 0, 1),  0.19],
-  [Date.UTC(2003, 0, 1),  0.42],
-  [Date.UTC(2004, 0, 1),  0.31],
-  [Date.UTC(2005, 0, 1),  1.11],
-  [Date.UTC(2006, 0, 1),  0.39],
-  [Date.UTC(2007, 0, 1),  0.63],
-  [Date.UTC(2008, 0, 1),  1.40],
-  [Date.UTC(2009, 0, 1),  1.31],
-  [Date.UTC(2010, 0, 1),  1.05],
-  [Date.UTC(2011, 0, 1),  1.15],
-  [Date.UTC(2012, 0, 1),  1.73],
-  [Date.UTC(2013, 0, 1),  1.33]
-]
-      },{
-            
-        name: 'Humanitarian',
+          [Date.UTC(1990, 0, 1), 0.01],
+          [Date.UTC(1991, 0, 1), 0.00],
+          [Date.UTC(1992, 0, 1), 0.01],
+          [Date.UTC(1993, 0, 1), 0.02],
+          [Date.UTC(1994, 0, 1), 0.01],
+          [Date.UTC(1995, 0, 1), 0.05],
+          [Date.UTC(1996, 0, 1), 0.01],
+          [Date.UTC(1997, 0, 1), 0.34],
+          [Date.UTC(1998, 0, 1), 0.12],
+          [Date.UTC(1999, 0, 1), 0.13],
+          [Date.UTC(2000, 0, 1), 0.74],
+          [Date.UTC(2001, 0, 1), 0.12],
+          [Date.UTC(2002, 0, 1), 0.19],
+          [Date.UTC(2003, 0, 1), 0.42],
+          [Date.UTC(2004, 0, 1), 0.31],
+          [Date.UTC(2005, 0, 1), 1.11],
+          [Date.UTC(2006, 0, 1), 0.39],
+          [Date.UTC(2007, 0, 1), 0.63],
+          [Date.UTC(2008, 0, 1), 1.40],
+          [Date.UTC(2009, 0, 1), 1.31],
+          [Date.UTC(2010, 0, 1), 1.05],
+          [Date.UTC(2011, 0, 1), 1.15],
+          [Date.UTC(2012, 0, 1), 1.73],
+          [Date.UTC(2013, 0, 1), 1.33]
+        ]
+      }, {
+
+        name: 'Reconstruction',
         data: [
-        [Date.UTC(1990, 0, 1),  0.05],
-  [Date.UTC(1991, 0, 1),  0.39],
-  [Date.UTC(1992, 0, 1),  0.65],
-  [Date.UTC(1993, 0, 1),  0.13],
-  [Date.UTC(1994, 0, 1),  0.08],
-  [Date.UTC(1995, 0, 1),  0.00],
-  [Date.UTC(1996, 0, 1),  0.00],
-  [Date.UTC(1997, 0, 1),  0.80],
-  [Date.UTC(1998, 0, 1),  1.31],
-  [Date.UTC(1999, 0, 1),  0.79],
-  [Date.UTC(2000, 0, 1),  0.22],
-  [Date.UTC(2001, 0, 1),  0.09],
-  [Date.UTC(2002, 0, 1),  0.11],
-  [Date.UTC(2003, 0, 1),  0.34],
-  [Date.UTC(2004, 0, 1),  0.14],
-  [Date.UTC(2005, 0, 1),  0.87],
-  [Date.UTC(2006, 0, 1),  0.11],
-  [Date.UTC(2007, 0, 1),  0.09],
-  [Date.UTC(2008, 0, 1),  0.37],
-  [Date.UTC(2009, 0, 1),  0.07],
-  [Date.UTC(2010, 0, 1),  0.64],
-  [Date.UTC(2011, 0, 1),  0.26],
-  [Date.UTC(2012, 0, 1),  0.21],
-  [Date.UTC(2013, 0, 1),  0.02]
-]
+          [Date.UTC(1990, 0, 1), 0.91],
+          [Date.UTC(1991, 0, 1), 0.24],
+          [Date.UTC(1992, 0, 1), 0.86],
+          [Date.UTC(1993, 0, 1), 1.23],
+          [Date.UTC(1994, 0, 1), 0.73],
+          [Date.UTC(1995, 0, 1), 1.56],
+          [Date.UTC(1996, 0, 1), 0.49],
+          [Date.UTC(1997, 0, 1), 0.58],
+          [Date.UTC(1998, 0, 1), 2.08],
+          [Date.UTC(1999, 0, 1), 2.48],
+          [Date.UTC(2000, 0, 1), 2.23],
+          [Date.UTC(2001, 0, 1), 2.97],
+          [Date.UTC(2002, 0, 1), 5.67],
+          [Date.UTC(2003, 0, 1), 3.78],
+          [Date.UTC(2004, 0, 1), 3.01],
+          [Date.UTC(2005, 0, 1), 4.64],
+          [Date.UTC(2006, 0, 1), 2.34],
+          [Date.UTC(2007, 0, 1), 3.02],
+          [Date.UTC(2008, 0, 1), 1.36],
+          [Date.UTC(2009, 0, 1), 1.77],
+          [Date.UTC(2010, 0, 1), 2.94],
+          [Date.UTC(2011, 0, 1), 1.27],
+          [Date.UTC(2012, 0, 1), 1.50],
+          [Date.UTC(2013, 0, 1), 1.25]
+        ]
       },
 
       {
 
         name: 'Emergency',
         data: [
-  [Date.UTC(1990, 0, 1),  1.19],
-  [Date.UTC(1991, 0, 1),  1.32],
-  [Date.UTC(1992, 0, 1),  1.60],
-  [Date.UTC(1993, 0, 1),  1.63],
-  [Date.UTC(1994, 0, 1),  1.88],
-  [Date.UTC(1995, 0, 1),  2.95],
-  [Date.UTC(1996, 0, 1),  3.71],
-  [Date.UTC(1997, 0, 1),  3.60],
-  [Date.UTC(1998, 0, 1),  4.48],
-  [Date.UTC(1999, 0, 1),  8.98],
-  [Date.UTC(2000, 0, 1),  4.64],
-  [Date.UTC(2001, 0, 1),  4.75],
-  [Date.UTC(2002, 0, 1),  6.65],
-  [Date.UTC(2003, 0, 1),  7.86],
-  [Date.UTC(2004, 0, 1),  8.56],
-  [Date.UTC(2005, 0, 1),  10.29],
-  [Date.UTC(2006, 0, 1),  7.65],
-  [Date.UTC(2007, 0, 1),  8.34],
-  [Date.UTC(2008, 0, 1),  9.95],
-  [Date.UTC(2009, 0, 1),  11.71],
-  [Date.UTC(2010, 0, 1),  11.70],
-  [Date.UTC(2011, 0, 1),  11.91],
-  [Date.UTC(2012, 0, 1),  10.53],
-  [Date.UTC(2013, 0, 1),  13.16]
-]
+          [Date.UTC(1990, 0, 1), 1.19],
+          [Date.UTC(1991, 0, 1), 1.32],
+          [Date.UTC(1992, 0, 1), 1.60],
+          [Date.UTC(1993, 0, 1), 1.63],
+          [Date.UTC(1994, 0, 1), 1.88],
+          [Date.UTC(1995, 0, 1), 2.95],
+          [Date.UTC(1996, 0, 1), 3.71],
+          [Date.UTC(1997, 0, 1), 3.60],
+          [Date.UTC(1998, 0, 1), 4.48],
+          [Date.UTC(1999, 0, 1), 8.98],
+          [Date.UTC(2000, 0, 1), 4.64],
+          [Date.UTC(2001, 0, 1), 4.75],
+          [Date.UTC(2002, 0, 1), 6.65],
+          [Date.UTC(2003, 0, 1), 7.86],
+          [Date.UTC(2004, 0, 1), 8.56],
+          [Date.UTC(2005, 0, 1), 10.29],
+          [Date.UTC(2006, 0, 1), 7.65],
+          [Date.UTC(2007, 0, 1), 8.34],
+          [Date.UTC(2008, 0, 1), 9.95],
+          [Date.UTC(2009, 0, 1), 11.71],
+          [Date.UTC(2010, 0, 1), 11.70],
+          [Date.UTC(2011, 0, 1), 11.91],
+          [Date.UTC(2012, 0, 1), 10.53],
+          [Date.UTC(2013, 0, 1), 13.16]
+        ]
 
       }, {
 
-        name: 'Reconstruction',
+        name: 'Humanitarian',
         data: [
-  [Date.UTC(1990, 0, 1),  0.91],
-  [Date.UTC(1991, 0, 1),  0.24],
-  [Date.UTC(1992, 0, 1),  0.86],
-  [Date.UTC(1993, 0, 1),  1.23],
-  [Date.UTC(1994, 0, 1),  0.73],
-  [Date.UTC(1995, 0, 1),  1.56],
-  [Date.UTC(1996, 0, 1),  0.49],
-  [Date.UTC(1997, 0, 1),  0.58],
-  [Date.UTC(1998, 0, 1),  2.08],
-  [Date.UTC(1999, 0, 1),  2.48],
-  [Date.UTC(2000, 0, 1),  2.23],
-  [Date.UTC(2001, 0, 1),  2.97],
-  [Date.UTC(2002, 0, 1),  5.67],
-  [Date.UTC(2003, 0, 1),  3.78],
-  [Date.UTC(2004, 0, 1),  3.01],
-  [Date.UTC(2005, 0, 1),  4.64],
-  [Date.UTC(2006, 0, 1),  2.34],
-  [Date.UTC(2007, 0, 1),  3.02],
-  [Date.UTC(2008, 0, 1),  1.36],
-  [Date.UTC(2009, 0, 1),  1.77],
-  [Date.UTC(2010, 0, 1),  2.94],
-  [Date.UTC(2011, 0, 1),  1.27],
-  [Date.UTC(2012, 0, 1),  1.50],
-  [Date.UTC(2013, 0, 1),  1.25]
-]
+          [Date.UTC(1990, 0, 1), 0.05],
+          [Date.UTC(1991, 0, 1), 0.39],
+          [Date.UTC(1992, 0, 1), 0.65],
+          [Date.UTC(1993, 0, 1), 0.13],
+          [Date.UTC(1994, 0, 1), 0.08],
+          [Date.UTC(1995, 0, 1), 0.00],
+          [Date.UTC(1996, 0, 1), 0.00],
+          [Date.UTC(1997, 0, 1), 0.80],
+          [Date.UTC(1998, 0, 1), 1.31],
+          [Date.UTC(1999, 0, 1), 0.79],
+          [Date.UTC(2000, 0, 1), 0.22],
+          [Date.UTC(2001, 0, 1), 0.09],
+          [Date.UTC(2002, 0, 1), 0.11],
+          [Date.UTC(2003, 0, 1), 0.34],
+          [Date.UTC(2004, 0, 1), 0.14],
+          [Date.UTC(2005, 0, 1), 0.87],
+          [Date.UTC(2006, 0, 1), 0.11],
+          [Date.UTC(2007, 0, 1), 0.09],
+          [Date.UTC(2008, 0, 1), 0.37],
+          [Date.UTC(2009, 0, 1), 0.07],
+          [Date.UTC(2010, 0, 1), 0.64],
+          [Date.UTC(2011, 0, 1), 0.26],
+          [Date.UTC(2012, 0, 1), 0.21],
+          [Date.UTC(2013, 0, 1), 0.02]
+        ]
       }
     ],
 
@@ -1899,15 +1801,15 @@ colors: ["#F37924","#438390", "#564e34", "#296976   ", "#898167", "#5ED6E4"],
 
     },
     subtitle: {
-      text: 'Source: CGD analysis; data on total disaster-related aid from OECD (2016); subset of all aid flows using coalesced purpose codes 70000, 74010, 72000–72050, 73010, corresponding to emergency, reconstruction and prevention / preparedness only. '
+      text: 'Notes: Data on total disaster-related aid from OECD (2016). Subset of all aid flows using coalesced purpose codes 70000, 74010, 72000–72050, 73010, corresponding to emergency, reconstruction and prevention / preparedness only. CGD analysis.'
 
     },
 
     yAxis: {
-      title:{
-        text:   'percentage of total'
-},
-reversedStacks:false
+      title: {
+        text: 'billions USD(2010)'
+      },
+      reversedStacks: true
     },
     xAxis: {
       type: 'datetime'
@@ -1919,20 +1821,21 @@ reversedStacks:false
         marker: {
           enabled: false
         },
-        stacking: 'percent'
+        stacking: 'normal'
       }
     },
     tooltip: {
-        valueDecimals: 2,
+      valueDecimals: 2,
       valueSuffix: ' billion',
       valuePrefix: '$'
     }
-    
+
 
 
   });
 
 });
+  
 
 
 
@@ -1972,7 +1875,7 @@ $(function() {
             ]
           },
           {
-type:'line',
+
             name: 'Disaster-related aid',
             data: [
               [Date.UTC(2004, 0, 1), 8.63],
@@ -1994,7 +1897,7 @@ type:'line',
 
         },
         subtitle: {
-          text: 'Source: CGD analysis; data on disaster-related aid is from OECD (2016); data on insurance payouts from Munich Re (2015).'
+          text: 'Notes: Data on disaster-related aid is from OECD (2016). Data on insurance payouts from Munich Re (2015). CGD analysis.'
 
         },
 
@@ -2026,9 +1929,6 @@ type:'line',
 
       });
 });
-
-
-
 
 
 
