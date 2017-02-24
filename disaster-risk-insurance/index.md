@@ -5,48 +5,55 @@ custom_css: disaster
 ---
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+some dollar axes show years and others are don't; are the latter assumed to be in current dollars? should that be specified?
 
 ## Figure 1
-<div class="hc-chart" id="chart-0"></div>
-
-## Figure 2
 <div class="hc-chart" id="chart-1"></div>
 
-## Figure 3
-TK
-
-## Figure 4
+## Figure 2
 <div class="hc-chart" id="chart-2"></div>
 
-## Figure 5
+## Figure 3
+are the currency units in billions? (shows in tooltip)
 <div class="hc-chart" id="chart-3"></div>
 
-## Figure 6
+## Figure 4
 <div class="hc-chart" id="chart-4"></div>
 
-## Figure 7
+## Figure 5
 <div class="hc-chart" id="chart-5"></div>
 
-## Figure 8
-TK
-
-## Figure 9
-TK
-
-## Figure 10
+## Figure 6
 <div class="hc-chart" id="chart-6"></div>
 
-## Figure 11
+## Figure 7
 <div class="hc-chart" id="chart-7"></div>
 
-## Figure 12
+## Figure 8
 <div class="hc-chart" id="chart-8"></div>
 
+## Figure 9
+<div class="hc-chart" id="chart-9"></div>
+below: seems the effect of the chart depends a lot on the scale chosen for the left axis. is that fair?
+<div class="hc-chart" id="chart-9b"></div>
+
+## Figure 10
+<div class="hc-chart" id="chart-10"></div>
+
+## Figure 11
+<div class="hc-chart" id="chart-11"></div>
+
+## Figure 12
+<div class="hc-chart" id="chart-12"></div>
+
 ## Figure 13 
-TK
+<div class="hc-chart" id="chart-13"></div>
+
+**alternate**
+<div class="hc-chart" id="chart-13b"></div>
 
 ## Figure 14
-<div class="hc-chart" id="chart-9"></div>
+<div class="hc-chart" id="chart-14"></div>
 
 <!-- scripts for D3, D3-tip, and the visualizations -->
 <script src="https://www.cgdev.org/sites/all/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js?v=1.7.2"></script>

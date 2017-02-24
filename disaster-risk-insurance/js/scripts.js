@@ -10,7 +10,7 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
 
  $(function() {
         Highcharts.setOptions(Highcharts.theme);
-      $('#chart-0').highcharts({
+      $('#chart-1').highcharts({
         chart: {
           type: 'bubble',
           zoomType: 'xy',
@@ -792,7 +792,7 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
  */
 $(function() {
 var categories = ['Lower middle', 'Upper middle'];  
-  $('#chart-1').highcharts({
+  $('#chart-2').highcharts({
     chart: {
       type: 'column'
     },
@@ -858,9 +858,92 @@ var categories = ['Lower middle', 'Upper middle'];
  *
  */
 
- $(function () {
+
+$(function() {
+  $('#chart-3').highcharts({
+    chart: {
+      type: 'column',
+    },
+    colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
+    series: [{
+        name: 'High income',
+        data: [
+          ['Damage', 2077.026187],
+          ['Hum. Capital Loss', 317.1241505],
+          ['Deaths', 242010]
+        ]
+        
+      }, {
+        name: 'Upper middle',
+        data: [
+          ['Damage', 415.5770712],
+          ['Hum. Capital Loss', 85.9753035],
+          ['Deaths', 161835]
+        ]
+       
+      }, {
+        name: 'Lower middle',
+        data: [
+          ['Damage', 548.484038],
+          ['Hum. Capital Loss', 114.8324132],
+          ['Deaths', 671115]
+        ]
+      },
+      {
+        name: 'Low income',
+        data: [
+          ['Damage', 472.3523603],
+          ['Hum. Capital Loss', 78.53275104],
+          ['Deaths', 2416291]
+        ]
+      }
+
+    ],
+    plotOptions: {
+      column: {
+        stacking: 'percent'
+      }
+    },
+
+    tooltip: {
+      formatter: function() {
+        if (this.key == 'Deaths') {
+          return '<b>' + this.series.name + '</b><br />' + this.key + ': ' + Highcharts.numberFormat(this.y, 0, '.', ',') + '<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
+        } else {
+          return '<b>' + this.series.name + '</b><br />' + this.key + ': $' + Highcharts.numberFormat(this.y, 2, '.', ',') + ' billion<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
+        }
+
+      }
+    },
+    title: {
+      text: 'Damage Mainly in Rich Countries but Deaths Mainly in Poor Countries'
+    },
+    subtitle: {
+      text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). ‘Human capital loss’ estimated as number of deaths from Em-Dat times difference between life expectancy and median age in country times real income per capita. Median age is median-variant projection from United Nations (2012), income per capita and life expectancy from World Bank (2015b). CGD analysis.'
+    },
+    yAxis: {
+      title: {
+        text: 'share of total (percent)'
+      },
+      reversedStacks: false
+    }
+  });
+
+
+
+
+});
+
+
+
+
+
+
+
+
+$(function () {
  
-    $('#chart-2').highcharts({
+    $('#chart-4').highcharts({
         chart: {
             type: 'column',
            
@@ -958,9 +1041,12 @@ var categories = ['Lower middle', 'Upper middle'];
 
 
 
+
+
+
 $(function () {
  
-    $('#chart-3').highcharts({
+    $('#chart-5').highcharts({
         chart: {
             type: 'area',
            marker: {
@@ -1077,7 +1163,7 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
 ],
         
         title: {
-            text: 'Natural Disasters Are Increasingly, Especially in Poorer Countries'
+            text: 'Natural Disasters Are Increasing, Especially in Poorer Countries'
         },
         subtitle:{
           text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). CGD analysis.'
@@ -1122,7 +1208,7 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
 
 $(function() {
 
-  $('#chart-4').highcharts({
+  $('#chart-6').highcharts({
     chart: {
       type: 'area',
       marker: {
@@ -1273,7 +1359,7 @@ colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9
 
 $(function () {
  
-    $('#chart-5').highcharts({
+    $('#chart-7').highcharts({
         chart: {
             type: 'column',
            
@@ -1377,7 +1463,368 @@ $(function () {
 
 
 
+$(function () {
+ 
+    $('#chart-8').highcharts({
+        chart: {
+            type: 'area',
+           marker: {
+           enabled:false
+           }
+        },
+colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
+      
+        series: [
+        {
+  name: 'Aid | Any',
+  data:[
+    [Date.UTC(1980, 0, 1),  0.4],
+    [Date.UTC(1981, 0, 1),  0.3],
+    [Date.UTC(1982, 0, 1),  0.5],
+    [Date.UTC(1983, 0, 1),  0.9],
+    [Date.UTC(1984, 0, 1),  0.6],
+    [Date.UTC(1985, 0, 1),  1.2],
+    [Date.UTC(1986, 0, 1),  1.7],
+    [Date.UTC(1987, 0, 1),  1.2],
+    [Date.UTC(1988, 0, 1),  1.5],
+    [Date.UTC(1989, 0, 1),  1.3],
+    [Date.UTC(1990, 0, 1),  1.6],
+    [Date.UTC(1991, 0, 1),  1],
+    [Date.UTC(1992, 0, 1),  1.3],
+    [Date.UTC(1993, 0, 1),  1.3],
+    [Date.UTC(1994, 0, 1),  1.2],
+    [Date.UTC(1995, 0, 1),  3],
+    [Date.UTC(1996, 0, 1),  1.6],
+    [Date.UTC(1997, 0, 1),  2.3],
+    [Date.UTC(1998, 0, 1),  3.8],
+    [Date.UTC(1999, 0, 1),  5.2],
+    [Date.UTC(2000, 0, 1),  4.1],
+    [Date.UTC(2001, 0, 1),  5.2],
+    [Date.UTC(2002, 0, 1),  8.4],
+    [Date.UTC(2003, 0, 1),  8.7],
+    [Date.UTC(2004, 0, 1),  8.1],
+    [Date.UTC(2005, 0, 1),  11.9],
+    [Date.UTC(2006, 0, 1),  6.7],
+    [Date.UTC(2007, 0, 1),  8.1],
+    [Date.UTC(2008, 0, 1),  8.8],
+    [Date.UTC(2009, 0, 1),  9.9],
+    [Date.UTC(2010, 0, 1),  10.1],
+    [Date.UTC(2011, 0, 1),  7.7],
+    [Date.UTC(2012, 0, 1),  6.3],
+    [Date.UTC(2013, 0, 1),  7.4]
+]
+},
 
+{
+  name: 'Aid | World',
+  data: [
+  [Date.UTC(1980, 0, 1),  0],
+  [Date.UTC(1981, 0, 1),  0.1],
+  [Date.UTC(1982, 0, 1),  0],
+  [Date.UTC(1983, 0, 1),  0.4],
+  [Date.UTC(1984, 0, 1),  0.1],
+  [Date.UTC(1985, 0, 1),  0.7],
+  [Date.UTC(1986, 0, 1),  0.1],
+  [Date.UTC(1987, 0, 1),  0.7],
+  [Date.UTC(1988, 0, 1),  0.6],
+  [Date.UTC(1989, 0, 1),  0.3],
+  [Date.UTC(1990, 0, 1),  1.1],
+  [Date.UTC(1991, 0, 1),  0.3],
+  [Date.UTC(1992, 0, 1),  0.4],
+  [Date.UTC(1993, 0, 1),  0.1],
+  [Date.UTC(1994, 0, 1),  0.6],
+  [Date.UTC(1995, 0, 1),  0.3],
+  [Date.UTC(1996, 0, 1),  0.2],
+  [Date.UTC(1997, 0, 1),  0.3],
+  [Date.UTC(1998, 0, 1),  1.9],
+  [Date.UTC(1999, 0, 1),  1.9],
+  [Date.UTC(2000, 0, 1),  1.5],
+  [Date.UTC(2001, 0, 1),  1.9],
+  [Date.UTC(2002, 0, 1),  2.4],
+  [Date.UTC(2003, 0, 1),  2.1],
+  [Date.UTC(2004, 0, 1),  1.3],
+  [Date.UTC(2005, 0, 1),  4],
+  [Date.UTC(2006, 0, 1),  3.9],
+  [Date.UTC(2007, 0, 1),  3.6],
+  [Date.UTC(2008, 0, 1),  3.4],
+  [Date.UTC(2009, 0, 1),  3],
+  [Date.UTC(2010, 0, 1),  5.5],
+  [Date.UTC(2011, 0, 1),  3.2],
+  [Date.UTC(2012, 0, 1),  2.4],
+  [Date.UTC(2013, 0, 1),  2.6]
+]
+},
+{
+  
+  name: 'Aid | National',
+  data:[
+  [Date.UTC(1980, 0, 1),  0.1],
+  [Date.UTC(1981, 0, 1),  0.1],
+  [Date.UTC(1982, 0, 1),  0.1],
+  [Date.UTC(1983, 0, 1),  0.7],
+  [Date.UTC(1984, 0, 1),  0.1],
+  [Date.UTC(1985, 0, 1),  0.3],
+  [Date.UTC(1986, 0, 1),  0.2],
+  [Date.UTC(1987, 0, 1),  0.7],
+  [Date.UTC(1988, 0, 1),  0.9],
+  [Date.UTC(1989, 0, 1),  0.1],
+  [Date.UTC(1990, 0, 1),  1.1],
+  [Date.UTC(1991, 0, 1),  0.3],
+  [Date.UTC(1992, 0, 1),  0.3],
+  [Date.UTC(1993, 0, 1),  0.6],
+  [Date.UTC(1994, 0, 1),  0.2],
+  [Date.UTC(1995, 0, 1),  1.3],
+  [Date.UTC(1996, 0, 1),  0.2],
+  [Date.UTC(1997, 0, 1),  0.2],
+  [Date.UTC(1998, 0, 1),  2.1],
+  [Date.UTC(1999, 0, 1),  2.6],
+  [Date.UTC(2000, 0, 1),  1.6],
+  [Date.UTC(2001, 0, 1),  2.8],
+  [Date.UTC(2002, 0, 1),  5.8],
+  [Date.UTC(2003, 0, 1),  1.6],
+  [Date.UTC(2004, 0, 1),  1.3],
+  [Date.UTC(2005, 0, 1),  3.2],
+  [Date.UTC(2006, 0, 1),  1.9],
+  [Date.UTC(2007, 0, 1),  3.6],
+  [Date.UTC(2008, 0, 1),  3.5],
+  [Date.UTC(2009, 0, 1),  2.3],
+  [Date.UTC(2010, 0, 1),  5.3],
+  [Date.UTC(2011, 0, 1),  2.7],
+  [Date.UTC(2012, 0, 1),  2.4],
+  [Date.UTC(2013, 0, 1),  1.6]
+]
+}
+
+
+
+],
+        
+        title: {
+            text: 'Reasonable Definitions Suggest Higher Amounts of Spending'
+        },
+        subtitle:{
+          text: 'Notes: Data on severity of disaster definition form EM-DAT (Guha-Sapir et al., 2015). Data on aid flows disaggregated by purpose from the OECD CRS (2016). Includes all aid to recipient which recorded any natural disaster, a disaster in the top 10% of disasters globally in terms of financial or human losses, or a disaster in the to 10% of disasters in the country’s history. CGD analysis.'
+            
+        },
+
+        yAxis: {
+            title: {
+               text: 'billions USD(2010)'
+               }          
+        },
+        xAxis: {
+            type: 'datetime'
+
+           
+        },
+        plotOptions: {
+         series: {
+         marker: {
+         enabled:false
+         }/*,
+         stacking:'normal'*/
+         }
+        },
+        tooltip: {
+          valuePrefix: '$',
+          valueSuffix: ' billion'
+        }
+
+
+    });
+
+});
+
+
+
+
+
+$(function() {
+
+  $('#chart-9').highcharts({
+    chart: {
+      type: 'column',
+
+    },
+
+colors: teal,
+    series: [
+    {
+      yAxis: 0,
+      name: 'Deaths, Guinea',
+      data: [
+  [Date.UTC(2014, 2, 1), 255],
+  [Date.UTC(2014, 3, 1), 892],
+  [Date.UTC(2014, 4, 1), 846],
+  [Date.UTC(2014, 5, 1), 1419],
+  [Date.UTC(2014, 6, 1), 2810],
+  [Date.UTC(2014, 7, 1), 3827],
+  [Date.UTC(2014, 8, 1), 4740],
+  [Date.UTC(2014, 9, 1), 8545],
+  [Date.UTC(2014, 10, 1), 9381],
+  [Date.UTC(2014, 11, 1), 7595],
+  [Date.UTC(2015, 0, 1), 7381],
+  [Date.UTC(2015, 1, 1), 8087],
+  [Date.UTC(2015, 2, 1), 8786],
+  [Date.UTC(2015, 3, 1), 11728],
+  [Date.UTC(2015, 4, 1), 9605],
+  [Date.UTC(2015, 5, 1), 9783],
+  [Date.UTC(2015, 6, 1), 12519],
+  [Date.UTC(2015, 7, 1), 10097],
+  [Date.UTC(2015, 8, 1), 10121],
+  [Date.UTC(2015, 9, 1), 12671],
+  [Date.UTC(2015, 10, 1), 10144],
+  [Date.UTC(2015, 11, 1), 12680],
+  [Date.UTC(2016, 0, 1), 10144],
+  [Date.UTC(2016, 1, 1), 7608]
+]
+    },{
+      yAxis: 0,
+      name: 'Deaths, Liberia',
+      data: [
+  [Date.UTC(2014, 2, 1), 12],
+  [Date.UTC(2014, 3, 1), 76],
+  [Date.UTC(2014, 4, 1), 49],
+  [Date.UTC(2014, 5, 1), 96],
+  [Date.UTC(2014, 6, 1), 945],
+  [Date.UTC(2014, 7, 1), 4162],
+  [Date.UTC(2014, 8, 1), 11290],
+  [Date.UTC(2014, 9, 1), 23771],
+  [Date.UTC(2014, 10, 1), 23199],
+  [Date.UTC(2014, 11, 1), 16419],
+  [Date.UTC(2015, 0, 1), 14325],
+  [Date.UTC(2015, 1, 1), 15509],
+  [Date.UTC(2015, 2, 1), 16844],
+  [Date.UTC(2015, 3, 1), 22407],
+  [Date.UTC(2015, 4, 1), 19097],
+  [Date.UTC(2015, 5, 1), 19224],
+  [Date.UTC(2015, 6, 1), 24037],
+  [Date.UTC(2015, 7, 1), 19232],
+  [Date.UTC(2015, 8, 1), 19232],
+  [Date.UTC(2015, 9, 1), 24040],
+  [Date.UTC(2015, 10, 1), 19232],
+  [Date.UTC(2015, 11, 1), 24045],
+  [Date.UTC(2016, 0, 1), 19236],
+  [Date.UTC(2016, 1, 1), 14427]
+]
+    },{
+      yAxis: 0,
+      name: 'Deaths, Sierra Leone',
+      data: [
+  [Date.UTC(2014, 2, 1), 5],
+  [Date.UTC(2014, 3, 1), 0],
+  [Date.UTC(2014, 4, 1), 9],
+  [Date.UTC(2014, 5, 1), 122],
+  [Date.UTC(2014, 6, 1), 1543],
+  [Date.UTC(2014, 7, 1), 3373],
+  [Date.UTC(2014, 8, 1), 4443],
+  [Date.UTC(2014, 9, 1), 11087],
+  [Date.UTC(2014, 10, 1), 10001],
+  [Date.UTC(2014, 11, 1), 10776],
+  [Date.UTC(2015, 0, 1), 12349],
+  [Date.UTC(2015, 1, 1), 13486],
+  [Date.UTC(2015, 2, 1), 14613],
+  [Date.UTC(2015, 3, 1), 19263],
+  [Date.UTC(2015, 4, 1), 15622],
+  [Date.UTC(2015, 5, 1), 15674],
+  [Date.UTC(2015, 6, 1), 19719],
+  [Date.UTC(2015, 7, 1), 15806],
+  [Date.UTC(2015, 8, 1), 15814],
+  [Date.UTC(2015, 9, 1), 19775],
+  [Date.UTC(2015, 10, 1), 15820],
+  [Date.UTC(2015, 11, 1), 19775],
+  [Date.UTC(2016, 0, 1), 15822],
+  [Date.UTC(2016, 1, 1), 11868]
+]
+    },
+    {
+      type: 'line',
+      marker: {
+        enabled: false
+      },
+      yAxis: 1,
+      name: 'Funding',
+      tooltip: {
+
+
+        valueSuffix: ' million',
+        valuePrefix: '$'
+      },
+      data: [
+        [Date.UTC(2014, 2, 1), 0.85],
+        [Date.UTC(2014, 3, 1), 4.76],
+        [Date.UTC(2014, 4, 1), 5.34],
+        [Date.UTC(2014, 5, 1), 5.18],
+        [Date.UTC(2014, 6, 1), 4.49],
+        [Date.UTC(2014, 7, 1), 127.86],
+        [Date.UTC(2014, 8, 1), 1309.79],
+        [Date.UTC(2014, 9, 1), 609.04],
+        [Date.UTC(2014, 10, 1), 470.00],
+        [Date.UTC(2014, 11, 1), 509.43],
+        [Date.UTC(2015, 0, 1), 195.42],
+        [Date.UTC(2015, 1, 1), 46.10],
+        [Date.UTC(2015, 2, 1), 110.11],
+        [Date.UTC(2015, 3, 1), 99.60],
+        [Date.UTC(2015, 4, 1), 29.34],
+        [Date.UTC(2015, 5, 1), 90.10],
+        [Date.UTC(2015, 6, 1), 549.11],
+        [Date.UTC(2015, 7, 1), 17.65],
+        [Date.UTC(2015, 8, 1), 10.99],
+        [Date.UTC(2015, 9, 1), 7.18],
+        [Date.UTC(2015, 10, 1), 6.97],
+        [Date.UTC(2015, 11, 1), 211.87],
+        [Date.UTC(2016, 0, 1), 2.34],
+        [Date.UTC(2016, 1, 1), 15.93]
+      ]
+    }],
+
+    title: {
+      text: 'Funding Follows the Caseload: Ebola in West Africa'
+    },
+    subtitle: {
+      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015 and Centers for Disease Control (2016). CGD analysis.'
+
+    },
+    yAxis: [{
+      title: {
+        text: 'thousands of deaths'
+        
+      },
+      labels: {
+        formatter: function(){
+                  return this.value / 1000;
+                }
+        
+      }
+
+
+
+    }, {
+
+      title: {
+        text: 'millions USD',
+        
+      },
+      
+      opposite: true
+    }],
+
+    xAxis: {
+      type: 'datetime'
+
+
+    },
+    plotOptions:{
+     column: {
+     stacking: 'normal'
+     }
+    }
+    
+
+
+  });
+
+});
 
 
 
@@ -1386,7 +1833,118 @@ $(function () {
 
 $(function() {
 
-  $('#chart-6').highcharts({
+      $('#chart-9b').highcharts({
+          chart: {
+            type: 'line',
+
+          },
+title: {
+text:''
+},
+subtitle: {
+text: 'Notes:  Data from UN OCHA Financial Tracking Service (FTS), 2015 and Centers for Disease Control (2016). CGD analysis.'
+},
+
+          series: [{
+            marker: {
+        enabled: false
+      },
+            yAxis:1,
+            name: 'Change in commitments (%)',
+            data: [
+              [Date.UTC(2014, 2, 1), 0.0],
+              [Date.UTC(2014, 3, 1), 4.6],
+              [Date.UTC(2014, 4, 1), 0.1],
+              [Date.UTC(2014, 5, 1), 0.0],
+              [Date.UTC(2014, 6, 1), -0.1],
+              [Date.UTC(2014, 7, 1), 27.5],
+              [Date.UTC(2014, 8, 1), 9.2],
+              [Date.UTC(2014, 9, 1), -0.5],
+              [Date.UTC(2014, 10, 1), -0.2],
+              [Date.UTC(2014, 11, 1), 0.1],
+              [Date.UTC(2015, 0, 1), -0.6],
+              [Date.UTC(2015, 1, 1), -0.8],
+              [Date.UTC(2015, 2, 1), 1.4],
+              [Date.UTC(2015, 3, 1), -0.1],
+              [Date.UTC(2015, 4, 1), -0.7],
+              [Date.UTC(2015, 5, 1), 2.1],
+              [Date.UTC(2015, 6, 1), 5.1],
+              [Date.UTC(2015, 7, 1), -1.0],
+              [Date.UTC(2015, 8, 1), -0.4],
+              [Date.UTC(2015, 9, 1), -0.3],
+              [Date.UTC(2015, 10, 1), 0.0],
+              [Date.UTC(2015, 11, 1), 29.4],
+              [Date.UTC(2016, 0, 1), -1.0],
+              [Date.UTC(2016, 1, 1), 5.8]
+            ]
+          }, {
+            marker: {
+        enabled: false
+      },
+            yAxis:0,
+            name: 'Change in deaths (%)',
+            data: [
+              [Date.UTC(2014, 2, 1), 0.0],
+              [Date.UTC(2014, 3, 1), 2.6],
+              [Date.UTC(2014, 4, 1), -0.1],
+              [Date.UTC(2014, 5, 1), 0.8],
+              [Date.UTC(2014, 6, 1), 2.2],
+              [Date.UTC(2014, 7, 1), 1.1],
+              [Date.UTC(2014, 8, 1), 0.8],
+              [Date.UTC(2014, 9, 1), 1.1],
+              [Date.UTC(2014, 10, 1), 0.0],
+              [Date.UTC(2014, 11, 1), -0.2],
+              [Date.UTC(2015, 0, 1), 0.0],
+              [Date.UTC(2015, 1, 1), 0.1],
+              [Date.UTC(2015, 2, 1), 0.1],
+              [Date.UTC(2015, 3, 1), 0.3],
+              [Date.UTC(2015, 4, 1), -0.2],
+              [Date.UTC(2015, 5, 1), 0.0],
+              [Date.UTC(2015, 6, 1), 0.3],
+              [Date.UTC(2015, 7, 1), -0.2],
+              [Date.UTC(2015, 8, 1), 0.0],
+              [Date.UTC(2015, 9, 1), 0.3],
+              [Date.UTC(2015, 10, 1), -0.2],
+              [Date.UTC(2015, 11, 1), 0.3],
+              [Date.UTC(2016, 0, 1), -0.2],
+              [Date.UTC(2016, 1, 1), -0.2]
+            ]
+          }],
+
+
+          yAxis: [{
+            title: {
+              text: 'percent change in deaths',
+            },
+             plotLines: [{
+            value:0,
+            width:2,
+            color:'#888888'
+            }]
+            },
+            {
+            title: {
+              text: 'percent change in funding (commitments)',
+            },
+            opposite:true,
+            max: 30
+            }],
+
+            xAxis: {
+              type: 'datetime'
+            }
+
+
+          });
+
+      });
+
+
+
+
+$(function() {
+
+  $('#chart-10').highcharts({
     chart: {
       type: 'column',
 
@@ -1512,10 +2070,9 @@ $(function() {
 
 
 
-
 $(function() {
   var categories = ['Honduras', 'Guatemala', 'Dominica', 'Mozambique', 'Vanuatu', 'Malawi', 'Nepal'];
-  $('#chart-7').highcharts({
+  $('#chart-11').highcharts({
     chart: {
       type: 'column'
     },
@@ -1657,7 +2214,7 @@ $(function() {
 
 $(function() {
 
-  $('#chart-8').highcharts({
+  $('#chart-12').highcharts({
     chart: {
       type: 'area',
       marker: {
@@ -1832,6 +2389,236 @@ $(function() {
 
 
 
+$(function() {
+
+  $('#chart-13').highcharts({
+    chart: {
+      type: 'column',
+      marker: {
+        enabled: false
+      }
+    },
+
+
+    series: [
+
+      {
+
+        name: 'Requirements',
+        data: [
+          [Date.UTC(2006, 0, 1), 5.91],
+          [Date.UTC(2007, 0, 1), 5.63],
+          [Date.UTC(2008, 0, 1), 7.19],
+          [Date.UTC(2009, 0, 1), 9.99],
+          [Date.UTC(2010, 0, 1), 11.25],
+          [Date.UTC(2011, 0, 1), 8.54],
+          [Date.UTC(2012, 0, 1), 8.59],
+          [Date.UTC(2013, 0, 1), 11.61],
+          [Date.UTC(2014, 0, 1), 15.77],
+          [Date.UTC(2015, 0, 1), 16.39]
+        ]
+      }, {
+
+        name: 'Funding',
+        data: [
+          [Date.UTC(2006, 0, 1), 3.95],
+          [Date.UTC(2007, 0, 1), 4.07],
+          [Date.UTC(2008, 0, 1), 5.41],
+          [Date.UTC(2009, 0, 1), 7.24],
+          [Date.UTC(2010, 0, 1), 7.25],
+          [Date.UTC(2011, 0, 1), 5.50],
+          [Date.UTC(2012, 0, 1), 5.39],
+          [Date.UTC(2013, 0, 1), 7.53],
+          [Date.UTC(2014, 0, 1), 9.61],
+          [Date.UTC(2015, 0, 1), 9.27]
+        ]
+      }, {
+        name: 'Deficit',
+        data: [
+          [Date.UTC(2006, 0, 1), -1.96],
+          [Date.UTC(2007, 0, 1), -1.56],
+          [Date.UTC(2008, 0, 1), -1.78],
+          [Date.UTC(2009, 0, 1), -2.75],
+          [Date.UTC(2010, 0, 1), -4.00],
+          [Date.UTC(2011, 0, 1), -3.04],
+          [Date.UTC(2012, 0, 1), -3.20],
+          [Date.UTC(2013, 0, 1), -4.08],
+          [Date.UTC(2014, 0, 1), -6.16],
+          [Date.UTC(2015, 0, 1), -7.12]
+        ],
+        color: '#d95e66',
+        dataLabels: {
+          enabled: true,
+          formatter: function() {
+            return Highcharts.numberFormat(this.y, 1, '.', ',');
+          }
+        }
+      }
+    ],
+
+    title: {
+      text: 'The Humanitarian Financing Deficit Is Growing Fast'
+
+    },
+    subtitle: {
+      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis. '
+
+    },
+
+    yAxis: {
+      title: {
+        text: 'billions USD(2010)'
+      },
+      reversedStacks: false
+    },
+    xAxis: {
+      type: 'datetime'
+
+
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        },
+        tooltip: {
+          valueDecimals: 1,
+          valueSuffix: ' billion',
+          valuePrefix: '$'
+        }
+      }
+
+    }
+
+
+  });
+});
+
+
+
+$(function() {
+
+  $('#chart-13b').highcharts({
+    chart: {
+      type: 'column',
+      marker: {
+        enabled: false
+      }
+    },
+
+
+    series: [{
+      
+      name: 'Deficit',
+      type: 'arearange',
+      data: [
+        [Date.UTC(2006, 0, 1), 3.9, 5.9],
+        [Date.UTC(2007, 0, 1), 4.1, 5.6],
+        [Date.UTC(2008, 0, 1), 5.4, 7.2],
+        [Date.UTC(2009, 0, 1), 7.2, 10.0],
+        [Date.UTC(2010, 0, 1), 7.3, 11.3],
+        [Date.UTC(2011, 0, 1), 5.5, 8.5],
+        [Date.UTC(2012, 0, 1), 5.4, 8.6],
+        [Date.UTC(2013, 0, 1), 7.5, 11.6],
+        [Date.UTC(2014, 0, 1), 9.6, 15.8],
+        [Date.UTC(2015, 0, 1), 9.3, 16.4]
+      ],
+      color: '#d95e66',
+      dataLabels: {
+        enabled: true,
+        formatter: function() {
+
+          if (this.y == this.point.high) {
+            return '(' + Highcharts.numberFormat(this.y - this.point.low, 1, '.', ',') + ')';
+          }
+        },
+        yHigh: -10,
+        xHigh: -3,
+        color: '#d95e66'
+
+      }
+    }, {
+
+      name: 'Requirements',
+      data: [
+        [Date.UTC(2006, 0, 1), 5.91],
+        [Date.UTC(2007, 0, 1), 5.63],
+        [Date.UTC(2008, 0, 1), 7.19],
+        [Date.UTC(2009, 0, 1), 9.99],
+        [Date.UTC(2010, 0, 1), 11.25],
+        [Date.UTC(2011, 0, 1), 8.54],
+        [Date.UTC(2012, 0, 1), 8.59],
+        [Date.UTC(2013, 0, 1), 11.61],
+        [Date.UTC(2014, 0, 1), 15.77],
+        [Date.UTC(2015, 0, 1), 16.39]
+      ]
+    }, {
+
+      name: 'Funding',
+      data: [
+        [Date.UTC(2006, 0, 1), 3.95],
+        [Date.UTC(2007, 0, 1), 4.07],
+        [Date.UTC(2008, 0, 1), 5.41],
+        [Date.UTC(2009, 0, 1), 7.24],
+        [Date.UTC(2010, 0, 1), 7.25],
+        [Date.UTC(2011, 0, 1), 5.50],
+        [Date.UTC(2012, 0, 1), 5.39],
+        [Date.UTC(2013, 0, 1), 7.53],
+        [Date.UTC(2014, 0, 1), 9.61],
+        [Date.UTC(2015, 0, 1), 9.27]
+      ]
+    }],
+
+    title: {
+      text: 'The Humanitarian Financing Deficit Is Growing Fast'
+
+    },
+    subtitle: {
+      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis. '
+
+    },
+
+    yAxis: {
+      title: {
+        text: 'billions USD(2010)'
+      },
+      reversedStacks: false,
+      max: 18,
+      tickInterval: 5
+    },
+    xAxis: {
+      type: 'datetime'
+
+
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        }        
+      },
+      column: {
+      tooltip: {
+          valueDecimals: 1,
+          valueSuffix: ' billion',
+          valuePrefix: '$'
+        }
+      },
+      arearange: {
+      tooltip: {
+        pointFormatter: function() {
+          console.log(this);
+          return '<span style="color:' + this.color + '">\u25CF</span>' +  this.series.name + ': <b>$' + Highcharts.numberFormat(this.high - this.low, 1, '.',',') + ' billion</b><br/>';
+
+        }
+      }
+      }
+
+    }
+
+
+  });
+});
 
 
 
@@ -1840,7 +2627,7 @@ $(function() {
 
 $(function() {
 
-      $('#chart-9').highcharts({
+      $('#chart-14').highcharts({
         chart: {
           type: 'column',
           marker: {
