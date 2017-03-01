@@ -9,772 +9,765 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
  */
 
  $(function() {
-        Highcharts.setOptions(Highcharts.theme);
-      $('#chart-1').highcharts({
-        chart: {
-          type: 'bubble',
-          zoomType: 'xy',
+   Highcharts.setOptions(Highcharts.theme);
+   $('#chart-1').highcharts({
+       chart: {
+         type: 'bubble',
+         zoomType: 'xy',
 
-        },
-        title: {
-          text: 'Low-Income Countries Are More Vulnerable to Natural Disasters, and Disasters Help Keep Them Poor'
-        },
-        subtitle: {
-          text: 'Notes: Data for average number of deaths per year from EM-DAT (Guha-Sapir et al., 2015), data on GDP per capita and population form World Bank (2015), vulnerability measured by INFORM (2017), rescaled from zero to one. CGD analysis.',
+       },
+       title: {
+         text: 'Low-Income Countries Are More Vulnerable to Natural Disasters, and Disasters Help Keep Them Poor'
+       },
+       subtitle: {
+         text: 'Notes: Data for average number of deaths per year from EM-DAT (Guha-Sapir et al., 2015), data on GDP per capita and population form World Bank (2015), vulnerability measured by INFORM (2017), rescaled from zero to one. CGD analysis.',
 
-        },
-        series: [{
+       },
+       series: [{
 
-          regression: true,
-          regressionSettings: {
-            type: 'exponential',
-            color: '#cccccc'
+         regression: true,
+         regressionSettings: {
+           type: 'logarithmic',
+           color: '#cccccc'
 
-          },
-          data: [{
-            "name": "Afghanistan",
-            "x": 6.387423038,
-            "y": 0.840909064,
-            "z": 17.75072861
-          }, {
-            "name": "Albania",
-            "x": 8.280259132,
-            "y": 0.272727281,
-            "z": 2.355627298
-          }, {
-            "name": "Algeria",
-            "x": 8.344274521,
-            "y": 0.454545468,
-            "z": 1.709142685
-          }, {
-            "name": "Angola",
-            "x": 8.319101334,
-            "y": 0.511363626,
-            "z": 19.11488533
-          }, {
-            "name": "Armenia",
-            "x": 8.157406807,
-            "y": 0.375,
-            "z": 0
-          }, {
-            "name": "Azerbaijan",
-            "x": 8.611838341,
-            "y": 0.488636374,
-            "z": 1.007475019
-          }, {
-            "name": "Bangladesh",
-            "x": 7.099781036,
-            "y": 0.613636374,
-            "z": 6.665419579
-          }, {
-            "name": "Belarus",
-            "x": 8.655294418,
-            "y": 0.181818187,
-            "z": 0.104916833
-          }, {
-            "name": "Belize",
-            "x": 8.492638588,
-            "y": 0.329545468,
-            "z": 3.338178635
-          }, {
-            "name": "Benin",
-            "x": 6.636013985,
-            "y": 0.454545468,
-            "z": 3.216551542
-          }, {
-            "name": "Bhutan",
-            "x": 7.884575844,
-            "y": 0.284090906,
-            "z": 3.078121901
-          }, {
-            "name": "Bolivia",
-            "x": 8.031642914,
-            "y": 0.409090906,
-            "z": 8.548664093
-          }, {
-            "name": "Bosnia and Herzegovina",
-            "x": 8.354516983,
-            "y": 0.420454532,
-            "z": 1.211632967
-          }, {
-            "name": "Botswana",
-            "x": 8.757805824,
-            "y": 0.284090906,
-            "z": 23.13300514
-          }, {
-            "name": "Brazil",
-            "x": 9.052350998,
-            "y": 0.340909094,
-            "z": 1.685128808
-          }, {
-            "name": "Bulgaria",
-            "x": 8.852733612,
-            "y": 0.25,
-            "z": 2.23045516
-          }, {
-            "name": "Burkina Faso",
-            "x": 6.379740238,
-            "y": 0.568181813,
-            "z": 27.8090477
-          }, {
-            "name": "Burundi",
-            "x": 5.62426424,
-            "y": 0.670454562,
-            "z": 4.07776165
-          }, {
-            "name": "Cabo Verde",
-            "x": 8.0327425,
-            "y": 0.23863636,
-            "z": 16.63971901
-          }, {
-            "name": "Cambodia",
-            "x": 7.055045128,
-            "y": 0.465909094,
-            "z": 7.352732182
-          }, {
-            "name": "Cameroon",
-            "x": 7.104358196,
-            "y": 0.659090936,
-            "z": 9.586594582
-          }, {
-            "name": "Central African Republic",
-            "x": 5.778276443,
-            "y": 0.909090936,
-            "z": 7.813418865
-          }, {
-            "name": "Chad",
-            "x": 6.65375948,
-            "y": 0.829545438,
-            "z": 9.969040871
-          }, {
-            "name": "China",
-            "x": 8.990651131,
-            "y": 0.420454532,
-            "z": 7.835836887
-          }, {
-            "name": "Colombia",
-            "x": 8.708828926,
-            "y": 0.568181813,
-            "z": 5.609391212
-          }, {
-            "name": "Comoros",
-            "x": 6.575701714,
-            "y": 0.375,
-            "z": 73.21868896
-          }, {
-            "name": "Congo",
-            "x": 7.523589134,
-            "y": 0.556818187,
-            "z": 18.25159836
-          }, {
-            "name": "Congo DR",
-            "x": 6.122608662,
-            "y": 0.75,
-            "z": 7.794198036
-          }, {
-            "name": "Costa Rica",
-            "x": 9.3290205,
-            "y": 0.284090906,
-            "z": 2.531666517
-          }, {
-            "name": "Croatia",
-            "x": 9.35321331,
-            "y": 0.204545453,
-            "z": 0.889651179
-          }, {
-            "name": "Cuba",
-            "x": 8.823184013,
-            "y": 0.25,
-            "z": 2.092007875
-          }, {
-            "name": "Côte d'Ivoire",
-            "x": 7.243505955,
-            "y": 0.602272749,
-            "z": 2.193514347
-          }, {
-            "name": "Djibouti",
-            "x": 7.573081017,
-            "y": 0.556818187,
-            "z": 17.33374023
-          }, {
-            "name": "Dominica",
-            "x": 8.870155334,
-            "y": 0.295454532,
-            "z": 40.09262848
-          }, {
-            "name": "Dominican Republic",
-            "x": 8.774695396,
-            "y": 0.340909094,
-            "z": 7.181687832
-          }, {
-            "name": "Ecuador",
-            "x": 8.733120918,
-            "y": 0.431818187,
-            "z": 2.942335844
-          }, {
-            "name": "Egypt",
-            "x": 8.19277668,
-            "y": 0.465909094,
-            "z": 3.176731348
-          }, {
-            "name": "El Salvador",
-            "x": 8.347435951,
-            "y": 0.556818187,
-            "z": 8.228894234
-          }, {
-            "name": "Eritrea",
-            "x": 6.299798965,
-            "y": 0.568181813,
-            "z": 1.214645028
-          }, {
-            "name": "Ethiopia",
-            "x": 6.428379059,
-            "y": 0.681818187,
-            "z": 2.302283764
-          }, {
-            "name": "Fiji",
-            "x": 8.5092659,
-            "y": 0.306818187,
-            "z": 5.429983616
-          }, {
-            "name": "Gabon",
-            "x": 9.01995945,
-            "y": 0.397727281,
-            "z": 5.189202785
-          }, {
-            "name": "Gambia",
-            "x": 6.15599823,
-            "y": 0.363636374,
-            "z": 3.324355841
-          }, {
-            "name": "Georgia",
-            "x": 8.241696358,
-            "y": 0.397727281,
-            "z": 1.271469235
-          }, {
-            "name": "Ghana",
-            "x": 7.222347736,
-            "y": 0.363636374,
-            "z": 4.871054173
-          }, {
-            "name": "Grenada",
-            "x": 9.128264427,
-            "y": 0.102272727,
-            "z": 0.88303262
-          }, {
-            "name": "Guatemala",
-            "x": 8.269623756,
-            "y": 0.579545438,
-            "z": 18.84893227
-          }, {
-            "name": "Guinea",
-            "x": 6.275365829,
-            "y": 0.522727251,
-            "z": 26.61805534
-          }, {
-            "name": "Guinea-Bissau",
-            "x": 6.350865364,
-            "y": 0.5,
-            "z": 48.71257401
-          }, {
-            "name": "Guyana",
-            "x": 8.325390816,
-            "y": 0.340909094,
-            "z": 4.1628685
-          }, {
-            "name": "Haiti",
-            "x": 6.707282066,
-            "y": 0.693181813,
-            "z": 2040.755615
-          }, {
-            "name": "Honduras",
-            "x": 7.835536957,
-            "y": 0.511363626,
-            "z": 10.33538628
-          }, {
-            "name": "Hungary",
-            "x": 9.422507286,
-            "y": 0.193181813,
-            "z": 5.932254314
-          }, {
-            "name": "India",
-            "x": 7.376670361,
-            "y": 0.602272749,
-            "z": 2.473259211
-          }, {
-            "name": "Indonesia",
-            "x": 8.115666389,
-            "y": 0.443181813,
-            "z": 6.599462509
-          }, {
-            "name": "Iran",
-            "x": 8.602062225,
-            "y": 0.522727251,
-            "z": 3.533709764
-          }, {
-            "name": "Iraq",
-            "x": 8.50588131,
-            "y": 0.738636374,
-            "z": 5.217938423
-          }, {
-            "name": "Jamaica",
-            "x": 8.562553406,
-            "y": 0.23863636,
-            "z": 1.496770501
-          }, {
-            "name": "Jordan",
-            "x": 8.505129814,
-            "y": 0.420454532,
-            "z": 0.696241796
-          }, {
-            "name": "Kazakhstan",
-            "x": 9.260080338,
-            "y": 0.193181813,
-            "z": 1.510962129
-          }, {
-            "name": "Kenya",
-            "x": 7.227453709,
-            "y": 0.647727251,
-            "z": 5.941697121
-          }, {
-            "name": "Kiribati",
-            "x": 7.261422157,
-            "y": 0.363636374,
-            "z": 0
-          }, {
-            "name": "Kyrgyzstan",
-            "x": 7.005984306,
-            "y": 0.352272719,
-            "z": 2.757754803
-          }, {
-            "name": "Lao PDR",
-            "x": 7.505734921,
-            "y": 0.443181813,
-            "z": 3.609772444
-          }, {
-            "name": "Lebanon",
-            "x": 8.993134499,
-            "y": 0.568181813,
-            "z": 2.942929268
-          }, {
-            "name": "Lesotho",
-            "x": 6.972592831,
-            "y": 0.431818187,
-            "z": 3.022072077
-          }, {
-            "name": "Liberia",
-            "x": 6.122216225,
-            "y": 0.534090936,
-            "z": 100.7423706
-          }, {
-            "name": "Libya",
-            "x": 8.615731239,
-            "y": 0.647727251,
-            "z": 29.64449883
-          }, {
-            "name": "Madagascar",
-            "x": 5.996044159,
-            "y": 0.522727251,
-            "z": 4.056933403
-          }, {
-            "name": "Malawi",
-            "x": 5.918855667,
-            "y": 0.5,
-            "z": 4.160292149
-          }, {
-            "name": "Malaysia",
-            "x": 9.186900139,
-            "y": 0.340909094,
-            "z": 2.088070154
-          }, {
-            "name": "Maldives",
-            "x": 9.035485268,
-            "y": 0.193181813,
-            "z": 0.964552701
-          }, {
-            "name": "Mali",
-            "x": 6.585145473,
-            "y": 0.647727251,
-            "z": 3.548070908
-          }, {
-            "name": "Marshall Islands",
-            "x": 8.127394676,
-            "y": 0.386363626,
-            "z": 0
-          }, {
-            "name": "Mauritania",
-            "x": 7.223284721,
-            "y": 0.602272749,
-            "z": 7.039425373
-          }, {
-            "name": "Mauritius",
-            "x": 9.132606506,
-            "y": 0.193181813,
-            "z": 1.739635825
-          }, {
-            "name": "Mexico",
-            "x": 9.105538368,
-            "y": 0.5,
-            "z": 1.456831932
-          }, {
-            "name": "Moldova Republic of",
-            "x": 7.521892548,
-            "y": 0.261363626,
-            "z": 0.9678846
-          }, {
-            "name": "Mongolia",
-            "x": 8.285974503,
-            "y": 0.386363626,
-            "z": 3.34421277
-          }, {
-            "name": "Montenegro",
-            "x": 8.765001297,
-            "y": 0.227272734,
-            "z": 2.048940182
-          }, {
-            "name": "Morocco",
-            "x": 7.964920998,
-            "y": 0.397727281,
-            "z": 2.540683746
-          }, {
-            "name": "Mozambique",
-            "x": 6.271446705,
-            "y": 0.636363626,
-            "z": 5.253964424
-          }, {
-            "name": "Myanmar",
-            "x": 7.057457447,
-            "y": 0.715909064,
-            "z": 248.6993866
-          }, {
-            "name": "Namibia",
-            "x": 8.449678421,
-            "y": 0.375,
-            "z": 14.00346851
-          }, {
-            "name": "Nepal",
-            "x": 6.611130714,
-            "y": 0.568181813,
-            "z": 39.87917709
-          }, {
-            "name": "Nicaragua",
-            "x": 7.643432617,
-            "y": 0.431818187,
-            "z": 7.589557648
-          }, {
-            "name": "Niger",
-            "x": 5.883205891,
-            "y": 0.784090936,
-            "z": 6.426112652
-          }, {
-            "name": "Nigeria",
-            "x": 7.878644466,
-            "y": 0.670454562,
-            "z": 6.640343189
-          }, {
-            "name": "Pakistan",
-            "x": 7.268708706,
-            "y": 0.704545438,
-            "z": 49.45932388
-          }, {
-            "name": "Palestine",
-            "x": 7.960951805,
-            "y": 0.5,
-            "z": 0.343125403
-          }, {
-            "name": "Papua New Guinea",
-            "x": 7.72672987,
-            "y": 0.613636374,
-            "z": 10.49371719
-          }, {
-            "name": "Paraguay",
-            "x": 8.314085007,
-            "y": 0.284090906,
-            "z": 1.757870317
-          }, {
-            "name": "Peru",
-            "x": 8.704025269,
-            "y": 0.420454532,
-            "z": 13.13273144
-          }, {
-            "name": "Philippines",
-            "x": 7.973914146,
-            "y": 0.511363626,
-            "z": 20.30426025
-          }, {
-            "name": "Romania",
-            "x": 9.101966858,
-            "y": 0.25,
-            "z": 3.057680845
-          }, {
-            "name": "Russian Federation",
-            "x": 9.115214348,
-            "y": 0.454545468,
-            "z": 37.57993317
-          }, {
-            "name": "Rwanda",
-            "x": 6.54728508,
-            "y": 0.556818187,
-            "z": 2.009607315
-          }, {
-            "name": "Saint Lucia",
-            "x": 8.95362854,
-            "y": 0.147727266,
-            "z": 10.70074749
-          }, {
-            "name": "Saint Vincent and the Grenadines",
-            "x": 8.815692902,
-            "y": 0.147727266,
-            "z": 9.978404999
-          }, {
-            "name": "Samoa",
-            "x": 8.278567314,
-            "y": 0.272727281,
-            "z": 83.16770935
-          }, {
-            "name": "Sao Tome and Principe",
-            "x": 7.420017719,
-            "y": 0.090909094,
-            "z": 33.33759689
-          }, {
-            "name": "Senegal",
-            "x": 6.801928043,
-            "y": 0.534090936,
-            "z": 5.069311619
-          }, {
-            "name": "Serbia",
-            "x": 8.563149452,
-            "y": 0.431818187,
-            "z": 1.141863227
-          }, {
-            "name": "Sierra Leone",
-            "x": 6.481779099,
-            "y": 0.545454562,
-            "z": 73.53516388
-          }, {
-            "name": "Solomon Islands",
-            "x": 7.567788124,
-            "y": 0.522727251,
-            "z": 24.63837051
-          }, {
-            "name": "Somalia",
-            "x": 6.30858469,
-            "y": 1,
-            "z": 209.5885162
-          }, {
-            "name": "South Africa",
-            "x": 8.652418137,
-            "y": 0.443181813,
-            "z": 2.670026541
-          }, {
-            "name": "South Sudan",
-            "x": 6.593838692,
-            "y": 0.954545438,
-            "z": 4.411718845
-          }, {
-            "name": "Sri Lanka",
-            "x": 8.275421143,
-            "y": 0.386363626,
-            "z": 6.072457314
-          }, {
-            "name": "Sudan",
-            "x": 7.789340019,
-            "y": 0.75,
-            "z": 10.61271095
-          }, {
-            "name": "Suriname",
-            "x": 9.157500267,
-            "y": 0.261363626,
-            "z": 4.497348785
-          }, {
-            "name": "Swaziland",
-            "x": 8.070950508,
-            "y": 0.340909094,
-            "z": 1.877121687
-          }, {
-            "name": "Syria",
-            "x": 7.640117168,
-            "y": 0.738636374,
-            "z": 1.23863101
-          }, {
-            "name": "Tajikistan",
-            "x": 6.830779076,
-            "y": 0.454545468,
-            "z": 3.881585836
-          }, {
-            "name": "Tanzania",
-            "x": 6.778756618,
-            "y": 0.602272749,
-            "z": 3.48759222
-          }, {
-            "name": "Thailand",
-            "x": 8.668156624,
-            "y": 0.409090906,
-            "z": 3.235871315
-          }, {
-            "name": "The former Yugoslav Republic of Macedonia",
-            "x": 8.487281799,
-            "y": 0.261363626,
-            "z": 1.669955969
-          }, {
-            "name": "Timor-Leste",
-            "x": 7.054443359,
-            "y": 0.431818187,
-            "z": 2.282208443
-          }, {
-            "name": "Togo",
-            "x": 6.327286243,
-            "y": 0.420454532,
-            "z": 4.480598927
-          }, {
-            "name": "Tonga",
-            "x": 8.318387032,
-            "y": 0.261363626,
-            "z": 74.7022171
-          }, {
-            "name": "Tunisia",
-            "x": 8.261658669,
-            "y": 0.306818187,
-            "z": 2.944574356
-          }, {
-            "name": "Turkey",
-            "x": 9.118848801,
-            "y": 0.522727251,
-            "z": 2.732480764
-          }, {
-            "name": "Turkmenistan",
-            "x": 8.805746078,
-            "y": 0.318181813,
-            "z": 0.267030358
-          }, {
-            "name": "Tuvalu",
-            "x": 8.10016346,
-            "y": 0.397727281,
-            "z": 0
-          }, {
-            "name": "Uganda",
-            "x": 6.558612823,
-            "y": 0.625,
-            "z": 5.329753876
-          }, {
-            "name": "Ukraine",
-            "x": 7.656788826,
-            "y": 0.556818187,
-            "z": 3.378254414
-          }, {
-            "name": "Uzbekistan",
-            "x": 7.664848804,
-            "y": 0.306818187,
-            "z": 0.118399024
-          }, {
-            "name": "Vanuatu",
-            "x": 7.939270973,
-            "y": 0.397727281,
-            "z": 7.992454529
-          }, {
-            "name": "Venezuela",
-            "x": 9.414507866,
-            "y": 0.465909094,
-            "z": 2.048371792
-          }, {
-            "name": "Viet Nam",
-            "x": 7.654982567,
-            "y": 0.352272719,
-            "z": 3.463821173
-          }, {
-            "name": "Yemen",
-            "x": 7.248711586,
-            "y": 0.818181813,
-            "z": 5.482543468
-          }, {
-            "name": "Zambia",
-            "x": 7.173865795,
-            "y": 0.420454532,
-            "z": 4.983534336
-          }, {
-            "name": "Zimbabwe",
-            "x": 6.828867912,
-            "y": 0.511363626,
-            "z": 34.07693481
-          }],
-          name: 'Countries',
-          type: 'bubble',
-          enableMouseTracking:true
-          
-        }],
-        plotOptions: {
-        series: {
-        enableMouseTracking:false
-        },
-          bubble: {
-            maxSize: 100,
-            dataLabels: {
-              enabled: true,
-              formatter: function() {
-                label = this.point.z > 100 ? this.point.name : '';
-                return label;
-              }
-            },
+         },
+         data: [{
+           "name": "Afghanistan",
+           "x": 594.32,
+           "y": 0.84,
+           "z": 17.75
+         }, {
+           "name": "Albania",
+           "x": 3945.22,
+           "y": 0.27,
+           "z": 2.36
+         }, {
+           "name": "Algeria",
+           "x": 4206.03,
+           "y": 0.45,
+           "z": 1.71
+         }, {
+           "name": "Angola",
+           "x": 4101.47,
+           "y": 0.51,
+           "z": 19.11
+         }, {
+           "name": "Armenia",
+           "x": 3489.13,
+           "y": 0.38,
+           "z": 0
+         }, {
+           "name": "Azerbaijan",
+           "x": 5496.34,
+           "y": 0.49,
+           "z": 1.01
+         }, {
+           "name": "Bangladesh",
+           "x": 1211.7,
+           "y": 0.61,
+           "z": 6.67
+         }, {
+           "name": "Belarus",
+           "x": 5740.46,
+           "y": 0.18,
+           "z": 0.1
+         }, {
+           "name": "Belize",
+           "x": 4878.72,
+           "y": 0.33,
+           "z": 3.34
+         }, {
+           "name": "Benin",
+           "x": 762.05,
+           "y": 0.45,
+           "z": 3.22
+         }, {
+           "name": "Bhutan",
+           "x": 2656,
+           "y": 0.28,
+           "z": 3.08
+         }, {
+           "name": "Bolivia",
+           "x": 3076.79,
+           "y": 0.41,
+           "z": 8.55
+         }, {
+           "name": "Bosnia and Herzegovina",
+           "x": 4249.33,
+           "y": 0.42,
+           "z": 1.21
+         }, {
+           "name": "Botswana",
+           "x": 6360.14,
+           "y": 0.28,
+           "z": 23.13
+         }, {
+           "name": "Brazil",
+           "x": 8538.59,
+           "y": 0.34,
+           "z": 1.69
+         }, {
+           "name": "Bulgaria",
+           "x": 6993.48,
+           "y": 0.25,
+           "z": 2.23
+         }, {
+           "name": "Burkina Faso",
+           "x": 589.77,
+           "y": 0.57,
+           "z": 27.81
+         }, {
+           "name": "Burundi",
+           "x": 277.07,
+           "y": 0.67,
+           "z": 4.08
+         }, {
+           "name": "Cabo Verde",
+           "x": 3080.18,
+           "y": 0.24,
+           "z": 16.64
+         }, {
+           "name": "Cambodia",
+           "x": 1158.69,
+           "y": 0.47,
+           "z": 7.35
+         }, {
+           "name": "Cameroon",
+           "x": 1217.26,
+           "y": 0.66,
+           "z": 9.59
+         }, {
+           "name": "Central African Republic",
+           "x": 323.2,
+           "y": 0.91,
+           "z": 7.81
+         }, {
+           "name": "Chad",
+           "x": 775.7,
+           "y": 0.83,
+           "z": 9.97
+         }, {
+           "name": "China",
+           "x": 8027.68,
+           "y": 0.42,
+           "z": 7.84
+         }, {
+           "name": "Colombia",
+           "x": 6056.15,
+           "y": 0.57,
+           "z": 5.61
+         }, {
+           "name": "Comoros",
+           "x": 717.45,
+           "y": 0.38,
+           "z": 73.22
+         }, {
+           "name": "Congo",
+           "x": 1851.2,
+           "y": 0.56,
+           "z": 18.25
+         }, {
+           "name": "Congo DR",
+           "x": 456.05,
+           "y": 0.75,
+           "z": 7.79
+         }, {
+           "name": "Costa Rica",
+           "x": 11260.09,
+           "y": 0.28,
+           "z": 2.53
+         }, {
+           "name": "Croatia",
+           "x": 11535.83,
+           "y": 0.2,
+           "z": 0.89
+         }, {
+           "name": "Cuba",
+           "x": 6789.85,
+           "y": 0.25,
+           "z": 2.09
+         }, {
+           "name": "Côte d'Ivoire",
+           "x": 1398.99,
+           "y": 0.6,
+           "z": 2.19
+         }, {
+           "name": "Djibouti",
+           "x": 1945.12,
+           "y": 0.56,
+           "z": 17.33
+         }, {
+           "name": "Dominica",
+           "x": 7116.39,
+           "y": 0.3,
+           "z": 40.09
+         }, {
+           "name": "Dominican Republic",
+           "x": 6468.47,
+           "y": 0.34,
+           "z": 7.18
+         }, {
+           "name": "Ecuador",
+           "x": 6205.06,
+           "y": 0.43,
+           "z": 2.94
+         }, {
+           "name": "Egypt",
+           "x": 3614.75,
+           "y": 0.47,
+           "z": 3.18
+         }, {
+           "name": "El Salvador",
+           "x": 4219.35,
+           "y": 0.56,
+           "z": 8.23
+         }, {
+           "name": "Eritrea",
+           "x": 544.46,
+           "y": 0.57,
+           "z": 1.21
+         }, {
+           "name": "Ethiopia",
+           "x": 619.17,
+           "y": 0.68,
+           "z": 2.3
+         }, {
+           "name": "Fiji",
+           "x": 4960.52,
+           "y": 0.31,
+           "z": 5.43
+         }, {
+           "name": "Gabon",
+           "x": 8266.45,
+           "y": 0.4,
+           "z": 5.19
+         }, {
+           "name": "Gambia",
+           "x": 471.54,
+           "y": 0.36,
+           "z": 3.32
+         }, {
+           "name": "Georgia",
+           "x": 3795.97,
+           "y": 0.4,
+           "z": 1.27
+         }, {
+           "name": "Ghana",
+           "x": 1369.7,
+           "y": 0.36,
+           "z": 4.87
+         }, {
+           "name": "Grenada",
+           "x": 9212.02,
+           "y": 0.1,
+           "z": 0.88
+         }, {
+           "name": "Guatemala",
+           "x": 3903.48,
+           "y": 0.58,
+           "z": 18.85
+         }, {
+           "name": "Guinea",
+           "x": 531.32,
+           "y": 0.52,
+           "z": 26.62
+         }, {
+           "name": "Guinea-Bissau",
+           "x": 572.99,
+           "y": 0.5,
+           "z": 48.71
+         }, {
+           "name": "Guyana",
+           "x": 4127.35,
+           "y": 0.34,
+           "z": 4.16
+         }, {
+           "name": "Haiti",
+           "x": 818.34,
+           "y": 0.69,
+           "z": 2040.76
+         }, {
+           "name": "Honduras",
+           "x": 2528.89,
+           "y": 0.51,
+           "z": 10.34
+         }, {
+           "name": "Hungary",
+           "x": 12363.54,
+           "y": 0.19,
+           "z": 5.93
+         }, {
+           "name": "India",
+           "x": 1598.26,
+           "y": 0.6,
+           "z": 2.47
+         }, {
+           "name": "Indonesia",
+           "x": 3346.49,
+           "y": 0.44,
+           "z": 6.6
+         }, {
+           "name": "Iran",
+           "x": 5442.88,
+           "y": 0.52,
+           "z": 3.53
+         }, {
+           "name": "Iraq",
+           "x": 4943.76,
+           "y": 0.74,
+           "z": 5.22
+         }, {
+           "name": "Jamaica",
+           "x": 5232.02,
+           "y": 0.24,
+           "z": 1.5
+         }, {
+           "name": "Jordan",
+           "x": 4940.05,
+           "y": 0.42,
+           "z": 0.7
+         }, {
+           "name": "Kazakhstan",
+           "x": 10509.98,
+           "y": 0.19,
+           "z": 1.51
+         }, {
+           "name": "Kenya",
+           "x": 1376.71,
+           "y": 0.65,
+           "z": 5.94
+         }, {
+           "name": "Kiribati",
+           "x": 1424.28,
+           "y": 0.36,
+           "z": 0
+         }, {
+           "name": "Kyrgyzstan",
+           "x": 1103.22,
+           "y": 0.35,
+           "z": 2.76
+         }, {
+           "name": "Lao PDR",
+           "x": 1818.44,
+           "y": 0.44,
+           "z": 3.61
+         }, {
+           "name": "Lebanon",
+           "x": 8047.65,
+           "y": 0.57,
+           "z": 2.94
+         }, {
+           "name": "Lesotho",
+           "x": 1066.99,
+           "y": 0.43,
+           "z": 3.02
+         }, {
+           "name": "Liberia",
+           "x": 455.87,
+           "y": 0.53,
+           "z": 100.74
+         }, {
+           "name": "Libya",
+           "x": 5517.78,
+           "y": 0.65,
+           "z": 29.64
+         }, {
+           "name": "Madagascar",
+           "x": 401.84,
+           "y": 0.52,
+           "z": 4.06
+         }, {
+           "name": "Malawi",
+           "x": 371.99,
+           "y": 0.5,
+           "z": 4.16
+         }, {
+           "name": "Malaysia",
+           "x": 9768.33,
+           "y": 0.34,
+           "z": 2.09
+         }, {
+           "name": "Maldives",
+           "x": 8395.79,
+           "y": 0.19,
+           "z": 0.96
+         }, {
+           "name": "Mali",
+           "x": 724.26,
+           "y": 0.65,
+           "z": 3.55
+         }, {
+           "name": "Marshall Islands",
+           "x": 3385.97,
+           "y": 0.39,
+           "z": 0
+         }, {
+           "name": "Mauritania",
+           "x": 1370.99,
+           "y": 0.6,
+           "z": 7.04
+         }, {
+           "name": "Mauritius",
+           "x": 9252.11,
+           "y": 0.19,
+           "z": 1.74
+         }, {
+           "name": "Mexico",
+           "x": 9005.02,
+           "y": 0.5,
+           "z": 1.46
+         }, {
+           "name": "Moldova Republic of",
+           "x": 1848.06,
+           "y": 0.26,
+           "z": 0.97
+         }, {
+           "name": "Mongolia",
+           "x": 3967.83,
+           "y": 0.39,
+           "z": 3.34
+         }, {
+           "name": "Montenegro",
+           "x": 6406.07,
+           "y": 0.23,
+           "z": 2.05
+         }, {
+           "name": "Morocco",
+           "x": 2878.2,
+           "y": 0.4,
+           "z": 2.54
+         }, {
+           "name": "Mozambique",
+           "x": 529.24,
+           "y": 0.64,
+           "z": 5.25
+         }, {
+           "name": "Myanmar",
+           "x": 1161.49,
+           "y": 0.72,
+           "z": 248.7
+         }, {
+           "name": "Namibia",
+           "x": 4673.57,
+           "y": 0.38,
+           "z": 14
+         }, {
+           "name": "Nepal",
+           "x": 743.32,
+           "y": 0.57,
+           "z": 39.88
+         }, {
+           "name": "Nicaragua",
+           "x": 2086.9,
+           "y": 0.43,
+           "z": 7.59
+         }, {
+           "name": "Niger",
+           "x": 358.96,
+           "y": 0.78,
+           "z": 6.43
+         }, {
+           "name": "Nigeria",
+           "x": 2640.29,
+           "y": 0.67,
+           "z": 6.64
+         }, {
+           "name": "Pakistan",
+           "x": 1434.7,
+           "y": 0.7,
+           "z": 49.46
+         }, {
+           "name": "Palestine",
+           "x": 2866.8,
+           "y": 0.5,
+           "z": 0.34
+         }, {
+           "name": "Papua New Guinea",
+           "x": 2268.17,
+           "y": 0.61,
+           "z": 10.49
+         }, {
+           "name": "Paraguay",
+           "x": 4080.95,
+           "y": 0.28,
+           "z": 1.76
+         }, {
+           "name": "Peru",
+           "x": 6027.13,
+           "y": 0.42,
+           "z": 13.13
+         }, {
+           "name": "Philippines",
+           "x": 2904.2,
+           "y": 0.51,
+           "z": 20.3
+         }, {
+           "name": "Romania",
+           "x": 8972.92,
+           "y": 0.25,
+           "z": 3.06
+         }, {
+           "name": "Russian Federation",
+           "x": 9092.58,
+           "y": 0.45,
+           "z": 37.58
+         }, {
+           "name": "Rwanda",
+           "x": 697.35,
+           "y": 0.56,
+           "z": 2.01
+         }, {
+           "name": "Saint Lucia",
+           "x": 7735.91,
+           "y": 0.15,
+           "z": 10.7
+         }, {
+           "name": "Saint Vincent and the Grenadines",
+           "x": 6739.17,
+           "y": 0.15,
+           "z": 9.98
+         }, {
+           "name": "Samoa",
+           "x": 3938.55,
+           "y": 0.27,
+           "z": 83.17
+         }, {
+           "name": "Sao Tome and Principe",
+           "x": 1669.06,
+           "y": 0.09,
+           "z": 33.34
+         }, {
+           "name": "Senegal",
+           "x": 899.58,
+           "y": 0.53,
+           "z": 5.07
+         }, {
+           "name": "Serbia",
+           "x": 5235.14,
+           "y": 0.43,
+           "z": 1.14
+         }, {
+           "name": "Sierra Leone",
+           "x": 653.13,
+           "y": 0.55,
+           "z": 73.54
+         }, {
+           "name": "Solomon Islands",
+           "x": 1934.86,
+           "y": 0.52,
+           "z": 24.64
+         }, {
+           "name": "Somalia",
+           "x": 549.27,
+           "y": 1,
+           "z": 209.59
+         }, {
+           "name": "South Africa",
+           "x": 5723.97,
+           "y": 0.44,
+           "z": 2.67
+         }, {
+           "name": "South Sudan",
+           "x": 730.58,
+           "y": 0.95,
+           "z": 4.41
+         }, {
+           "name": "Sri Lanka",
+           "x": 3926.17,
+           "y": 0.39,
+           "z": 6.07
+         }, {
+           "name": "Sudan",
+           "x": 2414.72,
+           "y": 0.75,
+           "z": 10.61
+         }, {
+           "name": "Suriname",
+           "x": 9485.32,
+           "y": 0.26,
+           "z": 4.5
+         }, {
+           "name": "Swaziland",
+           "x": 3200.14,
+           "y": 0.34,
+           "z": 1.88
+         }, {
+           "name": "Syria",
+           "x": 2079.99,
+           "y": 0.74,
+           "z": 1.24
+         }, {
+           "name": "Tajikistan",
+           "x": 925.91,
+           "y": 0.45,
+           "z": 3.88
+         }, {
+           "name": "Tanzania",
+           "x": 878.98,
+           "y": 0.6,
+           "z": 3.49
+         }, {
+           "name": "Thailand",
+           "x": 5814.77,
+           "y": 0.41,
+           "z": 3.24
+         }, {
+           "name": "The former Yugoslav Republic of Macedonia",
+           "x": 4852.66,
+           "y": 0.26,
+           "z": 1.67
+         }, {
+           "name": "Timor-Leste",
+           "x": 1157.99,
+           "y": 0.43,
+           "z": 2.28
+         }, {
+           "name": "Togo",
+           "x": 559.64,
+           "y": 0.42,
+           "z": 4.48
+         }, {
+           "name": "Tonga",
+           "x": 4098.54,
+           "y": 0.26,
+           "z": 74.7
+         }, {
+           "name": "Tunisia",
+           "x": 3872.51,
+           "y": 0.31,
+           "z": 2.94
+         }, {
+           "name": "Turkey",
+           "x": 9125.69,
+           "y": 0.52,
+           "z": 2.73
+         }, {
+           "name": "Turkmenistan",
+           "x": 6672.48,
+           "y": 0.32,
+           "z": 0.27
+         }, {
+           "name": "Tuvalu",
+           "x": 3295.01,
+           "y": 0.4,
+           "z": 0
+         }, {
+           "name": "Uganda",
+           "x": 705.29,
+           "y": 0.63,
+           "z": 5.33
+         }, {
+           "name": "Ukraine",
+           "x": 2114.95,
+           "y": 0.56,
+           "z": 3.38
+         }, {
+           "name": "Uzbekistan",
+           "x": 2132.07,
+           "y": 0.31,
+           "z": 0.12
+         }, {
+           "name": "Vanuatu",
+           "x": 2805.31,
+           "y": 0.4,
+           "z": 7.99
+         }, {
+           "name": "Venezuela",
+           "x": 12265.03,
+           "y": 0.47,
+           "z": 2.05
+         }, {
+           "name": "Viet Nam",
+           "x": 2111.14,
+           "y": 0.35,
+           "z": 3.46
+         }, {
+           "name": "Yemen",
+           "x": 1406.29,
+           "y": 0.82,
+           "z": 5.48
+         }, {
+           "name": "Zambia",
+           "x": 1304.88,
+           "y": 0.42,
+           "z": 4.98
+         }, {
+           "name": "Zimbabwe",
+           "x": 924.14,
+           "y": 0.51,
+           "z": 34.08
+         }],
+         name: 'Countries',
+         type: 'bubble',
+         enableMouseTracking: true,
+         showInLegend: true
 
-          }
-        },
+       }],
+       plotOptions: {
+         series: {
+           enableMouseTracking: false,
+           showInLegend: false
+         },
+         bubble: {
+           maxSize: 100,
+           dataLabels: {
+             enabled: true,
+             formatter: function() {
+               label = this.point.z > 100 ? this.point.name : '';
+               return label;
+             }
+           },
+
+         }
+       },
        tooltip: {
-                  formatter: function() {
-
-               
-                    return '<b>' + this.point.name + '</b><br />GDP per capita (log): ' + Highcharts.numberFormat(this.point.x, 2, '.', ',') + '<br/>Vulnerability index: ' + Highcharts.numberFormat(this.point.y, 2, '.', ',') + '<br />Deaths (in proportion to population): ' +Highcharts.numberFormat(this.point.z, 0, '.', ',') + '<br/>';
-                
-
-                  }
-                },
-        yAxis: {
-          type: 'linear',
-          title: {
-            text: 'vulnerability (INFORM Index)'
-          },
-          tickWidth: 0,
-          max: 1,
-          gridLineWidth: 0,
-          labels: {
-            enabled: true
-          },
-        },
-        xAxis: {
-          title: {
-            text: 'GDP per capita (logs)'
-          },
-          minPadding: 0.02,
-          type: 'linear',
-          tickWidth: 0,
-          labels: {
-            enabled: true
-          },
-
-        },
-        legend: {
-          enabled: false
-        }
-
-      });
+         formatter: function() {
 
 
-    });
+           return '<b>' + this.point.name + '</b><br />GDP per capita: $' + Highcharts.numberFormat(this.point.x, 0, '.', ',') + '<br/>Vulnerability index: ' + Highcharts.numberFormat(this.point.y, 2, '.', ',') + '<br />Deaths per million: ' + Highcharts.numberFormat(this.point.z, 0, '.', ',') + '<br/>';
 
 
+         }
+       },
+       yAxis: {
+         type: 'linear',
+         title: {
+           text: 'vulnerability (INFORM Index)'
+         },
+         tickWidth: 0,
+         max: 1,
+         gridLineWidth: 0,
+         labels: {
+           enabled: true
+         },
+       },
+       xAxis: {
+         title: {
+           text: 'GDP per capita (log scale)'
+         },
+         minPadding: 0.02,
+         type: 'logarithmic',
+         tickWidth: 0,
+         labels: {
+           enabled: true,
+           format: '{value:,.0f}'
+
+         },
+
+       },
+       legend: {
+         labelFormatter: function() {
+
+           return 'Disaster deaths per million of population, average 2005–2015';
+         }
+       }
+
+     
+
+   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+ });
 
 
 
@@ -859,80 +852,86 @@ var categories = ['Lower middle', 'Upper middle'];
  */
 
 
-$(function() {
-  $('#chart-3').highcharts({
-    chart: {
-      type: 'column',
-    },
-    colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
-    series: [{
-        name: 'High income',
-        data: [
-          ['Damage', 2077.026187],
-          ['Hum. Capital Loss', 317.1241505],
-          ['Deaths', 242010]
-        ]
-        
-      }, {
-        name: 'Upper middle',
-        data: [
-          ['Damage', 415.5770712],
-          ['Hum. Capital Loss', 85.9753035],
-          ['Deaths', 161835]
-        ]
-       
-      }, {
-        name: 'Lower middle',
-        data: [
-          ['Damage', 548.484038],
-          ['Hum. Capital Loss', 114.8324132],
-          ['Deaths', 671115]
-        ]
-      },
-      {
-        name: 'Low income',
-        data: [
-          ['Damage', 472.3523603],
-          ['Hum. Capital Loss', 78.53275104],
-          ['Deaths', 2416291]
-        ]
-      }
+ $(function() {
+   $('#chart-3').highcharts({
+     chart: {
+       type: 'column',
+     },
+     colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9D3", "#9FBFF7"],
+     series: [{
+         name: 'High income',
+         data: [
+           ['Damage', 2077.026187],
+           ['Hum. Capital Loss', 317.1241505],
+           ['Deaths', 242010]
+         ]
 
-    ],
-    plotOptions: {
-      column: {
-        stacking: 'percent'
-      }
-    },
+       }, {
+         name: 'Upper middle',
+         data: [
+           ['Damage', 415.5770712],
+           ['Hum. Capital Loss', 85.9753035],
+           ['Deaths', 161835]
+         ]
 
-    tooltip: {
-      formatter: function() {
-        if (this.key == 'Deaths') {
-          return '<b>' + this.series.name + '</b><br />' + this.key + ': ' + Highcharts.numberFormat(this.y, 0, '.', ',') + '<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
-        } else {
-          return '<b>' + this.series.name + '</b><br />' + this.key + ': $' + Highcharts.numberFormat(this.y, 2, '.', ',') + ' billion<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
-        }
+       }, {
+         name: 'Lower middle',
+         data: [
+           ['Damage', 548.484038],
+           ['Hum. Capital Loss', 114.8324132],
+           ['Deaths', 671115]
+         ]
+       }, {
+         name: 'Low income',
+         data: [
+           ['Damage', 472.3523603],
+           ['Hum. Capital Loss', 78.53275104],
+           ['Deaths', 2416291]
+         ]
+       }
 
-      }
-    },
-    title: {
-      text: 'Damage Mainly in Rich Countries but Deaths Mainly in Poor Countries'
-    },
-    subtitle: {
-      text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). ‘Human capital loss’ estimated as number of deaths from Em-Dat times difference between life expectancy and median age in country times real income per capita. Median age is median-variant projection from United Nations (2012), income per capita and life expectancy from World Bank (2015b). CGD analysis.'
-    },
-    yAxis: {
-      title: {
-        text: 'share of total (percent)'
-      },
-      reversedStacks: false
-    }
-  });
+     ],
+     plotOptions: {
+       column: {
+         stacking: 'percent'
+       }
+     },
 
+     tooltip: {
+       formatter: function() {
+         if (this.key == 'Deaths') {
+           return '<b>' + this.series.name + '</b><br />' + this.key + ': ' + Highcharts.numberFormat(this.y, 0, '.', ',') + '<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
+         } else {
+           return '<b>' + this.series.name + '</b><br />' + this.key + ': $' + Highcharts.numberFormat(this.y, 0, '.', ',') + ' billion<br />Share: ' + Highcharts.numberFormat(this.point.percentage, 0, '.', ',') + '%';
+         }
+
+       }
+     },
+     title: {
+       text: 'Damage Mainly in Rich Countries but Deaths Mainly in Poor Countries'
+     },
+     subtitle: {
+       text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). ‘Human capital loss’ estimated as number of deaths from Em-Dat times difference between life expectancy and median age in country times real income per capita. Median age is median-variant projection from United Nations (2012), income per capita and life expectancy from World Bank (2015b). CGD analysis.'
+     },
+     yAxis: {
+       title: {
+         text: 'share of total (percent)'
+       },
+       reversedStacks: false
+     }
+   });
 
 
 
-});
+
+ });
+
+
+
+
+
+
+
 
 
 
@@ -1308,7 +1307,7 @@ colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9
 
     yAxis: {
       title:{
-        text:   'billions USD'
+        text:   'billions USD(2010)'
 }
     },
     xAxis: {
@@ -2389,116 +2388,12 @@ $(function() {
 
 
 
+
+
+
 $(function() {
 
   $('#chart-13').highcharts({
-    chart: {
-      type: 'column',
-      marker: {
-        enabled: false
-      }
-    },
-
-
-    series: [
-
-      {
-
-        name: 'Requirements',
-        data: [
-          [Date.UTC(2006, 0, 1), 5.91],
-          [Date.UTC(2007, 0, 1), 5.63],
-          [Date.UTC(2008, 0, 1), 7.19],
-          [Date.UTC(2009, 0, 1), 9.99],
-          [Date.UTC(2010, 0, 1), 11.25],
-          [Date.UTC(2011, 0, 1), 8.54],
-          [Date.UTC(2012, 0, 1), 8.59],
-          [Date.UTC(2013, 0, 1), 11.61],
-          [Date.UTC(2014, 0, 1), 15.77],
-          [Date.UTC(2015, 0, 1), 16.39]
-        ]
-      }, {
-
-        name: 'Funding',
-        data: [
-          [Date.UTC(2006, 0, 1), 3.95],
-          [Date.UTC(2007, 0, 1), 4.07],
-          [Date.UTC(2008, 0, 1), 5.41],
-          [Date.UTC(2009, 0, 1), 7.24],
-          [Date.UTC(2010, 0, 1), 7.25],
-          [Date.UTC(2011, 0, 1), 5.50],
-          [Date.UTC(2012, 0, 1), 5.39],
-          [Date.UTC(2013, 0, 1), 7.53],
-          [Date.UTC(2014, 0, 1), 9.61],
-          [Date.UTC(2015, 0, 1), 9.27]
-        ]
-      }, {
-        name: 'Deficit',
-        data: [
-          [Date.UTC(2006, 0, 1), -1.96],
-          [Date.UTC(2007, 0, 1), -1.56],
-          [Date.UTC(2008, 0, 1), -1.78],
-          [Date.UTC(2009, 0, 1), -2.75],
-          [Date.UTC(2010, 0, 1), -4.00],
-          [Date.UTC(2011, 0, 1), -3.04],
-          [Date.UTC(2012, 0, 1), -3.20],
-          [Date.UTC(2013, 0, 1), -4.08],
-          [Date.UTC(2014, 0, 1), -6.16],
-          [Date.UTC(2015, 0, 1), -7.12]
-        ],
-        color: '#d95e66',
-        dataLabels: {
-          enabled: true,
-          formatter: function() {
-            return Highcharts.numberFormat(this.y, 1, '.', ',');
-          }
-        }
-      }
-    ],
-
-    title: {
-      text: 'The Humanitarian Financing Deficit Is Growing Fast'
-
-    },
-    subtitle: {
-      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis. '
-
-    },
-
-    yAxis: {
-      title: {
-        text: 'billions USD(2010)'
-      },
-      reversedStacks: false
-    },
-    xAxis: {
-      type: 'datetime'
-
-
-    },
-    plotOptions: {
-      series: {
-        marker: {
-          enabled: false
-        },
-        tooltip: {
-          valueDecimals: 1,
-          valueSuffix: ' billion',
-          valuePrefix: '$'
-        }
-      }
-
-    }
-
-
-  });
-});
-
-
-
-$(function() {
-
-  $('#chart-13b').highcharts({
     chart: {
       type: 'column',
       marker: {

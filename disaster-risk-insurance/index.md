@@ -5,8 +5,6 @@ custom_css: disaster
 ---
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-some dollar axes show years and others are don't; are the latter assumed to be in current dollars? should that be specified?
-
 ## Figure 1
 <div class="hc-chart" id="chart-1"></div>
 
@@ -14,7 +12,6 @@ some dollar axes show years and others are don't; are the latter assumed to be i
 <div class="hc-chart" id="chart-2"></div>
 
 ## Figure 3
-are the currency units in billions? (shows in tooltip)
 <div class="hc-chart" id="chart-3"></div>
 
 ## Figure 4
@@ -48,9 +45,6 @@ below: seems the effect of the chart depends a lot on the scale chosen for the l
 
 ## Figure 13 
 <div class="hc-chart" id="chart-13"></div>
-
-**alternate**
-<div class="hc-chart" id="chart-13b"></div>
 
 ## Figure 14
 <div class="hc-chart" id="chart-14"></div>
