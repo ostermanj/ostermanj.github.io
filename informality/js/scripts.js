@@ -20,7 +20,7 @@
 
     Chart.prototype = {
         setup: function() {
-            var margin = { top: 5, right: 15, bottom: 5, left: 0 },
+            var margin = { top: 5, right: 23, bottom: 5, left: 0 },
                 labelHeight = 0,
                 svgWidth = 95 - margin.right - margin.left,
                 svgHeight = 70 + labelHeight - margin.top - margin.bottom;
@@ -51,7 +51,7 @@
            
             var xAxis = d3.axisBottom().scale(x).tickSize(0);
 
-            var yAxis = d3.axisRight().scale(yAxisScale).ticks(5).tickSize(0);
+            var yAxis = d3.axisRight().scale(yAxisScale).ticks(2,",.0%").tickSize(0);
 
             
 
@@ -147,7 +147,7 @@
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
 
-             d3.selectAll('#charrt-0 .last-question .svg-wrapper')
+             d3.selectAll('#chart-0 .last-question .svg-wrapper')
                .append('p')
                .attr('class', 'country-label')
                .text(function(d){

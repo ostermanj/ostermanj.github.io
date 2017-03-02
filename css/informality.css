@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 h5 {
     font-family: Lato,Verdana,Arial,sans-serif;
     font-size: 14px;
+    
 }
 
 body {
@@ -152,7 +153,7 @@ rect:hover {
 .viz-category h4, .viz-category h5, .country-label {
     width: 100%;
     color: inherit;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 
@@ -243,4 +244,20 @@ rect:hover {
 
 .last-chart .y-axis {
     display: inline;
+}
+
+#chart-1 .y-axis {
+  display: inline;
+}
+
+.y-axis text {
+  fill: #666;
+}
+
+.post-content {
+  width: 750px;
+}
+
+#chart-1 .svg-wrapper {
+  margin-bottom: 10px;
 }

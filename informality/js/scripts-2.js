@@ -22,7 +22,7 @@
         setup: function() {
             var margin = { top: 5, right: 15, bottom: 5, left: 0 },
                 svgWidth = 320 - margin.right - margin.left,
-                svgHeight = 80 - margin.top - margin.bottom,
+                svgHeight = 90 - margin.top - margin.bottom,
                 labelWidth = 50;
 
             console.log(app.data); /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
@@ -48,7 +48,7 @@
            
             var xAxis = d3.axisLeft().scale(x).tickSize(0);
 
-            var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5).tickSize(0);
+            var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5,",.0%").tickSize(0);
 
             
 

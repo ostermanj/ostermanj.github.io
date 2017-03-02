@@ -8,7 +8,7 @@ custom_css: informality
 Figure 1:
 <div id="chart-0"></div>
 
-
+<p> </p>
 Figure 2:
 <div id="chart-1"></div>
 
