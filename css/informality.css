@@ -1,3 +1,69 @@
+/*
+ *
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Futura W02 Medium', Futura, Helvetica,Verdana,Arial,sans-serif;
+    letter-spacing: 0.01em;
+    padding-bottom: 12px;
+    font-weight: 600;
+
+}
+
+.viz-category h4 {
+    font-size: 15px;
+}
+
+h5 {
+    font-family: Lato,Verdana,Arial,sans-serif;
+    font-size: 14px;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #3b342b;
+    font-family: Lato,Verdana,Arial,sans-serif;
+}
+
+p.country-label {
+    font-size: 11px;
+    text-align: center;
+    width: 91px;
+
+}
+
+.series-0 rect {
+    fill: #438390;
+}
+
+.series-1 rect {
+    fill: #564e34;
+}
+
+.series-2 rect {
+    fill: #1fa9b8;
+}
+
+.series-3 rect {
+    fill: #898167;
+}
+
+.series-4 rect {
+    fill: #5ED6E4;
+}
+
+.series-5 rect {
+    fill: #C2B793;
+}
+
+.series-6 rect {
+    fill: #9CA9D3;
+}
+
+.series-7 rect {
+    fill: #9FBFF7;
+}
+
 #viz-container {
     width:550px;
     display: flex;
@@ -29,13 +95,13 @@
 }
 
 .electricity {
-    color: #296976;
-    background-color: rgba(93, 231, 255, 0.2)
+   /* color: #296976; */
+    /* background-color: rgba(93, 231, 255, 0.2) 8/
 }
 
 .access_to_finance {
     color: rgba(80, 67, 47, 0.87);
-    background-color: rgba(245, 214, 169, 0.15);
+   /* background-color: rgba(245, 214, 169, 0.15); */
 }
 
 .svg-wrapper svg {
@@ -46,60 +112,24 @@
 
 }
 
-.electricity .x-axis .domain, .electricity .y-axis .domain  {
-    stroke: #296976;
-}
-
-.x-axis text {
-    fill: #aabfc3;
-    
-
-}
-
-.electricity .y-axis text  {
-    fill: #296976;
-}
-
-.access_to_finance .x-axis .domain, .access_to_finance .y-axis .domain {
-    stroke: #69583e;
-}
-
-.access_to_finance .y-axis text  {
-    fill: #69583e;
-} 
-
-.DRC rect, rect.DRC {
-    fill: #0E3B43;
-  
-}
-
-.Ghana rect, rect.Ghana {
-    fill: #5B2333;
-  
-}
-
-.Kenya rect, rect.Kenya {
-    fill: #296976;
-  
-}
-.Myanmar rect, rect.Myanmar {
-    fill: #564B3D;
-  
-}
-.Rwanda rect, rect.Rwanda {
-    fill: #647275;
-  
-}
-
 rect {
-    fill-opacity: 0.6;
+    
     cursor: pointer;
     transition: fill 0.2s linear;
+
 
 }
 
 rect:hover {
-    fill:#bada33;
+    fill-opacity:0.5;
+}
+
+.x-axis path, .y-axis path {
+    stroke: #bbc;
+}
+
+.x-axis .tick text {
+
 }
 
 .svg-wrapper {
@@ -115,17 +145,11 @@ rect:hover {
     margin-bottom: 0;
 }
 
-.country-label {
-    font-family: "Passion One", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.4rem;
-    text-align: center;
-    margin:0;
 
-}
-
+/*
 .d3-tip {
     background-color: rgba(255,255,255, 0.9);
-    color: #000;
+    color: #3b342b;
     font-family: "Passion One", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     padding: 10px;
@@ -133,13 +157,69 @@ rect:hover {
     transition: opacity 0.5s linear;
 
 
+} */
+
+.d3-tip {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border:1px solid #dadada;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  font-size: 11px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  pointer-events: none;
+
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+  content: "\25BC";
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+  content: "\25C0";
+  margin: -4px 0 0 0;
+  top: 50%;
+  left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+  content: "\25B2";
+  margin: 0 0 1px 0;
+  top: -8px;
+  left: 0;
+  text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+  content: "\25B6";
+  margin: -4px 0 0 -1px;
+  top: 50%;
+  left: 100%;
 }
 
 .x-axis .tick text {
     display: none;
 }
 
-.first-category .first-question .first-chart .x-axis .tick text {
+.first-category .last-question .last-chart .x-axis .tick text {
     display: inline;
 }
 
