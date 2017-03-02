@@ -32,35 +32,35 @@ p.country-label {
 
 }
 
-.series-0 rect {
+.series-0 rect, rect.series-0 {
     fill: #438390;
 }
 
-.series-1 rect {
+.series-1 rect, rect.series-1 {
     fill: #564e34;
 }
 
-.series-2 rect {
+.series-2 rect, rect.series-2 {
     fill: #1fa9b8;
 }
 
-.series-3 rect {
+.series-3 rect, rect.series-3 {
     fill: #898167;
 }
 
-.series-4 rect {
+.series-4 rect, rect.series-4 {
     fill: #5ED6E4;
 }
 
-.series-5 rect {
+.series-5 rect, rect.series-5 {
     fill: #C2B793;
 }
 
-.series-6 rect {
+.series-6 rect, rect.series-6 {
     fill: #9CA9D3;
 }
 
-.series-7 rect {
+.series-7 rect, rect.series-7 {
     fill: #9FBFF7;
 }
 
