@@ -139,7 +139,9 @@
                 }
               }) // passing d.mean as parameter to scale function
               .attr('class', function(d){
-                return d.firm_type;
+              
+                  return d.firm_type;
+              
               })
               .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library

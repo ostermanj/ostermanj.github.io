@@ -64,6 +64,10 @@ p.country-label {
     fill: #9FBFF7;
 }
 
+.informal {
+    fill-opacity:0.5;
+}
+
 #viz-container {
     width:550px;
     display: flex;
@@ -122,6 +126,8 @@ rect {
 
 rect:hover {
     fill-opacity:0.5;
+    stroke:#fff;
+    stroke-width:1px;
 }
 
 .x-axis path, .y-axis path {
@@ -219,7 +225,7 @@ rect:hover {
     display: none;
 }
 
-.first-category .last-question .last-chart .x-axis .tick text {
+.last-question .last-chart .x-axis .tick text {
     display: inline;
 }
 
