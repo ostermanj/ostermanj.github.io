@@ -147,7 +147,7 @@
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
 
-             d3.selectAll('.last-question .svg-wrapper')
+             d3.selectAll('#charrt-0 .last-question .svg-wrapper')
                .append('p')
                .attr('class', 'country-label')
                .text(function(d){

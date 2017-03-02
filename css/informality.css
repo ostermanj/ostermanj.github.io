@@ -98,6 +98,10 @@ p.country-label {
     
 }
 
+#chart-1 .viz-question {
+  justify-content: flex-start;
+}
+
 .electricity {
    /* color: #296976; */
     /* background-color: rgba(93, 231, 255, 0.2) 8/
@@ -226,6 +230,10 @@ rect:hover {
 }
 
 .last-question .last-chart .x-axis .tick text {
+    display: inline;
+}
+
+#chart-1 .x-axis .tick text {
     display: inline;
 }
 

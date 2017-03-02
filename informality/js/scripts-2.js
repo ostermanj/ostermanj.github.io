@@ -21,8 +21,9 @@
     Chart.prototype = {
         setup: function() {
             var margin = { top: 5, right: 15, bottom: 5, left: 0 },
-                svgWidth = 95 - margin.right - margin.left,
-                svgHeight = 70 - margin.top - margin.bottom;
+                svgWidth = 320 - margin.right - margin.left,
+                svgHeight = 80 - margin.top - margin.bottom,
+                labelWidth = 50;
 
             console.log(app.data); /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
                                                                                               -> Object [key=outages]       -> array[5]
@@ -32,29 +33,29 @@
             
             var x = d3.scaleBand()
                       .domain(['DRC','Ghana', 'Kenya', 'Myanmar', 'Rwanda'])
-                      .range([0, svgWidth])
+                      .range([0, svgHeight])
                       .padding(0.33);  
 
             var y = d3.scaleLinear()
                       .domain([0,0.7])
-                      .range([0, svgHeight]);
+                      .range([0, svgWidth - labelWidth]);
 
            
             var yAxisScale = d3.scaleLinear()
                       .domain([0,0.7])
-                      .range([svgHeight, 0]);
+                      .range([0, svgWidth - labelWidth]);
 
            
-            var xAxis = d3.axisBottom().scale(x).tickSize(0);
+            var xAxis = d3.axisLeft().scale(x).tickSize(0);
 
-            var yAxis = d3.axisRight().scale(yAxisScale).ticks(5).tickSize(0);
+            var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5).tickSize(0);
 
             
 
             var tool_tip = d3.tip()
                   .attr("class", "d3-tip")
                  // .offset([-8, 0])
-                  .direction('n')
+                  .direction('e')
                   .html(function(d){
                       return '<b>' + d.country + '</b><br>'
                            + 'Yes: ' + d3.format(",.1%")(d.value);
@@ -81,14 +82,22 @@
                      
 
 
-              var svgs = questionDiv.selectAll('svg')
+              var svgWrappers = questionDiv.selectAll('svg')
               .data(function(d){ 
                 console.log(d);
                 return d.values;
                 }) // 4 x array[5] : Object[key=<country>]
               .enter().append('div')
-              .attr('class','svg-wrapper')
-              .append('svg')
+              .attr('class','svg-wrapper');
+
+              svgWrappers.append('h5')
+              .text(function(d){
+                console.log(d);
+                return d.values[0].readable;
+              })
+
+
+              var svgs = svgWrappers.append('svg')
               .attr('width', svgWidth + margin.left + margin.right)
               .attr('height', svgHeight + margin.top + margin.bottom)
               .attr('class', function(d,i,array){
@@ -96,20 +105,18 @@
                 return  d.key + str;
               })
               .append('g')
-              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+              //.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
               .selectAll('rect')
               .data(function(d){ return d.values; })  // numerical values of each
               .enter().append('rect')
       
-              .attr('x', function(d){ return x(d.country); })
               .attr('y', function(d){ 
-                
-                  return svgHeight - y(d.value); // passing d.mean as parameter to scale function
-                
-              }) 
+                  return x(d.country);
+              })
+              .attr('x', labelWidth + 10) 
          
-              .attr('width', x.bandwidth())
-              .attr('height', function(d){
+              .attr('height', x.bandwidth())
+              .attr('width', function(d){
                 
                   return y(d.value); // passing d.mean as parameter to scale function
                 
@@ -123,32 +130,32 @@
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
 
-             d3.selectAll('#chart-1 .last-question .svg-wrapper')
+/*             d3.selectAll('#chart-1 .last-question .svg-wrapper')
                .append('p')
                .attr('class', 'country-label')
                .text(function(d){
                 console.log(d);
                  return d.values[0].readable;
-               });
-
-          /*     questionDiv.selectAll('svg')
-               .append('g')
-              .attr('class', 'x-axis')
-              .attr('transform', 'translate(0,' + (svgHeight + margin.top) + ')')
-              .call(xAxis)
-              .selectAll("text")
-              .attr("transform", "rotate(-90)")
-              .attr("y", 0)
-              .attr("x", 0)
-              .attr("dx",22)
-              .attr("dy",3)
-              .style("text-anchor", "start");
+               }); */
 
               questionDiv.selectAll('svg')
+               .append('g')
+              .attr('class', 'x-axis')
+              .attr('transform', 'translate(' + (labelWidth + 10) + ', 0)')
+              .call(xAxis)
+              .selectAll("text")
+           //   .attr("transform", "rotate(-90)")
+              .attr("y", 1)
+              .attr("x", -7)
+         //     .attr("dx",22)
+              
+              .style("text-anchor", "end");
+
+             questionDiv.selectAll('svg')
               .append('g')
-              .attr('transform', 'translate(' +  svgWidth + ', ' + (margin.top) + ')')
+              .attr('transform', 'translate(' + (labelWidth + 10) + ',' + (svgHeight) + ')')
               .attr('class', 'y-axis')
-              .call(yAxis)*/
+              .call(yAxis);
 
 
        
