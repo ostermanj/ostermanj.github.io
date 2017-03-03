@@ -66,14 +66,15 @@ p.country-label {
 }
 
 .informal {
-    fill-opacity:0.5;
+    fill-opacity:0.7;
 }
 
-#viz-container {
+.viz-container {
     width:550px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -25px;
     
  
 }
@@ -99,7 +100,7 @@ p.country-label {
     
 }
 
-#chart-1 .viz-question {
+.bar-chart .viz-question {
   justify-content: flex-start;
 }
 
@@ -234,7 +235,7 @@ rect:hover {
     display: inline;
 }
 
-#chart-1 .x-axis .tick text {
+.bar-chart .x-axis .tick text {
     display: inline;
 }
 
@@ -246,7 +247,7 @@ rect:hover {
     display: inline;
 }
 
-#chart-1 .y-axis {
+.bar-chart .y-axis {
   display: inline;
 }
 
@@ -258,6 +259,6 @@ rect:hover {
   width: 750px;
 }
 
-#chart-1 .svg-wrapper {
+.bar-chart .svg-wrapper {
   margin-bottom: 10px;
 }
