@@ -2,7 +2,11 @@
  *
  */
 
-h1, h2, h3, h4, h5, h6 {
+ #sharer-outer-wrapper.sharer-second {
+  background-color: #f3f3f3;
+ }
+
+h2, h3, h4, h5, h6 {
     font-family: 'Futura W02 Medium', Futura, Helvetica,Verdana,Arial,sans-serif;
     letter-spacing: 0.01em;
     padding-bottom: 12px;
