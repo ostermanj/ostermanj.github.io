@@ -5,7 +5,8 @@
         BarChart,
         app,
         DATA_FILE = 'data/informality-concept.csv',
-        previousMax;
+        previousMax,
+        rangeType;
 
 
     ColumnChart = function(el, cats, quest, head, scaleMax) {
@@ -53,6 +54,7 @@
                 if (chart.quest.length === 0 || chart.quest.indexOf(q.key) !== -1) { // if question is in parameter or if no parameters
                   q.values.forEach(function(c){ // cycle through the values
                     c.values.forEach(function(d){  // cycle through the values' values
+                      rangeType = d.firm_type;
                       numericValues.push(d.value); // and push the value of the datum to the array
                     })
                   })
@@ -73,6 +75,13 @@
           this.max = d3.max(numericValues);
           previousMax = this.max;
           console.log(this.max);
+        },
+        chartBands: function(){
+          if (rangeType === 'perceived' || rangeType === 'estimated'){
+            return ['perceived','estimated']
+          } else {
+              return ['informal', 'small', 'medium', 'large'];
+            }
         },
         setup: function() {
             var chart = this; // should be able to use app.chart ??
@@ -95,7 +104,7 @@
 
             var x = d3.scaleBand()
 // NEEDS TO BE SET PROGRAMMATICALLY
-                .domain(['informal', 'small', 'medium', 'large']) 
+                .domain(chart.chartBands()) 
                 .range([0, svgWidth])
                 .padding(0.33);
 
@@ -248,6 +257,14 @@
                 .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', tool_tip.hide) // .hide is defined in links d3-tip library
                 .call(tool_tip);
+
+                questionDiv.append('p')
+
+                .html(function(d) {
+                    // console.log(d);
+                    return d.values[0].values[0].note;
+                })
+                .attr('class','chart-note');
 
             d3.selectAll(this.el + ' .last-question .svg-wrapper')
                 .append('p')
@@ -407,8 +424,13 @@
                 // .offset([-8, 0])
                 .direction('e')
                 .html(function(d) {
+                  if (d.units !== 'abs'){
                     return '<b>' + d.country + '</b><br>' +
                         'Yes: ' + d3.format(",.1%")(d.value);
+                      } else {
+                        return '<b>' + d.country + '</b><br>' +
+                       d.value;
+                      }
                 })
                 .style('opacity', 1);
             console.log(app.data);
@@ -518,7 +540,10 @@
                       return yAbs(d.value);
                     }
 
-                });
+                })
+                .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
+                .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
+                .call(tool_tip);
             /*      .attr('class', function(d,i,array){
                     var str = i === 0 ? ' first-chart' : i === array.length - 1 ? ' last-chart' : '';
                     return  d.key + str;
@@ -610,7 +635,7 @@
                 })
                 .entries(json);
             app.data = nested;
-            // param0: container; param1: array of categories; param2: array of questions; param3: boolean show heading?
+            // param0: container; param1: array of categories; param2: array of questions; param3: boolean show heading?, p4: int or string "previous" for manual max
             new ColumnChart('#chart-0', ['electricity'], ['generator'], true, 1);
             new ColumnChart('#chart-1', ['electricity'], ['outages'], false);
             new ColumnChart('#chart-2', ['access_to_finance'], [], true, 1);
@@ -620,7 +645,15 @@
             new BarChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
             new BarChart('#chart-7', ['crime'], [], true);
             new BarChart('#chart-8', ['benefits_of_registration'], ['finance','materials', 'bribes', 'receipts'], true);
-            new ColumnChart('#chart-9', ['benefits_of_registration'], ['time_to_register'], true);
+            new BarChart('#chart-9', ['registration_requirements'], ['days'], true);
+            new ColumnChart('#chart-10', ['benefits_of_registration'], ['time_to_register'], false);
+            new BarChart('#chart-11', ['registration_requirements'], ['number_procedures'], false);
+            new BarChart('#chart-12', ['registration_requirements'], ['cost_percent'], false);
+            new BarChart('#chart-13', ['registration_requirements'], ['cost_total'], false);
+            new BarChart('#chart-14', ['registration_requirements'], ['capital_percent'], false);
+            new BarChart('#chart-15', ['registration_requirements'], ['capital_min'], false);
+            new ColumnChart('#chart-16', ['productivity'], ['sales_per_worker'], true);
+
 
 
         }

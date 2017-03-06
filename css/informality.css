@@ -18,10 +18,15 @@ h2, h3, h4, h5, h6 {
     font-size: 15px;
 }
 
-h5 {
+h5, p.chart-note {
     font-family: Lato,Verdana,Arial,sans-serif;
     font-size: 14px;
     
+}
+
+p.chart-note {
+  font-size: 13px;
+  width: 100%;
 }
 
 body {

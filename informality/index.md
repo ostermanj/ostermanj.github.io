@@ -60,7 +60,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 <div id="chart-15"></div>
 
 <!-- productivity column-->
-<div id="chart-13"></div>
+<div id="chart-16"></div>
 
 <!-- scripts for D3, D3-tip, and the visualizations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js"></script>
