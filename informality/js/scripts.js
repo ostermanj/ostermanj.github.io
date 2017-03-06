@@ -4,14 +4,17 @@
     var ColumnChart,
         BarChart,
         app,
-        DATA_FILE = 'data/informality-concept.csv';
+        DATA_FILE = 'data/informality-concept.csv',
+        previousMax;
 
 
-    ColumnChart = function(el, cats, quest, head) {
+    ColumnChart = function(el, cats, quest, head, scaleMax) {
         this.el = el;
         this.cats = cats;
         this.quest = quest;
         this.head = head;
+        this.scaleMax = scaleMax;
+        this.chartMinMax();
         this.setup();
         //this.update();  placeholder
         //this.resize();  placeholder
@@ -24,6 +27,53 @@
     }*/
 
     ColumnChart.prototype = {
+       chartMinMax: function(){
+          if (this.scaleMax){
+            if (!isNaN(this.scaleMax)) {
+              this.max = this.scaleMax;
+              return;
+            } else if (this.scaleMax === 'previous'){
+              this.max = previousMax;
+              return;
+            }
+          }
+          var chart = this;
+          var numericValues = [];
+          var filteredData = app.data.filter(function(obj){ 
+            if (chart.cats.length > 0) {
+                        return chart.cats.indexOf(obj.key) != -1;
+                    } else {
+                        return true;
+                    }
+          });
+          
+          filteredData.forEach(function(obj){ // obj key: 'owner_characterstics', values: array(6[quest]), for example
+            
+              obj.values.forEach(function(q){ //for each question
+                if (chart.quest.length === 0 || chart.quest.indexOf(q.key) !== -1) { // if question is in parameter or if no parameters
+                  q.values.forEach(function(c){ // cycle through the values
+                    c.values.forEach(function(d){  // cycle through the values' values
+                      numericValues.push(d.value); // and push the value of the datum to the array
+                    })
+                  })
+                }
+              })
+                  
+          });
+        /*  filteredData = filteredData.values.filter(function(obj){ 
+            if (chart.quest.length > 0) {
+                        return chart.quest.indexOf(obj.key) != -1;
+                    } else {
+                        return true;
+                    }
+          });*/
+          console.log('filtered',filteredData);
+          console.log('numericValues',numericValues);
+          this.min = d3.min(numericValues);
+          this.max = d3.max(numericValues);
+          previousMax = this.max;
+          console.log(this.max);
+        },
         setup: function() {
             var chart = this; // should be able to use app.chart ??
             var margin = {
@@ -50,22 +100,22 @@
                 .padding(0.33);
 
             var y = d3.scaleLinear()
-                .domain([0, 1])
+                .domain([0, chart.max])
                 .range([0, svgHeight]);
 
             var yOutages = d3.scaleLinear()
 // NEEDS TO BE SET PROGRAMMATICALLY
-                .domain([0, 13]) 
+                .domain([0, chart.max]) 
                 .range([0, svgHeight]);
 
             var yAxisScale = d3.scaleLinear()
 // NEEDS TO BE SET PROGRAMMATICALLY (LATER CHARTS HAVE VALUES GREATER THAN 100%)
-                .domain([0, 1])
+                .domain([0, chart.max])
                 .range([svgHeight, 0]);
 
             var yAxisAbsScale = d3.scaleLinear() 
 // NEEDS TO BE SET PROGRAMMATICALLY
-                .domain([0, 13])
+                .domain([0, chart.max])
                 .range([svgHeight, 0]);
 
             var xAxis = d3.axisBottom().scale(x).tickSize(0);
@@ -236,11 +286,12 @@
         } // end setup()
     }; // end prototype  for ColumnChart
 
-    BarChart = function(el, cats, quest, head) {
+    BarChart = function(el, cats, quest, head, scaleMax) {
         this.el = el;
         this.cats = cats;
         this.quest = quest;
         this.head = head;
+        this.scaleMax = scaleMax;
         this.chartMinMax();
         this.setup();
 
@@ -256,6 +307,15 @@
 
     BarChart.prototype = {
         chartMinMax: function(){
+          if (this.scaleMax){
+            if (!isNaN(this.scaleMax)) {
+              this.max = this.scaleMax;
+              return;
+            } else if (this.scaleMax === 'previous'){
+              this.max = previousMax;
+              return;
+            }
+          }
           var chart = this;
           var numericValues = [];
           var filteredData = app.data.filter(function(obj){ 
@@ -551,11 +611,11 @@
                 .entries(json);
             app.data = nested;
             // param0: container; param1: array of categories; param2: array of questions; param3: boolean show heading?
-            new ColumnChart('#chart-0', ['electricity'], ['generator'], true);
+            new ColumnChart('#chart-0', ['electricity'], ['generator'], true, 1);
             new ColumnChart('#chart-1', ['electricity'], ['outages'], false);
-            new ColumnChart('#chart-2', ['access_to_finance'], [], true);
+            new ColumnChart('#chart-2', ['access_to_finance'], [], true, 1);
             new BarChart('#chart-3', ['owner_characteristics'], ['age', 'experience'], true);
-            new BarChart('#chart-4', ['owner_characteristics'], ['owner_university','parent_university'], false);
+            new BarChart('#chart-4', ['owner_characteristics'], ['owner_university','parent_university'], false, 0.478);
             new BarChart('#chart-5', ['owner_characteristics'], ['parent_business'], false);
             new BarChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
             new BarChart('#chart-7', ['crime'], [], true);
