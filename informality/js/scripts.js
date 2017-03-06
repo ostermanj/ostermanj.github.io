@@ -41,10 +41,11 @@
                                                                                               -> Object [key=outages]       -> array[5]
                                                -> Object [key=access_to_finance] -> array [2] -> Object [key=bank_account]  -> array[5]
                                                                                               -> Object [key=loan_/_credit] -> array[5]
-                                                                                  */
+ // *** CAN THE SCALES HAVE LOGIC TO DECIDE BT ABS AND PERCENTAGE ?                                                                                */
 
             var x = d3.scaleBand()
-                .domain(['informal', 'small', 'medium', 'large']) // could be set programmatically but prob ok
+// NEEDS TO BE SET PROGRAMMATICALLY
+                .domain(['informal', 'small', 'medium', 'large']) 
                 .range([0, svgWidth])
                 .padding(0.33);
 
@@ -53,14 +54,17 @@
                 .range([0, svgHeight]);
 
             var yOutages = d3.scaleLinear()
-                .domain([0, 13]) // how to get max programmatically ??
+// NEEDS TO BE SET PROGRAMMATICALLY
+                .domain([0, 13]) 
                 .range([0, svgHeight]);
 
             var yAxisScale = d3.scaleLinear()
+// NEEDS TO BE SET PROGRAMMATICALLY (LATER CHARTS HAVE VALUES GREATER THAN 100%)
                 .domain([0, 1])
                 .range([svgHeight, 0]);
 
-            var yAxisAbsScale = d3.scaleLinear() // how to get max programmatically ??
+            var yAxisAbsScale = d3.scaleLinear() 
+// NEEDS TO BE SET PROGRAMMATICALLY
                 .domain([0, 13])
                 .range([svgHeight, 0]);
 
@@ -237,6 +241,7 @@
         this.cats = cats;
         this.quest = quest;
         this.head = head;
+        this.chartMinMax();
         this.setup();
 
         //this.update();  placeholder
@@ -250,6 +255,43 @@
     }*/
 
     BarChart.prototype = {
+        chartMinMax: function(){
+          var chart = this;
+          var numericValues = [];
+          var filteredData = app.data.filter(function(obj){ 
+            if (chart.cats.length > 0) {
+                        return chart.cats.indexOf(obj.key) != -1;
+                    } else {
+                        return true;
+                    }
+          });
+          
+          filteredData.forEach(function(obj){ // obj key: 'owner_characterstics', values: array(6[quest]), for example
+            
+              obj.values.forEach(function(q){ //for each question
+                if (chart.quest.length === 0 || chart.quest.indexOf(q.key) !== -1) { // if question is in parameter or if no parameters
+                  q.values.forEach(function(c){ // cycle through the values
+                    c.values.forEach(function(d){  // cycle through the values' values
+                      numericValues.push(d.value); // and push the value of the datum to the array
+                    })
+                  })
+                }
+              })
+                  
+          });
+        /*  filteredData = filteredData.values.filter(function(obj){ 
+            if (chart.quest.length > 0) {
+                        return chart.quest.indexOf(obj.key) != -1;
+                    } else {
+                        return true;
+                    }
+          });*/
+          console.log('filtered',filteredData);
+          console.log('numericValues',numericValues);
+          this.min = d3.min(numericValues);
+          this.max = d3.max(numericValues);
+          console.log(this.max);
+        },
         setup: function() {
             var chart = this;
             var margin = {
@@ -275,20 +317,20 @@
                 .padding(0.33);
 
             var y = d3.scaleLinear()
-                .domain([0, 0.7])
-                .range([0, svgWidth - labelWidth]);
+                .domain([0, chart.max])
+                .range([0, svgWidth - labelWidth]); // *** THESE ARE NOW THE SAME, THIS AND BELOW
 
             var yAbs = d3.scaleLinear()
-                .domain([0, 40])
+                .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]);
 
 
             var yAxisScale = d3.scaleLinear()
-                .domain([0, 0.7])
+                .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]);
 
               var yAxisAbsScale = d3.scaleLinear() // how to get max programmatically ??
-                .domain([0, 42])
+                .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]);
 
 
@@ -516,6 +558,9 @@
             new BarChart('#chart-4', ['owner_characteristics'], ['owner_university','parent_university'], false);
             new BarChart('#chart-5', ['owner_characteristics'], ['parent_business'], false);
             new BarChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
+            new BarChart('#chart-7', ['crime'], [], true);
+            new BarChart('#chart-8', ['benefits_of_registration'], ['finance','materials', 'bribes', 'receipts'], true);
+            new ColumnChart('#chart-9', ['benefits_of_registration'], ['time_to_register'], true);
 
 
         }
