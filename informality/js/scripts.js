@@ -151,15 +151,19 @@ console.log(chart.domainRange);
                 .html(function(d) {
                     if (d.units === 'percent') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
-                            'Yes: ' + d3.format(",.1%")(d.value) + '<br>' +
+                            d3.format(",.1%")(d.value) + '<br>' +
+                            '(n = ' + d.n + ')';
+                    } else if (d.units === 'currency') {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            '$' + d3.format(",.0s")(d.value) + '<br>' +
                             '(n = ' + d.n + ')';
                     } else if (d.units === 'abs') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
-                            'Number: ' + d.value + '<br>' +
+                            d.value + '<br>' +
                             '(n = ' + d.n + ')';
                     } else {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
-                            d.units.capitalizeFirstLetter() + ': ' + d.value + '<br>' +
+                            d.units.capitalizeFirstLetter() +  ': '  + d.value + '<br>' +
                             '(n = ' + d.n + ')';
                     }
                 })
@@ -256,7 +260,7 @@ console.log(chart.domainRange);
                 }) 
                 .attr('class', function(d) {
 
-                    return d.firm_type;
+                    return d.firm_type.replace(/\d-/,'');
 
                 })
                 .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
@@ -436,18 +440,28 @@ console.log(chart.domainRange);
 
 
 
-            var tool_tip = d3.tip()
+           var tool_tip = d3.tip()
                 .attr("class", "d3-tip")
                 // .offset([-8, 0])
                 .direction('e')
                 .html(function(d) {
-                  if (d.units !== 'abs'){
-                    return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase().replace(/\d-/,'') + ')<br>' +
-                        'Yes: ' + d3.format(",.1%")(d.value);
-                      } else {
-                        return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase().replace(/\d-/,'') + ')<br>' +
-                       d.value;
-                      }
+                    if (d.units === 'percent') {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            d3.format(",.1%")(d.value) + '<br>' +
+                            '(n = ' + d.n + ')';
+                    } else if (d.units === 'currency') {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            '$' + d3.format(",.0s")(d.value) + '<br>' +
+                            '(n = ' + d.n + ')';
+                    } else if (d.units === 'abs') {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            d.value + '<br>' +
+                            '(n = ' + d.n + ')';
+                    } else {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            d.units.capitalizeFirstLetter() +  ': '  + d.value + '<br>' +
+                            '(n = ' + d.n + ')';
+                    }
                 })
                 .style('opacity', 1);
             
