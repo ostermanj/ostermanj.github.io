@@ -8,14 +8,28 @@ menu: hide
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
 
+<!-- use electricity, grid connection, informal only -->
+<div id="chart-17"></div>
+<!-- generator -->
 <div id="chart-0"></div>
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
+<!-- number of outages per month -->
 <div id="chart-1"></div>
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+<!-- duration of outages per month -->
+<div id="chart-18"></div>
 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+<!-- uses water -->
+<div id="chart-19"></div>
+
+<!-- water incidents -->
+<div id="chart-20"></div>
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+<!-- access to finance -->
 <div id="chart-2"></div>
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -34,6 +48,11 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 
 <!-- crime bar-->
 <div id="chart-7"></div>
+
+<!-- crime severity-->
+<div id="chart-21"></div>
+
+<div id="chart-22"></div>
 
 <!-- regis benefits (thru receipts) bar-->
 <div id="chart-8"></div>

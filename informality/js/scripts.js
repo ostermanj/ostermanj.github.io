@@ -425,10 +425,10 @@
                 .direction('e')
                 .html(function(d) {
                   if (d.units !== 'abs'){
-                    return '<b>' + d.country + '</b><br>' +
+                    return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase() + ')<br>' +
                         'Yes: ' + d3.format(",.1%")(d.value);
                       } else {
-                        return '<b>' + d.country + '</b><br>' +
+                        return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase() + ')<br>' +
                        d.value;
                       }
                 })
@@ -636,14 +636,20 @@
                 .entries(json);
             app.data = nested;
             // param0: container; param1: array of categories; param2: array of questions; param3: boolean show heading?, p4: int or string "previous" for manual max
-            new ColumnChart('#chart-0', ['electricity'], ['generator'], true, 1);
+            new BarChart('#chart-17', ['electricity'], ['electricity_use','grid'], true);
+            new ColumnChart('#chart-0', ['electricity'], ['generator'], false, 1);
             new ColumnChart('#chart-1', ['electricity'], ['outages'], false);
+            new ColumnChart('#chart-18', ['electricity'], ['outages_duration'], false);
+            new BarChart('#chart-19', ['water'], ['water_use'], true);
+            new ColumnChart('#chart-20', ['water'], ['number_incidents'], false);
             new ColumnChart('#chart-2', ['access_to_finance'], [], true, 1);
             new BarChart('#chart-3', ['owner_characteristics'], ['age', 'experience'], true);
             new BarChart('#chart-4', ['owner_characteristics'], ['owner_university','parent_university'], false, 0.478);
             new BarChart('#chart-5', ['owner_characteristics'], ['parent_business'], false);
-            new BarChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
-            new BarChart('#chart-7', ['crime'], [], true);
+            new ColumnChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
+            new BarChart('#chart-7', ['crime'], ['severe_obstacle','crime_losses_month'], true);
+            new BarChart('#chart-21', ['crime'], ['severity'], false, 4);
+            new ColumnChart('#chart-22', ['crime'], ['severity_by_size'], false, 4);
             new BarChart('#chart-8', ['benefits_of_registration'], ['finance','materials', 'bribes', 'receipts'], true);
             new BarChart('#chart-9', ['registration_requirements'], ['days'], true);
             new ColumnChart('#chart-10', ['benefits_of_registration'], ['time_to_register'], false);
