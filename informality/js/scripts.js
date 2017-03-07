@@ -5,18 +5,20 @@
         BarChart,
         app,
         DATA_FILE = 'data/informality-concept.csv',
-        previousMax,
-        rangeType;
+        previousMax;
+        
+
 
 
     ColumnChart = function(el, cats, quest, head, scaleMax) {
+        console.log('ColumnChart');
         this.el = el;
         this.cats = cats;
         this.quest = quest;
         this.head = head;
         this.scaleMax = scaleMax;
         this.chartMinMax();
-        this.setup();
+        
         //this.update();  placeholder
         //this.resize();  placeholder
     };
@@ -24,22 +26,16 @@
     /*d3.selection.prototype.last = function(){
       //var last = this.size() - 1;
       //return this[0][last];
-      // console.log(this);
+      // 
     }*/
 
     ColumnChart.prototype = {
        chartMinMax: function(){
-          if (this.scaleMax){
-            if (!isNaN(this.scaleMax)) {
-              this.max = this.scaleMax;
-              return;
-            } else if (this.scaleMax === 'previous'){
-              this.max = previousMax;
-              return;
-            }
-          }
+        console.log('chartMinMax');
+          
           var chart = this;
           var numericValues = [];
+          this.domainRange = [];
           var filteredData = app.data.filter(function(obj){ 
             if (chart.cats.length > 0) {
                         return chart.cats.indexOf(obj.key) != -1;
@@ -54,14 +50,17 @@
                 if (chart.quest.length === 0 || chart.quest.indexOf(q.key) !== -1) { // if question is in parameter or if no parameters
                   q.values.forEach(function(c){ // cycle through the values
                     c.values.forEach(function(d){  // cycle through the values' values
-                      rangeType = d.firm_type;
-                      numericValues.push(d.value); // and push the value of the datum to the array
+                      if (chart.domainRange.indexOf(d.firm_type) === -1){
+                        chart.domainRange.push(d.firm_type);
+                      }
+                     numericValues.push(d.value); // and push the value of the datum to the array
                     })
                   })
                 }
               })
                   
           });
+          chart.domainRange.sort();
         /*  filteredData = filteredData.values.filter(function(obj){ 
             if (chart.quest.length > 0) {
                         return chart.quest.indexOf(obj.key) != -1;
@@ -69,21 +68,25 @@
                         return true;
                     }
           });*/
-          console.log('filtered',filteredData);
-          console.log('numericValues',numericValues);
+          
+          
           this.min = d3.min(numericValues);
           this.max = d3.max(numericValues);
-          previousMax = this.max;
-          console.log(this.max);
-        },
-        chartBands: function(){
-          if (rangeType === 'perceived' || rangeType === 'estimated'){
-            return ['perceived','estimated']
-          } else {
-              return ['informal', 'small', 'medium', 'large'];
+          if (this.scaleMax){
+            if (!isNaN(this.scaleMax)) {
+              this.max = this.scaleMax;
+              
+            } else if (this.scaleMax === 'previous'){
+              this.max = previousMax;
+              
             }
+          }
+          previousMax = this.max;
+          this.setup();
+          
         },
         setup: function() {
+            console.log('setup');
             var chart = this; // should be able to use app.chart ??
             var margin = {
                     top: 5,
@@ -95,16 +98,16 @@
                 svgWidth = 95 - margin.right - margin.left,
                 svgHeight = 70 + labelHeight - margin.top - margin.bottom;
 
-            // console.log(app.data); 
+            //  
             /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
                                                                                               -> Object [key=outages]       -> array[5]
                                                -> Object [key=access_to_finance] -> array [2] -> Object [key=bank_account]  -> array[5]
                                                                                               -> Object [key=loan_/_credit] -> array[5]
  // *** CAN THE SCALES HAVE LOGIC TO DECIDE BT ABS AND PERCENTAGE ?                                                                                */
-
+console.log(chart.domainRange);
             var x = d3.scaleBand()
 // NEEDS TO BE SET PROGRAMMATICALLY
-                .domain(chart.chartBands()) 
+                .domain(chart.domainRange) 
                 .range([0, svgWidth])
                 .padding(0.33);
 
@@ -127,7 +130,10 @@
                 .domain([0, chart.max])
                 .range([svgHeight, 0]);
 
-            var xAxis = d3.axisBottom().scale(x).tickSize(0);
+            var xAxis = d3.axisBottom().scale(x).tickSize(0).tickFormat(function(d){
+                console.log(d);
+                return d.replace(/\d-/,'');
+            });
 
             var yAxis = d3.axisRight().scale(yAxisScale).ticks(2, ",.0%").tickSize(0);
 
@@ -141,11 +147,11 @@
                 .direction('n')
                 .html(function(d) {
                     if (d.units !== 'abs') {
-                        return '<b>' + d.firm_type.toUpperCase() + '</b> (' + d.country + ')<br>' +
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
                             'Yes: ' + d3.format(",.1%")(d.value) + '<br>' +
                             '(n = ' + d.n + ')';
                     } else {
-                        return '<b>' + d.firm_type.toUpperCase() + '</b> (' + d.country + ')<br>' +
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
                             'Number: ' + d.value + '<br>' +
                             '(n = ' + d.n + ')';
                     }
@@ -199,7 +205,7 @@
             questionDiv.append('h5')
 
                 .text(function(d) {
-                    // console.log(d);
+                    // 
                     return d.values[0].values[0].readable;
                 });
 
@@ -261,7 +267,7 @@
                 questionDiv.append('p')
 
                 .html(function(d) {
-                    // console.log(d);
+                    // 
                     return d.values[0].values[0].note;
                 })
                 .attr('class','chart-note');
@@ -279,6 +285,10 @@
                 .attr('transform', 'translate(0,' + (svgHeight + margin.top) + ')')
                 .call(xAxis)
                 .selectAll("text")
+             /*   .html(function(d){
+                    console.log(d);
+                    return d.firm_type;
+                })*/
                 .attr("transform", "rotate(-90)")
                 .attr("y", 0)
                 .attr("x", 0)
@@ -319,7 +329,7 @@
     /*d3.selection.prototype.last = function(){
       //var last = this.size() - 1;
       //return this[0][last];
-      // console.log(this);
+      // 
     }*/
 
     BarChart.prototype = {
@@ -363,11 +373,11 @@
                         return true;
                     }
           });*/
-          console.log('filtered',filteredData);
-          console.log('numericValues',numericValues);
+          
+          
           this.min = d3.min(numericValues);
           this.max = d3.max(numericValues);
-          console.log(this.max);
+          
         },
         setup: function() {
             var chart = this;
@@ -381,7 +391,7 @@
                 svgHeight = 90 - margin.top - margin.bottom,
                 labelWidth = 50;
 
-            // console.log(app.data);
+            // 
             /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
                                                                                              -> Object [key=outages]       -> array[5]
                                               -> Object [key=access_to_finance] -> array [2] -> Object [key=bank_account]  -> array[5]
@@ -425,15 +435,15 @@
                 .direction('e')
                 .html(function(d) {
                   if (d.units !== 'abs'){
-                    return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase() + ')<br>' +
+                    return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase().replace(/\d-/,'') + ')<br>' +
                         'Yes: ' + d3.format(",.1%")(d.value);
                       } else {
-                        return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase() + ')<br>' +
+                        return '<b>' + d.country + '</b> (' + d.firm_type.toUpperCase().replace(/\d-/,'') + ')<br>' +
                        d.value;
                       }
                 })
                 .style('opacity', 1);
-            console.log(app.data);
+            
 
             var categoryDiv = d3.select(this.el) // ok all one cat
                 .append('div')
@@ -484,7 +494,7 @@
             /*
                           var svgWrappers = questionDiv.selectAll('svg')
                           .data(function(d){ 
-                            // console.log(d);
+                            // 
                             return d.values;
                             }) // 4 x array[5] : Object[key=<country>]
                           .enter().append('div')
@@ -492,7 +502,7 @@
 
                           svgWrappers.append('h5')
                           .text(function(d){
-                            // console.log(d);
+                            // 
                             return d.values[0].readable;
                           })
             */
@@ -511,7 +521,7 @@
                 .attr('width', svgWidth + margin.left + margin.right)
                 .attr('height', svgHeight + margin.top + margin.bottom)
                 .attr('class', function(d) {
-                    console.log(d);
+                    
                     return d.values[0].values[0].units;
                 })
                 .selectAll('g')
@@ -524,7 +534,7 @@
                 })
                 .selectAll('rect')
                 .data(function(d) {
-                    console.log(d);
+                    
                     return d.values;
                 }) // numerical values of each
                 .enter().append('rect')
@@ -561,7 +571,7 @@
          
               .attr('height', x.bandwidth())
               .attr('width', function(d){
-                // console.log(d);
+                // 
                   return y(d.value); // passing d.mean as parameter to scale function
                 
               }) // passing d.mean as parameter to scale function
@@ -578,7 +588,7 @@
                            .append('p')
                            .attr('class', 'country-label')
                            .text(function(d){
-                            // console.log(d);
+                            // 
                              return d.values[0].readable;
                            }); */
 

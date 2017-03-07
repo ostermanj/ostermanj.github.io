@@ -10,6 +10,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 
 <!-- use electricity, grid connection, informal only -->
 <div id="chart-17"></div>
+
 <!-- generator -->
 <div id="chart-0"></div>
 
