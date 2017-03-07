@@ -193,6 +193,7 @@ console.log(chart.domainRange);
                     .text(function(d) {
                         return d.key.toUpperCase().replace(/_/g, ' '); // electricity, access to finance
                     })
+                    .attr('id', function(d){return d.key;});
             }
 
             var questionDiv = categoryDiv.selectAll('div')
@@ -263,6 +264,7 @@ console.log(chart.domainRange);
                     return d.firm_type.replace(/\d-/,'');
 
                 })
+
                 .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', tool_tip.hide) // .hide is defined in links d3-tip library
                 .call(tool_tip);
@@ -490,6 +492,7 @@ console.log(chart.domainRange);
                     .text(function(d) {
                         return d.key.toUpperCase().replace(/_/g, ' '); // electricity, access to finance
                     })
+                    .attr('id', function(d){return d.key;});
             }
 
 
@@ -552,8 +555,9 @@ console.log(chart.domainRange);
                 .enter().append('g')
                 .attr('class', function(d, i) {
                     return 'series-' + i;
-                })
-                .selectAll('rect')
+                });
+
+            var rects = svgs.selectAll('rect')
                 .data(function(d) {
                     
                     return d.values;
@@ -575,43 +579,26 @@ console.log(chart.domainRange);
                 .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
-            /*      .attr('class', function(d,i,array){
-                    var str = i === 0 ? ' first-chart' : i === array.length - 1 ? ' last-chart' : '';
-                    return  d.key + str;
-                  }) */
-            /*      .append('g')
-              //.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-              .selectAll('rect')
-              .data(function(d){ return d.values; })  // numerical values of each
-              .enter().append('rect')
-      
-              .attr('y', function(d){ 
-                  return x(d.country);
-              })
-              .attr('x', labelWidth + 10) 
-         
-              .attr('height', x.bandwidth())
-              .attr('width', function(d){
-                // 
-                  return y(d.value); // passing d.mean as parameter to scale function
-                
-              }) // passing d.mean as parameter to scale function
-              .attr('class', function(d,i){
-              
-                  return d.country + ' series-' + i;
-              
-              })
-              .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
-                .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
-                .call(tool_tip); */
-
-            /*             d3.selectAll('#chart-1 .last-question .svg-wrapper')
-                           .append('p')
-                           .attr('class', 'country-label')
-                           .text(function(d){
-                            // 
-                             return d.values[0].readable;
-                           }); */
+          
+            svgs.selectAll('text')
+            .data(function(d) {
+                    
+                    return d.values;
+                }) // numerical values of each
+                .enter().append('text')
+                .attr('y', function(d) {
+                    return x(d.country) + 9;
+                })
+                .attr('x', labelWidth + 12)
+                .attr('font-size', 11)
+                .attr('fill', '#666')
+                .text(function(d){
+                    if (d.value === 0){
+                        return 'zero';
+                    } else if (y(d.value) < 2){
+                        return d.value;
+                    }
+                });
 
             questionDiv.selectAll('svg')
                 .append('g')
@@ -686,6 +673,18 @@ console.log(chart.domainRange);
             new BarChart('#chart-15', ['registration_requirements'], ['capital_min'], false);
             new ColumnChart('#chart-16', ['productivity'], ['sales_per_worker'], true);
 
+            console.log(app.data);
+            var div = document.getElementById('nav-buttons');
+            app.data.forEach(function(obj){
+                var button = document.createElement('button');
+                button.className = 'nav-button';
+                button.innerText = obj.key.toUpperCase().replace(/_/g,' ');
+                button.onclick = function(){
+                    var id = document.getElementById(obj.key);
+                    id.scrollIntoView();
+                };
+                div.appendChild(button);
+            })
 
 
         }
