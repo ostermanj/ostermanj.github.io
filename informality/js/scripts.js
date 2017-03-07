@@ -7,7 +7,9 @@
         DATA_FILE = 'data/informality-concept.csv',
         previousMax;
         
-
+    String.prototype.capitalizeFirstLetter = function() { // HT  http://stackoverflow.com/a/3291856/5701184
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    };
 
 
     ColumnChart = function(el, cats, quest, head, scaleMax) {
@@ -54,6 +56,7 @@
                         chart.domainRange.push(d.firm_type);
                       }
                      numericValues.push(d.value); // and push the value of the datum to the array
+                     chart.units = d.units;
                     })
                   })
                 }
@@ -115,18 +118,8 @@ console.log(chart.domainRange);
                 .domain([0, chart.max])
                 .range([0, svgHeight]);
 
-            var yOutages = d3.scaleLinear()
-// NEEDS TO BE SET PROGRAMMATICALLY
-                .domain([0, chart.max]) 
-                .range([0, svgHeight]);
-
             var yAxisScale = d3.scaleLinear()
 // NEEDS TO BE SET PROGRAMMATICALLY (LATER CHARTS HAVE VALUES GREATER THAN 100%)
-                .domain([0, chart.max])
-                .range([svgHeight, 0]);
-
-            var yAxisAbsScale = d3.scaleLinear() 
-// NEEDS TO BE SET PROGRAMMATICALLY
                 .domain([0, chart.max])
                 .range([svgHeight, 0]);
 
@@ -135,24 +128,38 @@ console.log(chart.domainRange);
                 return d.replace(/\d-/,'');
             });
 
-            var yAxis = d3.axisRight().scale(yAxisScale).ticks(2, ",.0%").tickSize(0);
+            var yAxis = d3.axisRight().scale(yAxisScale).ticks(2).tickSize(0).tickFormat(function(d){
+                console.log(chart);
+                if (chart.units === 'percent'){
+                    return d3.format(',.0%')(d); // as a percent rounded no decimal
+                } else if (chart.units === 'currency'){
+                    return '$' + d3.format(",.0s")(d) // with SI abbrev (k, M, etc), no decimal
+                } else {
+                    return d;
+                }
+                
+            });
 
-            var yAxisAbs = d3.axisRight().scale(yAxisAbsScale).ticks(4).tickSize(0);
 
 
+            
 
             var tool_tip = d3.tip()
                 .attr("class", "d3-tip")
                 // .offset([-8, 0])
                 .direction('n')
                 .html(function(d) {
-                    if (d.units !== 'abs') {
+                    if (d.units === 'percent') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
                             'Yes: ' + d3.format(",.1%")(d.value) + '<br>' +
                             '(n = ' + d.n + ')';
-                    } else {
+                    } else if (d.units === 'abs') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
                             'Number: ' + d.value + '<br>' +
+                            '(n = ' + d.n + ')';
+                    } else {
+                        return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
+                            d.units.capitalizeFirstLetter() + ': ' + d.value + '<br>' +
                             '(n = ' + d.n + ')';
                     }
                 })
@@ -240,21 +247,13 @@ console.log(chart.domainRange);
                     return x(d.firm_type);
                 })
                 .attr('y', function(d) {
-                    if (d.question !== 'outages') {
-                        return svgHeight - y(d.value); // passing d.value as parameter to scale function
-                    } else {
-                        return svgHeight - yOutages(d.value);
-                    }
+                    return svgHeight - y(d.value); // passing d.value as parameter to scale function
                 })
 
                 .attr('width', x.bandwidth())
                 .attr('height', function(d) {
-                    if (d.question !== 'outages') {
-                        return y(d.value); // passing d.value as parameter to scale function
-                    } else {
-                        return yOutages(d.value);
-                    }
-                }) // passing d.value as parameter to scale function
+                    return y(d.value); // passing d.value as parameter to scale function
+                }) 
                 .attr('class', function(d) {
 
                     return d.firm_type;
@@ -296,17 +295,13 @@ console.log(chart.domainRange);
                 .attr("dy", 3)
                 .style("text-anchor", "start");
 
-            questionDiv.selectAll('svg.percent')
+            questionDiv.selectAll('svg')
                 .append('g')
                 .attr('transform', 'translate(' + svgWidth + ', ' + (margin.top) + ')')
                 .attr('class', 'y-axis')
                 .call(yAxis);
 
-            questionDiv.selectAll('svg.abs') // should be DRYer here
-                .append('g')
-                .attr('transform', 'translate(' + svgWidth + ', ' + (margin.top) + ')')
-                .attr('class', 'y-axis')
-                .call(yAxisAbs);
+           
 
 
 
@@ -320,7 +315,7 @@ console.log(chart.domainRange);
         this.head = head;
         this.scaleMax = scaleMax;
         this.chartMinMax();
-        this.setup();
+        
 
         //this.update();  placeholder
         //this.resize();  placeholder
@@ -334,15 +329,7 @@ console.log(chart.domainRange);
 
     BarChart.prototype = {
         chartMinMax: function(){
-          if (this.scaleMax){
-            if (!isNaN(this.scaleMax)) {
-              this.max = this.scaleMax;
-              return;
-            } else if (this.scaleMax === 'previous'){
-              this.max = previousMax;
-              return;
-            }
-          }
+        
           var chart = this;
           var numericValues = [];
           var filteredData = app.data.filter(function(obj){ 
@@ -360,6 +347,7 @@ console.log(chart.domainRange);
                   q.values.forEach(function(c){ // cycle through the values
                     c.values.forEach(function(d){  // cycle through the values' values
                       numericValues.push(d.value); // and push the value of the datum to the array
+                      chart.units = d.units;
                     })
                   })
                 }
@@ -377,6 +365,16 @@ console.log(chart.domainRange);
           
           this.min = d3.min(numericValues);
           this.max = d3.max(numericValues);
+            if (this.scaleMax){
+            if (!isNaN(this.scaleMax)) {
+              this.max = this.scaleMax;
+              
+            } else if (this.scaleMax === 'previous'){
+              this.max = previousMax;
+              
+            }
+          }
+          this.setup();
           
         },
         setup: function() {
@@ -416,16 +414,25 @@ console.log(chart.domainRange);
                 .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]);
 
-              var yAxisAbsScale = d3.scaleLinear() // how to get max programmatically ??
-                .domain([0, chart.max])
-                .range([0, svgWidth - labelWidth]);
-
 
             var xAxis = d3.axisLeft().scale(x).tickSize(0);
 
-            var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5, ",.0%").tickSize(0);
+           
 
-            var yAxisAbs = d3.axisBottom().scale(yAxisAbsScale).ticks(4).tickSize(0);
+             var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5).tickSize(0).tickFormat(function(d){
+                console.log(chart);
+                if (chart.units === 'percent'){
+                    return d3.format(',.0%')(d); // as a percent rounded no decimal
+                } else if (chart.units === 'currency'){
+                    return '$' + d3.format(",.0s")(d) // with SI abbrev (k, M, etc), no decimal
+                } else {
+                    return d;
+                }
+                
+            });
+
+
+           
 
 
 
@@ -605,18 +612,13 @@ console.log(chart.domainRange);
 
                 .style("text-anchor", "end");
 
-            questionDiv.selectAll('svg.percent')
+            questionDiv.selectAll('svg')
                 .append('g')
                 .attr('transform', 'translate(' + (labelWidth + 10) + ',' + (svgHeight) + ')')
                 .attr('class', 'y-axis')
                 .call(yAxis);
 
-            questionDiv.selectAll('svg.abs')
-                .append('g')
-                .attr('transform', 'translate(' + (labelWidth + 10) + ',' + (svgHeight) + ')')
-                .attr('class', 'y-axis')
-                .call(yAxisAbs);
-
+           
 
 
         } // end setup()
@@ -656,7 +658,7 @@ console.log(chart.domainRange);
             new BarChart('#chart-3', ['owner_characteristics'], ['age', 'experience'], true);
             new BarChart('#chart-4', ['owner_characteristics'], ['owner_university','parent_university'], false, 0.478);
             new BarChart('#chart-5', ['owner_characteristics'], ['parent_business'], false);
-            new ColumnChart('#chart-6', ['owner_characteristics'], ['female_owned'], false);
+            new ColumnChart('#chart-6', ['owner_characteristics'], ['female_owned'], false, 1);
             new BarChart('#chart-7', ['crime'], ['severe_obstacle','crime_losses_month'], true);
             new BarChart('#chart-21', ['crime'], ['severity'], false, 4);
             new ColumnChart('#chart-22', ['crime'], ['severity_by_size'], false, 4);
