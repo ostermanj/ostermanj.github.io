@@ -44,7 +44,7 @@ body {
 p.country-label {
     font-size: 11px;
     text-align: center;
-    width: 91px;
+    width: 67px;
 
 }
 
@@ -85,10 +85,10 @@ p.country-label {
 }
 
 .viz-container {
-    width:550px;
+    max-width:550px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     margin-top: -25px;
     
  
@@ -98,17 +98,17 @@ p.country-label {
     display: flex;
     flex-direction: column;
  /*  border: 1px solid magenta;*/
-    width: 98%;
-    align-items: center;
+    
+    
      margin: 5px 0;
-     padding: 0 10px ;
+     
 }
 
 .viz-question {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width:98%;
+    
+    
   /* border: 1px dotted magenta;  */
     
     margin: 5px 0;
@@ -132,9 +132,14 @@ p.country-label {
 .svg-wrapper svg {
    /* border: 1px dotted cyan;
     border-bottom: 1px solid #828282;  */
-    padding: 0 5px;
-    border-bottom-color: inherit;
+    
+    
 
+}
+
+.wrapper {
+    padding-right: 7.5px;
+    padding-left: 7.5px;
 }
 
 rect {
@@ -164,6 +169,7 @@ rect:hover {
     /*border: 1px dotted magenta; */
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .viz-category h4, .viz-category h5, .country-label {
@@ -270,10 +276,24 @@ rect:hover {
   fill: #666;
 }
 
-.post-content {
-  width: 750px;
-}
 
 .bar-chart .svg-wrapper {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 490px){
+  .svg-wrapper:nth-of-type(4) .y-axis {
+    display:inline;
+  }
+
+}
+
+@media screen and (max-width: 394px){
+  .svg-wrapper:nth-of-type(4) .y-axis {
+    display:none;
+  }
+  .svg-wrapper:nth-of-type(3) .y-axis {
+    display:inline;
+  }
+  
 }

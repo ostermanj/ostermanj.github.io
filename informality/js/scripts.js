@@ -93,7 +93,7 @@
             var chart = this; // should be able to use app.chart ??
             var margin = {
                     top: 5,
-                    right: 23,
+                    right: 29,
                     bottom: 5,
                     left: 0
                 },
@@ -147,7 +147,13 @@ console.log(chart.domainRange);
             var tool_tip = d3.tip()
                 .attr("class", "d3-tip")
                 // .offset([-8, 0])
-                .direction('n')
+                .direction(function(){
+                    if (window.innerWidth > 820){
+                        return 'n';
+                    } else {
+                        return 'e';
+                    }
+                })
                 .html(function(d) {
                     if (d.units === 'percent') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
@@ -275,7 +281,12 @@ console.log(chart.domainRange);
                     // 
                     return d.values[0].values[0].note;
                 })
-                .attr('class','chart-note');
+                .attr('class','chart-note')
+                .attr('style', function(d){
+                    if (!d.values[0].values[0].note){
+                        return 'display: none';
+                    }
+                });
 
             d3.selectAll(this.el + ' .last-question .svg-wrapper')
                 .append('p')
@@ -387,13 +398,13 @@ console.log(chart.domainRange);
             var chart = this;
             var margin = {
                     top: 5,
-                    right: 15,
+                    right: 0,
                     bottom: 5,
                     left: 0
                 },
-                svgWidth = 320 - margin.right - margin.left,
+                svgWidth = 305 - margin.right - margin.left,
                 svgHeight = 90 - margin.top - margin.bottom,
-                labelWidth = 50;
+                labelWidth = 40;
 
             // 
             /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
@@ -445,7 +456,13 @@ console.log(chart.domainRange);
            var tool_tip = d3.tip()
                 .attr("class", "d3-tip")
                 // .offset([-8, 0])
-                .direction('e')
+                .direction(function(){
+                    if (window.innerWidth > 394){
+                        return 'e';
+                    } else {
+                        return 'n';
+                    }
+                })
                 .html(function(d) {
                     if (d.units === 'percent') {
                         return '<b>' + d.firm_type.toUpperCase().replace(/\d-/,'') + '</b> (' + d.country + ')<br>' +
