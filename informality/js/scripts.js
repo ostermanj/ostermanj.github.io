@@ -107,7 +107,7 @@
             
             
             this.svgs.selectAll('rect')
-            .transition().delay(500).duration(1000).ease(d3.easeBounce)
+            .transition().delay(200).duration(1000).ease(d3.easeBounce)
             .attr('height', function(d) {
                 
                     return chart.y(d.value); // passing d.value as parameter to scale function
@@ -354,6 +354,7 @@
     }; // end prototype  for ColumnChart
 
     BarChart = function(el, cats, quest, head, scaleMax) {
+        var chart = this;
         this.el = el;
         this.cats = cats;
         this.quest = quest;
@@ -361,6 +362,14 @@
         this.scaleMax = scaleMax;
         this.chartMinMax();
         
+        var elementWatcher = scrollMonitor.create( el );
+        elementWatcher.enterViewport(function() {
+          if (this.watchItem.className.indexOf('in-view') === -1){
+                chart.adjustLength();
+                this.watchItem.className += ' in-view';
+               
+             }
+        });
 
         //this.update();  placeholder
         //this.resize();  placeholder
@@ -422,6 +431,20 @@
           this.setup();
           
         },
+        adjustLength: function(){
+            console.log('adjust length');
+            var chart = this;
+            
+            
+            this.gs.selectAll('rect')
+            .transition().delay(200).duration(1000).ease(d3.easeBounce)
+            .attr('width', function(d) {
+                   console.log(d);
+                        return chart.y(d.value); // passing d.mean as parameter to scale function
+                   
+
+                })
+        },
         setup: function() {
             var chart = this;
             var margin = {
@@ -431,8 +454,9 @@
                     left: 0
                 },
                 svgWidth = 305 - margin.right - margin.left,
-                svgHeight = 90 - margin.top - margin.bottom,
-                labelWidth = 40;
+                labelWidth = 40,
+                svgHeight = 90 - margin.top - margin.bottom;
+                
 
             // 
             /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
@@ -446,16 +470,11 @@
                 .range([0, svgHeight])
                 .padding(0.33);
 
-            var y = d3.scaleLinear()
+            chart.y = d3.scaleLinear()
                 .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]); // *** THESE ARE NOW THE SAME, THIS AND BELOW
 
-            var yAbs = d3.scaleLinear()
-                .domain([0, chart.max])
-                .range([0, svgWidth - labelWidth]);
-
-
-            var yAxisScale = d3.scaleLinear()
+           var yAxisScale = d3.scaleLinear()
                 .domain([0, chart.max])
                 .range([0, svgWidth - labelWidth]);
 
@@ -592,8 +611,9 @@
                 .attr('class', function(d) {
                     
                     return d.values[0].values[0].units;
-                })
-                .selectAll('g')
+                });
+
+            this.gs = svgs.selectAll('g')
                 .data(function(d) {
                     return d.values;
                 })
@@ -602,9 +622,9 @@
                     return 'series-' + i;
                 });
 
-            var rects = svgs.selectAll('rect')
+            var rects = this.gs.selectAll('rect')
                 .data(function(d) {
-                    
+                    console.log(d);
                     return d.values;
                 }) // numerical values of each
                 .enter().append('rect')
@@ -613,25 +633,19 @@
                 })
                 .attr('x', labelWidth + 10)
                 .attr('height', x.bandwidth())
-                .attr('width', function(d) {
-                    if (d.units == 'percent'){
-                        return y(d.value); // passing d.mean as parameter to scale function
-                    } else {
-                      return yAbs(d.value);
-                    }
-
-                })
+                
                 .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', tool_tip.hide)  // .hide is defined in links d3-tip library
                 .call(tool_tip);
           
-            svgs.selectAll('text')
+            this.gs.selectAll('text')
             .data(function(d) {
                     
                     return d.values;
                 }) // numerical values of each
                 .enter().append('text')
                 .attr('y', function(d) {
+                  //  console.log(d);
                     return x(d.country) + 9;
                 })
                 .attr('x', labelWidth + 12)
@@ -640,7 +654,7 @@
                 .text(function(d){
                     if (d.value === 0){
                         return 'zero';
-                    } else if (y(d.value) < 2){
+                    } else if (chart.y(d.value) < 2){
                         return d.value;
                     }
                 });
