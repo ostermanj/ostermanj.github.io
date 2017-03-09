@@ -13,13 +13,26 @@
 
 
     ColumnChart = function(el, cats, quest, head, scaleMax) {
-        console.log('ColumnChart');
+        var chart = this;
         this.el = el;
         this.cats = cats;
         this.quest = quest;
         this.head = head;
         this.scaleMax = scaleMax;
         this.chartMinMax();
+
+        var elementWatcher = scrollMonitor.create( el );
+        elementWatcher.enterViewport(function() {
+          if (this.watchItem.className.indexOf('in-view') === -1){
+                chart.adjustLength();
+                this.watchItem.className += ' in-view';
+               
+             }
+        });
+      /*  elementWatcher.exitViewport(function() {
+            console.log( 'I have left the viewport' );
+        }); */
+
         
         //this.update();  placeholder
         //this.resize();  placeholder
@@ -33,7 +46,7 @@
 
     ColumnChart.prototype = {
        chartMinMax: function(){
-        console.log('chartMinMax');
+        
           
           var chart = this;
           var numericValues = [];
@@ -88,8 +101,23 @@
           this.setup();
           
         },
+        adjustLength: function(){
+            console.log('adjust length');
+            var chart = this;
+            
+            
+            this.svgs.selectAll('rect')
+            .transition().delay(500).duration(1000).ease(d3.easeBounce)
+            .attr('height', function(d) {
+                
+                    return chart.y(d.value); // passing d.value as parameter to scale function
+                })
+            .attr('y', function(d) {
+                    return chart.svgHeight - chart.y(d.value); // passing d.value as parameter to scale function
+                }); 
+        },
         setup: function() {
-            console.log('setup');
+            
             var chart = this; // should be able to use app.chart ??
             var margin = {
                     top: 5,
@@ -98,8 +126,9 @@
                     left: 0
                 },
                 labelHeight = 0,
-                svgWidth = 95 - margin.right - margin.left,
-                svgHeight = 70 + labelHeight - margin.top - margin.bottom;
+                svgWidth = 95 - margin.right - margin.left;
+            
+            this.svgHeight = 70 + labelHeight - margin.top - margin.bottom;
 
             //  
             /* array[2] -> Object [key=electricity]       -> array [2] -> Object [key=generator]     -> array[5]
@@ -107,29 +136,29 @@
                                                -> Object [key=access_to_finance] -> array [2] -> Object [key=bank_account]  -> array[5]
                                                                                               -> Object [key=loan_/_credit] -> array[5]
  // *** CAN THE SCALES HAVE LOGIC TO DECIDE BT ABS AND PERCENTAGE ?                                                                                */
-console.log(chart.domainRange);
+
             var x = d3.scaleBand()
 // NEEDS TO BE SET PROGRAMMATICALLY
                 .domain(chart.domainRange) 
                 .range([0, svgWidth])
                 .padding(0.33);
 
-            var y = d3.scaleLinear()
+            chart.y = d3.scaleLinear()
                 .domain([0, chart.max])
-                .range([0, svgHeight]);
+                .range([0, chart.svgHeight]);
 
             var yAxisScale = d3.scaleLinear()
 // NEEDS TO BE SET PROGRAMMATICALLY (LATER CHARTS HAVE VALUES GREATER THAN 100%)
                 .domain([0, chart.max])
-                .range([svgHeight, 0]);
+                .range([chart.svgHeight, 0]);
 
             var xAxis = d3.axisBottom().scale(x).tickSize(0).tickFormat(function(d){
-                console.log(d);
+                
                 return d.replace(/\d-/,'');
             });
 
             var yAxis = d3.axisRight().scale(yAxisScale).ticks(2).tickSize(0).tickFormat(function(d){
-                console.log(chart);
+                
                 if (chart.units === 'percent'){
                     return d3.format(',.0%')(d); // as a percent rounded no decimal
                 } else if (chart.units === 'currency'){
@@ -230,7 +259,7 @@ console.log(chart.domainRange);
 
 
 
-            var svgs = questionDiv.selectAll('svg')
+            this.svgs = questionDiv.selectAll('svg')
                 .data(function(d) {
                     return d.values;
                 }) // 4 x array[5] : Object[key=<country>]
@@ -238,12 +267,13 @@ console.log(chart.domainRange);
                 .attr('class', 'svg-wrapper')
                 .append('svg')
                 .attr('width', svgWidth + margin.left + margin.right)
-                .attr('height', svgHeight + margin.top + margin.bottom)
+                .attr('height', this.svgHeight + margin.top + margin.bottom)
                 .attr('class', function(d, i, array) {
                     var str = i === 0 ? ' first-chart' : i === array.length - 1 ? ' last-chart' : '';
                     return d.key + str + ' series-' + i + ' ' + d.values[0].units;
-                })
-                .append('g')
+                });
+
+            this.svgs.append('g')
                 .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
                 .selectAll('rect')
                 .data(function(d) {
@@ -258,13 +288,11 @@ console.log(chart.domainRange);
                     return x(d.firm_type);
                 })
                 .attr('y', function(d) {
-                    return svgHeight - y(d.value); // passing d.value as parameter to scale function
+                    return chart.svgHeight; // passing d.value as parameter to scale function
                 })
 
                 .attr('width', x.bandwidth())
-                .attr('height', function(d) {
-                    return y(d.value); // passing d.value as parameter to scale function
-                }) 
+                
                 .attr('class', function(d) {
 
                     return d.firm_type.replace(/\d-/,'');
@@ -298,11 +326,11 @@ console.log(chart.domainRange);
             questionDiv.selectAll('svg')
                 .append('g')
                 .attr('class', 'x-axis')
-                .attr('transform', 'translate(0,' + (svgHeight + margin.top) + ')')
+                .attr('transform', 'translate(0,' + (this.svgHeight + margin.top) + ')')
                 .call(xAxis)
                 .selectAll("text")
              /*   .html(function(d){
-                    console.log(d);
+                    
                     return d.firm_type;
                 })*/
                 .attr("transform", "rotate(-90)")
@@ -321,7 +349,7 @@ console.log(chart.domainRange);
            
 
 
-
+              //  this.adjustLength();
         } // end setup()
     }; // end prototype  for ColumnChart
 
@@ -437,7 +465,7 @@ console.log(chart.domainRange);
            
 
              var yAxis = d3.axisBottom().scale(yAxisScale).ticks(5).tickSize(0).tickFormat(function(d){
-                console.log(chart);
+                
                 if (chart.units === 'percent'){
                     return d3.format(',.0%')(d); // as a percent rounded no decimal
                 } else if (chart.units === 'currency'){
@@ -690,7 +718,7 @@ console.log(chart.domainRange);
             new BarChart('#chart-15', ['registration_requirements'], ['capital_min'], false);
             new ColumnChart('#chart-16', ['productivity'], ['sales_per_worker'], true);
 
-            console.log(app.data);
+            
             var div = document.getElementById('nav-buttons');
             app.data.forEach(function(obj){
                 var button = document.createElement('button');
@@ -710,3 +738,17 @@ console.log(chart.domainRange);
     d3.csv(DATA_FILE, app.initialize);
 
 })(); // end IIFE
+/*
+//var myElement = document.getElementById("chart-17");
+var charts = document.querySelectorAll('.viz-container');
+charts.forEach(function(chart){
+console.log(chart);
+    var elementWatcher = scrollMonitor.create( chart );
+
+    elementWatcher.enterViewport(function() {
+        console.log( 'I have entered the viewport' );
+    });
+    elementWatcher.exitViewport(function() {
+        console.log( 'I have left the viewport' );
+    });
+});*/
