@@ -30,36 +30,38 @@ ColumnChart.prototype = {
        setup: function(){
             var chart = this; // should be able to use app.chart ??
             var margin = {
-                    top: 5,
-                    right: 29,
-                    bottom: 5,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
                     left: 0
                 },
                 labelHeight = 0,
-                svgWidth = 95 - margin.right - margin.left;
-            
-            this.svgHeight = 70 + labelHeight - margin.top - margin.bottom;
+                strokeWidth = 3;
 
-            var x = d3.scaleBand()
+            this.svgWidth = 95 - margin.right - margin.left;
+            
+            this.svgHeight = 95 + labelHeight - margin.top - margin.bottom;
+
+          /*  var x = d3.scaleBand()
                 .domain(chart.domain) 
                 .range([0, svgWidth])
-                .padding(0.33);
+                .padding(0.33); */
 
             chart.y = d3.scaleLinear()
-                .domain([0, chart.max])
-                .range([0, chart.svgHeight]);
+                .domain([chart.min, chart.max])
+                .range([2, ( chart.svgHeight / 2 ) - strokeWidth]);
 
-            var yAxisScale = d3.scaleLinear()
+         /*   var yAxisScale = d3.scaleLinear()
                 .domain([0, chart.max])
                 .range([chart.svgHeight, 0]);
 
             var xAxis = d3.axisBottom().scale(x).tickSize(0).tickFormat(function(d){                
                 return d;
-            });
+            }); 
 
             var yAxis = d3.axisRight().scale(yAxisScale).ticks(10).tickSize(0).tickFormat(function(d){
                 return d;
-            });
+            });*/
 
 
             var tool_tip = d3.tip()
@@ -86,23 +88,20 @@ ColumnChart.prototype = {
                 .attr('id', function(d){
                     return d.key;
                 })
-                .attr('width', svgWidth)
+                .attr('width', this.svgWidth)
                 .attr('height', this.svgHeight);
 
             this.svgs.append('g')
               //  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-                .selectAll('rect')
+                .selectAll('circle')
                 .data(function(d) {
                     return d.values;
                 }) // numerical values of each
-                .enter().append('rect')
-                .attr('x', function(d) {
-                    return x(d.domain);
-                })
-                .attr('y', function(d) {
-                    return chart.svgHeight; // passing d.value as parameter to scale function
-                })
-                .attr('width', x.bandwidth())                
+                .enter().append('circle')
+                .attr('cx', chart.svgWidth / 2 )
+                .attr('cy', chart.svgHeight / 2 )
+                .attr('r',0)
+                .attr('stroke-width', strokeWidth)
                 .attr('class', function(d) {
                     return d.domain;
                 })
@@ -118,15 +117,12 @@ ColumnChart.prototype = {
             var chart = this;
             
             
-            this.svgs.selectAll('rect')
+            this.svgs.selectAll('circle')
             .transition().delay(function(d,i){
                 return 200 + (i * 20);
             }).duration(1000).ease(d3.easeBounce)
-            .attr('height', function(d) {                
+            .attr('r', function(d) {                
                     return chart.y(d.value); // passing d.value as parameter to scale function
-                })
-            .attr('y', function(d) {
-                    return chart.svgHeight - chart.y(d.value); // passing d.value as parameter to scale function
                 }); 
         }
 

@@ -1,28 +1,46 @@
 .environment {
+  stroke:#008026;
   fill:#008026;
 }
 
 .human_rights {
+  stroke:#4C82B8;
   fill:#4C82B8;
+  
 }
 
 .gender_equity {
+  stroke:#9A471A;
   fill:#9A471A;
+  
 }
 
 .good_governance {
+  stroke:#FFBE42;
   fill:#FFBE42;
+  
 }
 
 .peace {
+  stroke:#7F7F7F;
   fill:#7F7F7F;
+  
 }
 
 .poverty_reduction {
+  stroke:#81659D;
   fill:#81659D;
+  
 }
 
 #chart-0 svg {
   background-color: #f3f3f3;
   margin-right: 5px;
+  line-height: 0;
+}
+
+#chart-0 svg circle {
+   stroke:-opacity: 0.8;;
+   fill-opacity:0;
+}
 }
