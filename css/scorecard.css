@@ -33,14 +33,26 @@
   
 }
 
+#chart-0 {
+    line-height: 0;
+}
+
 #chart-0 svg {
   background-color: #f3f3f3;
-  margin-right: 5px;
+  margin: 0 5px 5px 0;
   line-height: 0;
 }
 
 #chart-0 svg circle {
    stroke:-opacity: 0.8;;
    fill-opacity:0;
+   
 }
+
+.country-label {
+    font-family: "Passion One", "Helevetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    fill: #888;
+    letter-spacing: 0.5px;
+
 }

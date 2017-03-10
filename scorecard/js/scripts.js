@@ -29,18 +29,19 @@ ColumnChart.prototype = {
        },
        setup: function(){
             var chart = this; // should be able to use app.chart ??
-            var margin = {
-                    top: 0,
+            this.margin = {
+                    top: 12,
                     right: 0,
                     bottom: 0,
                     left: 0
-                },
-                labelHeight = 0,
-                strokeWidth = 3;
+                };
+                
+            this.strokeWidth = 3;
 
-            this.svgWidth = 95 - margin.right - margin.left;
+            this.svgWidth = 106;
             
-            this.svgHeight = 95 + labelHeight - margin.top - margin.bottom;
+            this.svgHeight = this.svgWidth;
+            this.previousValue = null;
 
           /*  var x = d3.scaleBand()
                 .domain(chart.domain) 
@@ -49,7 +50,7 @@ ColumnChart.prototype = {
 
             chart.y = d3.scaleLinear()
                 .domain([chart.min, chart.max])
-                .range([2, ( chart.svgHeight / 2 ) - strokeWidth]);
+                .range([2, ( chart.svgHeight / 2 ) - chart.strokeWidth - chart.margin.top]);
 
          /*   var yAxisScale = d3.scaleLinear()
                 .domain([0, chart.max])
@@ -89,19 +90,32 @@ ColumnChart.prototype = {
                     return d.key;
                 })
                 .attr('width', this.svgWidth)
-                .attr('height', this.svgHeight);
+                .attr('height', this.svgHeight)
+
+            this.svgs.append('text')
+                .text(function(d){
+                    return d.key;
+                })
+                .attr('alignment-baseline', 'after-edge')
+                .attr('class','country-label')
+                .attr('y', this.svgHeight)
+                .attr('x',this.svgWidth / 2)
+                .attr('text-anchor', 'middle');
 
             this.svgs.append('g')
-              //  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+         //       .attr('transform', 'translate(' + chart.margin.left + ',' + chart.margin.top + ')')
                 .selectAll('circle')
                 .data(function(d) {
-                    return d.values;
+                    var sorted = d.values.sort(function(a,b){
+                        return b.value - a.value;
+                    })
+                    return sorted;
                 }) // numerical values of each
                 .enter().append('circle')
                 .attr('cx', chart.svgWidth / 2 )
-                .attr('cy', chart.svgHeight / 2 )
+                .attr('cy', chart.svgHeight / 2)
                 .attr('r',0)
-                .attr('stroke-width', strokeWidth)
+                .attr('stroke-width', this.strokeWidth)
                 .attr('class', function(d) {
                     return d.domain;
                 })
@@ -121,8 +135,27 @@ ColumnChart.prototype = {
             .transition().delay(function(d,i){
                 return 200 + (i * 20);
             }).duration(1000).ease(d3.easeBounce)
-            .attr('r', function(d) {                
-                    return chart.y(d.value); // passing d.value as parameter to scale function
+            .attr('r', function(d,i,array) {                
+                    var radius = chart.y(d.value);
+                    
+                    if (chart.previousValue){
+                        console.log('previous: ' + chart.previousValue);
+                        console.log(chart.previousValue - radius);
+                        if (chart.previousValue - radius < chart.strokeWidth && chart.previousValue >= radius) {
+                            console.log('overlap');
+                            console.log('r: ' + radius);
+                            console.log('previous: ' + chart.previousValue);
+                            radius = chart.previousValue - chart.strokeWidth;
+                        } else if (radius - chart.previousValue < chart.strokeWidth && radius >= chart.previousValue){
+                            radius = chart.previousValue + chart.strokeWidth;
+                        }
+                    }
+                    if ( i === array.lenth - 1 ){
+                        chart.previousValue = null;
+                    } else {
+                        chart.previousValue = radius;
+                    }
+                    return radius;
                 }); 
         }
 
