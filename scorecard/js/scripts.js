@@ -61,7 +61,74 @@ ColumnChart.prototype = {
                 return d;
             });
 
-       }
+
+            var tool_tip = d3.tip()
+                .attr("class", "d3-tip")
+                // .offset([-8, 0])
+                .direction(function(){
+                    if (window.innerWidth > 820){
+                        return 'n';
+                    } else {
+                        return 'e';
+                    }
+                })
+                .html(function(d) {                    
+                    return '<b>' + d.country + '</b><br>' +
+                        d.readable + '<br>' +
+                        d.value;               
+                })
+                .style('opacity', 1);
+
+            this.svgs = d3.select(this.el)
+                .selectAll('svg')
+                .data(model.data).enter()
+                .append('svg')
+                .attr('id', function(d){
+                    return d.key;
+                })
+                .attr('width', svgWidth)
+                .attr('height', this.svgHeight);
+
+            this.svgs.append('g')
+              //  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+                .selectAll('rect')
+                .data(function(d) {
+                    return d.values;
+                }) // numerical values of each
+                .enter().append('rect')
+                .attr('x', function(d) {
+                    return x(d.domain);
+                })
+                .attr('y', function(d) {
+                    return chart.svgHeight; // passing d.value as parameter to scale function
+                })
+                .attr('width', x.bandwidth())                
+                .attr('class', function(d) {
+                    return d.domain;
+                })
+                .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
+                .on('mouseout', tool_tip.hide) // .hide is defined in links d3-tip library
+                .call(tool_tip);
+
+                this.adjustLength();
+
+       },
+       adjustLength: function(){
+            console.log('adjust length');
+            var chart = this;
+            
+            
+            this.svgs.selectAll('rect')
+            .transition().delay(function(d,i){
+                return 200 + (i * 20);
+            }).duration(1000).ease(d3.easeBounce)
+            .attr('height', function(d) {                
+                    return chart.y(d.value); // passing d.value as parameter to scale function
+                })
+            .attr('y', function(d) {
+                    return chart.svgHeight - chart.y(d.value); // passing d.value as parameter to scale function
+                }); 
+        }
 
 };
 

@@ -1,0 +1,28 @@
+.environment {
+  fill:#008026;
+}
+
+.human_rights {
+  fill:#4C82B8;
+}
+
+.gender_equity {
+  fill:#9A471A;
+}
+
+.good_governance {
+  fill:#FFBE42;
+}
+
+.peace {
+  fill:#7F7F7F;
+}
+
+.poverty_reduction {
+  fill:#81659D;
+}
+
+#chart-0 svg {
+  background-color: #f3f3f3;
+  margin-right: 5px;
+}

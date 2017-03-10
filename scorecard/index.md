@@ -2,6 +2,7 @@
 layout: page
 permalink: /scorecard/
 title: Country global citizenship report card
+custom_css: scorecard
 menu: hide
 ---
 
