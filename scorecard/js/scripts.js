@@ -1,13 +1,17 @@
 "use strict";
 
-var ColumnChart = function(el) {
+/*
+ * Chart prototype, common to all scorecard charts
+ */
+
+var Chart = function(el) {
         
         var chart = this;
         this.el = el;
         this.chartMinMaxDomain();
     };
 
-ColumnChart.prototype = {
+Chart.prototype = {
        chartMinMaxDomain: function(){
             var chart = this;
             var numericValues = [];
@@ -25,9 +29,9 @@ ColumnChart.prototype = {
             this.max = d3.max(numericValues);
             this.min = d3.min(numericValues);
             
-            this.setup();
+            this.protoSetup();
        },
-       setup: function(){
+       protoSetup: function(){
             var chart = this; // should be able to use app.chart ??
             this.margin = {
                     top: 12,
@@ -43,44 +47,10 @@ ColumnChart.prototype = {
             this.svgHeight = this.svgWidth;
             this.previousValue = null;
 
-          /*  var x = d3.scaleBand()
-                .domain(chart.domain) 
-                .range([0, svgWidth])
-                .padding(0.33); */
-
             chart.y = d3.scaleLinear()
                 .domain([chart.min, chart.max])
                 .range([2, ( chart.svgHeight / 2 ) - chart.strokeWidth - chart.margin.top]);
 
-         /*   var yAxisScale = d3.scaleLinear()
-                .domain([0, chart.max])
-                .range([chart.svgHeight, 0]);
-
-            var xAxis = d3.axisBottom().scale(x).tickSize(0).tickFormat(function(d){                
-                return d;
-            }); 
-
-            var yAxis = d3.axisRight().scale(yAxisScale).ticks(10).tickSize(0).tickFormat(function(d){
-                return d;
-            });*/
-
-
-         /*   var tool_tip = d3.tip()
-                .attr("class", "d3-tip")
-                // .offset([-8, 0])
-                .direction(function(){
-                    if (window.innerWidth > 820){
-                        return 'n';
-                    } else {
-                        return 'e';
-                    }
-                })
-                .html(function(d) {                    
-                    return '<b>' + d.country + '</b><br>' +
-                        d.readable + '<br>' +
-                        d.value;               
-                })
-                .style('opacity', 1); */
 
             this.svgs = d3.select(this.el)
                 .selectAll('svg')
@@ -105,31 +75,7 @@ ColumnChart.prototype = {
                 .attr('x',this.svgWidth / 2)
                 .attr('text-anchor', 'middle');
 
-            this.gs = this.svgs.append('g')
-                .attr('class', 'circles')
-                .attr('opacity', 1);
-         
-            this.gs.selectAll('circle')
-                .data(function(d) {
-                    var sorted = d.values.sort(function(a,b){
-                        return b.value - a.value;
-                    })
-                    return sorted;
-                }) // numerical values of each
-                .enter().append('circle')
-                .attr('cx', chart.svgWidth / 2 )
-                .attr('cy', chart.svgHeight / 2)
-                .attr('r',0)
-                .attr('stroke-width', this.strokeWidth)
-                .attr('class', function(d) {
-                    return d.domain;
-                });
-               
-               
-
-                this.adjustLength();
-
-       },
+    },
        hoverIn: function(){
         d3.select(this)
         .select('g.circles')
@@ -196,6 +142,23 @@ ColumnChart.prototype = {
 
 };
 
+/*
+ * CIRCLE CHART CONSTRUCTOR
+ */
+
+    var CircleChart = function(el){
+
+        this.extendPrototype(CircleChart.prototype, circleChartExtension); 
+        Chart.call(this, el);
+
+    }
+
+    CircleChart.prototype = Object.create(Chart.prototype); 
+
+    var circleChartExtension = {
+        
+    };
+
 
 /*
  * MODEL
@@ -230,7 +193,7 @@ var model = {
 
 var controller = {
     makeCharts: function(){
-         new ColumnChart('#chart-0');
+         new Chart('#chart-0');
     }
 };
 
