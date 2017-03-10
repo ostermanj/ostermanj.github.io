@@ -52,10 +52,10 @@ below: seems the effect of the chart depends a lot on the scale chosen for the l
 <!-- scripts for D3, D3-tip, and the visualizations -->
 <script src="https://www.cgdev.org/sites/all/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js?v=1.7.2"></script>
 
-<script src="https://code.highcharts.com/5.0.7/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="js/highcharts-theme-r.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://www.cgdev.org/sites/all/themes/entity_iframe/js/highcharts-exporting-4.js"></script><script src="https://www.cgdev.org/sites/all/themes/entity_iframe/js/export-csv.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script><script src="https://www.cgdev.org/sites/all/themes/entity_iframe/js/export-csv.js"></script>
 <script src="js/pattern-fill-v2.js"></script>
 
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
