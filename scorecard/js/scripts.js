@@ -1,7 +1,7 @@
 "use strict";
 
 var ColumnChart = function(el) {
-        console.log('ColumnChart');
+        
         var chart = this;
         this.el = el;
         this.chartMinMaxDomain();
@@ -20,11 +20,11 @@ ColumnChart.prototype = {
                     }
                 });
             });
-            console.log(numericValues);
+            
             chart.domain.sort();
             this.max = d3.max(numericValues);
             this.min = d3.min(numericValues);
-            console.log(this.max,this.min);
+            
             this.setup();
        },
        setup: function(){
@@ -65,7 +65,7 @@ ColumnChart.prototype = {
             });*/
 
 
-            var tool_tip = d3.tip()
+         /*   var tool_tip = d3.tip()
                 .attr("class", "d3-tip")
                 // .offset([-8, 0])
                 .direction(function(){
@@ -80,7 +80,7 @@ ColumnChart.prototype = {
                         d.readable + '<br>' +
                         d.value;               
                 })
-                .style('opacity', 1);
+                .style('opacity', 1); */
 
             this.svgs = d3.select(this.el)
                 .selectAll('svg')
@@ -91,6 +91,9 @@ ColumnChart.prototype = {
                 })
                 .attr('width', this.svgWidth)
                 .attr('height', this.svgHeight)
+                .on('mouseover', this.hoverIn) 
+                .on('mouseout', this.hoverOut);
+                
 
             this.svgs.append('text')
                 .text(function(d){
@@ -102,9 +105,11 @@ ColumnChart.prototype = {
                 .attr('x',this.svgWidth / 2)
                 .attr('text-anchor', 'middle');
 
-            this.svgs.append('g')
-         //       .attr('transform', 'translate(' + chart.margin.left + ',' + chart.margin.top + ')')
-                .selectAll('circle')
+            this.gs = this.svgs.append('g')
+                .attr('class', 'circles')
+                .attr('opacity', 1);
+         
+            this.gs.selectAll('circle')
                 .data(function(d) {
                     var sorted = d.values.sort(function(a,b){
                         return b.value - a.value;
@@ -118,16 +123,46 @@ ColumnChart.prototype = {
                 .attr('stroke-width', this.strokeWidth)
                 .attr('class', function(d) {
                     return d.domain;
-                })
-                .on('mouseover', tool_tip.show) // .show is defined in links d3-tip library
-                .on('mouseout', tool_tip.hide) // .hide is defined in links d3-tip library
-                .call(tool_tip);
+                });
+               
+               
 
                 this.adjustLength();
 
        },
+       hoverIn: function(){
+        d3.select(this)
+        .select('g.circles')
+        .transition().duration(200)
+        .attr('opacity', 0);
+
+        /*d3.select(this)
+          .append('g')
+          .attr('class', 'columns')
+          .attr('opacity', 1)
+          .data(function(d) {
+                    var sorted = d.values.sort(function(a,b){
+                        return b.value - a.value;
+                    })
+                    return sorted;
+            })
+          .enter().append('rect')
+          .attr('x', function(d){
+            return d3.scaleBand(d.value)
+                .domain(['environment','human_rights',])
+                .range([0, svgHeight])
+                .padding(0.33);
+
+          })*/
+       },
+       hoverOut: function(){
+         d3.select(this)
+            .select('g.circles')
+            .transition().duration(200)
+            .attr('opacity', 1);
+       },
        adjustLength: function(){
-            console.log('adjust length');
+            
             var chart = this;
             
             
@@ -139,12 +174,12 @@ ColumnChart.prototype = {
                     var radius = chart.y(d.value);
                     
                     if (chart.previousValue){
-                        console.log('previous: ' + chart.previousValue);
-                        console.log(chart.previousValue - radius);
+                        
+                        
                         if (chart.previousValue - radius < chart.strokeWidth && chart.previousValue >= radius) {
-                            console.log('overlap');
-                            console.log('r: ' + radius);
-                            console.log('previous: ' + chart.previousValue);
+                            
+                            
+                            
                             radius = chart.previousValue - chart.strokeWidth;
                         } else if (radius - chart.previousValue < chart.strokeWidth && radius >= chart.previousValue){
                             radius = chart.previousValue + chart.strokeWidth;
@@ -170,7 +205,7 @@ ColumnChart.prototype = {
 var model = {
     data: [],
     initialize: function(json) {
-        console.log('init');
+        
         json.forEach(function(obj) { //iterate over each object of the data array
             for (var key in obj) { // iterate over each property of the object
                 if (obj.hasOwnProperty(key)) {
@@ -184,7 +219,7 @@ var model = {
             })
             .entries(json);
 
-        console.log(nested);
+        
         model.data = nested;
 
         controller.makeCharts();
