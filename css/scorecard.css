@@ -44,8 +44,8 @@
 }
 
 #chart-0 svg ellipse {
-   stroke:-opacity: 0.8;;
-   fill-opacity:0;
+   stroke-opacity: 1;
+   
    
 }
 

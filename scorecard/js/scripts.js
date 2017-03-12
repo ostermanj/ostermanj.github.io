@@ -54,7 +54,7 @@ Chart.prototype = {
             }, false)
             .on('mouseout', function(d,i,array){
                 chart.hoverOut.call(chart,d,i,array);
-            })
+            });
 
 
         this.svgs.append('text')
@@ -144,16 +144,40 @@ var circleChartExtension = {
                 .domain([chart.min, chart.max])
                 .range([2, (chart.svgHeight / 2) - chart.strokeWidth - chart.margin.top]);
 
+        this.maskBars = this.svgs.append('defs')
+        .selectAll('clipPath')
+         .data(function(d) {
+            console.log(d);
+             return d.values;
+            })
+         .enter().append('clipPath')
+         .attr('id', function(d,i){
+            return 'mask-' +  encodeURIComponent(d.country) + '-' + i;
+         })
+         .append('rect')
+         .attr('y', function(d,i,array){
+            return chart.svgHeight - chart.margin.bottom - chart.strokeWidth - chart.y(d.value) * 2;
+            })
+            .attr('x', function(d){
+                return chart.barX(d.domain);
+            })
+            .attr('height', function(d){
+                return chart.y(d.value) * 2;
+            })
+            .attr('width', chart.barX.bandwidth());
+           // .attr('fill', 'transparent')
+           // .attr('stroke', 'magenta');
+
+
         this.gs = this.svgs.append('g')
             .attr('class', 'circles')
             .attr('opacity', 1);
 
+     
         this.gs.selectAll('ellipse')
             .data(function(d) {
-                var sorted = d.values.sort(function(a, b) {
-                    return b.value - a.value;
-                })
-                return sorted;
+             
+                return d.values;
             }) // numerical values of each
             .enter().append('ellipse')
             .attr('cx', chart.svgWidth / 2)
@@ -165,6 +189,8 @@ var circleChartExtension = {
                 return d.domain;
             });
 
+
+      
         this.adjustRadii();
     },
     adjustRadii: function() {
@@ -197,7 +223,8 @@ var circleChartExtension = {
             })
             .attr('ry', function(d,i,array){
                 return chart.returnRadii(d, i, array);
-            });
+            })
+            .attr('fill-opacity',0);
             
      },
      hoverIn: function(d,i,array) {
@@ -207,25 +234,51 @@ var circleChartExtension = {
        d3.select(array[i]).selectAll('ellipse')
         .transition().duration(500).delay(150)
         .attr('rx', 1)
+        .attr('ry', function(d){
+            return chart.y(d.value) - chart.strokeWidth;
+        })
         .attr('cy', function(d,i,array){
-            return chart.svgHeight / 2 - d3.select(array[i]).attr('ry') + chart.svgHeight / 2 - chart.margin.bottom - 5;
+            return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
         })
         .attr('cx', function(d){
-            return chart.barX(d.domain);
-        });;
+            return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
+        })
+        .attr('fill-opacity',1)
+        .transition().delay(50)
+        .attr('clip-path', function(d,i){
+           return 'url(#mask-' + encodeURIComponent(d.country) + '-' + i + ')';
+        })
+
+        
+        .attr('rx', function(d){
+            return chart.barX.bandwidth();
+        })
+        .attr('ry', function(d){
+            return chart.y(d.value) + chart.strokeWidth;
+        });
     
     },
      hoverOut: function(d,i,array) {
         console.log(d);
         var chart = this;
       d3.select(array[i]).selectAll('ellipse')
-        .transition().duration(200)
+        .transition().duration(100)
+        .attr('rx', 1)
+        .attr('ry', function(d){
+            return chart.y(d.value) - chart.strokeWidth;
+        })
+        .transition().duration(500).delay(50)
+        .attr('clip-path','')
+        .attr('cy', chart.svgHeight / 2)
         .attr('cx', chart.svgWidth / 2)
-        .attr('cy', chart.svgHeight / 2) 
+        .attr('fill-opacity',0)
         .attr('rx', function(d,i,array){
-            return d3.select(array[i]).attr('ry');
-            //return chart.returnRadii(d, i, array);
+            return chart.returnRadii(d, i, array);            
+        })
+        .attr('ry', function(d,i,array){
+            return chart.returnRadii(d, i, array);            
         });
+        
        
 
 
