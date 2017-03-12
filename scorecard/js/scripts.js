@@ -49,8 +49,12 @@ Chart.prototype = {
             })
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
-            .on('mouseover', this.hoverIn)
-            .on('mouseout', this.hoverOut);
+            .on('mouseover', function(d,i,array){
+                chart.hoverIn.call(chart,d,i,array);
+            }, false)
+            .on('mouseout', function(d,i,array){
+                chart.hoverOut.call(chart,d,i,array);
+            })
 
 
         this.svgs.append('text')
@@ -65,24 +69,34 @@ Chart.prototype = {
 
         this.setup();
 
-    },
-    hoverIn: function() {
-        d3.select(this)
-            .select('g.circles')
-            .transition().duration(200)
-            .attr('opacity', 0);
-
-
-
-
-    },
-    hoverOut: function() {
-        d3.select(this)
-            .select('g.circles')
-            .transition().duration(200)
-            .attr('opacity', 1);
     }
+   
+      
+  /* 
+    this.selectAll('circle')
+            .transition().duration(2000)
+            .attr('opacity', 0);
+/*
+        d3.select(this)
+            .select('g.columns')
+            .transition().delay(200).duration(200)
+            .attr('opacity', 1);
 
+        d3.select('rect')
+            .transition().duration(100).ease(d3.easeBounce)
+            .attr('height', function(d){
+                return chart.barY(d.value);
+              })
+              .attr('y', function(d){
+                return chart.svgHeight - chart.margin.bottom - chart.barY(d.value) - chart.strokeWidth;
+              });
+
+
+*/
+
+    
+    
+   
 
 };
 
@@ -121,6 +135,10 @@ var circleChartExtension = {
 
         var chart = this;
 
+        this.barX = d3.scaleBand()
+            .domain(chart.domain)
+            .range([chart.margin.left, chart.svgWidth - chart.margin.right])
+            .padding(0.33);
 
         this.y = d3.scaleLinear()
                 .domain([chart.min, chart.max])
@@ -130,17 +148,18 @@ var circleChartExtension = {
             .attr('class', 'circles')
             .attr('opacity', 1);
 
-        this.gs.selectAll('circle')
+        this.gs.selectAll('ellipse')
             .data(function(d) {
                 var sorted = d.values.sort(function(a, b) {
                     return b.value - a.value;
                 })
                 return sorted;
             }) // numerical values of each
-            .enter().append('circle')
+            .enter().append('ellipse')
             .attr('cx', chart.svgWidth / 2)
             .attr('cy', chart.svgHeight / 2)
-            .attr('r', 0)
+            .attr('rx', 0)
+            .attr('ry', 0)
             .attr('stroke-width', this.strokeWidth)
             .attr('class', function(d) {
                 return d.domain;
@@ -151,23 +170,11 @@ var circleChartExtension = {
     adjustRadii: function() {
 
         var chart = this;
-
-
-        this.svgs.selectAll('circle')
-            .transition().delay(function(d, i) {
-                return 200 + (i * 20);
-            }).duration(1000).ease(d3.easeBounce)
-            .attr('r', function(d, i, array) {
-                
-                var radius = chart.y(d.value);
-
+        
+        this.returnRadii = function(d, i, array){
+            var radius = chart.y(d.value);
                 if (chart.previousValue) {
-
-
                     if (chart.previousValue - radius < chart.strokeWidth && chart.previousValue >= radius) {
-
-
-
                         radius = chart.previousValue - chart.strokeWidth;
                     } else if (radius - chart.previousValue < chart.strokeWidth && radius >= chart.previousValue) {
                         radius = chart.previousValue + chart.strokeWidth;
@@ -179,10 +186,52 @@ var circleChartExtension = {
                     chart.previousValue = radius;
                 }
                 return radius;
-            });
-        this.hoverCharts();
-    },
+        }
 
+        this.svgs.selectAll('ellipse')
+            .transition().delay(function(d, i) {
+                return 200 + (i * 20);
+            }).duration(1000).ease(d3.easeBounce)
+            .attr('rx', function(d,i,array){
+                return chart.returnRadii(d, i, array);
+            })
+            .attr('ry', function(d,i,array){
+                return chart.returnRadii(d, i, array);
+            });
+            
+     },
+     hoverIn: function(d,i,array) {
+
+        var chart = this;
+        console.log(d);
+       d3.select(array[i]).selectAll('ellipse')
+        .transition().duration(500).delay(150)
+        .attr('rx', 1)
+        .attr('cy', function(d,i,array){
+            return chart.svgHeight / 2 - d3.select(array[i]).attr('ry') + chart.svgHeight / 2 - chart.margin.bottom - 5;
+        })
+        .attr('cx', function(d){
+            return chart.barX(d.domain);
+        });;
+    
+    },
+     hoverOut: function(d,i,array) {
+        console.log(d);
+        var chart = this;
+      d3.select(array[i]).selectAll('ellipse')
+        .transition().duration(200)
+        .attr('cx', chart.svgWidth / 2)
+        .attr('cy', chart.svgHeight / 2) 
+        .attr('rx', function(d,i,array){
+            return d3.select(array[i]).attr('ry');
+            //return chart.returnRadii(d, i, array);
+        });
+       
+
+
+    }
+
+/*
     hoverCharts: function(){
         var chart = this;
         
@@ -192,11 +241,12 @@ var circleChartExtension = {
 
         this.barX = d3.scaleBand()
             .domain(chart.domain)
-            .range([chart.margin.left, chart.svgWidth - chart.margin.right]);
+            .range([chart.margin.left, chart.svgWidth - chart.margin.right])
+            .padding(0.33);
 
-        this.gs = this.svgs.append('g')
+        this.gbars = this.svgs.append('g')
             .attr('class', 'columns')
-            .attr('opacity', 1)
+            .attr('opacity', 0)
             .selectAll('rect')
              .data(function(d) {
                     var sorted = d.values.sort(function(a,b){
@@ -206,9 +256,14 @@ var circleChartExtension = {
             })
           .enter().append('rect')
           .attr('width', chart.barX.bandwidth())
+          .attr('class',function(d){
+            return d.domain;
+          })
           .attr('x', function(d){
             return chart.barX(d.domain);
           })
+         // .attr('height', 0)
+         // .attr('y', chart.svgHeight - chart.margin.bottom - chart.strokeWidth)
           .attr('height', function(d){
             return chart.barY(d.value);
           })
@@ -216,7 +271,7 @@ var circleChartExtension = {
             return chart.svgHeight - chart.margin.bottom - chart.barY(d.value) - chart.strokeWidth;
           });
     }
-
+*/
 };
 
 /*
