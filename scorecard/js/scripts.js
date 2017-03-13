@@ -49,11 +49,8 @@ Chart.prototype = {
             })
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
-            .on('mouseover', function(d,i,array){
+            .on('click', function(d,i,array){
                 chart.hoverIn.call(chart,d,i,array);
-            }, false)
-            .on('mouseout', function(d,i,array){
-                chart.hoverOut.call(chart,d,i,array);
             });
 
 
@@ -105,7 +102,8 @@ Chart.prototype = {
  */
 
 var CircleChart = function(el) {
-     
+    
+
     var chart = this;
      this.margin = {
                 top: 12,
@@ -133,6 +131,15 @@ var circleChartExtension = {
 
     setup: function() {
 
+    this.tool_tip = d3.tip()
+        .attr("class", "d3-tip")
+        // .offset([-8, 0])
+        .direction('n')
+        .html(function(d) {
+           return '<b>' + d.readable + ': </b>' + d.value;
+       })
+        .style('opacity', 1);
+
         var chart = this;
 
         this.barX = d3.scaleBand()
@@ -147,7 +154,7 @@ var circleChartExtension = {
         this.maskBars = this.svgs.append('defs')
         .selectAll('clipPath')
          .data(function(d) {
-            console.log(d);
+            
              return d.values;
             })
          .enter().append('clipPath')
@@ -187,7 +194,8 @@ var circleChartExtension = {
             .attr('stroke-width', this.strokeWidth)
             .attr('class', function(d) {
                 return d.domain;
-            });
+            })
+            .call(this.tool_tip);
 
 
       
@@ -230,8 +238,17 @@ var circleChartExtension = {
      hoverIn: function(d,i,array) {
 
         var chart = this;
-        console.log(d);
-       d3.select(array[i]).selectAll('ellipse')
+        
+       d3.select(array[i])
+      .on('mouseleave', function(d,i,array){
+                chart.hoverOut.call(chart,d,i,array);
+            }) 
+       .on('click', function(d,i,array){
+                chart.hoverOut.call(chart,d,i,array);
+            })
+       .selectAll('ellipse')
+         .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
+            .on('mouseout', chart.tool_tip.hide)            
         .transition().duration(500).delay(150)
         .attr('rx', 1)
         .attr('ry', function(d){
@@ -256,12 +273,23 @@ var circleChartExtension = {
         .attr('ry', function(d){
             return chart.y(d.value) + chart.strokeWidth;
         });
+        
     
     },
      hoverOut: function(d,i,array) {
-        console.log(d);
+        
         var chart = this;
-      d3.select(array[i]).selectAll('ellipse')
+      d3.select(array[i])
+       .on('mouseleave', function(){
+            return;
+            })
+            .on('click', function(d,i,array){
+                chart.hoverIn.call(chart,d,i,array);
+            })       
+       .selectAll('ellipse')
+       .on('mouseover', function(){
+        return;
+       })
         .transition().duration(100)
         .attr('rx', 1)
         .attr('ry', function(d){
@@ -283,6 +311,9 @@ var circleChartExtension = {
 
 
     }
+
+    
+
 
 /*
     hoverCharts: function(){
