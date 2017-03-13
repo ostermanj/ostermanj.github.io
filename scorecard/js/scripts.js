@@ -21,12 +21,14 @@ Chart.prototype = {
         var chart = this;
         var numericValues = [];
         this.domain = [];
-        model.data.forEach(function(c) {
-            c.values.forEach(function(d) {
-                numericValues.push(d.value);
-                if (chart.domain.indexOf(d.domain) === -1) {
-                    chart.domain.push(d.domain);
-                }
+        model.data.forEach(function(g) {
+            g.values.forEach(function(c){
+                c.values.forEach(function(d) {
+                    numericValues.push(d.value);
+                    if (chart.domain.indexOf(d.domain) === -1) {
+                        chart.domain.push(d.domain);
+                    }
+                });
             });
         });
 
@@ -39,11 +41,18 @@ Chart.prototype = {
     protoSetup: function() {
         var chart = this; 
         
+        this.incomeGroups = d3.select(this.el)
+        .selectAll('div')
+        .data(model.data).enter()
+        .append('div')
+        .attr('id', function(d) {
+            return d.key;
+        })
 
-        this.svgs = d3.select(this.el)
-            .selectAll('svg')
-            .data(model.data).enter()
-            .append('svg')
+        this.svgs = this.incomeGroups.selectAll('svg')
+            .data(function(d){
+                return d.values;
+            }).enter().append('svg')
             .attr('id', function(d) {
                 return d.key;
             })
@@ -154,7 +163,7 @@ var circleChartExtension = {
         this.maskBars = this.svgs.append('defs')
         .selectAll('clipPath')
          .data(function(d) {
-            
+            console.log(d);
              return d.values;
             })
          .enter().append('clipPath')
@@ -162,7 +171,7 @@ var circleChartExtension = {
             return 'mask-' +  encodeURIComponent(d.country) + '-' + i;
          })
          .append('rect')
-         .attr('y', function(d,i,array){
+         .attr('y', function(d){
             return chart.svgHeight - chart.margin.bottom - chart.strokeWidth - chart.y(d.value) * 2;
             })
             .attr('x', function(d){
@@ -225,7 +234,7 @@ var circleChartExtension = {
         this.svgs.selectAll('ellipse')
             .transition().delay(function(d, i) {
                 return 200 + (i * 20);
-            }).duration(1000).ease(d3.easeBounce)
+            }).duration(1050).ease(d3.easeBounce)
             .attr('rx', function(d,i,array){
                 return chart.returnRadii(d, i, array);
             })
@@ -393,6 +402,20 @@ var model = {
     data: [],
     initialize: function(json) {
 
+        json = model.convertStrings(json);
+        //model.nest(json);
+        
+        d3.csv(JOIN.file, function(joinJSON){
+            joinJSON = model.convertStrings(joinJSON);
+         //   console.log(json);
+         //   console.log(joinJSON);
+            model.joinResult(joinJSON,json);
+        });
+        
+        //var joinResult = this.join(d3.csv(JOIN.file),json,JOIN.joinKey,JOIN.joinKey, function())
+    },
+    convertStrings: function(json) {
+
         json.forEach(function(obj) { //iterate over each object of the data array
             for (var key in obj) { // iterate over each property of the object
                 if (obj.hasOwnProperty(key)) {
@@ -400,18 +423,51 @@ var model = {
                 }
             }
         });
+
+        return json;
+    },
+    nest: function(json){
+        
         var nested = d3.nest()
+            .key(function(d){
+                return d.income_group;
+            })
             .key(function(d) {
                 return d.country;
             })
             .entries(json);
 
 
-        model.data = nested;
+        model.data = nested; // MOVE THIS
+        console.log(model.data);
 
-        controller.makeCharts();
+        controller.makeCharts(); // MOVE THIS
 
+    },
+    join: function (lookupTable, mainTable, lookupKey, mainKey, select) { // HT http://learnjsdata.com/combine_data.html
+        var l = lookupTable.length,
+            m = mainTable.length,
+            lookupIndex = [],
+            output = [];
+        for (var i = 0; i < l; i++) { // loop through l items
+            var row = lookupTable[i];
+            lookupIndex[row[lookupKey]] = row; // create an index for lookup table
+        }
+        for (var j = 0; j < m; j++) { // loop through m items
+            var y = mainTable[j];
+            var x = lookupIndex[y[mainKey]]; // get corresponding row from lookupTable
+            output.push(select(y, x)); // select only the columns you need
+        }
+        return output;
+    },
+
+    joinResult: function(joinJSON,json){
+        var result = model.join(joinJSON,json,JOIN.joinKey,JOIN.joinKey,JOIN.select);
+        //console.log(result);
+        model.nest(result);
     }
+       
+    
 
 };
 
@@ -426,4 +482,22 @@ var controller = {
  */
 
 var DATA_FILE = 'data/country-scorecard.csv';
+var JOIN = {
+    file: 'data/income-group.csv',
+    joinKey: 'code', // same key for both here, but could specify different keys for the join function
+    select: function(a,b){
+      //  console.log('a', a);
+      //  console.log('b',b);
+        return {
+            code: a.code,
+            country: a.country,
+            domain: a.domain,
+            readable: a.readable,
+            value: a.value,
+            income_group: b.income_group,
+            income_group_n: b.income_group_n,
+            region: b.region
+        }
+    }
+};
 d3.csv(DATA_FILE, model.initialize);
