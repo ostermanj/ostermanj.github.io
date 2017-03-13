@@ -41,15 +41,16 @@ Chart.prototype = {
     protoSetup: function() {
         var chart = this; 
         
-        this.incomeGroups = d3.select(this.el)
+        this.groups = d3.select(this.el)
         .selectAll('div')
         .data(model.data).enter()
         .append('div')
         .attr('id', function(d) {
-            return d.key;
+            return d.key.replace(/\d-/,'').replace(' ','-').toLowerCase();
         })
+        .attr('class','main-group');
 
-        this.svgs = this.incomeGroups.selectAll('svg')
+        this.svgs = this.groups.selectAll('svg')
             .data(function(d){
                 return d.values;
             }).enter().append('svg')
@@ -72,6 +73,16 @@ Chart.prototype = {
             .attr('y', this.svgHeight)
             .attr('x', this.svgWidth / 2)
             .attr('text-anchor', 'middle');
+
+        this.svgs.append('text')
+        .attr('class','group-label')
+        .attr('alignment-baseline','hanging')
+        .attr('x', 2)
+        .attr('y',2)
+            .text(function(d,i){
+                console.log(i);
+            return i === 0 ? d.values[0].income_group.replace(/\d-/,'') : '';
+        })
 
         this.setup();
 
@@ -432,6 +443,7 @@ var model = {
             .key(function(d){
                 return d.income_group;
             })
+            .sortKeys(d3.descending)
             .key(function(d) {
                 return d.country;
             })
@@ -463,7 +475,7 @@ var model = {
 
     joinResult: function(joinJSON,json){
         var result = model.join(joinJSON,json,JOIN.joinKey,JOIN.joinKey,JOIN.select);
-        //console.log(result);
+        console.log(result);
         model.nest(result);
     }
        

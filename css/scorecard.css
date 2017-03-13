@@ -57,13 +57,32 @@
    
 }
 
-.country-label {
+.country-label, .group-label {
     font-family: "Passion One", "Helevetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     fill: #888;
     letter-spacing: 0.5px;
 
+
 }
+
+.group-label {
+font-size: 13px;
+letter-spacing: 0;
+  }
+
+.main-group {
+  display: inline;
+}
+
+.main-group svg:first-of-type {
+  border-left: 1px solid #888 !important;
+  border-top: 1px solid #888 !important;
+}
+
+
+
+
 
 /*
  * D3 TIP
