@@ -1,0 +1,185 @@
+.environment {
+  stroke:#008026;
+  fill:#008026;
+}
+
+.human_rights {
+  stroke:#4C82B8;
+  fill:#4C82B8;
+  
+}
+
+.gender_equity {
+  stroke:#9A471A;
+  fill:#9A471A;
+  
+}
+
+.good_governance {
+  stroke:#FFBE42;
+  fill:#FFBE42;
+  
+}
+
+.peace {
+  stroke:#7F7F7F;
+  fill:#7F7F7F;
+  
+}
+
+.poverty_reduction {
+  stroke:#81659D;
+  fill:#81659D;
+  
+}
+
+#chart-0 {
+    line-height: 0;
+}
+
+#chart-0 svg {
+  background-color: #f3f3f3;
+  margin: 0 5px 5px 0;
+  line-height: 0;
+  cursor:pointer;
+  border: 1px solid #f3f3f3;
+  transition: border-color 0.2s linear;
+}
+
+#chart-0 svg:hover {
+  border:1px solid #ff5600;
+
+}
+
+#chart-0 svg ellipse {
+   stroke-opacity: 1;
+   
+   
+}
+
+.country-label, .group-label {
+    font-family: "Passion One", "Helevetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    fill: #888;
+    letter-spacing: 0.5px;
+
+
+}
+
+.group-label {
+font-size: 13px;
+letter-spacing: 0;
+  }
+
+.main-group {
+  display: inline;
+}
+
+.main-group svg:first-of-type {
+  border-left: 1px solid #888 !important;
+  border-top: 1px solid #888 !important;
+}
+
+
+/*
+ *  lock icon
+ */
+
+#lock-group {
+  transition: transform 0.2s linear;
+ 
+}
+
+#lock-icon {
+   transform: translate(120px,1px);
+   opacity: 0;
+   transition: opacity 0.2s linear 0.75s;
+}
+
+.clicked #lock-icon, .locked #lock-icon {
+  transform: translate(90px,1px);
+  opacity:1;
+}
+
+#lock-icon * {
+  fill:#bbb;
+  stroke:#bbb;
+  transition: fill 0.2s linear, stroke 0.2s linear, transform 0.2s linear;;
+}
+#lock-icon:hover * {
+  fill:#ff5600;
+  stroke:#ff5600;
+}
+
+
+#lock-icon circle, #lock-icon:hover circle {
+  fill:none;
+}
+
+.closed #lock-group {
+  transform: translate(0,3px);
+}
+
+
+
+
+/*
+ * D3 TIP
+ */
+
+ .d3-tip {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border:1px solid #dadada;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  font-size: 11px;
+  max-width: 120px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  pointer-events: none;
+
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+  content: "\25BC";
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+  content: "\25C0";
+  margin: -4px 0 0 0;
+  top: 50%;
+  left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+  content: "\25B2";
+  margin: 0 0 1px 0;
+  top: -8px;
+  left: 0;
+  text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+  content: "\25B6";
+  margin: -4px 0 0 -1px;
+  top: 50%;
+  left: 100%;
+}
