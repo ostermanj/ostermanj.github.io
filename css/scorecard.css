@@ -81,6 +81,17 @@ letter-spacing: 0;
 }
 
 
+/*
+ *  lock icon
+ */
+
+#lock-group {
+  transition: transform 0.2s linear;
+}
+
+.closed #lock-group {
+  transform: translate(0,3px);
+}
 
 
 

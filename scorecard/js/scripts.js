@@ -82,10 +82,81 @@ Chart.prototype = {
             .text(function(d,i){
                 console.log(i);
             return i === 0 ? d.values[0].income_group.replace(/\d-/,'') : '';
-        })
+        });
 
+
+        this.createLock();
         this.setup();
 
+    },
+
+    createLock: function(){
+         this.lockIcon = this.svgs.append('g')
+            .attr('id','lock-icon')
+            .attr('class','open')
+            .attr('transform','translate(90,1)')
+            .on('click',this.toggleLock)
+            
+        this.lockIcon.append('rect')
+            .attr('x', 1.5)
+            .attr('y', 9)
+            .attr('fill', '#888888')
+            .attr('width', 11)
+            .attr('height',9);
+
+        this.lockIcon.append('defs')
+            .append('clipPath')
+            .attr('id','lock-clip')
+            .append('rect')
+            .attr('x', 1)
+            .attr('width',11)
+            .attr('height',5);
+
+        this.lockGroup = this.lockIcon.append('g')
+        .attr('id','lock-group');
+
+        this.lockGroup.append('circle')
+        .attr('clip-path','url(#lock-clip)')
+        .attr('fill','none')
+        .attr('stroke','#888888')
+        .attr('stroke-width',2)
+        .attr('cx',7)
+        .attr('cy',5)
+        .attr('r',4);
+
+        this.lockGroup.append('line')
+        .attr('fill','none')
+        .attr('stroke',"#888888")
+        .attr('stroke-width',2)
+        .attr('x1',3)
+        .attr('y1',5)
+        .attr('x2',3)
+        .attr('y2',7);
+
+        this.lockGroup.append('line')
+        .attr('fill','none')
+        .attr('stroke',"#888888")
+        .attr('stroke-width',2)
+        .attr('x1',11)
+        .attr('y1',5)
+        .attr('x2',11)
+        .attr('y2',9);
+        
+    },
+
+    toggleLock: function(d,i,nodes){
+var that = this;
+d3.select(this)
+  .attr('class', function(){
+    console.log(that);
+    if (that.getAttribute('class') !== 'closed') {
+        return 'closed';
+    } else {
+        return 'open';
+    }
+  });
+/*d3.select(nodes[i].getElementById('lock-group'))
+.attr('opacity', 0.5);*/
     }
    
       
