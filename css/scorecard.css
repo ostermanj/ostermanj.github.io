@@ -87,11 +87,39 @@ letter-spacing: 0;
 
 #lock-group {
   transition: transform 0.2s linear;
+ 
+}
+
+#lock-icon {
+   transform: translate(120px,1px);
+   opacity: 0;
+   transition: opacity 0.2s linear 0.75s;
+}
+
+.clicked #lock-icon, .locked #lock-icon {
+  transform: translate(90px,1px);
+  opacity:1;
+}
+
+#lock-icon * {
+  fill:#bbb;
+  stroke:#bbb;
+  transition: fill 0.2s linear, stroke 0.2s linear, transform 0.2s linear;;
+}
+#lock-icon:hover * {
+  fill:#ff5600;
+  stroke:#ff5600;
+}
+
+
+#lock-icon circle, #lock-icon:hover circle {
+  fill:none;
 }
 
 .closed #lock-group {
   transform: translate(0,3px);
 }
+
 
 
 

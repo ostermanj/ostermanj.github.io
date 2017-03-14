@@ -57,9 +57,11 @@ Chart.prototype = {
             .attr('id', function(d) {
                 return d.key;
             })
+            .attr('class','not-clicked')
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
             .on('click', function(d,i,array){
+                console.log(d,i,array);
                 chart.hoverIn.call(chart,d,i,array);
             });
 
@@ -94,13 +96,12 @@ Chart.prototype = {
          this.lockIcon = this.svgs.append('g')
             .attr('id','lock-icon')
             .attr('class','open')
-            .attr('transform','translate(90,1)')
+            
             .on('click',this.toggleLock)
             
         this.lockIcon.append('rect')
             .attr('x', 1.5)
             .attr('y', 9)
-            .attr('fill', '#888888')
             .attr('width', 11)
             .attr('height',9);
 
@@ -117,16 +118,12 @@ Chart.prototype = {
 
         this.lockGroup.append('circle')
         .attr('clip-path','url(#lock-clip)')
-        .attr('fill','none')
-        .attr('stroke','#888888')
         .attr('stroke-width',2)
         .attr('cx',7)
         .attr('cy',5)
         .attr('r',4);
 
         this.lockGroup.append('line')
-        .attr('fill','none')
-        .attr('stroke',"#888888")
         .attr('stroke-width',2)
         .attr('x1',3)
         .attr('y1',5)
@@ -134,8 +131,6 @@ Chart.prototype = {
         .attr('y2',7);
 
         this.lockGroup.append('line')
-        .attr('fill','none')
-        .attr('stroke',"#888888")
         .attr('stroke-width',2)
         .attr('x1',11)
         .attr('y1',5)
@@ -145,19 +140,31 @@ Chart.prototype = {
     },
 
     toggleLock: function(d,i,nodes){
-var that = this;
-d3.select(this)
-  .attr('class', function(){
-    console.log(that);
-    if (that.getAttribute('class') !== 'closed') {
-        return 'closed';
-    } else {
-        return 'open';
-    }
-  });
-/*d3.select(nodes[i].getElementById('lock-group'))
-.attr('opacity', 0.5);*/
-    }
+
+        d3.event.stopPropagation()
+        var that = this;
+        d3.select(this)
+          .attr('class', function(){
+            console.log(that);
+            if (that.getAttribute('class') !== 'closed') {
+                return 'closed';
+            } else {
+                return 'open';
+            }
+          });
+          var that = nodes[i].ownerSVGElement;
+          d3.select(that)        
+          .attr('class', function(){
+            
+            if (that.getAttribute('class') !== 'locked') {
+                return 'locked';
+            } else {
+                return 'clicked';
+            }
+          });
+        /*d3.select(nodes[i].getElementById('lock-group'))
+        .attr('opacity', 0.5);*/
+            }
    
       
   /* 
@@ -331,6 +338,7 @@ var circleChartExtension = {
         var chart = this;
         
        d3.select(array[i])
+       .attr('class','clicked')
       .on('mouseleave', function(d,i,array){
                 chart.hoverOut.call(chart,d,i,array);
             }) 
@@ -368,9 +376,12 @@ var circleChartExtension = {
     
     },
      hoverOut: function(d,i,array) {
-        
+        if (d3.select(array[i]).attr('class') === 'locked'){
+            return;
+        }
         var chart = this;
       d3.select(array[i])
+       .attr('class','not-clicked')
        .on('mouseleave', function(){
             return;
             })
