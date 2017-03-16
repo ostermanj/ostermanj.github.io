@@ -21,7 +21,7 @@
   
 }
 
-.peace {
+.peace { 
   stroke:#7F7F7F;
   fill:#7F7F7F;
   
@@ -55,6 +55,17 @@
    stroke-opacity: 1;
    
    
+}
+
+#compare-view-outer {
+  width: 100%;
+ }
+
+#compare-view {
+  width: 100%;
+  }
+#compare-view.active {
+  
 }
 
 .country-label, .group-label {

@@ -38,9 +38,17 @@ Chart.prototype = {
 
         this.protoSetup();
     },
-    protoSetup: function() {
+    protoSetup: function() { 
+
         var chart = this; 
-        
+         
+        d3.select('.post-content')
+            .insert('div','#chart-0')
+            .attr('id','compare-view-outer')
+            .append('div')
+            .attr('id','compare-view')
+            .style('height', ( chart.svgHeight + 2 ) + 'px');
+
         this.groups = d3.select(this.el)
         .selectAll('div')
         .data(model.data).enter()
@@ -140,7 +148,7 @@ Chart.prototype = {
     },
 
     toggleLock: function(d,i,nodes){
-
+        console.log(d,i,nodes);
         d3.event.stopPropagation()
         var that = this;
         d3.select(this)
@@ -156,41 +164,43 @@ Chart.prototype = {
           d3.select(that)        
           .attr('class', function(){
             
-            if (that.getAttribute('class') !== 'locked') {
+            if (that.getAttribute('class').indexOf('locked') === -1) {
+               
+                document.getElementById('compare-view').style.height = ( reportCard.svgHeight + 2 ) + 'px';
+               // call create new chart here
+                createMonitor(that);
                 return 'locked';
             } else {
+                destroyMonitor(that);
                 return 'clicked';
             }
           });
-        /*d3.select(nodes[i].getElementById('lock-group'))
-        .attr('opacity', 0.5);*/
-            }
+
+
+
+          function createMonitor( el ){
+            reportCard.elementWatchers['svg' + d.key] = scrollMonitor.create( el, 5 );
+            reportCard.elementWatchers['svg' + d.key].partiallyExitViewport(function() {
+              if (reportCard.elementWatchers['svg' + d.key].isAboveViewport){
+
+                  console.log(reportCard.elementWatchers['svg' + d.key]);
+                  d3.select( el )
+                    .attr('class', 'locked freeze'); 
+                }   
+                 
+            });
+        }
+         function destroyMonitor( el ){
+            console.log(reportCard.elementWatchers['svg' + d.key]);
+            reportCard.elementWatchers['svg' + d.key].destroy();
+         }
+        
+    },
+    elementWatchers: {}
+    
    
       
-  /* 
-    this.selectAll('circle')
-            .transition().duration(2000)
-            .attr('opacity', 0);
-/*
-        d3.select(this)
-            .select('g.columns')
-            .transition().delay(200).duration(200)
-            .attr('opacity', 1);
-
-        d3.select('rect')
-            .transition().duration(100).ease(d3.easeBounce)
-            .attr('height', function(d){
-                return chart.barY(d.value);
-              })
-              .attr('y', function(d){
-                return chart.svgHeight - chart.margin.bottom - chart.barY(d.value) - chart.strokeWidth;
-              });
-
-
-*/
-
-    
-    
+ 
    
 
 };
@@ -376,7 +386,7 @@ var circleChartExtension = {
     
     },
      hoverOut: function(d,i,array) {
-        if (d3.select(array[i]).attr('class') === 'locked'){
+        if (d3.select(array[i]).attr('class').indexOf('locked') !== -1){
             return;
         }
         var chart = this;
@@ -567,14 +577,14 @@ var model = {
 
 var controller = {
     makeCharts: function() {
-        new CircleChart('#chart-0');
+        reportCard = new CircleChart('#chart-0');
     }
 };
 
 /*
  * INITIALIZE
  */
-
+var reportCard;
 var DATA_FILE = 'data/country-scorecard.csv';
 var JOIN = {
     file: 'data/income-group.csv',
