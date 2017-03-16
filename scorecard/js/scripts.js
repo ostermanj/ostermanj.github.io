@@ -68,8 +68,8 @@ Chart.prototype = {
             .attr('class','not-clicked')
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
-            .on('click', function(d,i,array){
-                console.log(d,i,array);
+            .on('mouseenter', function(d,i,array){
+                
                 chart.hoverIn.call(chart,d,i,array);
             });
 
@@ -90,7 +90,7 @@ Chart.prototype = {
         .attr('x', 2)
         .attr('y',2)
             .text(function(d,i){
-                console.log(i);
+                
             return i === 0 ? d.values[0].income_group.replace(/\d-/,'') : '';
         });
 
@@ -103,9 +103,9 @@ Chart.prototype = {
     createLock: function(){
          this.lockIcon = this.svgs.append('g')
             .attr('id','lock-icon')
-            .attr('class','open')
+            .attr('class','open');
             
-            .on('click',this.toggleLock)
+            
             
         this.lockIcon.append('rect')
             .attr('x', 1.5)
@@ -148,30 +148,29 @@ Chart.prototype = {
     },
 
     toggleLock: function(d,i,nodes){
-        console.log(d,i,nodes);
-        d3.event.stopPropagation()
-        var that = this;
-        d3.select(this)
+        
+        console.log(this);
+        var lockIcon = this.getElementById('lock-icon');
+        d3.select(lockIcon)
           .attr('class', function(){
-            console.log(that);
-            if (that.getAttribute('class') !== 'closed') {
+            
+            if (lockIcon.getAttribute('class') !== 'closed') {
                 return 'closed';
             } else {
                 return 'open';
             }
           });
-          var that = nodes[i].ownerSVGElement;
-          d3.select(that)        
+          
+          d3.select(this)        
           .attr('class', function(){
             
-            if (that.getAttribute('class').indexOf('locked') === -1) {
+            if (this.getAttribute('class').indexOf('locked') === -1) {
                
-                document.getElementById('compare-view').style.height = ( reportCard.svgHeight + 2 ) + 'px';
+                
                // call create new chart here
-                createMonitor(that);
-                return 'locked';
+               return 'locked';
             } else {
-                destroyMonitor(that);
+               
                 return 'clicked';
             }
           });
@@ -183,7 +182,7 @@ Chart.prototype = {
             reportCard.elementWatchers['svg' + d.key].partiallyExitViewport(function() {
               if (reportCard.elementWatchers['svg' + d.key].isAboveViewport){
 
-                  console.log(reportCard.elementWatchers['svg' + d.key]);
+                  
                   d3.select( el )
                     .attr('class', 'locked freeze'); 
                 }   
@@ -191,7 +190,7 @@ Chart.prototype = {
             });
         }
          function destroyMonitor( el ){
-            console.log(reportCard.elementWatchers['svg' + d.key]);
+            
             reportCard.elementWatchers['svg' + d.key].destroy();
          }
         
@@ -262,7 +261,7 @@ var circleChartExtension = {
         this.maskBars = this.svgs.append('defs')
         .selectAll('clipPath')
          .data(function(d) {
-            console.log(d);
+            
              return d.values;
             })
          .enter().append('clipPath')
@@ -344,21 +343,25 @@ var circleChartExtension = {
             
      },
      hoverIn: function(d,i,array) {
-
+        console.log(array[i].className.baseVal);
+        if ( array[i].className.baseVal.indexOf('locked') !== -1 ) {
+            return;
+        }
         var chart = this;
+        console.log(this);
         
        d3.select(array[i])
        .attr('class','clicked')
       .on('mouseleave', function(d,i,array){
                 chart.hoverOut.call(chart,d,i,array);
             }) 
-       .on('click', function(d,i,array){
-                chart.hoverOut.call(chart,d,i,array);
-            })
+       .on('click', chart.toggleLock)
+                //.call(chart,d,i,array); // THIS SHOULD BE WHAT LOCKS IT
+            
        .selectAll('ellipse')
          .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
             .on('mouseout', chart.tool_tip.hide)            
-        .transition().duration(500).delay(150)
+        .transition().duration(500).delay(500)
         .attr('rx', 1)
         .attr('ry', function(d){
             return chart.y(d.value) - chart.strokeWidth;
@@ -510,8 +513,8 @@ var model = {
         
         d3.csv(JOIN.file, function(joinJSON){
             joinJSON = model.convertStrings(joinJSON);
-         //   console.log(json);
-         //   console.log(joinJSON);
+         //   
+         //   
             model.joinResult(joinJSON,json);
         });
         
@@ -543,7 +546,7 @@ var model = {
 
 
         model.data = nested; // MOVE THIS
-        console.log(model.data);
+        
 
         controller.makeCharts(); // MOVE THIS
 
@@ -567,7 +570,7 @@ var model = {
 
     joinResult: function(joinJSON,json){
         var result = model.join(joinJSON,json,JOIN.joinKey,JOIN.joinKey,JOIN.select);
-        console.log(result);
+        
         model.nest(result);
     }
        
@@ -590,8 +593,8 @@ var JOIN = {
     file: 'data/income-group.csv',
     joinKey: 'code', // same key for both here, but could specify different keys for the join function
     select: function(a,b){
-      //  console.log('a', a);
-      //  console.log('b',b);
+      //  
+      //  
         return {
             code: a.code,
             country: a.country,
