@@ -107,7 +107,7 @@ letter-spacing: 0;
    transition: opacity 0.2s linear 0.75s;
 }
 
-.clicked #lock-icon, .locked #lock-icon {
+.transforming #lock-icon, .locked #lock-icon {
   transform: translate(90px,1px);
   opacity:1;
 }

@@ -65,7 +65,7 @@ Chart.prototype = {
             .attr('id', function(d) {
                 return d.key;
             })
-            .attr('class','not-clicked')
+            .attr('class','untouched')
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
             .on('mouseenter', function(d,i,array){
@@ -149,7 +149,7 @@ Chart.prototype = {
 
     toggleLock: function(d,i,nodes){
         
-        console.log(this);
+        
         var lockIcon = this.getElementById('lock-icon');
         d3.select(lockIcon)
           .attr('class', function(){
@@ -171,7 +171,7 @@ Chart.prototype = {
                return 'locked';
             } else {
                
-                return 'clicked';
+                return 'transforming';
             }
           });
 
@@ -237,6 +237,8 @@ var circleChartExtension = {
 
 
     setup: function() {
+
+    this.timers = {};
 
     this.tool_tip = d3.tip()
         .attr("class", "d3-tip")
@@ -343,58 +345,71 @@ var circleChartExtension = {
             
      },
      hoverIn: function(d,i,array) {
-        console.log(array[i].className.baseVal);
+        
         if ( array[i].className.baseVal.indexOf('locked') !== -1 ) {
             return;
         }
         var chart = this;
-        console.log(this);
+        
         
        d3.select(array[i])
-       .attr('class','clicked')
-      .on('mouseleave', function(d,i,array){
+       .attr('class','touched')
+       .on('mouseleave', function(d,i,array){
+               
                 chart.hoverOut.call(chart,d,i,array);
             }) 
-       .on('click', chart.toggleLock)
+       .on('click', chart.toggleLock);
                 //.call(chart,d,i,array); // THIS SHOULD BE WHAT LOCKS IT
-            
-       .selectAll('ellipse')
-         .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
-            .on('mouseout', chart.tool_tip.hide)            
-        .transition().duration(500).delay(500)
-        .attr('rx', 1)
-        .attr('ry', function(d){
-            return chart.y(d.value) - chart.strokeWidth;
-        })
-        .attr('cy', function(d,i,array){
-            return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
-        })
-        .attr('cx', function(d){
-            return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
-        })
-        .attr('fill-opacity',1)
-        .transition().delay(50)
-        .attr('clip-path', function(d,i){
-           return 'url(#mask-' + encodeURIComponent(d.country) + '-' + i + ')';
-        })
+        
+        chart.timers['svg-' + d.key] = setTimeout(function(){
 
+            chart.transform(d,i,array);
         
-        .attr('rx', function(d){
-            return chart.barX.bandwidth();
-        })
-        .attr('ry', function(d){
-            return chart.y(d.value) + chart.strokeWidth;
-        });
-        
+        },1000);   
     
     },
+    transform: function(d,i,array){
+        var chart = this;
+        d3.select(array[i])
+           .attr('class','transforming')
+           .selectAll('ellipse')
+             .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
+                .on('mouseout', chart.tool_tip.hide)            
+            .transition().duration(500)
+            .attr('rx', 1)
+            .attr('ry', function(d){
+                return chart.y(d.value) - chart.strokeWidth;
+            })
+            .attr('cy', function(d,i,array){
+                return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
+            })
+            .attr('cx', function(d){
+                return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
+            })
+            .attr('fill-opacity',1)
+            .transition().delay(50)
+            .attr('clip-path', function(d,i){
+               return 'url(#mask-' + encodeURIComponent(d.country) + '-' + i + ')';
+            })
+
+            
+            .attr('rx', function(d){
+                return chart.barX.bandwidth();
+            })
+            .attr('ry', function(d){
+                return chart.y(d.value) + chart.strokeWidth;
+            });
+    },
      hoverOut: function(d,i,array) {
-        if (d3.select(array[i]).attr('class').indexOf('locked') !== -1){
+        var chart = this;
+        clearTimeout(chart.timers['svg-' + d.key]);
+        var svgClass = d3.select(array[i]).attr('class');
+        if (svgClass.indexOf('locked') !== -1 || svgClass.indexOf('touched') !== -1){
             return;
         }
-        var chart = this;
+        
       d3.select(array[i])
-       .attr('class','not-clicked')
+       .attr('class','untouched')
        .on('mouseleave', function(){
             return;
             })
