@@ -358,14 +358,23 @@ var circleChartExtension = {
                
                 chart.hoverOut.call(chart,d,i,array);
             }) 
-       .on('click', chart.toggleLock);
-                //.call(chart,d,i,array); // THIS SHOULD BE WHAT LOCKS IT
+       .on('click', function(d,i,array){
+        //console.log(this.className.baseVal);
+            if (this.className.baseVal.indexOf('transforming') !== -1 || this.className.baseVal.indexOf('locked') !== -1){
+                  chart.toggleLock.call(this,d,i,array);
+             } else {
+                  clearTimeout(chart.timers['svg-' + d.key]);
+                  chart.transform.call(chart,d,i,array);
+             }
+
+        });
+                
         
         chart.timers['svg-' + d.key] = setTimeout(function(){
 
             chart.transform(d,i,array);
         
-        },1000);   
+        },500);   
     
     },
     transform: function(d,i,array){
