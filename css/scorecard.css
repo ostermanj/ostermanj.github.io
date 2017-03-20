@@ -104,10 +104,10 @@ letter-spacing: 0;
 #lock-icon {
    transform: translate(120px,1px);
    opacity: 0;
-   transition: opacity 0.2s linear 0.75s;
+   transition: opacity 0.2s linear;
 }
 
-.transforming #lock-icon, .locked #lock-icon {
+.transforming #lock-icon, .locked #lock-icon, .transformed #lock-icon {
   transform: translate(90px,1px);
   opacity:1;
 }
@@ -131,8 +131,18 @@ letter-spacing: 0;
   transform: translate(0,3px);
 }
 
+/*
+ * cloned svg
+ */
 
+ #compare-view svg {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+ }
 
+ #compare-view svg.show-clone {
+  opacity: 1;
+ }
 
 /*
  * D3 TIP

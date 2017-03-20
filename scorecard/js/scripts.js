@@ -163,17 +163,29 @@ Chart.prototype = {
           
           d3.select(this)        
           .attr('class', function(){
-            
-            if (this.getAttribute('class').indexOf('locked') === -1) {
-               
+            var svg = this;
+            if (this.getAttribute('class').indexOf('locked') !== -1) { // is not locked
                 
-               // call create new chart here
-               return 'locked';
-            } else {
-               
-                return 'transforming';
+             /*  reportCard.intervals['svg-' + i] = window.setInterval( function() {
+                    console.log(svg);
+                    if ( svg.getAttribute('class').indexOf('done') !== -1 ){
+                        var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.setAttribute('class','show-clone');
+                        document.getElementById('compare-view').appendChild(clone);
+                        clearInterval(reportCard.intervals['svg-' + i]);                        
+                    }
+               }, 2000); */
+               return 'transforming';
             }
-          });
+            if ( this.getAttribute('class').indexOf('transforming done') !== -1 ){
+               
+                return 'locked done';
+            }
+            if ( this.getAttribute('class').indexOf('transforming') !== -1 ){
+                return 'locked'
+            }
+        });
 
 
 
@@ -239,6 +251,7 @@ var circleChartExtension = {
     setup: function() {
 
     this.timers = {};
+    this.intervals = {};
 
     this.tool_tip = d3.tip()
         .attr("class", "d3-tip")
@@ -360,7 +373,7 @@ var circleChartExtension = {
             }) 
        .on('click', function(d,i,array){
         //console.log(this.className.baseVal);
-            if (this.className.baseVal.indexOf('transforming') !== -1 || this.className.baseVal.indexOf('locked') !== -1){
+            if (this.className.baseVal.indexOf('transforming') !== -1 || this.className.baseVal.indexOf('locked') !== -1 ){
                   chart.toggleLock.call(this,d,i,array);
              } else {
                   clearTimeout(chart.timers['svg-' + d.key]);
@@ -380,7 +393,8 @@ var circleChartExtension = {
     transform: function(d,i,array){
         var chart = this;
         d3.select(array[i])
-           .attr('class','transforming')
+           .attr('class','transforming')        
+           
            .selectAll('ellipse')
              .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', chart.tool_tip.hide)            
@@ -407,14 +421,33 @@ var circleChartExtension = {
             })
             .attr('ry', function(d){
                 return chart.y(d.value) + chart.strokeWidth;
+            })
+            .on('end', function() {
+                var $svg = d3.select(array[i]);
+                if ($svg.attr('class') === 'transforming') {
+                    $svg.attr('class','transforming done');
+                } else if ( $svg.attr('class') === 'locked' ) {
+                   $svg.attr('class','locked done');
+                }
+                
             });
+
+        /*
+        d3.select(array[i])
+            .transition().delay(1000)
+            .attr('class','transforming done');*/
     },
      hoverOut: function(d,i,array) {
         var chart = this;
-        clearTimeout(chart.timers['svg-' + d.key]);
+        clearTimeout(chart.timers['svg-' + d.key]); // clear the hoverIn timer
         var svgClass = d3.select(array[i]).attr('class');
-        if (svgClass.indexOf('locked') !== -1 || svgClass.indexOf('touched') !== -1){
+        if (svgClass.indexOf('locked') !== -1 ) {
             return;
+        } 
+        if ( svgClass.indexOf('touched') !== -1) {
+             d3.select(array[i])
+               .attr('class','untouched');
+               return;
         }
         
       d3.select(array[i])
