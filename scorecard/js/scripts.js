@@ -146,16 +146,34 @@ Chart.prototype = {
         .attr('y2',9);
         
     },
+    createClone: function(svg) {
+         var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.setAttribute('class','show-clone');
+                        document.getElementById('compare-view').appendChild(clone);
+    },
 
     toggleLock: function(d,i,nodes){
-        
+        console.log(d);
+        var svg = this;
         
         var lockIcon = this.getElementById('lock-icon');
         d3.select(lockIcon)
           .attr('class', function(){
             
             if (lockIcon.getAttribute('class') !== 'closed') {
+                  reportCard.intervals['svg-' + d.key] = window.setInterval( function() {
+                    
+                    if ( svg.getAttribute('class').indexOf('done') !== -1 ){
+                        var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.setAttribute('class','show-clone');
+                        document.getElementById('compare-view').appendChild(clone);
+                        clearInterval(reportCard.intervals['svg-' + d.key]);                        
+                    }
+                }, 20);
                 return 'closed';
+
             } else {
                 return 'open';
             }
