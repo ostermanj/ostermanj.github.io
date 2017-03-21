@@ -9,9 +9,12 @@ var Chart = function(el) {
     var chart = this;
     this.el = el;
     this.chartMinMaxDomain();
+    this.elementWatchers = {};
 };
 
 Chart.prototype = {
+
+
     extendPrototype: function(destinationPrototype, obj) {
         for (var i in obj) {
             destinationPrototype[i] = obj[i];
@@ -154,6 +157,7 @@ Chart.prototype = {
     },
 
     toggleLock: function(d,i,nodes){
+        reportCard.createMonitor('compare-view-outer');
         console.log(d);
         var svg = this;
         
@@ -167,14 +171,27 @@ Chart.prototype = {
                     if ( svg.getAttribute('class').indexOf('done') !== -1 ){
                         var clone = svg.cloneNode(true);
                         clone.id += '-clone';
-                        clone.setAttribute('class','show-clone');
+                        clone.querySelectorAll('clipPath').forEach(function(clip){
+                            clip.id = clip.id + '-clone';
+                        })
                         document.getElementById('compare-view').appendChild(clone);
+                        reportCard.timers['svg-clone-' + d.key] = window.setTimeout(function(){
+                            clone.setAttribute('class','show-clone');
+                        }, 200);
+
                         clearInterval(reportCard.intervals['svg-' + d.key]);                        
                     }
                 }, 20);
                 return 'closed';
 
             } else {
+                clearTimeout(reportCard.timers['svg-clone-' + d.key]);
+                var cloned = document.getElementById(d.key + '-clone');
+                cloned.setAttribute('class','hide-clone');
+                window.setTimeout(function(){
+                    cloned.parentNode.removeChild(cloned);
+                },550); 
+
                 return 'open';
             }
           });
@@ -194,7 +211,7 @@ Chart.prototype = {
                         clearInterval(reportCard.intervals['svg-' + i]);                        
                     }
                }, 2000); */
-               return 'transforming';
+               return 'transforming done';
             }
             if ( this.getAttribute('class').indexOf('transforming done') !== -1 ){
                
@@ -207,27 +224,8 @@ Chart.prototype = {
 
 
 
-          function createMonitor( el ){
-            reportCard.elementWatchers['svg' + d.key] = scrollMonitor.create( el, 5 );
-            reportCard.elementWatchers['svg' + d.key].partiallyExitViewport(function() {
-              if (reportCard.elementWatchers['svg' + d.key].isAboveViewport){
-
-                  
-                  d3.select( el )
-                    .attr('class', 'locked freeze'); 
-                }   
-                 
-            });
-        }
-         function destroyMonitor( el ){
-            
-            reportCard.elementWatchers['svg' + d.key].destroy();
-         }
-        
-    },
-    elementWatchers: {}
     
-   
+   }
       
  
    
@@ -264,6 +262,32 @@ var CircleChart = function(el) {
 CircleChart.prototype = Object.create(Chart.prototype);
 
 var circleChartExtension = {
+
+
+    createMonitor: function( el ){
+
+
+            var monitor = scrollMonitor.create( document.getElementById(el), 4);
+            monitor.lock();
+            function freeze() {
+                 monitor.watchItem.className = 'freeze'; 
+                 document.getElementById('chart-0').style.marginTop = '141px';             
+            }
+             if (monitor.isAboveViewport){
+                freeze(); 
+             }
+            console.log(monitor);
+            monitor.partiallyExitViewport(function() {
+              if (monitor.isAboveViewport){
+                  freeze();   
+              }
+            });
+
+            monitor.fullyEnterViewport(function() {
+                monitor.watchItem.className = '';
+                document.getElementById('chart-0').style.marginTop = '';   
+            });
+    },
 
 
     setup: function() {
@@ -338,7 +362,7 @@ var circleChartExtension = {
             .call(this.tool_tip);
 
 
-      
+        
         this.adjustRadii();
     },
     adjustRadii: function() {
