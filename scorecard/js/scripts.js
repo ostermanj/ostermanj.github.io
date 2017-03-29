@@ -9,9 +9,12 @@ var Chart = function(el) {
     var chart = this;
     this.el = el;
     this.chartMinMaxDomain();
+    this.elementWatchers = {};
 };
 
 Chart.prototype = {
+
+
     extendPrototype: function(destinationPrototype, obj) {
         for (var i in obj) {
             destinationPrototype[i] = obj[i];
@@ -38,9 +41,17 @@ Chart.prototype = {
 
         this.protoSetup();
     },
-    protoSetup: function() {
+    protoSetup: function() { 
+
         var chart = this; 
-        
+         
+        d3.select('.post-content')
+            .insert('div','#chart-0')
+            .attr('id','compare-view-outer')
+            .append('div')
+            .attr('id','compare-view')
+            .style('height', ( chart.svgHeight + 2 ) + 'px');
+
         this.groups = d3.select(this.el)
         .selectAll('div')
         .data(model.data).enter()
@@ -57,11 +68,11 @@ Chart.prototype = {
             .attr('id', function(d) {
                 return d.key;
             })
-            .attr('class','not-clicked')
+            .attr('class','untouched')
             .attr('width', this.svgWidth)
             .attr('height', this.svgHeight)
-            .on('click', function(d,i,array){
-                console.log(d,i,array);
+            .on('mouseenter', function(d,i,array){
+                
                 chart.hoverIn.call(chart,d,i,array);
             });
 
@@ -82,7 +93,7 @@ Chart.prototype = {
         .attr('x', 2)
         .attr('y',2)
             .text(function(d,i){
-                console.log(i);
+                
             return i === 0 ? d.values[0].income_group.replace(/\d-/,'') : '';
         });
 
@@ -95,9 +106,9 @@ Chart.prototype = {
     createLock: function(){
          this.lockIcon = this.svgs.append('g')
             .attr('id','lock-icon')
-            .attr('class','open')
+            .attr('class','open');
             
-            .on('click',this.toggleLock)
+            
             
         this.lockIcon.append('rect')
             .attr('x', 1.5)
@@ -138,59 +149,85 @@ Chart.prototype = {
         .attr('y2',9);
         
     },
+    createClone: function(svg) {
+         var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.setAttribute('class','show-clone');
+                        document.getElementById('compare-view').appendChild(clone);
+    },
 
     toggleLock: function(d,i,nodes){
-
-        d3.event.stopPropagation()
-        var that = this;
-        d3.select(this)
+        reportCard.createMonitor('compare-view-outer');
+        console.log(d);
+        var svg = this;
+        
+        var lockIcon = this.getElementById('lock-icon');
+        d3.select(lockIcon)
           .attr('class', function(){
-            console.log(that);
-            if (that.getAttribute('class') !== 'closed') {
+            
+            if (lockIcon.getAttribute('class') !== 'closed') {
+                  reportCard.intervals['svg-' + d.key] = window.setInterval( function() {
+                    
+                    if ( svg.getAttribute('class').indexOf('done') !== -1 ){
+                        var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.querySelectorAll('clipPath').forEach(function(clip){
+                            clip.id = clip.id + '-clone';
+                        })
+                        document.getElementById('compare-view').appendChild(clone);
+                        reportCard.timers['svg-clone-' + d.key] = window.setTimeout(function(){
+                            clone.setAttribute('class','show-clone');
+                        }, 200);
+
+                        clearInterval(reportCard.intervals['svg-' + d.key]);                        
+                    }
+                }, 20);
                 return 'closed';
+
             } else {
+                clearTimeout(reportCard.timers['svg-clone-' + d.key]);
+                var cloned = document.getElementById(d.key + '-clone');
+                cloned.setAttribute('class','hide-clone');
+                window.setTimeout(function(){
+                    cloned.parentNode.removeChild(cloned);
+                },550); 
+
                 return 'open';
             }
           });
-          var that = nodes[i].ownerSVGElement;
-          d3.select(that)        
+          
+          d3.select(this)        
           .attr('class', function(){
-            
-            if (that.getAttribute('class') !== 'locked') {
-                return 'locked';
-            } else {
-                return 'clicked';
+            var svg = this;
+            if (this.getAttribute('class').indexOf('locked') !== -1) { // is not locked
+                
+             /*  reportCard.intervals['svg-' + i] = window.setInterval( function() {
+                    console.log(svg);
+                    if ( svg.getAttribute('class').indexOf('done') !== -1 ){
+                        var clone = svg.cloneNode(true);
+                        clone.id += '-clone';
+                        clone.setAttribute('class','show-clone');
+                        document.getElementById('compare-view').appendChild(clone);
+                        clearInterval(reportCard.intervals['svg-' + i]);                        
+                    }
+               }, 2000); */
+               return 'transforming done';
             }
-          });
-        /*d3.select(nodes[i].getElementById('lock-group'))
-        .attr('opacity', 0.5);*/
+            if ( this.getAttribute('class').indexOf('transforming done') !== -1 ){
+               
+                return 'locked done';
             }
-   
+            if ( this.getAttribute('class').indexOf('transforming') !== -1 ){
+                return 'locked'
+            }
+        });
+
+
+
+    
+   }
       
-  /* 
-    this.selectAll('circle')
-            .transition().duration(2000)
-            .attr('opacity', 0);
-/*
-        d3.select(this)
-            .select('g.columns')
-            .transition().delay(200).duration(200)
-            .attr('opacity', 1);
-
-        d3.select('rect')
-            .transition().duration(100).ease(d3.easeBounce)
-            .attr('height', function(d){
-                return chart.barY(d.value);
-              })
-              .attr('y', function(d){
-                return chart.svgHeight - chart.margin.bottom - chart.barY(d.value) - chart.strokeWidth;
-              });
-
-
-*/
-
-    
-    
+ 
    
 
 };
@@ -227,7 +264,36 @@ CircleChart.prototype = Object.create(Chart.prototype);
 var circleChartExtension = {
 
 
+    createMonitor: function( el ){
+
+
+            var monitor = scrollMonitor.create( document.getElementById(el), 4);
+            monitor.lock();
+            function freeze() {
+                 monitor.watchItem.className = 'freeze'; 
+                 document.getElementById('chart-0').style.marginTop = '141px';             
+            }
+             if (monitor.isAboveViewport){
+                freeze(); 
+             }
+            console.log(monitor);
+            monitor.partiallyExitViewport(function() {
+              if (monitor.isAboveViewport){
+                  freeze();   
+              }
+            });
+
+            monitor.fullyEnterViewport(function() {
+                monitor.watchItem.className = '';
+                document.getElementById('chart-0').style.marginTop = '';   
+            });
+    },
+
+
     setup: function() {
+
+    this.timers = {};
+    this.intervals = {};
 
     this.tool_tip = d3.tip()
         .attr("class", "d3-tip")
@@ -252,7 +318,7 @@ var circleChartExtension = {
         this.maskBars = this.svgs.append('defs')
         .selectAll('clipPath')
          .data(function(d) {
-            console.log(d);
+            
              return d.values;
             })
          .enter().append('clipPath')
@@ -296,7 +362,7 @@ var circleChartExtension = {
             .call(this.tool_tip);
 
 
-      
+        
         this.adjustRadii();
     },
     adjustRadii: function() {
@@ -334,54 +400,100 @@ var circleChartExtension = {
             
      },
      hoverIn: function(d,i,array) {
-
-        var chart = this;
         
-       d3.select(array[i])
-       .attr('class','clicked')
-      .on('mouseleave', function(d,i,array){
-                chart.hoverOut.call(chart,d,i,array);
-            }) 
-       .on('click', function(d,i,array){
-                chart.hoverOut.call(chart,d,i,array);
-            })
-       .selectAll('ellipse')
-         .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
-            .on('mouseout', chart.tool_tip.hide)            
-        .transition().duration(500).delay(150)
-        .attr('rx', 1)
-        .attr('ry', function(d){
-            return chart.y(d.value) - chart.strokeWidth;
-        })
-        .attr('cy', function(d,i,array){
-            return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
-        })
-        .attr('cx', function(d){
-            return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
-        })
-        .attr('fill-opacity',1)
-        .transition().delay(50)
-        .attr('clip-path', function(d,i){
-           return 'url(#mask-' + encodeURIComponent(d.country) + '-' + i + ')';
-        })
-
-        
-        .attr('rx', function(d){
-            return chart.barX.bandwidth();
-        })
-        .attr('ry', function(d){
-            return chart.y(d.value) + chart.strokeWidth;
-        });
-        
-    
-    },
-     hoverOut: function(d,i,array) {
-        if (d3.select(array[i]).attr('class') === 'locked'){
+        if ( array[i].className.baseVal.indexOf('locked') !== -1 ) {
             return;
         }
         var chart = this;
+        
+        
+       d3.select(array[i])
+       .attr('class','touched')
+       .on('mouseleave', function(d,i,array){
+               
+                chart.hoverOut.call(chart,d,i,array);
+            }) 
+       .on('click', function(d,i,array){
+        //console.log(this.className.baseVal);
+            if (this.className.baseVal.indexOf('transforming') !== -1 || this.className.baseVal.indexOf('locked') !== -1 ){
+                  chart.toggleLock.call(this,d,i,array);
+             } else {
+                  clearTimeout(chart.timers['svg-' + d.key]);
+                  chart.transform.call(chart,d,i,array);
+             }
+
+        });
+                
+        
+        chart.timers['svg-' + d.key] = setTimeout(function(){
+
+            chart.transform(d,i,array);
+        
+        },500);   
+    
+    },
+    transform: function(d,i,array){
+        var chart = this;
+        d3.select(array[i])
+           .attr('class','transforming')        
+           
+           .selectAll('ellipse')
+             .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
+                .on('mouseout', chart.tool_tip.hide)            
+            .transition().duration(500)
+            .attr('rx', 1)
+            .attr('ry', function(d){
+                return chart.y(d.value) - chart.strokeWidth;
+            })
+            .attr('cy', function(d,i,array){
+                return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
+            })
+            .attr('cx', function(d){
+                return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
+            })
+            .attr('fill-opacity',1)
+            .transition().delay(50)
+            .attr('clip-path', function(d,i){
+               return 'url(#mask-' + encodeURIComponent(d.country) + '-' + i + ')';
+            })
+
+            
+            .attr('rx', function(d){
+                return chart.barX.bandwidth();
+            })
+            .attr('ry', function(d){
+                return chart.y(d.value) + chart.strokeWidth;
+            })
+            .on('end', function() {
+                var $svg = d3.select(array[i]);
+                if ($svg.attr('class') === 'transforming') {
+                    $svg.attr('class','transforming done');
+                } else if ( $svg.attr('class') === 'locked' ) {
+                   $svg.attr('class','locked done');
+                }
+                
+            });
+
+        /*
+        d3.select(array[i])
+            .transition().delay(1000)
+            .attr('class','transforming done');*/
+    },
+     hoverOut: function(d,i,array) {
+        var chart = this;
+        clearTimeout(chart.timers['svg-' + d.key]); // clear the hoverIn timer
+        var svgClass = d3.select(array[i]).attr('class');
+        if (svgClass.indexOf('locked') !== -1 ) {
+            return;
+        } 
+        if ( svgClass.indexOf('touched') !== -1) {
+             d3.select(array[i])
+               .attr('class','untouched');
+               return;
+        }
+        
       d3.select(array[i])
-       .attr('class','not-clicked')
+       .attr('class','untouched')
        .on('mouseleave', function(){
             return;
             })
@@ -500,8 +612,8 @@ var model = {
         
         d3.csv(JOIN.file, function(joinJSON){
             joinJSON = model.convertStrings(joinJSON);
-         //   console.log(json);
-         //   console.log(joinJSON);
+         //   
+         //   
             model.joinResult(joinJSON,json);
         });
         
@@ -533,7 +645,7 @@ var model = {
 
 
         model.data = nested; // MOVE THIS
-        console.log(model.data);
+        
 
         controller.makeCharts(); // MOVE THIS
 
@@ -557,7 +669,7 @@ var model = {
 
     joinResult: function(joinJSON,json){
         var result = model.join(joinJSON,json,JOIN.joinKey,JOIN.joinKey,JOIN.select);
-        console.log(result);
+        
         model.nest(result);
     }
        
@@ -567,21 +679,21 @@ var model = {
 
 var controller = {
     makeCharts: function() {
-        new CircleChart('#chart-0');
+        reportCard = new CircleChart('#chart-0');
     }
 };
 
 /*
  * INITIALIZE
  */
-
+var reportCard;
 var DATA_FILE = 'data/country-scorecard.csv';
 var JOIN = {
     file: 'data/income-group.csv',
     joinKey: 'code', // same key for both here, but could specify different keys for the join function
     select: function(a,b){
-      //  console.log('a', a);
-      //  console.log('b',b);
+      //  
+      //  
         return {
             code: a.code,
             country: a.country,

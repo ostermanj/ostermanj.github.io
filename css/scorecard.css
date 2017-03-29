@@ -21,7 +21,7 @@
   
 }
 
-.peace {
+.peace { 
   stroke:#7F7F7F;
   fill:#7F7F7F;
   
@@ -37,13 +37,18 @@
     line-height: 0;
 }
 
-#chart-0 svg {
+#chart-0 svg, #compare-view svg {
   background-color: #f3f3f3;
   margin: 0 5px 5px 0;
   line-height: 0;
   cursor:pointer;
   border: 1px solid #f3f3f3;
   transition: border-color 0.2s linear;
+}
+
+#compare-view {
+  margin: 5px 0;
+
 }
 
 #chart-0 svg:hover {
@@ -55,6 +60,22 @@
    stroke-opacity: 1;
    
    
+}
+
+#compare-view-outer {
+  width: 100%;
+ }
+
+ #compare-view-outer.freeze {
+  position: fixed;
+  top:0;
+ }
+
+#compare-view {
+  width: 100%;
+  }
+#compare-view.active {
+  
 }
 
 .country-label, .group-label {
@@ -93,10 +114,10 @@ letter-spacing: 0;
 #lock-icon {
    transform: translate(120px,1px);
    opacity: 0;
-   transition: opacity 0.2s linear 0.75s;
+   transition: opacity 0.2s linear;
 }
 
-.clicked #lock-icon, .locked #lock-icon {
+.transforming #lock-icon, .locked #lock-icon, .transformed #lock-icon {
   transform: translate(90px,1px);
   opacity:1;
 }
@@ -120,8 +141,24 @@ letter-spacing: 0;
   transform: translate(0,3px);
 }
 
+/*
+ * cloned svg
+ */
+
+ #compare-view svg {
+  opacity: 0;
+  transition: opacity 0.2s linear, width 0.5s linear;
 
 
+ }
+
+ #compare-view svg.show-clone {
+  opacity: 1;
+ }
+
+ #compare-view svg.hide-clone {
+   width:0;
+ }
 
 /*
  * D3 TIP

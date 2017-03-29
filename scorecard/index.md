@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 
 
 
-
+<script src="{{ site.baseurl }}/informality/js/scrollMonitor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js"></script>
 <script src="{{ site.baseurl }}/informality/js/d3-tip.js"></script>
 <script src="{{ site.baseurl }}/scorecard/js/scripts.js"></script>
