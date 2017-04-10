@@ -8,16 +8,16 @@ var highlight = ["#438390", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5", "#c5c5c5
  *
  */
 
- $(function() {
    Highcharts.setOptions(Highcharts.theme);
-   $('#chart-1').highcharts({
+ $(function() {
+   $('#hc-container').highcharts({
        chart: {
          type: 'bubble',
          zoomType: 'xy',
 
        },
        title: {
-         text: 'Low-Income Countries Are More Vulnerable to Natural Disasters, and Disasters Help Keep Them Poor'
+         text: 'Disasters Lower Incomes, Lower Incomes Increase Vulnerability'
        },
        subtitle: {
          text: 'Notes: Data for average number of deaths per year from EM-DAT (Guha-Sapir et al., 2015), data on GDP per capita and population form World Bank (2015), vulnerability measured by INFORM (2017), rescaled from zero to one. CGD analysis.',
@@ -816,10 +816,10 @@ var categories = ['Lower middle', 'Upper middle'];
     ],
     
     title: {
-      text: 'Disasters Damage Credit Ratings, Raising Borrowing Costs'
+      text: 'Disasters Lower Credit Ratings, Raising Borrowing Costs'
     },
     subtitle: {
-      text: 'Notes: data from S&P, 2015. CGD analysis.'
+      text: 'Notes: Data from Standard & Poor’s, 2015. Downgrade is the expected effect of rare and expensive “1 in 250” losses, based on geophysical models for a subset of countries. CGD analysis.'
     },
     xAxis: {
       labels: {
@@ -908,10 +908,10 @@ var categories = ['Lower middle', 'Upper middle'];
        }
      },
      title: {
-       text: 'Damage Mainly in Rich Countries but Deaths Mainly in Poor Countries'
+       text: 'Damage Mainly in Rich Countries, Deaths Mainly in Poor Ones (1980–2015)'
      },
      subtitle: {
-       text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). ‘Human capital loss’ estimated as number of deaths from Em-Dat times difference between life expectancy and median age in country times real income per capita. Median age is median-variant projection from United Nations (2012), income per capita and life expectancy from World Bank (2015b). CGD analysis.'
+       text: '“Human capital loss” is estimated as number of deaths from EM-DAT (Guha-Sapir et al., 2015), times the difference between life expectancy and median age in country, times real annual income per capita. Sum of damage is in real US dollars and deaths, 1980–2015. Median age is a median-variant projection from United Nations Department of Economic and Social Affairs (2013); income per capita and life expectancy are from World Bank Group (2015). CGD analysis.'
      },
      yAxis: {
        title: {
@@ -1002,10 +1002,10 @@ $(function () {
          
         },
         title: {
-            text: 'Disasters Displace Millions of People Each Year'
+            text: 'Disasters Displace Millions of People a Year'
         },
         subtitle:{
-          text: 'Notes: Data from Internal Displacement Monitoring Centre (IDMC). CGD analysis'
+          text: 'Notes: Data from Internal Displacement Monitoring Centre (IDMC, 2016). CGD analysis'
             
         },
 
@@ -1162,7 +1162,7 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
 ],
         
         title: {
-            text: 'Natural Disasters Are Increasing, Especially in Poorer Countries'
+            text: 'More Natural Disasters, Mostly in Poorer Countries'
         },
         subtitle:{
           text: 'Notes: Data from EM-DAT (Guha-Sapir et al., 2015). CGD analysis.'
@@ -1297,11 +1297,11 @@ colors:["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA9
     ],
 
     title: {
-      text: 'Aid Reporting Codes Likely Omit Relevant Flows: Haiti, Post-Earthquake'
+      text: 'Aid Reporting Omits Relevant Flows: Haiti, Post-Earthquake'
 
     },
     subtitle: {
-      text: 'Notes: Data from the OECD’s Creditor Reporting System (CRS), 2016. CGD analysis.'
+      text: 'Notes: Data from the Creditor Reporting System (CRS), Organisation for Economic Co-operation and Development (OECD) (2016). CGD analysis. '
 
     },
 
@@ -1435,10 +1435,10 @@ $(function () {
          
         },
         title: {
-            text: 'Donors Allocated $1.6 Billion a Year on Average, 2000–2015'
+            text: 'At Least $1.6 Billion a Year: Average Disaster Aid from Appeals'
         },
         subtitle:{
-          text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis.'
+          text: 'Notes: Data from the UN OCHA Financial Tracking Service, United Nations Office for the Coordination of Humanitarian Assistance (OCHA) (2015). CGD analysis. '
             
         },
 
@@ -1602,7 +1602,7 @@ colors: ["#438390", "#564e34", "#1fa9b8", "#898167", "#5ED6E4", "#C2B793", "#9CA
             text: 'Reasonable Definitions Suggest Higher Amounts of Spending'
         },
         subtitle:{
-          text: 'Notes: Data on severity of disaster definition form EM-DAT (Guha-Sapir et al., 2015). Data on aid flows disaggregated by purpose from the OECD CRS (2016). Includes all aid to recipient which recorded any natural disaster, a disaster in the top 10% of disasters globally in terms of financial or human losses, or a disaster in the to 10% of disasters in the country’s history. CGD analysis.'
+          text: 'Notes: Data on severity of disaster definition from EM-DAT (Guha-Sapir et al., 2015). Data on aid flows disaggregated by purpose from the CRS, Organisation for Economic Co-operation and Development (OECD) (2016). Includes all aid to recipients that recorded any natural disaster, a disaster in the top 10 percent of disasters globally in terms of financial or human losses, or a disaster in the top 10 percent of disasters in the country’s history. CGD analysis.'
             
         },
 
@@ -1778,10 +1778,10 @@ colors: teal,
     }],
 
     title: {
-      text: 'Funding Follows the Caseload: Ebola in West Africa'
+      text: 'Funding Follows Caseload: Ebola in West Africa, 2014'
     },
     subtitle: {
-      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015 and Centers for Disease Control (2016). CGD analysis.'
+      text: 'Notes:  Data from the UN OCHA Financial Tracking Service (FTS), United Nations Office for the Coordination of Humanitarian Assistance (2015), and Centers for Disease Control (2014). CGD analysis.  '
 
     },
     yAxis: [{
@@ -1826,7 +1826,7 @@ colors: teal,
 });
 
 
-
+/*
 
 
 
@@ -1838,10 +1838,10 @@ $(function() {
 
           },
 title: {
-text:''
+text:'Funding Follows Deaths: Somalia, 2010–12'
 },
 subtitle: {
-text: 'Notes:  Data from UN OCHA Financial Tracking Service (FTS), 2015 and Centers for Disease Control (2016). CGD analysis.'
+text: 'Notes: Data from Development Initiatives’ 2013 Global Humanitarian Assistance report, based on data from the UN OCHA Financial Tracking Service (FTS), United Nations Office for the Coordination of Humanitarian Assistance (2015), and data analysis by Checchi and Robinson (2013), using original survey data from the Food Security and Nutrition Analysis Unit—Somalia (FSNAU). CGD analysis.'
 },
 
           series: [{
@@ -1938,7 +1938,7 @@ text: 'Notes:  Data from UN OCHA Financial Tracking Service (FTS), 2015 and Cent
 
       });
 
-
+*/
 
 
 $(function() {
@@ -2015,10 +2015,10 @@ $(function() {
     }],
     
     title: {
-      text: 'Funding Follows Deaths: Famine in Somalia'
+      text: 'Funding Follows Deaths: Somalia, 2010–12'
     },
     subtitle: {
-      text: 'Notes: Data from Development Initiatives Global Humanitarian Assistance 2013 report, based on UN OCHA FTS data and data analysis done by Checchi (2013) on original survey data from Food Security and Nutrition Analysis Unit—Somalia (FSNAU).'
+      text: 'Notes: Data from Development Initiatives’ 2013 Global Humanitarian Assistance report, based on data from the UN OCHA Financial Tracking Service (FTS), United Nations Office for the Coordination of Humanitarian Assistance (2015), and data analysis by Checchi and Robinson (2013), using original survey data from the Food Security and Nutrition Analysis Unit—Somalia (FSNAU). CGD analysis.'
 
     },
     yAxis: [ {
@@ -2151,7 +2151,7 @@ $(function() {
       text: 'More Donors Mean More Fragmentation'
     },
     subtitle: {
-      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis.'
+      text: 'Notes: Data from the UN OCHA Financial Tracking Service (FTS), United Nations Office for the Coordination of Humanitarian Assistance (2015). CGD analysis. Concentration measured as Herfindahl-Hirschman Index.'
     },
     xAxis: {
       labels: {
@@ -2346,11 +2346,11 @@ $(function() {
     ],
 
     title: {
-      text: 'Finance for Reducing Losses Is a Small Share of Total Aid'
+      text: 'Risk Reduction Is Underfunded'
 
     },
     subtitle: {
-      text: 'Notes: Data on total disaster-related aid from OECD (2016). Subset of all aid flows using coalesced purpose codes 70000, 74010, 72000–72050, 73010, corresponding to emergency, reconstruction and prevention / preparedness only. CGD analysis.'
+      text: 'Notes: Data on total disaster-related aid from Organisation for Economic Co-operation and Development (OECD) (2016). Subset of all aid flows using coalesced purpose codes 70000, 74010, 72000–72050, 73010, corresponding to humanitarian, emergency, reconstruction and prevention/preparedness only. CGD analysis.'
 
     },
 
@@ -2469,7 +2469,7 @@ $(function() {
 
     },
     subtitle: {
-      text: 'Notes: Data from UN OCHA Financial Tracking Service (FTS), 2015. CGD analysis. '
+      text: 'Notes: Data from the UN OCHA Financial Tracking Service (FTS), United Nations Office for the Coordination of Humanitarian Assistance (OCHA), 2015. CGD analysis. '
 
     },
 
@@ -2568,11 +2568,11 @@ $(function() {
         ],
 
         title: {
-          text: 'Insurance Payouts Are Much Larger Than Ex-Post Aid'
+          text: 'Payouts Are Larger than Ex-Post Aid'
 
         },
         subtitle: {
-          text: 'Notes: Data on disaster-related aid is from OECD (2016). Data on insurance payouts from Munich Re (2015). CGD analysis.'
+          text: 'Notes: Data on disaster-related aid from Organisation for Economic Co-operation and Development (OECD) (2016). Data on insurance payouts from Munich Re (2015). CGD analysis.'
 
         },
 

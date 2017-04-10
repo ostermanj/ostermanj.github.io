@@ -38,7 +38,9 @@ Chart.prototype = {
         chart.domain.sort();
         this.max = d3.max(numericValues);
         this.min = d3.min(numericValues);
-
+        console.log(this.min);
+        console.log(this.max);
+        console.log(numericValues);
         this.protoSetup();
     },
     protoSetup: function() { 
@@ -304,7 +306,7 @@ var circleChartExtension = {
        })
         .style('opacity', 1);
 
-        var chart = this;
+        var chart = this; 
 
         this.barX = d3.scaleBand()
             .domain(chart.domain)
@@ -314,6 +316,12 @@ var circleChartExtension = {
         this.y = d3.scaleLinear()
                 .domain([chart.min, chart.max])
                 .range([2, (chart.svgHeight / 2) - chart.strokeWidth - chart.margin.top]);
+
+        this.yAxisScale = d3.scaleLinear()
+                .domain([chart.min - 4, chart.max + 4])
+                .range( [ (chart.svgHeight - chart.margin.bottom - chart.strokeWidth ), chart.margin.top - chart.strokeWidth ] );
+
+        this.yAxis = d3.axisRight().scale(chart.yAxisScale).ticks(4).tickSize(2);
 
         this.maskBars = this.svgs.append('defs')
         .selectAll('clipPath')
@@ -378,7 +386,7 @@ var circleChartExtension = {
                         radius = chart.previousValue + chart.strokeWidth;
                     }
                 }
-                if (i === array.lenth - 1) {
+                if (i === array.length - 1) {
                     chart.previousValue = null;
                 } else {
                     chart.previousValue = radius;
@@ -434,10 +442,10 @@ var circleChartExtension = {
     },
     transform: function(d,i,array){
         var chart = this;
-        d3.select(array[i])
-           .attr('class','transforming')        
+        var svg = d3.select(array[i])
+           .attr('class','transforming');
            
-           .selectAll('ellipse')
+           svg.selectAll('ellipse')
              .on('mouseover', chart.tool_tip.show) // .show is defined in links d3-tip library
                 .on('mouseout', chart.tool_tip.hide)            
             .transition().duration(500)
@@ -446,7 +454,7 @@ var circleChartExtension = {
                 return chart.y(d.value) - chart.strokeWidth;
             })
             .attr('cy', function(d,i,array){
-                return chart.svgHeight / 2 - chart.y(d.value) + chart.svgHeight / 2 - chart.margin.bottom + chart.strokeWidth - 5;
+                return chart.svgHeight - chart.y(d.value) - chart.margin.bottom + chart.strokeWidth - 5;
             })
             .attr('cx', function(d){
                 return chart.barX(d.domain) + chart.barX.bandwidth() / 2;
@@ -471,6 +479,7 @@ var circleChartExtension = {
                 } else if ( $svg.attr('class') === 'locked' ) {
                    $svg.attr('class','locked done');
                 }
+                $svg.call(chart.yAxis);
                 
             });
 
