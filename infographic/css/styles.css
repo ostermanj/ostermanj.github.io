@@ -1,0 +1,133 @@
+@-webkit-keyframes pulse {
+  0%,33% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); }
+  33%,66% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  66%,100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); } }
+@keyframes pulse {
+  0%,33% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); }
+  33%,66% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  66%,100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85); } }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 62.5%;
+  color: #3B342B; }
+
+text {
+  fill: #3B342B; }
+
+body {
+  font: 18px/180% "Questrial", Helvetica, Verdana, Arial, sans-serif;
+  background-color: #f3f3f3;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto; }
+
+header, footer {
+  background-color: #296976;
+  color: #fff;
+  text-transform: uppercase; }
+  header a, footer a {
+    color: #fff;
+    text-decoration: none !important;
+    -webkit-transition: color 0.2s linear;
+    transition: color 0.2s linear; }
+    header a:hover, footer a:hover {
+      color: #fdc513; }
+
+h1, h2 {
+  letter-spacing: 0.5px; }
+
+h1 {
+  font-size: 1.7rem; }
+  h1 #middle {
+    font-size: 3.4rem;
+    text-transform: none;
+    display: block; }
+  h1 #left {
+    position: relative;
+    left: -25px; }
+  h1 #right {
+    text-align: right;
+    display: block; }
+
+#view {
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  overflow-y: scroll; }
+
+section {
+  background-color: #c4b88f; }
+  section:not(#cover) {
+    min-height: 325px; }
+  section.active {
+    border: 1px solid magenta; }
+  section:last-of-type {
+    margin-bottom: -50%; }
+  section#the-facts {
+    background-color: #aad2d9; }
+  section#cover {
+    background-color: none;
+    background: url("/assets/f-hungary-a-20150718-scaled.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 50%; }
+  section.active h2 {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  section h2 {
+    margin: 10px 0 25px;
+    line-height: 135%;
+    text-transform: uppercase;
+    padding: 5px 0 5px calc(0.6 * 50px);
+    position: relative;
+    left: -50px;
+    background-color: #fdc513;
+    color: #296976;
+    box-shadow: rgba(59, 52, 42, 0.2) 5px 5px 5px;
+    font-size: 1.6rem;
+    -webkit-transform: translateX(calc(-100% - 5px));
+            transform: translateX(calc(-100% - 5px));
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    transition: -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out; }
+    section h2 span {
+      color: #3B342B; }
+  section svg {
+    width: 100%;
+    height: 400px;
+    margin-top: 15px; }
+    section svg .person {
+      fill: #296976; }
+      section svg .person.refugee {
+        fill: #3B342A; }
+  section .top-number text {
+    fill: #296976; }
+  section .refugee-number text {
+    fill: #3B342A; }
+  section .query {
+    fill: #296976;
+    cursor: pointer;
+   /* -webkit-animation: pulse 1s linear infinite;
+            animation: pulse 1s linear infinite;*/
+    box-shadow: rgba(59, 52, 42, 0.2) 5px 5px 5px; }
+
+.section-wrapper {
+  width: 100%;
+  padding: 12px 25px 12px 50px; }
