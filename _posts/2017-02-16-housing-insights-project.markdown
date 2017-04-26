@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "Housing Insights: Preserving affordable housing in Washington DC"
+title:  "Housing Insights: Preserving Affordable Housing in Washington DC"
 categories: project
 image: "housing-insights.png"
 tags: ['D3','open data', 'dataviz','front-end']

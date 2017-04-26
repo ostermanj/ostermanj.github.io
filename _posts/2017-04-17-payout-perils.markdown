@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "Payout for Perils: How Insurance Can Radically Improve Emergency Aid"
+title:  "Payouts for Perils: How Insurance Can Radically Improve Emergency Aid"
 categories: project
 image: "payouts-perils.jpg"
 tags: ['publications','AngularJS','dataviz','front-end','Highcharts']
