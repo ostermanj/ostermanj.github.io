@@ -52,7 +52,15 @@ body {
                 margin-bottom: 0;
 
     a {
-        color:$highlight-color;
+        color:#fff;
+        border-bottom-color:rgba(#fff,0.85);
+        &:hover {
+            border-bottom-color:rgba(#fff,1);
+        }
+        &:visited {
+            border-bottom-color:rgba(#fff,0.7);
+        }
+
     }
     h2 {
         color: #fff;
@@ -444,6 +452,11 @@ body {
 section {
     padding: 20px 0;
     margin-bottom: 30px;
+}
+
+section.latest {
+    max-width: 1575px;
+    margin: 0 auto;
 }
 
 #front-content-section{
