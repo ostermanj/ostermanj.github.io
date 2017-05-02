@@ -19,7 +19,7 @@ I am a freelance consultant helping organizations gain influence and drive engag
 
 I'm most familar with Drupal and WordPress content management systems.
 
-My resume: [PDF](../assets/osterman-resume-022017.pdf).
+My resume: [PDF](../assets/osterman-resume-050217.pdf).
 
 My other website (sculpture): [www.johnaosterman.com](http://www.johnaosterman.com)
 
