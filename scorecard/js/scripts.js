@@ -314,12 +314,12 @@ var circleChartExtension = {
             .padding(0.33);
 
         this.y = d3.scaleLinear()
-                .domain([chart.min, chart.max])
-                .range([2, (chart.svgHeight / 2) - chart.strokeWidth - chart.margin.top]);
+                .domain([0, chart.max])
+                .range([0, (chart.svgHeight / 2) - chart.strokeWidth - chart.margin.top]);
 
         this.yAxisScale = d3.scaleLinear()
-                .domain([chart.min - 4, chart.max + 4])
-                .range( [ (chart.svgHeight - chart.margin.bottom - chart.strokeWidth ), chart.margin.top - chart.strokeWidth ] );
+                .domain([0, chart.max])
+                .range( [ (chart.svgHeight - chart.margin.bottom - chart.strokeWidth - 1 ), chart.margin.top - chart.strokeWidth + 6 ] );
 
         this.yAxis = d3.axisRight().scale(chart.yAxisScale).ticks(4).tickSize(2);
 
@@ -369,7 +369,11 @@ var circleChartExtension = {
             })
             .call(this.tool_tip);
 
-
+        this.axisG = this.svgs.append('g')
+            .attr('id','y-axis')
+            .attr('transform',function(){
+                return 'translate(' + ( chart.svgWidth - chart.margin.right - 6 ) + ',0)';
+            });
         
         this.adjustRadii();
     },
@@ -474,12 +478,13 @@ var circleChartExtension = {
             })
             .on('end', function() {
                 var $svg = d3.select(array[i]);
+                console.log(array[i]);
                 if ($svg.attr('class') === 'transforming') {
                     $svg.attr('class','transforming done');
                 } else if ( $svg.attr('class') === 'locked' ) {
                    $svg.attr('class','locked done');
                 }
-                $svg.call(chart.yAxis);
+                $svg.select('g#y-axis').call(chart.yAxis);
                 
             });
 
