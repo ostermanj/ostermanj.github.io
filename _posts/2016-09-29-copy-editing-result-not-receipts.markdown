@@ -5,7 +5,6 @@ title:  'Copy editing: “Results Not Receipts” book manuscript'
 categories: project
 image: "results-not-receipts.png"
 tags: ['copy editing']
-featured: true
 link: https://www.brookings.edu/book/results-not-receipts/
 ---
 

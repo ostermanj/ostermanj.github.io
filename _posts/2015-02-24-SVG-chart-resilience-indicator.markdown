@@ -6,7 +6,6 @@ categories: project
 image: "resilience-indicator.png"
 tags: ['SVG','vanilla JavaScript', 'dataviz']
 link: 'http://www.cgdev.org/blog/could-you-take-another-2008-resilience-test-emerging-economies'
-repo: 'resilience-indicator'
 embed: [625, 610]
 ---
 

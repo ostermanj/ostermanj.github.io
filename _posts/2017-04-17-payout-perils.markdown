@@ -6,7 +6,6 @@ categories: project
 image: "payouts-perils.jpg"
 tags: ['publications','AngularJS','dataviz','front-end','Highcharts']
 link: 'https://www.cgdev.org/app/reader/3125196?page=0'
-featured: true
 ---
 
 [Payout for Perils: How Insurance Can Radically Improve Emergency Aid](https://www.cgdev.org/app/reader/3125196?page=0) is the final report of the Center for Global Development's Payouts for Perils Working Group. The report details how agencies and countries vulnerable to natural disasters “can use insurance and index-linked securities to save lives, money, and time by financing emergency response much more effectively and creating healthy incentives to invest in disaster risk reduction.”

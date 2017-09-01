@@ -49,7 +49,7 @@ Every country's result overall and on each of the seven components is ready to b
 
 ## About the code
 
-The tool is built on a Backbone.js framework with help from chart.js for rendering drill-down graphs. Server side, the tool parses a data from an XML file into JavaScript objects for use client side.
+The tool is built on a Backbone.js framework with help from chart.js for rendering drill-down graphs. Server side, the tool parses a data from an XML file into JavaScript objects for use on the client side.
 
 I welcome any feedback you may have. Please send me a note [on github][github] or by using the contact form below.
 
