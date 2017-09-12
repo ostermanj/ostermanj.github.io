@@ -46,7 +46,7 @@ var baselineTooltip = d3.tip()
             });            
 
 
-d3.csv('../data/emissions.csv', function(d){
+d3.csv('data/emissions.csv', function(d){
     var values = [];
     for ( var i = 2018; i < 2031; i++ ){
         values.push({date: parseTime(i), value:+d[i.toString()], price: d.price, growth_rate: d.growth_rate});
