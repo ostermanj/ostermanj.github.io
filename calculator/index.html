@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbon calculator</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/oxc7jph.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- end typekit -->
+    <!-- myFonts 30 day trial -->
+   
+    <!-- end myFonts -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+  <h2>Effects of carbon price on emissions and revenue</h2>
+  <div class="dropdowns">
+    <label for="price-selector">Carbon price</label>
+    <select id="price-selector">
+        <option selected disabled hidden value="">— select price —</option>
+        <option value="5">$5 / metric ton</option>
+        <option value="10">$10 / metric ton</option>
+        <option value="15">$15 / metric ton</option>
+        <option value="20">$20 / metric ton</option>
+        <option value="25">$25 / metric ton</option>
+        <option value="30">$30 / metric ton</option>
+        <option value="35">$35 / metric ton</option>
+        <option value="40">$40 / metric ton</option>
+        <option value="45">$45 / metric ton</option>
+        <option value="50">$50 / metric ton</option>
+    </select>
+    <label for="rate-selector">Growth rate</label>
+    <select id="rate-selector">
+      <option selected disabled hidden value="">— select growth rate —</option>
+      <option value="0.01">1%</option>
+      <option value="0.02">2%</option>
+      <option value="0.03">3%</option>
+      <option value="0.04">4%</option>
+      <option value="0.05">5%</option>
+    </select>
+  </div>
+  <div id="summary-stats">
+    <p><b>To come:</b> Summary stats such as cumulative emissions savings (absolute and relative to 2005) and cumulative revenue</p>
+  </div>
+  <h3>Annual emissions</h3>
+  <svg id="container"></svg>
+  <h3>Revenue</h3>
+  <p>chart to come</p>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
