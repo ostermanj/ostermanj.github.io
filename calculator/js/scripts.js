@@ -1,148 +1,192 @@
-'use strict';
+"use strict";
 
-var userPrice = 10,
-    userRate = 0.05;
+var priceSelector = d3.select('#price-selector')
+    .on('change', updateGate)
+    .node();
+var rateSelector = d3.select('#rate-selector')
+    .on('change', updateGate)
+    .node(); 
 
-var trendline;
+function updateGate(){
+    if ( priceSelector.options[priceSelector.selectedIndex].value && rateSelector.options[rateSelector.selectedIndex].value ) {
+        carbonLineCharts.forEach(function(each){
+            each.updateChart(priceSelector.options[priceSelector.selectedIndex].value, rateSelector.options[rateSelector.selectedIndex].value);
+        });
+    }
+}  
 
-// set the dimensions and margins of the graph
-var margin = {top: 40, right: 20, bottom: 40, left: 50},
-    width = 728 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var CarbonLineChart = function(configObject){ // marginsrgin {}, height #, width #, containerID, dataPath
+    this.setup(configObject);
+}
 
-var parseTime = d3.timeParse('%Y');
+CarbonLineChart.prototype = {
 
-// set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
+    setup: function(configObject){
+        var chart = this;
+        this.margin = configObject.margin;
+        this.width = configObject.width - this.margin.left - this.margin.right;
+        this.height = configObject.height - this.margin.top - this.margin.bottom;
+        this.labelOffset = configObject.trendLabelPosition === 'below' ? 20 : -20;
 
-// define the line
-var valueline =  d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.value); });
+        this.svg = d3.select(configObject.container)
+            .attr('width', this.width + this.margin.left + this.margin.right)
+            .attr('height', this.height + this.margin.top + this.margin.bottom)
+            .append('g')
+            .attr('transform',
+                  'translate(' + this.margin.left + ',' + this.margin.top + ')');
 
+        this.parseTime = d3.timeParse('%Y');
 
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select('#container')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
-    .append('g')
-    .attr('transform',
-          'translate(' + margin.left + ',' + margin.top + ')');
+        // set the ranges
+        this.x = d3.scaleTime().range([0, this.width]);
+        this.y = d3.scaleLinear().range([this.height, 0]);
 
-var tooltip = d3.tip()
+        // define the line
+        this.valueline =  d3.line()
+            .x(function(d) { return chart.x(d.date); })
+            .y(function(d) { return chart.y(d.value); });
+        var str = 'd.units';
+       
+        this.getData(configObject); 
+
+    },
+
+    getData: function(configObject){ // TO DO : get the data first since it informs set up
+        var chart = this;
+        chart.range = [];
+        d3.csv(configObject.dataPath, function(d){
+            var values = [];
+            for ( var i = 2018; i < 2031; i++ ){
+                chart.range.push(+d[i.toString()]);
+                values.push({date: chart.parseTime(i), value:+d[i.toString()], price: d.price, growth_rate: d.growth_rate, units: d.units});
+            }
+            return {
+                growth_rate: +d.growth_rate,
+                initial_price: +d.price,
+                units: d.units,
+                trend: values
+            }
+        }, function(error, data){
+            if ( error ) throw error;
+            console.log(data);
+            chart.baselineData = data.slice(0,1);
+            chart.data = d3.nest()
+                .key(function(d){
+                    return d.initial_price;
+                })
+                .key(function(d){
+                    return d.growth_rate;
+                })
+                .object(data);
+            console.log(chart.data);
+            chart.x.domain([chart.parseTime(2018),chart.parseTime(2030)]); // these can be part of setup if data is fetched first
+            chart.y.domain([d3.min(chart.range), d3.max(chart.range)]);
+
+            chart.setupTooltips(configObject);
+            chart.renderTrendline(); // trendline is rendered and then hidden by baseline
+            chart.renderTrendPoints();
+            chart.renderTrendlineLabel();
+            chart.renderBaseline(); // set up first rather than render here
+            chart.renderBaselinePoints();
+            chart.renderBaselineLabel();
+            chart.renderAxes();
+
+        });
+    },
+    setupTooltips: function(configObject){
+         this.tooltip = d3.tip()
             .attr("class", "d3-tip")
             .direction('n')
+            .offset([-8, 0])
             .html(function(d){
-                return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + '</b> ' + d.value + ' billion metric tons<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+                return configObject.trendlineTooltip(d); 
             });
 
-var baselineTooltip = d3.tip()
+        this.baselineTooltip = d3.tip()
             .attr("class", "d3-tip")
             .direction('n')
+            .offset([-8, 0])
             .html(function(d){
-                return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: ' + d.value + ' billion metric tons<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
-            });            
+                return configObject.baselineTooltip(d); 
+            });   
 
-
-d3.csv('data/emissions.csv', function(d){
-    var values = [];
-    for ( var i = 2018; i < 2031; i++ ){
-        values.push({date: parseTime(i), value:+d[i.toString()], price: d.price, growth_rate: d.growth_rate});
-    }
-    return {
-        growth_rate: +d.growth_rate,
-        initial_price: +d.price,
-        trend: values
-    }
-}, function(error, data){
-    if ( error ) throw error;
-    console.log(data);
-    var baselineData = data.slice(0,1);
-    console.log('basleinedata', baselineData);
-    console.log(data);
-    
-    data = d3.nest()
-        .key(function(d){
-            return d.initial_price;
-        })
-        .key(function(d){
-            return d.growth_rate;
-        })
-        .object(data);
-
-   // data = data[userPrice][userRate][0]['trend'];
-    console.log(data);
-
-    x.domain([parseTime(2018),parseTime(2030)]);
-    y.domain([3.4, 5.5]);
-
-    trendline = svg.append('path')
-        .attr('class', 'line')
-        .attr('d', function(){
-           return valueline(baselineData[0].trend);
-        });
-
-    var trendlineLabel = svg.append('text')
+    },
+    renderTrendline: function(){
+        var chart = this;
+        this.trendline = this.svg.append('path')
+            .attr('class', 'line')
+            .attr('d', function(){
+               return chart.valueline(chart.baselineData[0].trend);
+            });
+    },
+    renderTrendPoints: function(){
+        var chart = this;
+        this.trendPoints = this.svg.selectAll('trend-point')
+            .data(function(){
+                return chart.baselineData[0].trend;
+            })
+            .enter().append('circle')
+            .attr('class', 'data-point')
+            .attr('r',6)
+            .attr('cx', function(d){
+                return chart.x(d.date);
+            })
+            .attr('cy', function(d){
+                return chart.y(d.value)
+            })
+            .on('mouseover', this.tooltip.show)
+            .on('mouseout', this.tooltip.hide) 
+            .call(this.tooltip);
+    },
+    renderTrendlineLabel: function(){
+         var chart = this;
+         this.trendlineLabel = this.svg.append('text')
         .attr('class','line-label trendline-label no-display')
         .text('With carbon price')
         .attr('transform', function(){
-            return 'translate(' + x(baselineData[0].trend[7].date) + ',' + ( y(baselineData[0].trend[7].value) - 20 ) + ')';
+            console.log(chart.labelOffset);
+            return 'translate(' + chart.x(chart.baselineData[0].trend[7].date) + ',' + ( chart.y(chart.baselineData[0].trend[7].value) + chart.labelOffset ) + ')';
         });
-       
-
-    var points = svg.selectAll('trendpoint')
-        .data(function(){
-            return baselineData[0].trend;
-        })
-        .enter().append('circle')
-        .attr('class', 'data-point')
-        .attr('r',6)
-        .attr('cx', function(d){
-            return x(d.date);
-        })
-        .attr('cy', function(d){
-            return y(d.value)
-        })
-        .on('mouseover', tooltip.show)
-        .on('mouseout', tooltip.hide) 
-        .call(tooltip);;
-
-   var baselineGroup = svg.selectAll('g')
-        .data(baselineData)
-        .enter().append('g')
-        .attr('class','base-line-group');
+    },
+    renderBaseline: function(){
+        var chart = this;
+        this.baselineGroup = this.svg.selectAll('base-line-group')
+            .data(this.baselineData)
+            .enter().append('g')
+            .attr('class','base-line-group');
 
 
-    var baseline = baselineGroup.selectAll('path')
-        .data(baselineData)
-        .enter().append('path')
-        .attr('class', 'line baseline')
-        .attr('d', function(d){
-           return valueline(d.trend);
-        });
+        this.baseline = this.baselineGroup.selectAll('baseline')
+            .data(this.baselineData)
+            .enter().append('path')
+            .attr('class', 'line baseline')
+            .attr('d', function(d){
+               return chart.valueline(d.trend);
+            });
 
-
-    var baselinePoints  = baselineGroup.selectAll('circle')
-        .data(function(d){
-            return d.trend;
-        })
-        .enter().append('circle')
-        .attr('class', 'data-point baseline-point')
-        .attr('r',6)
-        .attr('cx', function(d){
-            return x(d.date);
-        })
-        .attr('cy', function(d){
-            return y(d.value)
-        })
-        .on('mouseover', baselineTooltip.show)
-        .on('mouseout', baselineTooltip.hide) 
-        .call(baselineTooltip);
-
-
-    var baselineLabel = baselineGroup.selectAll('baseline-label')
+    },
+    renderBaselinePoints: function(){
+        var chart = this;
+        this.baselinePoints  = this.baselineGroup.selectAll('baseline-point')
+            .data(function(d){
+                return d.trend;
+            })
+            .enter().append('circle')
+            .attr('class', 'data-point baseline-point')
+            .attr('r',6)
+            .attr('cx', function(d){
+                return chart.x(d.date);
+            })
+            .attr('cy', function(d){
+                return chart.y(d.value)
+            })
+            .on('mouseover', this.baselineTooltip.show)
+            .on('mouseout', this.baselineTooltip.hide) 
+            .call(this.baselineTooltip);
+    },
+    renderBaselineLabel: function(){
+        var chart = this;
+        this.baselineLabel = this.baselineGroup.selectAll('baseline-label')
         .data(function(d){
             console.log(d.trend[7]);
             return [d.trend[7]];
@@ -150,71 +194,123 @@ d3.csv('data/emissions.csv', function(d){
         .enter().append('text')
         .attr('transform', function(d){
             console.log(d);
-            return 'translate(' + x(d.date) + ',' + ( y(d.value) + 20 ) + ')';
+            return 'translate(' + chart.x(d.date) + ',' + ( chart.y(d.value) - 20 ) + ')';
         })
         .attr('class','line-label')
         .text('Without carbon price');
 
-     // Add the X Axis
-    var xAxis = svg.append('g')
-          .attr('transform', 'translate(0,' + ( height + 10 ) + ')')
+    },
+    renderAxes: function(){
+        var chart = this;
+        this.xAxis = this.svg.append('g')
+          .attr('transform', 'translate(0,' + ( this.height + 10 ) + ')')
           .attr('class', 'axis x-axis')
-          .call(d3.axisBottom(x));
+          .call(d3.axisBottom(chart.x));
 
-      // Add the Y Axis
-    var yAxis = svg.append('g')
+      
+        this.yAxis = this.svg.append('g')
           .attr('class', 'axis y-axis');
 
-     yAxis.append('text')
-        .attr('class', 'axis-label')
-        .attr('text-anchor','start')
-        .attr('transform', 'translate(-' + ( margin.left - 10 ) + ', -20)')
-        .text('billion metric tons');
+        this.yAxis.append('text')
+            .attr('class', 'axis-label')
+            .attr('text-anchor','start')
+            .attr('transform', 'translate(-' + ( this.margin.left - 10 ) + ', -20)')
+            .text(function(){
+                console.log(chart.data[0][0][0]);
+                return chart.data[0][0][0].units;
+            }); // TO DO: needs to be set programmatically.
 
-    yAxis.call(d3.axisLeft(y));
-
-    function updateTrendline(){
-        var priceSelector = d3.select('#price-selector').node(),
-            rateSelector = d3.select('#rate-selector').node();
-        if ( priceSelector.options[priceSelector.selectedIndex].value && rateSelector.options[rateSelector.selectedIndex].value ) {
-            userPrice = priceSelector.options[priceSelector.selectedIndex].value;
-            userRate = rateSelector.options[rateSelector.selectedIndex].value;
-        
-        trendline.data(function(){
-                console.log(data[userPrice][userRate]);
-                return data[userPrice][userRate];
+        this.yAxis.call(d3.axisLeft(chart.y));
+    },
+    updateChart(userPrice,userRate){
+        this.updateTrendline(userPrice,userRate);
+        this.updateTrendPoints(userPrice,userRate);
+        this.updateTrendlineLabel(userPrice,userRate);
+    },
+    updateTrendline: function(userPrice,userRate){
+        var chart = this;
+        this.trendline.data(function(){
+            return chart.data[userPrice][userRate];
+        })
+        .transition().duration(500)
+        .attr('d', function(d){
+           return chart.valueline(d.trend);
+        });
+    },
+    updateTrendPoints: function(userPrice, userRate){
+        var chart = this;
+        this.trendPoints.data(function(){
+            return chart.data[userPrice][userRate][0].trend;
             })
             .transition().duration(500)
-            .attr('d', function(d){
-               return valueline(d.trend);
+            .attr('cx', function(d){
+                return chart.x(d.date);
+            })
+            .attr('cy', function(d){
+                return chart.y(d.value)
             });
-
-         trendlineLabel.data(function(){
-                return [data[userPrice][userRate][0].trend[7]];
+    },
+    updateTrendlineLabel: function(userPrice,userRate){
+        var chart = this;
+        this.trendlineLabel.data(function(){
+                return [chart.data[userPrice][userRate][0].trend[7]];
             })
             .classed('no-display', false)
             .transition().duration(500)
             .attr('transform', function(d){
-                return 'translate(' + x(d.date) + ',' + ( y(d.value) - 20 ) + ')';
+                return 'translate(' + chart.x(d.date) + ',' + ( chart.y(d.value) + chart.labelOffset ) + ')';
             });
-
-        points.data(function(){
-            console.log(data[userPrice][userRate][0].trend);
-            return data[userPrice][userRate][0].trend;
-            })
-            .transition().duration(500)
-            .attr('cx', function(d){
-                return x(d.date);
-            })
-            .attr('cy', function(d){
-                return y(d.value)
-            });
-        }
     }
-    d3.select('#price-selector')
-        .on('change', updateTrendline);
-    d3.select('#rate-selector')
-        .on('change', updateTrendline);   
-    
 
-});
+
+};
+
+var carbonLineCharts = [];
+carbonLineCharts.push( 
+    new CarbonLineChart(
+        {
+            margin: { 
+                top: 40,
+                right: 20,
+                bottom: 40,
+                left: 50
+            },
+            width:550,
+            height:380,
+            dataPath:'data/emissions.csv',
+            container:'#container', 
+            baselineTooltip: function(d){
+                return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+            },
+            trendlineTooltip: function(d){
+                return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + ':</b> ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+            }
+
+        }
+    )
+);
+
+carbonLineCharts.push( 
+    new CarbonLineChart(
+        {
+            margin: { 
+                top: 40,
+                right: 20,
+                bottom: 40,
+                left: 50
+            },
+            width:550,
+            height:380,
+            dataPath:'data/revenue.csv',
+            container:'#container-2',
+            trendLabelPosition: 'below', 
+            baselineTooltip: function(d){
+                return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: $' + d.value; 
+            },
+            trendlineTooltip: function(d){
+                return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + ':</b> $' + d3.format(".3n")(d.value) + ' billion'; 
+            }
+
+        }
+    )
+);

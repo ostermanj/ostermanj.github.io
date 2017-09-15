@@ -1,12 +1,43 @@
+* {
+  box-sizing: border-box;
+
+
+}
+
 body {
-  padding: 0 50px 50px;
+  padding: 0;
+  margin: 0; /* TODO: RESET ALL MARGINS AND PADDING */
   color: #58585b;
   font: 17.6px/23.1px calluna,Georgia,"Times New Roman","DejaVu Serif",serif;
 }
 
+.margins {
+  padding: 0 50px;
+  margin: 0;
+}
 
 .dropdowns {
-  margin: 0 auto 25px auto;
+  margin: 0 auto;
+  padding-left: 30px;
+  position: relative;
+}
+
+.attention:before {
+   content: '!';
+    position: absolute;
+    left: 13px;
+    color: #fff;
+    z-index: 1;
+    top: 2px;
+}
+
+.attention:after {
+    content: '\025B2';
+    position: absolute;
+    left: 0;
+    font-size: 181%;
+    top: -1px;
+
 }
 
 h2 {
@@ -20,12 +51,51 @@ h3 {
 }
 
 #summary-stats {
-  border: 1px solid #58585b;
-  padding: 0 15px;
+  background-color: #58585b;
+  margin-top: 20px;
+}
+
+.summary div {
+ 
+  background-color: #58585b;
+  color: #fff;
+  padding: 10px;
+}
+
+.summary div h2 { /* TO DO : RESET MARGIN AND PADDING ACROSS THE BOARD */
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 90%;
+}
+
+.summary-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.summary-icon img {
+  margin: auto;
+  display: block;
+}
+
+.summary-data {
+  width: 170px;
 }
 
 .no-display {
   display:none;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 /*////////////////////
@@ -75,13 +145,12 @@ h3 {
 
 .line-label {
   font-size: 75%;
+  text-anchor: start;
 }
 
 .trendline-label {
   fill: #051839;
 }
-
-
 
 
 /* ///////////////////
@@ -92,13 +161,17 @@ h3 {
 
 .d3-tip {
   padding: 10px;
-  background: rgba(88,88,91, 0.2);
-  
+  background: rgba(230,231,232,0.9);
+  border: 1px solid #58585b;
   opacity: 0;
   transition: opacity 0.5s linear;
   font-size: 75%;
   line-height: 120%;
-  z-index: 9;
+  z-index: 999999;
+   font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
 }
 
 /* Creates a small triangle extender for the tooltip */
@@ -108,7 +181,7 @@ h3 {
   font-size: 10px;
   width: 100%;
   line-height: 1;
-  color: rgba(88,88,91, 0.2);
+  color: #58585b;
   position: absolute;
   pointer-events: none;
 

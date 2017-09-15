@@ -16,39 +16,75 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
-  <h2>Effects of carbon price on emissions and revenue</h2>
-  <div class="dropdowns">
-    <label for="price-selector">Carbon price</label>
-    <select id="price-selector">
-        <option selected disabled hidden value="">— select price —</option>
-        <option value="5">$5 / metric ton</option>
-        <option value="10">$10 / metric ton</option>
-        <option value="15">$15 / metric ton</option>
-        <option value="20">$20 / metric ton</option>
-        <option value="25">$25 / metric ton</option>
-        <option value="30">$30 / metric ton</option>
-        <option value="35">$35 / metric ton</option>
-        <option value="40">$40 / metric ton</option>
-        <option value="45">$45 / metric ton</option>
-        <option value="50">$50 / metric ton</option>
-    </select>
-    <label for="rate-selector">Growth rate</label>
-    <select id="rate-selector">
-      <option selected disabled hidden value="">— select growth rate —</option>
-      <option value="0.01">1%</option>
-      <option value="0.02">2%</option>
-      <option value="0.03">3%</option>
-      <option value="0.04">4%</option>
-      <option value="0.05">5%</option>
-    </select>
+  <div class="margins">
+    <h2>Effects of carbon price on emissions and revenue</h2>
+    <div class="dropdowns attention">
+      <label for="price-selector">A. Select carbon price</label>
+      <select id="price-selector">
+          <option selected disabled hidden value="">— select price —</option>
+          <option value="5">$5 / metric ton</option>
+          <option value="10">$10 / metric ton</option>
+          <option value="15">$15 / metric ton</option>
+          <option value="20">$20 / metric ton</option>
+          <option value="25">$25 / metric ton</option>
+          <option value="30">$30 / metric ton</option>
+          <option value="35">$35 / metric ton</option>
+          <option value="40">$40 / metric ton</option>
+          <option value="45">$45 / metric ton</option>
+          <option value="50">$50 / metric ton</option>
+      </select>
+
+      <label for="rate-selector">B. Select growth rate</label>
+      <select id="rate-selector">
+        <option selected disabled hidden value="">— select growth rate —</option>
+        <option value="0.01">1%</option>
+        <option value="0.02">2%</option>
+        <option value="0.03">3%</option>
+        <option value="0.04">4%</option>
+        <option value="0.05">5%</option>
+      </select>
+    </div>
+
+    <div class="flex-container">
+      <div>
+        <h3>Annual emissions</h3>
+        <svg id="container"></svg>
+      </div>
+      <div>
+        <h3>Annual revenue</h3>
+        <svg id="container-2"></svg>
+      </div>
+    </div>
   </div>
-  <div id="summary-stats">
-    <p><b>To come:</b> Summary stats such as cumulative emissions savings (absolute and relative to 2005) and cumulative revenue</p>
-  </div>
-  <h3>Annual emissions</h3>
-  <svg id="container"></svg>
-  <h3>Revenue</h3>
-  <p>chart to come</p>
+    <div id="summary-stats" class="flex-container space-around">
+      <div id="summary-emissions" class="summary flex-container">
+        <div class="summary-icon">
+          <img src="assets/emissions.svg" />
+        </div>
+        <div class="summary-data">
+          <h2>Cumulative emissions saved</h2>
+          [[to come]]
+        </div>
+      </div>
+      <div class="summary flex-container">
+        <div class="summary-icon">
+          <img src="assets/revenue.svg" />
+        </div>
+        <div class="summary-data">
+          <h2>Cumulative revenue</h2>
+            [[to come]]
+        </div>
+      </div>
+      <div class="summary flex-container">
+        <div class="summary-icon">
+          <img src="assets/price-tag.svg" />
+        </div>
+        <div class="summary-data">
+          <h2>Final carbon price</h2>
+            [[to come]]
+        </div>
+      </div>
+    </div>
 
   <script src="js/scripts.js"></script>
 </body>
