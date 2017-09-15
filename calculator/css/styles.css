@@ -6,9 +6,10 @@
 
 body {
   padding: 0;
-  margin: 0; /* TODO: RESET ALL MARGINS AND PADDING */
+  margin: 0 auto; /* TODO: RESET ALL MARGINS AND PADDING */
   color: #58585b;
   font: 17.6px/23.1px calluna,Georgia,"Times New Roman","DejaVu Serif",serif;
+  max-width: 1280px;
 }
 
 .margins {
