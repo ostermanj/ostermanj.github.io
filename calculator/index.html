@@ -1,91 +1,1107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Carbon calculator</title>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="js/d3-tip.js"></script>
-    <!-- Typekit -->
-    <script src="https://use.typekit.net/oxc7jph.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <!-- end typekit -->
-    <!-- myFonts 30 day trial -->
-   
-    <!-- end myFonts -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-</head>
-<body>
-  <div class="margins">
-    <h2>Effects of carbon price on emissions and revenue</h2>
-    <div class="dropdowns attention">
-      <label for="price-selector">A. Select carbon price</label>
-      <select id="price-selector">
-          <option selected disabled hidden value="">— select price —</option>
-          <option value="5">$5 / metric ton</option>
-          <option value="10">$10 / metric ton</option>
-          <option value="15">$15 / metric ton</option>
-          <option value="20">$20 / metric ton</option>
-          <option value="25">$25 / metric ton</option>
-          <option value="30">$30 / metric ton</option>
-          <option value="35">$35 / metric ton</option>
-          <option value="40">$40 / metric ton</option>
-          <option value="45">$45 / metric ton</option>
-          <option value="50">$50 / metric ton</option>
-      </select>
+<!-- saved from url=(0070)http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance -->
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#" class="js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<link rel="shortcut icon" href="http://www.rff.org/sites/all/themes/rff_theme/favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="description" content="Homeowners in high-risk flood areas exhibit both rational and biased optimism about flood risks. Understanding how these outlooks factor into flood insurance take-up rates can help determine the best policy options for increasing coverage.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance">
+<link rel="shortlink" href="http://www.rff.org/node/25651">
+<meta property="og:site_name" content="Resources for the Future">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance">
+<meta property="og:title" content="Why Don’t More People Buy Flood Insurance?">
+<meta property="og:description" content="Homeowners in high-risk flood areas exhibit both rational and biased optimism about flood risks. Understanding how these outlooks factor into flood insurance take-up rates can help determine the best policy options for increasing coverage.">
+<meta property="og:updated_time" content="2017-09-07T16:41:26-04:00">
+<meta property="og:image" content="http://www.rff.org/files/featured/GettyImages-841448806.jpg">
+<meta property="article:published_time" content="2017-09-06T17:11:35-04:00">
+<meta property="article:modified_time" content="2017-09-07T16:41:26-04:00">
+  <title>Why Don’t More People Buy Flood Insurance? | Resources for the Future</title>
 
-      <label for="rate-selector">B. Select growth rate</label>
-      <select id="rate-selector">
-        <option selected disabled hidden value="">— select growth rate —</option>
-        <option value="0.01">1%</option>
-        <option value="0.02">2%</option>
-        <option value="0.03">3%</option>
-        <option value="0.04">4%</option>
-        <option value="0.05">5%</option>
-      </select>
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cleartype" content="on">
+
+  <style>
+@import url("http://www.rff.org/modules/system/system.base.css?ov8ghk");
+</style>
+<style>
+@import url("http://www.rff.org/sites/all/modules/contrib/wysiwyg_linebreaks/wysiwyg_linebreaks.css?ov8ghk");
+</style>
+<style>
+@import url("http://www.rff.org/sites/all/themes/rff_theme/css/styles.css?ov8ghk");
+@import url("http://www.rff.org/sites/all/themes/rff_theme/css/magazine-styles.css?ov8ghk");
+</style>
+  <!--[if lt IE 9]>
+  <link href="sites/all/themes/rff_theme/css/styles-ie8.css" rel="stylesheet" type="text/css">
+  <![endif]-->
+  <script type="text/javascript" src="./rff-assets/p.js" async=""></script><script type="text/javascript" async="" src="./rff-assets/linkid.js"></script><script async="" src="./rff-assets/analytics.js"></script><script type="text/javascript" id="async-buttons" src="./rff-assets/async-buttons.js"></script><script src="./rff-assets/js_tm1gahPj5RurExr4Zj4GdGvvL7W4-u6_XRVeEsXyp3Q.js"></script>
+<script>var switchTo5x = true;</script>
+<script src="./rff-assets/buttons.js"></script>
+<script>if (stLight !== undefined) { stLight.options({"publisher":"dr-5d6b52c2-77dd-414b-f8a6-cf84b5ada91d","version":"5x","onhover":false,"shorten":"false"}); }</script>
+<script src="./rff-assets/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-1693550-21", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="./rff-assets/js_mbtlzvnqrujCS2JjnXzHO_PHzyC4_ud1F6_tTxjCZDg.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"rff_theme","theme_token":"BMSYFz5ttcGHFBqXIic4QZu_5BZJ66BIA2LMlX3lU7g","js":{"sites\/all\/modules\/custom\/rff_design_objects\/plugins\/layouts\/secondary-nav-layout\/js\/rff_menu.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"0":1,"http:\/\/w.sharethis.com\/button\/buttons.js":1,"1":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/rff_theme\/js\/script.js":1,"sites\/all\/themes\/rff_theme\/js\/mag-script.js":1,"sites\/all\/themes\/rff_theme\/js\/rff-fonts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/google_cse\/google_cse.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/wysiwyg_linebreaks\/wysiwyg_linebreaks.css":1,"sites\/all\/themes\/rff_theme\/system.menus.css":1,"sites\/all\/themes\/rff_theme\/system.messages.css":1,"sites\/all\/themes\/rff_theme\/system.theme.css":1,"sites\/all\/themes\/rff_theme\/css\/styles.css":1,"sites\/all\/themes\/rff_theme\/css\/magazine-styles.css":1,"sites\/all\/themes\/rff_theme\/node.css":1,"sites\/all\/themes\/rff_theme\/search.css":1,"sites\/all\/themes\/rff_theme\/user.css":1,"sites\/all\/themes\/rff_theme\/views.css":1,"sites\/all\/themes\/rff_theme\/panels.css":1,"sites\/all\/themes\/rff_theme\/google_cse.css":1,"sites\/all\/themes\/rff_theme\/ckeditor.css":1,"sites\/all\/themes\/rff_theme\/ctools.css":1,"sites\/all\/themes\/rff_theme\/date.css":1,"sites\/all\/themes\/rff_theme\/field.css":1,"sites\/all\/themes\/rff_theme\/mollom.css":1}},"googleCSE":{"cx":"006388586138120664371:7fmunlhzlcq","language":"","resultsWidth":600,"domain":"www.google.com"},"better_exposed_filters":{"views":{"blog_post_authors":{"displays":{"featured_researchers_list":{"filters":[]}}},"rail_related_content_automatic":{"displays":{"pane":{"filters":[]}}},"related_collections":{"displays":{"pane":{"filters":[]}}},"menu_blog_post_listing":{"displays":{"default":{"filters":[]}}},"menu_event_listing":{"displays":{"default":{"filters":[]}}},"menu_leadership_listing":{"displays":{"default":{"filters":[]}}},"menu_publication_listing":{"displays":{"default":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/blog\/2017\/why-don-t-more-people-buy-flood-insurance":true}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/contrib/zen/js/html5-respond.js"></script>
+    <![endif]-->
+    <!-- Google fonts for Frank Ruhl Libre -->
+  <link href="./rff-assets/css" rel="stylesheet">
+<script type="text/javascript" async="" src="./rff-assets/mtiFontTrackingCode.js"></script><link rel="stylesheet" type="text/css" href="./rff-assets/buttons.e80452d5e7cc382dad89d10f50bde247.css"><iframe id="stSegmentFrame" name="stSegmentFrame" frameborder="0" scrolling="no" width="0px" height="0px" sandbox="allow-scripts allow-same-origin" style="display:none;" src="./rff-assets/saved_resource.html"></iframe><link type="text/css" rel="stylesheet" href="./rff-assets/1.css"><script type="text/javascript" charset="utf-8" async="" src="./rff-assets/button.e722c258c2de2a7c30637037cf3fc66c.js"></script></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-25651 node-type-blog-post   section-blog page-panels">
+      <p id="skip-link">
+      <a href="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+    </p>
+      
+  <div class="container">
+    <div class="l-1up">
+      
+
     </div>
+  </div>
 
-    <div class="flex-container">
-      <div>
-        <h3>Annual emissions</h3>
-        <svg id="container"></svg>
+
+
+<div class="nav--utility-container">
+  <div class="container">
+    <div class="l-1up">
+      <nav class="nav--utility">
+        <ul class="nav--utility__list">
+        
+<header>
+      <h2 class="element-invisible">Utility Nav</h2>
+  </header>
+
+
+<li><a href="http://www.rff.org/about/get-updates-rff" class="utility-nav-list__item">Get Updates</a></li><li><a href="http://www.rff.org/about/support" class="utility-nav-list__item">Support RFF</a></li><li><a href="http://www.rff.org/about/contact" class="utility-nav-list__item">Contact</a></li>
+        <li>
+          
+
+<form class="google-cse" action="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" method="post" id="search-block-form--3" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--6">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search our Site" class="nav--utility__search-input form-text" type="text" id="edit-search-block-form--6" name="search_block_form" value="" size="15" maxlength="128">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--3"><input class="button nav--utility__submit form-submit" type="submit" id="edit-submit--3" name="op" value=""></div><input type="hidden" name="form_build_id" value="form-0IubTYa0NU0KOkehv_KFQxqC2r7nKPdnaMypGqvlJMA">
+<input type="hidden" name="form_id" value="search_block_form">
+</div></form>
+
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<div class="site-header">
+  <div class="container">
+    <div class="l-1up">
+      <div class="logo">
+                  <a href="http://www.rff.org/home">
+            <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 201.713 50.539" enable-background="new 0 0 201.713 50.539" xml:space="preserve">
+<g id="Layer_1">
+    <g>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M0,43.809h54.531v5.514H0V43.809z M0,25.733v-7.965L18.688,0
+            l9.574,9.191l8.5-4.595l17.769,10.109v6.434l-17.769-10.11l-8.5,4.595l-9.574-7.659L0,25.733z M0,25.733h28.262l8.5-4.594h17.769
+            v5.82H36.762l-8.5,4.595H0V25.733z M0,34.923h54.531v5.515H0V34.923z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M66.583,25.952h3.637l3.231,4.607
+            c0.177,0.248,0.229,0.336,0.229,0.477c0,0.071-0.035,0.142-0.247,0.142v0.247h3.919v-0.247c-0.371,0-0.512-0.177-0.759-0.53
+            l-3.265-4.625c2.17-0.337,3.459-1.66,3.459-3.762c0-2.066-1.624-3.69-4.696-3.69h-8.51v0.248c0.424,0,0.494,0.14,0.494,0.529v11.3
+            c0,0.388-0.07,0.53-0.494,0.53v0.247h3.496v-0.247c-0.424,0-0.495-0.142-0.495-0.53V25.952z M66.636,20.655h5.349
+            c1.272,0,2.295,0.495,2.295,1.606c0,1.113-1.024,1.607-2.295,1.607h-5.349V20.655z"></path>
+        <path fill="" d="M79.28,31.424h11.617c0.425,0,0.601,0.142,0.601,0.388h0.247v-2.894h-0.247
+            c0,0.282-0.177,0.422-0.601,0.422h-8.651v-3.459h5.544c0.423,0,0.601,0.142,0.601,0.423h0.247v-2.967h-0.247
+            c0,0.318-0.178,0.46-0.601,0.46h-5.544v-3.143h8.492c0.423,0,0.601,0.142,0.601,0.46h0.247v-2.931h-0.247
+            c0,0.247-0.178,0.388-0.601,0.388H79.28v0.247c0.388,0,0.459,0.142,0.459,0.53v11.299c0,0.388-0.07,0.53-0.459,0.53V31.424z"></path>
+        <path fill="" d="M106.274,19.702l-0.282-0.088c-0.054,0.053-0.089,0.123-0.318,0.123c-0.212,0-2.366-1.342-5.438-1.342
+            c-3.425,0-6.55,1.237-6.55,4.202c0,5.862,10.258,1.571,10.258,5.032c0,0.971-1.094,1.889-4.308,1.889
+            c-2.26,0-4.538-0.742-4.538-1.783c0-0.142,0.036-0.213,0.036-0.283l-0.283-0.14l-1.466,3.001l0.23,0.053
+            c0.088-0.053,0.14-0.142,0.247-0.142c0.406,0,1.643,1.378,5.95,1.378c4.519,0,6.778-1.8,6.778-4.132
+            c0-6.391-10.398-2.153-10.398-5.049c0-1.094,1.183-1.942,3.937-1.942c2.878,0,4.537,1.237,4.537,1.465
+            c0,0.089-0.016,0.177-0.034,0.248l0.282,0.159L106.274,19.702z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M115.685,18.395c-4.078,0-7.362,2.33-7.362,6.604
+            c0,4.272,3.284,6.603,7.362,6.603c4.078,0,7.362-2.33,7.362-6.603C123.047,20.725,119.763,18.395,115.685,18.395 M115.685,20.478
+            c2.683,0,4.855,1.571,4.855,4.52c0,2.948-2.172,4.519-4.855,4.519c-2.684,0-4.855-1.571-4.855-4.519
+            C110.83,22.05,113.001,20.478,115.685,20.478"></path>
+        <path fill="" d="M128.364,19.348c0-0.388,0.089-0.53,0.512-0.53v-0.247h-3.513v0.247c0.422,0,0.494,0.142,0.494,0.53v7.733
+            c0,3.39,2.436,4.52,6.498,4.52c4.061,0,6.496-1.13,6.496-4.52v-7.733c0-0.388,0.071-0.53,0.495-0.53v-0.247h-3.513v0.247
+            c0.424,0,0.512,0.142,0.512,0.53v7.309c0,2.084-0.813,2.859-3.99,2.859c-3.177,0-3.99-0.776-3.99-2.859V19.348z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M145.033,25.952h3.637l3.231,4.607
+            c0.177,0.248,0.23,0.336,0.23,0.477c0,0.071-0.036,0.142-0.248,0.142v0.247h3.92v-0.247c-0.371,0-0.512-0.177-0.759-0.53
+            l-3.266-4.625c2.171-0.337,3.461-1.66,3.461-3.762c0-2.066-1.624-3.69-4.697-3.69h-8.51v0.248c0.424,0,0.495,0.14,0.495,0.529
+            v11.3c0,0.388-0.071,0.53-0.495,0.53v0.247h3.496v-0.247c-0.423,0-0.495-0.142-0.495-0.53V25.952z M145.087,20.655h5.35
+            c1.27,0,2.294,0.495,2.294,1.606c0,1.113-1.024,1.607-2.294,1.607h-5.35V20.655z"></path>
+        <path fill="" d="M171.644,19.648l-0.248-0.088c-0.124,0.194-0.229,0.212-0.405,0.212c-0.372,0-2.454-1.377-5.562-1.377
+            c-4.326,0-7.963,2.472-7.963,6.603c0,4.643,3.902,6.604,7.838,6.604c4.45,0,5.81-2.085,6.34-2.085
+            c0.053,0,0.158,0.019,0.212,0.054l0.14-0.071l-1.818-2.595l-0.177,0.123c0.036,0.071,0.07,0.23,0.07,0.318
+            c0,0.794-2.1,2.171-4.554,2.171c-3.019,0-5.544-1.27-5.544-4.519c0-3.249,2.525-4.519,5.331-4.519c2.208,0,4.345,1.13,4.345,1.552
+            c0,0.089,0,0.178-0.019,0.283l0.264,0.142L171.644,19.648z"></path>
+        <path fill="" d="M174.401,31.424h11.617c0.425,0,0.6,0.142,0.6,0.388h0.248v-2.894h-0.248c0,0.282-0.175,0.422-0.6,0.422
+            h-8.651v-3.459h5.544c0.425,0,0.601,0.142,0.601,0.423h0.247v-2.967h-0.247c0,0.318-0.177,0.46-0.601,0.46h-5.544v-3.143h8.493
+            c0.423,0,0.6,0.142,0.6,0.46h0.247v-2.931h-0.247c0,0.247-0.177,0.388-0.6,0.388h-11.459v0.247c0.39,0,0.459,0.142,0.459,0.53
+            v11.299c0,0.388-0.069,0.53-0.459,0.53V31.424z"></path>
+        <path fill="" d="M201.396,19.702l-0.283-0.088c-0.053,0.053-0.088,0.123-0.318,0.123c-0.212,0-2.364-1.342-5.436-1.342
+            c-3.427,0-6.551,1.237-6.551,4.202c0,5.862,10.258,1.571,10.258,5.032c0,0.971-1.094,1.889-4.306,1.889
+            c-2.26,0-4.538-0.742-4.538-1.783c0-0.142,0.036-0.213,0.036-0.283l-0.284-0.14l-1.465,3.001l0.229,0.053
+            c0.088-0.053,0.142-0.142,0.247-0.142c0.407,0,1.643,1.378,5.95,1.378c4.52,0,6.779-1.8,6.779-4.132
+            c0-6.391-10.398-2.153-10.398-5.049c0-1.094,1.183-1.942,3.937-1.942c2.878,0,4.537,1.237,4.537,1.465
+            c0,0.089-0.018,0.177-0.036,0.248l0.283,0.159L201.396,19.702z"></path>
+        <path fill="" d="M64.131,41.389c0.298,0,0.347,0.099,0.347,0.372v7.958c0,0.274-0.049,0.373-0.347,0.373v0.174h2.437
+            v-0.174c-0.274,0-0.323-0.099-0.323-0.373v-3.356H69.9c0.298,0,0.422,0.099,0.422,0.298h0.174v-2.089h-0.174
+            c0,0.225-0.124,0.324-0.422,0.324h-3.655v-2.213h5.669c0.298,0,0.422,0.099,0.422,0.323h0.174v-2.063h-0.174
+            c0,0.173-0.124,0.273-0.422,0.273h-7.783V41.389z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M78.728,41.09c-2.872,0-5.184,1.641-5.184,4.649
+            c0,3.009,2.312,4.65,5.184,4.65c2.872,0,5.184-1.641,5.184-4.65C83.912,42.732,81.6,41.09,78.728,41.09 M78.728,42.557
+            c1.889,0,3.42,1.107,3.42,3.182c0,2.077-1.53,3.183-3.42,3.183c-1.889,0-3.418-1.107-3.418-3.183
+            C75.309,43.664,76.839,42.557,78.728,42.557"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M87.657,46.411h2.561l2.275,3.245
+            c0.124,0.174,0.161,0.236,0.161,0.336c0,0.049-0.025,0.098-0.174,0.098v0.174h2.761v-0.174c-0.262,0-0.36-0.123-0.536-0.372
+            l-2.3-3.257c1.53-0.236,2.437-1.169,2.437-2.649c0-1.454-1.143-2.598-3.307-2.598h-5.992v0.174c0.298,0,0.349,0.099,0.349,0.372
+            v7.958c0,0.274-0.05,0.372-0.349,0.372v0.174h2.463v-0.174c-0.298,0-0.349-0.098-0.349-0.372V46.411z M87.694,42.682h3.767
+            c0.895,0,1.617,0.349,1.617,1.131c0,0.784-0.722,1.131-1.617,1.131h-3.767V42.682z"></path>
+        <path fill="" d="M106.208,42.682h2.996c0.298,0,0.422,0.099,0.422,0.311h0.174v-2.077h-0.174
+            c0,0.199-0.124,0.298-0.422,0.298h-7.757c-0.298,0-0.424-0.099-0.424-0.298h-0.174v2.077h0.174c0-0.212,0.125-0.311,0.424-0.311
+            h2.996v7.037c0,0.274-0.05,0.372-0.372,0.372v0.174h2.522v-0.174c-0.323,0-0.385-0.098-0.385-0.372V42.682z"></path>
+        <path fill="" d="M113.245,44.746v-2.984c0-0.273,0.062-0.372,0.361-0.372v-0.174h-2.5v0.174
+            c0.324,0,0.373,0.099,0.373,0.372v7.958c0,0.273-0.049,0.372-0.373,0.372v0.174h2.5v-0.174c-0.299,0-0.361-0.099-0.361-0.372
+            v-3.407h5.596v3.407c0,0.273-0.05,0.372-0.373,0.372v0.174h2.487v-0.174c-0.288,0-0.349-0.099-0.349-0.372v-7.958
+            c0-0.273,0.061-0.372,0.349-0.372v-0.174h-2.487v0.174c0.323,0,0.373,0.099,0.373,0.372v2.984H113.245z"></path>
+        <path fill="" d="M122.845,50.265h8.18c0.298,0,0.422,0.099,0.422,0.274h0.175V48.5h-0.175c0,0.199-0.124,0.298-0.422,0.298
+            h-6.092v-2.437h3.904c0.298,0,0.422,0.099,0.422,0.298h0.174v-2.088h-0.174c0,0.225-0.124,0.323-0.422,0.323h-3.904v-2.212h5.98
+            c0.297,0,0.422,0.098,0.422,0.323h0.174v-2.064h-0.174c0,0.174-0.125,0.273-0.422,0.273h-8.069v0.174
+            c0.274,0,0.324,0.099,0.324,0.373v7.958c0,0.273-0.05,0.372-0.324,0.372V50.265z"></path>
+        <path fill="" d="M138.037,41.389c0.298,0,0.347,0.099,0.347,0.372v7.958c0,0.274-0.049,0.373-0.347,0.373v0.174h2.436
+            v-0.174c-0.273,0-0.322-0.099-0.322-0.373v-3.356h3.655c0.298,0,0.422,0.099,0.422,0.298h0.173v-2.089h-0.173
+            c0,0.225-0.124,0.324-0.422,0.324h-3.655v-2.213h5.668c0.298,0,0.424,0.099,0.424,0.323h0.173v-2.063h-0.173
+            c0,0.173-0.125,0.273-0.424,0.273h-7.782V41.389z"></path>
+        <path fill="" d="M149.824,41.761c0-0.273,0.063-0.372,0.361-0.372v-0.175h-2.474v0.175c0.298,0,0.347,0.099,0.347,0.372
+            v5.446c0,2.387,1.715,3.182,4.575,3.182c2.859,0,4.575-0.796,4.575-3.182v-5.446c0-0.273,0.049-0.372,0.349-0.372v-0.175h-2.475
+            v0.175c0.298,0,0.361,0.099,0.361,0.372v5.148c0,1.467-0.572,2.015-2.81,2.015c-2.237,0-2.81-0.547-2.81-2.015V41.761z"></path>
+        <path fill="" d="M164.223,42.682h2.996c0.298,0,0.422,0.099,0.422,0.311h0.174v-2.077h-0.174
+            c0,0.199-0.124,0.298-0.422,0.298h-7.757c-0.298,0-0.422-0.099-0.422-0.298h-0.174v2.077h0.174c0-0.212,0.124-0.311,0.422-0.311
+            h2.996v7.037c0,0.274-0.049,0.372-0.373,0.372v0.174h2.525v-0.174c-0.324,0-0.386-0.098-0.386-0.372V42.682z"></path>
+        <path fill="" d="M171.236,41.761c0-0.273,0.062-0.372,0.36-0.372v-0.175h-2.473v0.175c0.298,0,0.347,0.099,0.347,0.372
+            v5.446c0,2.387,1.715,3.182,4.575,3.182c2.859,0,4.574-0.796,4.574-3.182v-5.446c0-0.273,0.05-0.372,0.35-0.372v-0.175h-2.475
+            v0.175c0.298,0,0.36,0.099,0.36,0.372v5.148c0,1.467-0.571,2.015-2.809,2.015c-2.238,0-2.81-0.547-2.81-2.015V41.761z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="" d="M182.975,46.411h2.561l2.275,3.245
+            c0.124,0.174,0.161,0.236,0.161,0.336c0,0.049-0.026,0.098-0.174,0.098v0.174h2.76v-0.174c-0.262,0-0.36-0.123-0.535-0.372
+            l-2.3-3.257c1.529-0.236,2.437-1.169,2.437-2.649c0-1.454-1.143-2.598-3.307-2.598h-5.992v0.174c0.297,0,0.349,0.099,0.349,0.372
+            v7.958c0,0.274-0.051,0.372-0.349,0.372v0.174h2.461v-0.174c-0.298,0-0.347-0.098-0.347-0.372V46.411z M183.011,42.682h3.767
+            c0.896,0,1.617,0.349,1.617,1.131c0,0.784-0.721,1.131-1.617,1.131h-3.767V42.682z"></path>
+        <path fill="" d="M191.916,50.265h8.18c0.298,0,0.422,0.099,0.422,0.274h0.174V48.5h-0.174c0,0.199-0.124,0.298-0.422,0.298
+            h-6.092v-2.437h3.904c0.298,0,0.422,0.099,0.422,0.298h0.174v-2.088h-0.174c0,0.225-0.124,0.323-0.422,0.323h-3.904v-2.212h5.979
+            c0.299,0,0.423,0.098,0.423,0.323h0.174v-2.064h-0.174c0,0.174-0.124,0.273-0.423,0.273h-8.068v0.174
+            c0.273,0,0.322,0.099,0.322,0.373v7.958c0,0.273-0.049,0.372-0.322,0.372V50.265z"></path>
+    </g>
+</g>
+<g id="Layer_2" display="none">
+</g>
+</svg>
+          </a>
+              </div>
+      <nav class="nav">
+        
+<header>
+      <h2 class="element-invisible">Main menu</h2>
+  </header>
+<ul class="nav__list">
+  
+<li class="nav__list-item jquery-once-1-processed"><a href="http://www.rff.org/research" class="nav__list-item-link" id="main-menu-research">Research</a></li><li class="nav__list-item jquery-once-1-processed"><a href="http://www.rff.org/people" class="nav__list-item-link" id="main-menu-people">People</a></li><li class="nav__list-item jquery-once-1-processed"><a href="http://www.rff.org/events" class="nav__list-item-link" id="main-menu-events">Events</a></li><li class="nav__list-item jquery-once-1-processed"><a href="http://www.rff.org/blog" class="nav__list-item-link" id="main-menu-blog">Blog</a></li><li class="nav__list-item jquery-once-1-processed"><a href="http://www.rff.org/about" class="nav__list-item-link" id="main-menu-about">About</a></li></ul>
+        <div class="nav-mega" id="main-menu-about-children">
+          
+<div class="container">
+  <div class="l-nav--1">
+    <ul class="nav-mega__list">
+      
+<header>
+      <h2 class="element-invisible">About</h2>
+  </header>
+  
+<li><a href="http://www.rff.org/about" class="nav-mega__list-item-link" id="">About RFF</a></li><li><a href="http://www.rff.org/about/careers" class="nav-mega__list-item-link" id="">Careers</a></li><li><a href="http://www.rff.org/about/news-and-press" class="nav-mega__list-item-link" id="">News and Press</a></li><li><a href="http://www.rff.org/about/rff-centers-and-programs" class="nav-mega__list-item-link" id="">RFF Centers and Programs</a></li><li><a href="http://www.rff.org/about/support" class="nav-mega__list-item-link" id="">Support RFF</a></li>
+    </ul>
+  </div>
+  <div class="l-nav--2">
+          <div class="mega-summary">
+                  <h4 class="mega-summary__title">
+            <div class="panel-pane pane-custom pane-6">
+  
+      
+  
+  Contact Us
+
+  
+  </div>
+          </h4>
+                
+      <div class="mega-summary__contact-info">
+      <h5 class="mega-summary__header">Address:</h5>
+      <p>Resources for the Future<br>
+1616 P St. NW, Suite 600<br>
+Washington, DC 20036</p>
+    </div>
+  
+  <div class="mega-summary__phone">
+    <h5 class="mega-summary__header">Phone:</h5>
+    <a href="tel:2023285000">202.328.5000</a>
+  </div>
+
+  <div class="mega-summary__phone">
+    <h5 class="mega-summary__header">Fax:</h5>
+    <a href="tel:2029393460">202.939.3460</a>
+  </div>
+
+  <div class="mega-summary__social">
+    <h5 class="mega-summary__header">Social:</h5>
+    <ul class="summary__social">
+      <li>
+        <a href="https://www.facebook.com/ResourcesfortheFuture" title="RFF Facebook" target="_blank">
+          <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-1691.7 -188.9 545.4 554.8" enable-background="new -1691.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-1419-163c-138.9,0-251.5,112.6-251.5,251.5c0,138.8,112.4,251.3,251.1,251.5V155.6h-63v-73h63V28.8
+    c0-62.5,38.1-96.5,93.9-96.5c26.7,0,49.6,2,56.3,2.9V0.5l-38.6,0c-30.3,0-36.2,14.4-36.2,35.5v46.6h72.3l-9.4,73h-62.9v173
+    c102.3-31.9,176.5-127.3,176.5-240.1C-1167.5-50.4-1280.1-163-1419-163z"></path>
+</svg>
+Facebook
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/RFF_org" title="RFF Twitter" target="_blank">
+          <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-2265.7 -188.9 545.4 554.8" enable-background="new -2265.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-1993-163c-138.9,0-251.5,112.6-251.5,251.5S-2131.9,340-1993,340s251.5-112.6,251.5-251.5
+    S-1854.1-163-1993-163z M-1851,37.8c0.1,2.9,0.2,5.8,0.2,8.7c0,89.3-68,192.3-192.3,192.3c-38.2,0-73.7-11.2-103.6-30.4
+    c5.3,0.6,10.7,0.9,16.1,0.9c31.7,0,60.8-10.8,84-28.9c-29.6-0.5-54.5-20.1-63.1-46.9c4.1,0.8,8.4,1.2,12.7,1.2
+    c6.2,0,12.1-0.8,17.8-2.4c-30.9-6.2-54.2-33.5-54.2-66.3c0-0.3,0-0.6,0-0.9c9.1,5.1,19.5,8.1,30.6,8.5
+    c-18.1-12.1-30.1-32.8-30.1-56.3c0-12.4,3.3-24,9.2-34c33.3,40.9,83.1,67.8,139.3,70.6c-1.2-4.9-1.8-10.1-1.8-15.4
+    c0-37.3,30.3-67.6,67.6-67.6c19.4,0,37,8.2,49.3,21.3c15.4-3,29.9-8.7,42.9-16.4c-5,15.8-15.8,29-29.7,37.4
+    c13.7-1.6,26.7-5.3,38.8-10.6c0,0,0,0,0,0l0,0c0,0,0,0,0,0C-1826.3,16.4-1837.8,28.3-1851,37.8z"></path>
+</svg>
+Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/resources-for-the-future" title="RFF LinkedIn" target="_blank">
+          <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-1080.7 -188.9 545.4 554.8" enable-background="new -1080.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-818.1-163c-138.9,0-251.5,112.6-251.5,251.5S-957,340-818.1,340s251.5-112.6,251.5-251.5
+    S-679.2-163-818.1-163z M-889.6,223.9h-56.9V40.9h56.9V223.9z M-920.6,17.4c-21,0-34.6-13.6-34.6-32.2c0-18.6,13.6-32.2,34.6-32.2
+    c21,0,34.6,13.6,34.6,32.2C-885.9,3.8-898.3,17.4-920.6,17.4z M-660.8,223.9h-65.6v-95.2c0-24.7-9.9-42.1-32.2-42.1
+    c-17.3,0-26,11.1-30.9,22.3c-1.2,3.7-1.2,9.9-1.2,14.8v98.9H-855c0,0,1.2-168.2,0-183.1h64.3v28.4c3.7-12.4,24.7-30.9,56.9-30.9
+    c40.8,0,73,26,73,82.9V223.9z"></path>
+</svg>
+LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="http://itunes.apple.com/us/podcast/resources-for-future-events/id305068222" title="RFF Podcasts" target="_blank">
+          <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-3460.7 -188.9 545.4 554.8" enable-background="new -3460.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-3191.3-163c-138.9,0-251.5,112.6-251.5,251.5S-3330.2,340-3191.3,340s251.5-112.6,251.5-251.5
+    S-3052.4-163-3191.3-163z M-3173.8,266.8c-11.5,0.1-23,0-34.4,0c-12.8,0-19.5-5.9-19.3-19.2c0.3-15.8,0.1-31.6,0.1-47.4
+    c0-16.3,0.2-32.5-0.1-48.8c-0.2-12,5.6-17.8,17.2-18c12.9-0.2,25.8-0.2,38.7,0.1c11.1,0.2,16.4,6.2,16.4,17.3
+    c-0.1,32.5-0.1,65.1,0,97.6C-3155.1,261.1-3161.7,266.7-3173.8,266.8z M-3191.8,113c-25.6-0.3-46.5-21.1-46.8-46.6
+    c-0.3-26.4,20.5-47.4,47-47.4c26.6,0,47.5,20.6,47.5,47C-3144.1,91.9-3165.7,113.3-3191.8,113z M-3109.6,130
+    c-6.7-4.7-16.3-9.8-9.5-21.9c10.7-18.8,14.4-38.7,9.7-60.6c-7.1-33.1-38.6-61.8-71.6-65.1c-48.2-4.9-77.8,25.6-88.9,53.6
+    c-9.6,24.1-7.3,47.7,5.1,70.4c5,9.1,0.8,20.7-8.6,24.4c-5.1,2-6.7-1.8-8.9-4.8c-12.8-18.3-18.4-38.6-17.5-60.8
+    c0.1-57.8,43.6-105.1,102.4-108.6C-3141.7-46.8-3094.1-8-3084,46c4.9,26.2,1.5,52.6-13.7,75.8
+    C-3100.4,125.9-3102.2,135.2-3109.6,130z M-3064.5,156.2c-2.4,3.7-4.9,12.8-12.6,6.3c-5.8-4.9-12.7-9-5-19.7
+    c59.9-83.9,4.7-198.5-91.2-209.7c-56.7-6.6-100.2,14.8-131,60.8c-30.8,46-28.3,104.7,4,149.1c7.1,9.8,1.1,13.7-4.4,18.8
+    c-8.3,7.6-10.8-2-13.7-5.9c-40.7-55.9-37.4-135.7,6.7-188.8c31.7-38.1,72-56.6,121.1-57c80.5,0.2,143.1,57.3,153.6,137.9
+    C-3031.7,88.3-3043.3,123.3-3064.5,156.2z"></path>
+</svg>
+Podcast
+        </a>
+      </li>
+    </ul>
+  </div>
+              </div>
       </div>
-      <div>
-        <h3>Annual revenue</h3>
-        <svg id="container-2"></svg>
+</div>
+
+        </div>
+        <div class="nav-mega" id="main-menu-blog-children">
+          
+<div class="container">
+  <div class="l-nav--1">
+    <ul class="nav-mega__list">
+      
+<header>
+      <h2 class="element-invisible">Blog</h2>
+  </header>
+  
+<li><a href="http://www.rff.org/blog" class="nav-mega__list-item-link" id="">Common Resources Blog</a></li>
+    </ul>
+  </div>
+  <div class="l-nav--2">
+          <div class="mega-summary">
+                  <h4 class="mega-summary__title">
+            <p>Recent Blog Posts</p>
+          </h4>
+                        
+        
+  
+  
+      
+    <ul class="mega-summary__list">                  <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" class="active">Why Don’t More People Buy Flood Insurance?</a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/andrew-royal">Andrew Royal</a>, <a href="http://www.rff.org/people/profile/margaret-walls">Margaret A. Walls</a>  </span>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/blog/2017/managing-invasive-species-help-public-participation">Managing Invasive Species with the Help of Public Participation</a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/rebecca-epanchin-niell">Rebecca Epanchin-Niell</a>  </span>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/blog/2017/how-reliable-doe-s-grid-reliability-study">How Reliable Is DOE’s Grid Reliability Study? </a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/alan-j-krupnick">Alan J. Krupnick</a>, <a href="http://www.rff.org/people/profile/daniel-shawhan">Daniel Shawhan</a>, <a href="http://www.rff.org/people/profile/paul-picciano">Paul Picciano</a>  </span>
+        </li>
+            </ul>  
+  
+  
+  
+  
+  
+      </div>
+      </div>
+</div>
+
+        </div>
+        <div class="nav-mega" id="main-menu-events-children">
+          
+<div class="container">
+  <div class="l-nav--1">
+    <ul class="nav-mega__list">
+      
+<header>
+      <h2 class="element-invisible">Events</h2>
+  </header>
+  
+<li><a href="http://www.rff.org/events" class="nav-mega__list-item-link" id="">Upcoming Events</a></li><li><a href="http://www.rff.org/events/past" class="nav-mega__list-item-link" id="">Past Events</a></li><li><a href="http://www.rff.org/events/registration" class="nav-mega__list-item-link" id="">Registration</a></li><li><a href="http://www.rff.org/about/live-events" class="nav-mega__list-item-link" id="">Live Stream</a></li>
+    </ul>
+  </div>
+  <div class="l-nav--2">
+          <div class="mega-summary">
+                  <h4 class="mega-summary__title">
+            Events
+          </h4>
+                        
+        
+  
+  
+      
+    <ul class="mega-summary__list">                  <li class="mega-summary__list-item">
+          
+
+  <span class="mega-summary__list-meta">
+    Past    Event  </span>
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/events/event/2017-09/designing-shale-gas-leases-landowner-and-environmental-protection">Designing Shale Gas Leases for Landowner and Environmental Protection</a></h5>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+  <span class="mega-summary__list-meta">
+    Past    Event  </span>
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/events/event/2017-08/mitigating-effects-energy-resource-booms-water-consumption">Mitigating the Effects of Energy Resource Booms on Water Consumption </a></h5>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+  <span class="mega-summary__list-meta">
+    Past    Event  </span>
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/events/event/2017-08/exploring-effects-energy-resource-booms-public-education">Exploring the Effects of Energy Resource Booms on Public Education</a></h5>
+        </li>
+            </ul>  
+  
+  
+  
+  
+  
+      </div>
+      </div>
+</div>
+
+        </div>
+        <div class="nav-mega" id="main-menu-people-children">
+          
+<div class="container">
+  <div class="l-nav--1">
+    <ul class="nav-mega__list">
+      
+<header>
+      <h2 class="element-invisible">People</h2>
+  </header>
+  
+<li><a href="http://www.rff.org/people/leadership" class="nav-mega__list-item-link" id="">Leadership</a></li><li><a href="http://www.rff.org/people/researchers" class="nav-mega__list-item-link" id="">Researchers</a></li><li><a href="http://www.rff.org/people/staff" class="nav-mega__list-item-link" id="">Staff</a></li><li><a href="http://www.rff.org/people/affiliated-researchers" class="nav-mega__list-item-link" id="">Affiliated Researchers</a></li>
+    </ul>
+  </div>
+  <div class="l-nav--2">
+          <div class="mega-summary">
+                  <h4 class="mega-summary__title">
+            Leadership          </h4>
+                        
+        
+  
+  
+      
+    <ul class="mega-summary__list">                  <li class="mega-summary__profile">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/people/profile/richard-g-newell">Richard G. Newell</a></h5>
+
+  <span class="mega-summary__list-meta">
+    President and CEO
+
+  </span>
+
+        </li>
+                        <li class="mega-summary__profile">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/people/profile/terri-obrien">Terri O'Brien</a></h5>
+
+  <span class="mega-summary__list-meta">
+    Vice President for Finance and Administration
+
+  </span>
+
+        </li>
+                        <li class="mega-summary__profile">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/people/profile/margaret-walls">Margaret A. Walls</a></h5>
+
+  <span class="mega-summary__list-meta">
+    Interim Vice President for Research and Senior Fellow
+
+  </span>
+
+        </li>
+            </ul>  
+  
+  
+  
+  
+  
+      </div>
+      </div>
+</div>
+
+        </div>
+        <div class="nav-mega" id="main-menu-research-children">
+          
+<div class="container">
+  <div class="l-nav--1">
+    <ul class="nav-mega__list">
+      
+<header>
+      <h2 class="element-invisible">Research</h2>
+  </header>
+  
+<li><a href="http://www.rff.org/research" class="nav-mega__list-item-link" id="">Publications</a></li><li><a href="http://www.rff.org/research/topics" class="nav-mega__list-item-link" id="">Topics &amp; Subtopics</a></li><li><a href="http://www.rff.org/research/resources-magazine-listing" class="nav-mega__list-item-link" id="">Resources Magazine</a></li>
+    </ul>
+  </div>
+  <div class="l-nav--2">
+          <div class="mega-summary">
+                  <h4 class="mega-summary__title">
+            Latest Research
+          </h4>
+                        
+        
+  
+  
+      
+    <ul class="mega-summary__list">                  <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/research/publications/notching-free-do-cyclists-reveal-value-time">Notching for Free: Do Cyclists Reveal the Value of Time?</a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/casey-j-wichman">Casey J. Wichman</a>, <a href="http://www.rff.org/people/profile/brandon-cunningham">Brandon Cunningham</a>  </span>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/research/publications/speeding-pace-decisionmaking-diversion-project-implementation-louisiana">Speeding the Pace: Decisionmaking for Diversion Project Implementation in Louisiana</a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/leonard-shabman">Leonard A. Shabman</a>, <a href="http://www.rff.org/people/profile/james-w-boyd">James W. Boyd</a>  </span>
+        </li>
+                        <li class="mega-summary__list-item">
+          
+
+<h5 class="mega-summary__list-title">
+  <a href="http://www.rff.org/research/publications/expanding-toolkit-potential-role-emissions-containment-reserve-rggi">Expanding the Toolkit: The Potential Role for an Emissions Containment Reserve in RGGI</a></h5>
+
+
+  <span class="mega-summary__list-meta">
+    By <a href="http://www.rff.org/people/profile/dallas-burtraw">Dallas Burtraw</a>, Charles Holt, <a href="http://www.rff.org/people/profile/karen-l-palmer">Karen L. Palmer</a>, <a href="http://www.rff.org/people/profile/anthony-paul">Anthony Paul</a>, William Shobe  </span>
+        </li>
+            </ul>  
+  
+  
+  
+  
+  
+      </div>
+      </div>
+</div>
+
+        </div>
+      </nav>
+      <span class="mobile-nav__trigger">
+        Menu
+        <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 43.528 28.724" enable-background="new 0 0 43.528 28.724" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M8.308,19.161H36.33v4.185H8.308V19.161z M8.308,12.418H36.33
+    v4.186H8.308V12.418z M8.308,5.695H36.33v4.186H8.308V5.695z"></path>
+</svg>
+      </span>
+      <div class="mobile-nav-container">
+        <nav class="mobile-nav">
+          <div class="mobile-nav__search">
+            
+
+<form class="google-cse" action="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" method="post" id="search-block-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--4">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search our Site" class="mobile-nav__search-input form-text" type="text" id="edit-search-block-form--4" name="search_block_form" value="" size="15" maxlength="128">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input class="button mobile-nav__submit form-submit" type="submit" id="edit-submit--2" name="op" value=""></div><input type="hidden" name="form_build_id" value="form-YalhOQn6SnB28fqC4ARUnwrxDmTdlKK3r-2ULJCfbfU">
+<input type="hidden" name="form_id" value="search_block_form">
+</div></form>
+
+          </div>
+          
+<header>
+      <h2 class="element-invisible">Main menu</h2>
+  </header>
+<ul class="mobile-nav__list">
+  
+<li class="mobile-nav__list-item"><a href="http://www.rff.org/research" class="mobile-nav__list-item-link" id="main-menu-research">Research</a><div class="nav-mega"><div class="container"><div class="l-nav--1"><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1298"><a href="http://www.rff.org/research" class="menu__link">Publications</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1106"><a href="http://www.rff.org/research/topics" class="menu__link">Topics &amp; Subtopics</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1295"><a href="http://www.rff.org/research/resources-magazine-listing" class="menu__link">Resources Magazine</a></li>
+</ul></div></div></div></li><li class="mobile-nav__list-item"><a href="http://www.rff.org/people" class="mobile-nav__list-item-link" id="main-menu-people">People</a><div class="nav-mega"><div class="container"><div class="l-nav--1"><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1107"><a href="http://www.rff.org/people/leadership" class="menu__link">Leadership</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1104"><a href="http://www.rff.org/people/researchers" class="menu__link">Researchers</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1105"><a href="http://www.rff.org/people/staff" class="menu__link">Staff</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1101"><a href="http://www.rff.org/people/affiliated-researchers" class="menu__link">Affiliated Researchers</a></li>
+</ul></div></div></div></li><li class="mobile-nav__list-item"><a href="http://www.rff.org/events" class="mobile-nav__list-item-link" id="main-menu-events">Events</a><div class="nav-mega"><div class="container"><div class="l-nav--1"><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1299"><a href="http://www.rff.org/events" class="menu__link">Upcoming Events</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1103"><a href="http://www.rff.org/events/past" class="menu__link">Past Events</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1102"><a href="http://www.rff.org/events/registration" class="menu__link">Registration</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1294"><a href="http://www.rff.org/about/live-events" class="menu__link">Live Stream</a></li>
+</ul></div></div></div></li><li class="mobile-nav__list-item"><a href="http://www.rff.org/blog" class="mobile-nav__list-item-link" id="main-menu-blog">Blog</a><div class="nav-mega"><div class="container"><div class="l-nav--1"><ul class="menu"><li class="menu__item is-leaf first last leaf menu-mlid-1296"><a href="http://www.rff.org/blog" class="menu__link">Common Resources Blog</a></li>
+</ul></div></div></div></li><li class="mobile-nav__list-item"><a href="http://www.rff.org/about" class="mobile-nav__list-item-link" id="main-menu-about">About</a><div class="nav-mega"><div class="container"><div class="l-nav--1"><ul class="menu"><li class="menu__item is-leaf is-parent first leaf has-children menu-mlid-1297"><a href="http://www.rff.org/about" class="menu__link">About RFF</a><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1471"><a href="http://www.rff.org/about/rff-s-legacy" class="menu__link">RFF’s Legacy</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1961"><a href="http://www.rff.org/about/financial-reporting" class="menu__link">Financial Reporting</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1951"><a href="http://www.rff.org/about/board-directors" class="menu__link">Board of Directors</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1289"><a href="http://www.rff.org/about/contact" class="menu__link">Contact</a></li>
+</ul></li>
+<li class="menu__item is-leaf is-parent leaf has-children menu-mlid-1406"><a href="http://www.rff.org/about/careers" class="menu__link">Careers</a><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1441"><a href="http://www.rff.org/about/frequently-asked-questions-about-academic-life-rff" class="menu__link">Frequently Asked Questions about Academic Life at RFF</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1416"><a href="http://www.rff.org/about/academic-fellowships-and-internships" class="menu__link">Academic Fellowships and Internships</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1966"><a href="http://www.rff.org/about/gilbert-f-white-distinguished-visiting-fellowship" class="menu__link">Gilbert F. White Distinguished Visiting Fellowship</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1411"><a href="http://www.rff.org/about/john-v-krutilla-research-stipend" class="menu__link">John V. Krutilla Research Stipend</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1426"><a href="http://www.rff.org/about/joseph-l-fisher-doctoral-dissertation-fellowships" class="menu__link">Joseph L. Fisher Doctoral Dissertation Fellowships</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1431"><a href="http://www.rff.org/about/rff-summer-research-internship-program" class="menu__link">RFF Summer Research Internship Program</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1956"><a href="http://www.rff.org/about/walter-o-spofford-jr-memorial-internship" class="menu__link">Walter O. Spofford, Jr. Memorial Internship</a></li>
+</ul></li>
+<li class="menu__item is-leaf is-parent leaf has-children menu-mlid-1946"><a href="http://www.rff.org/about/news-and-press" class="menu__link">News and Press</a><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1300"><a href="http://www.rff.org/about/media-highlights" class="menu__link">Media Highlights</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1996"><a href="http://www.rff.org/about/press-releases" class="menu__link">Press Releases</a></li>
+</ul></li>
+<li class="menu__item is-leaf is-parent leaf has-children menu-mlid-1446"><a href="http://www.rff.org/about/rff-centers-and-programs" class="menu__link">RFF Centers and Programs</a><ul class="menu"><li class="menu__item is-leaf first last leaf menu-mlid-1451"><a href="http://www.rff.org/about/rffs-center-energy-and-climate-economics" class="menu__link">RFF's Center for Energy and Climate Economics</a></li>
+</ul></li>
+<li class="menu__item is-leaf is-parent last leaf has-children menu-mlid-1288"><a href="http://www.rff.org/about/support" class="menu__link">Support RFF</a><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1941"><a href="http://www.rff.org/about/giving-areas" class="menu__link">Giving Areas</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-5651"><a href="http://www.rff.org/about/molly-k-macauley-award-research-innovation-and-advanced-analytics-policy" class="menu__link">The Molly K. Macauley Award for Research Innovation and Advanced Analytics for Policy</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1936"><a href="http://www.rff.org/about/ways-give" class="menu__link">Ways to Give</a></li>
+</ul></li>
+</ul></div></div></div></li></ul>
+        </nav>
       </div>
     </div>
   </div>
-    <div id="summary-stats" class="flex-container space-around">
-      <div id="summary-emissions" class="summary flex-container">
-        <div class="summary-icon">
-          <img src="assets/emissions.svg" />
+</div>
+
+
+
+
+
+<div class="container">
+
+  
+      <main class="l-66-33--1">
+      
+<header class="general-header">
+      <span class="label--blog-post">
+            Blog Post        </span>
+  <h1>DEMO DEMO DEMO DEMO</h1>
+        <div class="header__meta">
+      <span class="date-display-single">Sep 6, 2017</span>
+
+              <span class="meta-divider">|</span>
+            <a href="http://www.rff.org/people/profile/andrew-royal">Andrew Royal</a>, <a href="http://www.rff.org/people/profile/margaret-walls">Margaret A. Walls</a>    </div>
+    </header>
+
+<main class="generic-main">
+  <div class="social"><span class="social-label">Share:</span> <ul class="social-list--header sharethis-wrapper"><li><span st_url="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" st_title="Why Don’t More People Buy Flood Insurance?" class="st_facebook_custom social-list__item facebook" displaytext="facebook" st_processed="yes">Facebook</span>
+</li><li><span st_url="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" st_title="Why Don’t More People Buy Flood Insurance?" class="st_linkedin_custom social-list__item linkedin" displaytext="linkedin" st_processed="yes">LinkedIn</span>
+</li><li><span st_url="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" st_title="Why Don’t More People Buy Flood Insurance?" class="st_twitter_custom social-list__item twitter" displaytext="twitter" st_processed="yes">Twitter</span>
+</li><li><span st_url="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" st_title="Why Don’t More People Buy Flood Insurance?" class="st_email_custom social-list__item email" displaytext="email" st_processed="yes">Email</span>
+</li></ul></div>  <div style="float:right; width: 300px; padding-left: 10px;"><img src="./rff-assets/GettyImages-841448806.jpg"><figcaption>© Karl Spencer/iStock/Getty Images Plus</figcaption></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/d3-tip.js"></script>
+<script src="https://use.typekit.net/oxc7jph.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<p>News stories after Hurricane Harvey are bringing national attention to the unfortunate reality that many flooded homes were not covered by flood insurance. A <em>Washington Post</em> <a href="https://www.washingtonpost.com/news/wonk/wp/2017/08/29/where-harvey-is-hitting-hardest-four-out-of-five-homeowners-lack-flood-insurance/?utm_term=.9cb2e37b1ec4">story</a> reported that only 17 percent of homeowners in affected areas had a current policy. Some of these flooded properties lie outside the FEMA designated 100-year floodplain, or Special Flood Hazard Area (SFHA). Estimates from past events show that <a href="http://biotech.law.lsu.edu/disasters/insurance/nfip_eval_1_percent_standard.pdf">20 to 30 percent</a> of all flooded properties lie outside the floodplain. Still, much of the flood costs are borne by homeowners within the floodplain who chose not to insure despite prior knowledge of risks. Nationwide, about <a href="https://www.rand.org/pubs/technical_reports/TR300.html">50 percent</a> of these high-risk SFHA homes are currently uninsured. Are these homeowners overly optimistic about future flood risks? Or is there some more rational reason for low insurance take-up?</p>
+<div id="carbon-calculator">
+    <h2 class="no-margin">Effects of carbon price on emissions and revenue</h2>
+    <div class="margins">
+      <div class="dropdowns">
+        <div class="flex-container">
+          <label id="price-label" class="attention" for="price-selector">Select carbon price</label>
+          <select class="grow" id="price-selector">
+              <option selected disabled hidden value="">— select price —</option>
+              <option value="5">$5 / metric ton</option>
+              <option value="10">$10 / metric ton</option>
+              <option value="15">$15 / metric ton</option>
+              <option value="20">$20 / metric ton</option>
+              <option value="25">$25 / metric ton</option>
+              <option value="30">$30 / metric ton</option>
+              <option value="35">$35 / metric ton</option>
+              <option value="40">$40 / metric ton</option>
+              <option value="45">$45 / metric ton</option>
+              <option value="50">$50 / metric ton</option>
+          </select>
         </div>
-        <div class="summary-data">
-          <h2>Cumulative emissions saved</h2>
-          [[to come]]
+        <div class="flex-container">
+          <label id="rate-label" class="attention" for="rate-selector">Select growth rate</label>
+          <select class="grow" id="rate-selector">
+            <option selected disabled hidden value="">— select growth rate —</option>
+            <option value="0">0%</option>
+            <option value="0.01">1%</option>
+            <option value="0.02">2%</option>
+            <option value="0.03">3%</option>
+            <option value="0.04">4%</option>
+            <option value="0.05">5%</option>
+          </select>
         </div>
       </div>
-      <div class="summary flex-container">
-        <div class="summary-icon">
-          <img src="assets/revenue.svg" />
+  
+      <div class="flex-container space-around">
+        <div class="chart-wrapper grow shrink">
+          <h3>Annual emissions</h3>
+          <div id="container"></div>
         </div>
-        <div class="summary-data">
-          <h2>Cumulative revenue</h2>
-            [[to come]]
-        </div>
-      </div>
-      <div class="summary flex-container">
-        <div class="summary-icon">
-          <img src="assets/price-tag.svg" />
-        </div>
-        <div class="summary-data">
-          <h2>Final carbon price</h2>
-            [[to come]]
+        <div class="chart-wrapper grow shrink">
+          <h3>Annual revenue</h3>
+          <div id="container-2"></div>
         </div>
       </div>
     </div>
+    <div id="summary-stats" class="not-calculated">
+      <h2 class="no-margin"><span class="when-calculated-only">Cumulative results in 2030</span><span class="bind-text attention">Select a price and growth rate for cumulative results in 2030</span></h2>
+      <div class="flex-container space-around">
+        <div id="summary-emissions" class="summary flex-container grow">
+          <div class="summary-icon">
+            <img src="assets/emissions.svg" />
+          </div>
+          <div class="summary-data grow">
+            <h2>Emissions saved</h2><span class="question">?</span>
+            <span class="bind-total">XX.X billion metric tons</span>
+          </div>
+        </div>
+        <div id="summary-revenue" class="summary flex-container grow">
+          <div class="summary-icon">
+            <img src="assets/revenue.svg" />
+          </div>
+          <div class="summary-data grow">
+            <h2>Total revenue</h2><span class="question">?</span>
+              <span class="bind-total">$X,XXX billion</span>
+          </div>
+        </div>
+        <div id="summary-price" class="summary flex-container grow">
+          <div class="summary-icon">
+            <img src="assets/price-tag.svg" />
+          </div>
+          <div class="summary-data grow">
+            <h2>Final carbon price</h2><span class="question">?</span>
+              <span class="bind-total">$XX.XX per ton</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<p>In search of answers to these questions, we recently undertook a survey of homeowners in the floodplains of Anne Arundel County, Maryland—a county on the western shore of the Chesapeake Bay and home to the state capital, Annapolis. Homeowners who took the survey reported their individual perceptions of flood risks, whether or not they had flood insurance, and whether they have experienced a flood in the past. They also answered several questions about their risk preferences and socioeconomic backgrounds. While we are still in the process of analyzing the data, one early finding from the 236 responses is telling: homeowners who have experienced a flood in the past have significantly greater beliefs about the probability of having their homes flood in the future and are more likely to own an insurance policy. The median household that has experienced a flood perceives a 2 percent (or 1-in-50-year) annual chance of flood, while the median household that has not experienced a flood perceives a 0.5 percent (or 1-in-200-year) annual chance.</p>
+<h3>The Distribution of Risk Perceptions among Homeowners Depends on Flood Experience</h3>
+<p><img src="./rff-assets/Plot A.png"></p>
+<p><img src="./rff-assets/Plot B.png"></p>
+<p>While it may seem obvious that experiencing a flood increases one’s perceived flood risk, the implication of this pattern is important. It shows that each homeowner is highly uncertain about his or her individual risk and relies largely on personal experiences to infer the probability of future flooding. When floods occur very rarely, relying on personal experience inevitably leads to substantial underestimation of risks. Indeed, 60 percent of surveyed homeowners believed they had an annual flood risk of less than 1 percent—and this share is even higher (70 percent) among homeowners who never experienced a flood.</p>
+<p>Why does it take personal experience with a disaster to sharpen people’s understanding of risks? It may be entirely rational for people to update their risk perceptions in this way if they do not have complete faith in FEMA’s 100-year floodplain designations—though this causes underestimation of flood risks. If rational belief updating is the sole reason for low insurance take-up, then the best strategy to increase take-up is to improve the accuracy and credibility of current flood maps so that homeowners rely less on their experiences and more on expert risk estimates.</p>
+<p>On the other hand, it may not be true that all optimism over flood risk is a rational response to uncertainty. An alternative to rational optimism is biased optimism, which occurs when someone’s self-assessment is at odds with both expert estimates and with personal experience. Biased optimism can stem from one of several sources. Psychologists point to <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=voeQ-8CASacC&amp;oi=fnd&amp;pg=PA1&amp;dq=festinger+cognitive+dissonance&amp;ots=9y36Rrt9uC&amp;sig=urJ9REuWF3yfyDLudMA89Y545zg#v=onepage&amp;q=festinger%20cognitive%20dissonance&amp;f=false">cognitive dissonance</a> as one source of overconfidence, defined as the tendency to maintain false beliefs to preserve consistency with one’s previous actions—such as the decision to buy a home in a high-risk area. Another possibility is that <a href="https://rd.springer.com/article/10.1007/s11166-015-9230-7">biased attention to recent events</a> leads people to underestimate disaster risks when none have occurred recently.</p>
+<p><a href="http://onlinelibrary.wiley.com/doi/10.3982/ECTA8583/full">Economists</a> have shown that one way of detecting bias in a population is to measure the share that believes it is better-off than at least half of all other members of the same population. In short, if perceptions are rational, we should expect no more than 50 percent of all homeowners in the SFHA to think that they have lower flood risk than at least half of all other SFHA homes. (The actual test is slightly more nuanced, but this explanation captures the basic idea.) For example, 75 percent of homes cannot all be lower risk than at least 50 percent of all other homes—so if 75 percent of homeowners think they are lower risk than 50 percent of all other homeowners, at least some of those homeowners must be biased in their self-assessments. Each participant in our survey was asked to estimate his or her likelihood of having lower flood risk than at least half of all other SFHA homes in Anne Arundel County—their responses were revealing.</p>
+<h3>How Probable Do Homeowners Think It Is That They Have Lower Flood Risk than Other SFHA Homes?</h3>
+<p><img src="./rff-assets/Plot C.png"></p>
+<p>If risk perceptions are unbiased, then we should expect the average home to report a probability of 50 percent. The actual average, however, is 59 percent, with one out of every five homeowners reporting that they are lower risk than most other SFHA homes with 100 percent certainty. This pattern of responses suggests that there exists at least some biased optimism among homeowners in our sample. This is important to note because biased homeowners may be less swayed by improved risk information and communication. Other tools, such as mandatory insurance requirements, may be more effective if bias is sufficiently pervasive.</p>
+<p>There are many policy concerns raised by the impact of Hurricane Harvey and the devastating flooding in Texas. Some of these are related to where communities are allowing homes to be built. Others are related to further local land use and floodplain management decisions. But once again, after a major disaster, we are discussing the low rates of flood insurance among damaged properties. Gaining a better understanding of why homeowners fail to purchase and how to change that decisionmaking—through financial incentives, mandates and better enforcement of mandates, better communication of risks, and a host of other options—are critical concerns moving forward.</p>
+<p>Preliminary results from our Maryland survey suggest that high-risk homeowners exhibit both rational and biased optimism over flood risks. Our ongoing analysis aims to determine which type of optimism plays a greater role in predicting insurance take-up. The predominant source of optimism dictates the best policy for aligning the risk perceptions of high-risk homeowners with the assessments of flood experts. Stay tuned for a more in-depth presentation of our findings.</p>
 
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+<script src="js/scripts.js"></script>
+
+</main>
+<h3 class="field-label">
+  </h3>
+
+  <p class="field field-name-field-footer field-type-text-long field-label-hidden">
+    </p><div style="margin-top: 0.9375em; padding-top: 0.9375em; border-top: 1px solid #e6e7e8;"><em>The views expressed in RFF blog posts are those of the authors and should not be attributed to Resources for the Future.</em></div>  <p></p>
+    </main>
+  
+      <div class="l-66-33--2 l-rail">
+      
+  <aside class="rail">
+        <h4 class="work--meta__title">Topics:</h4><ul class="tags-list"><li><a href="http://www.rff.org/research/topics/risk-and-uncertainty">Risk and Uncertainty</a></li>
+</ul>
+
+<h4 class="work--meta__title">Subtopics:</h4><ul class="tags-list"><li><a href="http://www.rff.org/research/subtopics/insurance">Insurance</a></li>
+</ul>
+
+  </aside>
+      
+  <aside class="rail">
+          <h3 class="rail__title">About the Author</h3>
+        
+        
+  
+  
+      
+    <ul class="researcher-list">                  <li class="researcher-list-item--small">
+          
+
+  <a href="http://www.rff.org/people/profile/andrew-royal">
+    <img class="researcher-list-item--small__image" src="./rff-assets/Royal_5x7.jpg" alt="Profile Headshot">
+  </a>
+  <h4 class="researcher-list-item--small__title">
+    <a href="http://www.rff.org/people/profile/andrew-royal">Andrew Royal</a>  </h4>
+  <span class="researcher-list-item--small__meta">
+    Postdoctoral Fellow
+
+  </span>
+        </li>
+                        <li class="researcher-list-item--small">
+          
+
+  <a href="http://www.rff.org/people/profile/margaret-walls">
+    <img class="researcher-list-item--small__image" src="./rff-assets/Walls_5x7.jpg" alt="Profile Headshot">
+  </a>
+  <h4 class="researcher-list-item--small__title">
+    <a href="http://www.rff.org/people/profile/margaret-walls">Margaret A. Walls</a>  </h4>
+  <span class="researcher-list-item--small__meta">
+    Interim Vice President for Research and Senior Fellow
+
+  </span>
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./rff-assets/follow_button.534c17036beb62f94dbf2b30b59dc118.en.html" style="position: static; visibility: visible; width: 154px; height: 20px;" data-screen-name="margaretwalls1"></iframe><script async="" src="./rff-assets/widgets.js" charset="utf-8"></script>
+
+        </li>
+            </ul>  
+  
+  
+  
+  
+  
+  </aside>
+
+  <aside class="rail">
+    <h3 class="rail__title">Related Content</h3>
+    <ul class="list--no-style">
+      
+        
+  
+  
+      
+      <li class="list-item">
+      <span class="list-item--work__label">
+            Working Paper
+
+      </span>
+  <h3 class="list-item__title">
+    <a href="http://www.rff.org/research/publications/defining-roles-public-and-private-sector-risk-communication-risk-reduction-and">Defining the Roles  of the Public and Private Sector in Risk Communication, Risk Reduction, and Risk Transfer</a>  </h3>
+  <span class="list-item__meta">
+    <span class="date-display-single">May 22, 2017</span>
+
+          <span class="meta-divider">|</span>
+        <a href="http://www.rff.org/people/profile/carolyn-kousky">Carolyn Kousky</a>, Howard Kunreuther          <span class="meta-divider">|</span>
+      <span class="list-item__meta-count">
+        28 pp.
+
+      </span>
+      </span>
+
+      <p class="list-item__meta">
+      This paper discusses the challenges of insuring against flood, earthquake, and terrorism losses, and suggests ways to improve public–private partnerships for disaster financing in three interrelated areas: risk communication, reduction, and transfer. 
+
+    </p>
+    
+      <div class="list-item__tags">
+      <a href="http://www.rff.org/research/topics/risk-and-uncertainty">Risk and Uncertainty</a>
+
+    </div>
+  
+    </li>
+        <li class="list-item">
+      <span class="list-item--work__label">
+            Journal Article
+
+      </span>
+  <h3 class="list-item__title">
+    <a href="http://www.rff.org/research/publications/pricing-flood-insurance">The Pricing of Flood Insurance</a>  </h3>
+  <span class="list-item__meta">
+    <span class="date-display-single">May 4, 2017</span>
+
+          <span class="meta-divider">|</span>
+        <a href="http://www.rff.org/people/profile/carolyn-kousky">Carolyn Kousky</a>, <a href="http://www.rff.org/people/profile/brett-lingle">Brett Lingle</a>, <a href="http://www.rff.org/people/profile/leonard-shabman">Leonard A. Shabman</a>      </span>
+
+    
+      <div class="list-item__tags">
+      <a href="http://www.rff.org/research/topics/risk-and-uncertainty">Risk and Uncertainty</a>
+
+    </div>
+  
+    </li>
+        <li class="list-item">
+      <span class="list-item--blog-post__label">
+            Blog Post      </span>
+  <h3 class="list-item__title">
+    <a href="http://www.rff.org/blog/2017/mitigation-post-flood-fema-s-increased-cost-compliance-icc-coverage">Mitigation Post-Flood: FEMA’s Increased Cost of Compliance (ICC) Coverage</a>  </h3>
+  <span class="list-item__meta">
+    <span class="date-display-single">Jul 7, 2017</span>
+
+          <span class="meta-divider">|</span>
+        <a href="http://www.rff.org/people/profile/brett-lingle">Brett Lingle</a>, <a href="http://www.rff.org/people/profile/carolyn-kousky">Carolyn Kousky</a>      </span>
+
+      <p class="list-item__meta">
+      Congress is considering changes to the National Flood Insurance Program to expand the ability of policyholders to reduce their risk when they are repairing flood damage.
+
+    </p>
+    
+      <div class="list-item__tags">
+      <a href="http://www.rff.org/research/topics/risk-and-uncertainty">Risk and Uncertainty</a>
+
+    </div>
+  
+    </li>
+    
+  
+  
+  
+  
+  
+    </ul>
+  </aside>
+
+  <aside class="rail--newsletter">
+    <div class="newsletter-form">
+            <h3 class="rail__title--general">Get Blog Updates</h3>
+<p>Sign up for notifications of new blog posts.</p>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://rff.us6.list-manage.com/subscribe/post?u=7c9b262e7e80d95252bcc249a&amp;id=e896179bd7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group">
+    <label for="mce-EMAIL" style="display:none;">Email Address </label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email">
+<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-form__button form-submit"> <input type="hidden" name="SOURCE" id="MERGE5" value="blog">
+</div>
+<div class="mc-field-group input-group" style="display:none;">
+    <strong>RFF Email Options </strong>
+    <ul><li><input type="checkbox" value="1" name="group[14481][1]" id="mce-group[14481]-14481-0"><label for="mce-group[14481]-14481-0">RFF Connection (monthly)</label></li>
+<li><input type="checkbox" value="2" name="group[14481][2]" id="mce-group[14481]-14481-1"><label for="mce-group[14481]-14481-1">Event invitations and notices</label></li>
+<li><input type="checkbox" value="32" name="group[14481][32]" id="mce-group[14481]-14481-2"><label for="mce-group[14481]-14481-2">Resources magazine (three times per year)</label></li>
+<li><input type="checkbox" value="4" name="group[14481][4]" id="mce-group[14481]-14481-3"><label for="mce-group[14481]-14481-3">RFF on the Issues (weekly)</label></li>
+<li><input type="checkbox" value="8" name="group[14481][8]" id="mce-group[14481]-14481-4" checked=""><label for="mce-group[14481]-14481-4">RFF's blog, Common Resources</label></li>
+<li><input type="checkbox" value="64" name="group[14481][64]" id="mce-group[14481]-14481-5"><label for="mce-group[14481]-14481-5">Press releases and media notes</label></li>
+<li><input type="checkbox" value="16" name="group[14481][16]" id="mce-group[14481]-14481-6" checked=""><label for="mce-group[14481]-14481-6">Opportunities to support RFF</label></li>
+
+</ul>
+</div>
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_7c9b262e7e80d95252bcc249a_e896179bd7" tabindex="-1" value=""></div>
+    
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->    </div>
+  </aside>
+    </div>
+  
+</div>
+
+<span class="footer-decoration">
+  <img class="footer-background" src="./rff-assets/footer-background.svg" alt="">
+</span>
+<footer class="footer">
+  <div class="container">
+    <div class="l-2up--1">
+      <h4 class="footer-title">Search our Site</h4>
+      
+
+<form class="google-cse" action="http://www.rff.org/blog/2017/why-don-t-more-people-buy-flood-insurance" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Try a topic, a researcher&#39;s name, or a specific title." class="footer-search__input form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input class="button footer-search__button form-submit" type="submit" id="edit-submit" name="op" value="Search"></div><input type="hidden" name="form_build_id" value="form-ymlHvC8nXGIQSloGzs3lQGxSnCtIPuxjIkZcsDVy2b4">
+<input type="hidden" name="form_id" value="search_block_form">
+</div></form>
+
+    </div>
+    <div class="l-2up--2">
+      <h4 class="footer-title">Contact</h4>
+
+              <div class="footer-contact__info">
+          <p>Resources for the Future<br>
+1616 P St. NW, Suite 600<br>
+Washington, DC 20036</p>
+<p>Phone: 202.328.5000<br>
+Fax: 202.939.3460</p>
+        </div>
+      
+            
+        <div class="footer-contact__info">
+          <a class="button" style="background:#c7922b;" href="https://npo.networkforgood.org/Donate/Donate.aspx?npoSubscriptionId=1004374&amp;uniqueID=634413120052374780">DONATE </a>        </div>
+      
+      
+<ul class="footer-contact__list">
+  
+<li><a href="http://www.rff.org/about/news-and-press" class="">Communications and media inquiries</a></li><li><a href="http://www.rff.org/people/researchers" class="">Contact a researcher</a></li><li><a href="http://www.rff.org/about/contact" class="">Ask a general question or submit a comment</a></li></ul>
+
+      <ul class="social-list">
+        <li>
+          <a href="https://www.facebook.com/ResourcesfortheFuture" title="RFF Facebook" target="_blank">
+            <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-1691.7 -188.9 545.4 554.8" enable-background="new -1691.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-1419-163c-138.9,0-251.5,112.6-251.5,251.5c0,138.8,112.4,251.3,251.1,251.5V155.6h-63v-73h63V28.8
+    c0-62.5,38.1-96.5,93.9-96.5c26.7,0,49.6,2,56.3,2.9V0.5l-38.6,0c-30.3,0-36.2,14.4-36.2,35.5v46.6h72.3l-9.4,73h-62.9v173
+    c102.3-31.9,176.5-127.3,176.5-240.1C-1167.5-50.4-1280.1-163-1419-163z"></path>
+</svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/RFF_org" title="RFF Twitter" target="_blank">
+            <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-2265.7 -188.9 545.4 554.8" enable-background="new -2265.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-1993-163c-138.9,0-251.5,112.6-251.5,251.5S-2131.9,340-1993,340s251.5-112.6,251.5-251.5
+    S-1854.1-163-1993-163z M-1851,37.8c0.1,2.9,0.2,5.8,0.2,8.7c0,89.3-68,192.3-192.3,192.3c-38.2,0-73.7-11.2-103.6-30.4
+    c5.3,0.6,10.7,0.9,16.1,0.9c31.7,0,60.8-10.8,84-28.9c-29.6-0.5-54.5-20.1-63.1-46.9c4.1,0.8,8.4,1.2,12.7,1.2
+    c6.2,0,12.1-0.8,17.8-2.4c-30.9-6.2-54.2-33.5-54.2-66.3c0-0.3,0-0.6,0-0.9c9.1,5.1,19.5,8.1,30.6,8.5
+    c-18.1-12.1-30.1-32.8-30.1-56.3c0-12.4,3.3-24,9.2-34c33.3,40.9,83.1,67.8,139.3,70.6c-1.2-4.9-1.8-10.1-1.8-15.4
+    c0-37.3,30.3-67.6,67.6-67.6c19.4,0,37,8.2,49.3,21.3c15.4-3,29.9-8.7,42.9-16.4c-5,15.8-15.8,29-29.7,37.4
+    c13.7-1.6,26.7-5.3,38.8-10.6c0,0,0,0,0,0l0,0c0,0,0,0,0,0C-1826.3,16.4-1837.8,28.3-1851,37.8z"></path>
+</svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/resources-for-the-future" title="RFF LinkedIn" target="_blank">
+            <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-1080.7 -188.9 545.4 554.8" enable-background="new -1080.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-818.1-163c-138.9,0-251.5,112.6-251.5,251.5S-957,340-818.1,340s251.5-112.6,251.5-251.5
+    S-679.2-163-818.1-163z M-889.6,223.9h-56.9V40.9h56.9V223.9z M-920.6,17.4c-21,0-34.6-13.6-34.6-32.2c0-18.6,13.6-32.2,34.6-32.2
+    c21,0,34.6,13.6,34.6,32.2C-885.9,3.8-898.3,17.4-920.6,17.4z M-660.8,223.9h-65.6v-95.2c0-24.7-9.9-42.1-32.2-42.1
+    c-17.3,0-26,11.1-30.9,22.3c-1.2,3.7-1.2,9.9-1.2,14.8v98.9H-855c0,0,1.2-168.2,0-183.1h64.3v28.4c3.7-12.4,24.7-30.9,56.9-30.9
+    c40.8,0,73,26,73,82.9V223.9z"></path>
+</svg>
+          </a>
+        </li>
+        <li>
+          <a href="http://itunes.apple.com/us/podcast/resources-for-future-events/id305068222" title="RFF Podcasts" target="_blank">
+            <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-3460.7 -188.9 545.4 554.8" enable-background="new -3460.7 -188.9 545.4 554.8" xml:space="preserve">
+<path fill="#002D55" d="M-3191.3-163c-138.9,0-251.5,112.6-251.5,251.5S-3330.2,340-3191.3,340s251.5-112.6,251.5-251.5
+    S-3052.4-163-3191.3-163z M-3173.8,266.8c-11.5,0.1-23,0-34.4,0c-12.8,0-19.5-5.9-19.3-19.2c0.3-15.8,0.1-31.6,0.1-47.4
+    c0-16.3,0.2-32.5-0.1-48.8c-0.2-12,5.6-17.8,17.2-18c12.9-0.2,25.8-0.2,38.7,0.1c11.1,0.2,16.4,6.2,16.4,17.3
+    c-0.1,32.5-0.1,65.1,0,97.6C-3155.1,261.1-3161.7,266.7-3173.8,266.8z M-3191.8,113c-25.6-0.3-46.5-21.1-46.8-46.6
+    c-0.3-26.4,20.5-47.4,47-47.4c26.6,0,47.5,20.6,47.5,47C-3144.1,91.9-3165.7,113.3-3191.8,113z M-3109.6,130
+    c-6.7-4.7-16.3-9.8-9.5-21.9c10.7-18.8,14.4-38.7,9.7-60.6c-7.1-33.1-38.6-61.8-71.6-65.1c-48.2-4.9-77.8,25.6-88.9,53.6
+    c-9.6,24.1-7.3,47.7,5.1,70.4c5,9.1,0.8,20.7-8.6,24.4c-5.1,2-6.7-1.8-8.9-4.8c-12.8-18.3-18.4-38.6-17.5-60.8
+    c0.1-57.8,43.6-105.1,102.4-108.6C-3141.7-46.8-3094.1-8-3084,46c4.9,26.2,1.5,52.6-13.7,75.8
+    C-3100.4,125.9-3102.2,135.2-3109.6,130z M-3064.5,156.2c-2.4,3.7-4.9,12.8-12.6,6.3c-5.8-4.9-12.7-9-5-19.7
+    c59.9-83.9,4.7-198.5-91.2-209.7c-56.7-6.6-100.2,14.8-131,60.8c-30.8,46-28.3,104.7,4,149.1c7.1,9.8,1.1,13.7-4.4,18.8
+    c-8.3,7.6-10.8-2-13.7-5.9c-40.7-55.9-37.4-135.7,6.7-188.8c31.7-38.1,72-56.6,121.1-57c80.5,0.2,143.1,57.3,153.6,137.9
+    C-3031.7,88.3-3043.3,123.3-3064.5,156.2z"></path>
+</svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="l-1up">
+      <nav class="footer-nav">
+        <ul class="footer-nav__list">
+          
+<header>
+      <h2 class="element-invisible">Footer Links</h2>
+  </header>
+
+
+<li><a href="http://www.rff.org/about/terms-and-conditions-use" class="base-nav-list__item">Privacy Policy</a></li><li><a href="http://www.rff.org/about/terms-and-conditions-use" class="base-nav-list__item">Terms and Conditions of Use</a></li><li><a href="http://www.rff.org/about/contact" class="base-nav-list__item">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+  <script src="./rff-assets/js_WR5jNli7NGbqEOIyEXa3BDOixlp-409mojHuftaKmrI.js"></script>
+
+
+<div style="position: absolute; top: 0px; right: 0px; z-index: 1000; background: rgb(255, 255, 255); padding: 10px; border: 10px solid red; display: none;">Invisible element is focused, check console for details.</div><div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px;">ShareThis Copy and Paste</div><div id="stwrapper" class="stwrapper stwrapper5x" style="display: none;"><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" src="./rff-assets/index.37b4b85c83ff6e0b734bb117f0024eb0.html"></iframe></div><div id="stOverlay" onclick="javascript:stWidget.closeWidget();"></div></body></html>

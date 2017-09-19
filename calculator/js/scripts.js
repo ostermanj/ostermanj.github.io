@@ -7,11 +7,75 @@ var rateSelector = d3.select('#rate-selector')
     .on('change', updateGate)
     .node(); 
 
+var globalPrice,
+    globalRate;
+
+function clearTooltips(){
+    carbonLineCharts.forEach(function(each){
+
+        each.trendPoints.dispatch('mouseout');
+        each.baselinePoints.dispatch('mouseout');
+    });
+}
+
+function updateTotals(price, rate){
+    globalPrice = price;
+    globalRate = rate;
+    /* PRICE */
+    var finalPrice = +price * Math.pow( 1 + +rate, 12);
+    console.log(finalPrice);
+
+    /* EMISSIONS */ 
+    var emissionsData = carbonLineCharts[0].data[price][rate][0].trend;
+    var emissionsBaseline = carbonLineCharts[0].data[0][0][0].trend;
+
+    var totalEmissionsSavings = emissionsData.reduce(function(acc,cur, i){
+        return acc + ( +emissionsBaseline[i].value - +cur.value )
+    },0);
+
+    console.log(totalEmissionsSavings);
+
+    /* REVENUE ( emissions * price ) */
+    var revenueData = carbonLineCharts[1].data[price][rate][0].trend;
+    var totalRevenue = revenueData.reduce(function(acc, cur){
+       return acc + +cur.value;
+    },0);
+    console.log(totalRevenue);
+
+    d3.select('#summary-stats .bind-text')
+        .classed('attention', false)
+        .text(', $' + price + ' per ton at ' + rate * 100 + '% growth rate');
+
+    d3.select('#summary-emissions .bind-total')
+        .text(d3.format(",.3r")(totalEmissionsSavings) + ' billion metric tons');
+    d3.select('#summary-revenue .bind-total')
+        .text('$' + d3.format(",.4r")(totalRevenue) + ' billion');
+    d3.select('#summary-price .bind-total')
+        .text('$' + d3.format(",.2f")(finalPrice) + ' per ton');
+
+    d3.select('#summary-stats')
+        .classed('not-calculated', false);
+
+
+
+
+
+}
+
 function updateGate(){
+    if ( priceSelector.options[priceSelector.selectedIndex].value ){
+        d3.select('#price-label')
+            .classed('attention', false);
+    }
+    if ( rateSelector.options[rateSelector.selectedIndex].value ){
+        d3.select('#rate-label')
+            .classed('attention', false);
+    }
     if ( priceSelector.options[priceSelector.selectedIndex].value && rateSelector.options[rateSelector.selectedIndex].value ) {
         carbonLineCharts.forEach(function(each){
             each.updateChart(priceSelector.options[priceSelector.selectedIndex].value, rateSelector.options[rateSelector.selectedIndex].value);
         });
+        updateTotals(priceSelector.options[priceSelector.selectedIndex].value, rateSelector.options[rateSelector.selectedIndex].value);
     }
 }  
 
@@ -23,17 +87,22 @@ CarbonLineChart.prototype = {
 
     setup: function(configObject){
         var chart = this;
+        var viewBox = '0 0 100 ' + Math.round(configObject.heightToWidth * 100);
         this.margin = configObject.margin;
-        this.width = configObject.width - this.margin.left - this.margin.right;
-        this.height = configObject.height - this.margin.top - this.margin.bottom;
-        this.labelOffset = configObject.trendLabelPosition === 'below' ? 20 : -20;
+        this.width = 100 - this.margin.left - this.margin.right;
+        this.height = configObject.heightToWidth * 100 - this.margin.top - this.margin.bottom;
+        this.labelOffset = configObject.trendLabelPosition === 'below' ? 4 : -2;
+        this.yAxisCount = configObject.yAxisCount;
+        this.hasBeenUpdated = false;
 
         this.svg = d3.select(configObject.container)
-            .attr('width', this.width + this.margin.left + this.margin.right)
-            .attr('height', this.height + this.margin.top + this.margin.bottom)
+            .append('svg')
+            .attr('width', '100%')
+            .attr('xmlns','http://www.w3.org/2000/svg')
+            .attr('version','1.1')
+            .attr('viewBox', viewBox)
             .append('g')
-            .attr('transform',
-                  'translate(' + this.margin.left + ',' + this.margin.top + ')');
+            .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
 
         this.parseTime = d3.timeParse('%Y');
 
@@ -45,7 +114,6 @@ CarbonLineChart.prototype = {
         this.valueline =  d3.line()
             .x(function(d) { return chart.x(d.date); })
             .y(function(d) { return chart.y(d.value); });
-        var str = 'd.units';
        
         this.getData(configObject); 
 
@@ -127,26 +195,33 @@ CarbonLineChart.prototype = {
             })
             .enter().append('circle')
             .attr('class', 'data-point')
-            .attr('r',6)
+            .attr('r',1)
             .attr('cx', function(d){
                 return chart.x(d.date);
             })
             .attr('cy', function(d){
                 return chart.y(d.value)
             })
-            .on('mouseover', this.tooltip.show)
+            .on('mouseover', function(e){
+                clearTooltips();
+                chart.tooltip.show(e);
+            })
             .on('mouseout', this.tooltip.hide) 
             .call(this.tooltip);
     },
     renderTrendlineLabel: function(){
          var chart = this;
-         this.trendlineLabel = this.svg.append('text')
-        .attr('class','line-label trendline-label no-display')
-        .text('With carbon price')
+         this.trendlineLabel = this.svg.append('g')
+        .attr('class','line-label trendline-label no-display')        
         .attr('transform', function(){
             console.log(chart.labelOffset);
             return 'translate(' + chart.x(chart.baselineData[0].trend[7].date) + ',' + ( chart.y(chart.baselineData[0].trend[7].value) + chart.labelOffset ) + ')';
         });
+
+        this.trendlineLabel
+            .append('text')
+            .attr('text-anchor', 'end')
+            .text('With carbon price');
     },
     renderBaseline: function(){
         var chart = this;
@@ -173,14 +248,17 @@ CarbonLineChart.prototype = {
             })
             .enter().append('circle')
             .attr('class', 'data-point baseline-point')
-            .attr('r',6)
+            .attr('r',1)
             .attr('cx', function(d){
                 return chart.x(d.date);
             })
             .attr('cy', function(d){
                 return chart.y(d.value)
             })
-            .on('mouseover', this.baselineTooltip.show)
+            .on('mouseover', function(e){
+                clearTooltips();
+                chart.baselineTooltip.show(e);
+            })
             .on('mouseout', this.baselineTooltip.hide) 
             .call(this.baselineTooltip);
     },
@@ -188,24 +266,26 @@ CarbonLineChart.prototype = {
         var chart = this;
         this.baselineLabel = this.baselineGroup.selectAll('baseline-label')
         .data(function(d){
-            console.log(d.trend[7]);
-            return [d.trend[7]];
+            console.log(d.trend[12]);
+            return [d.trend[12]];
         })
-        .enter().append('text')
+        .enter().append('g')
         .attr('transform', function(d){
             console.log(d);
-            return 'translate(' + chart.x(d.date) + ',' + ( chart.y(d.value) - 20 ) + ')';
+            return 'translate(' + chart.x(d.date) + ',' + ( chart.y(d.value) - 1.5) + ')';
         })
         .attr('class','line-label')
+        .attr('text-anchor', 'end')
+        .append('text')
         .text('Without carbon price');
 
     },
     renderAxes: function(){
         var chart = this;
         this.xAxis = this.svg.append('g')
-          .attr('transform', 'translate(0,' + ( this.height + 10 ) + ')')
+          .attr('transform', 'translate(0,' + ( this.height + 2 ) + ')')
           .attr('class', 'axis x-axis')
-          .call(d3.axisBottom(chart.x));
+          .call(d3.axisBottom(chart.x).tickSizeInner(1).tickSizeOuter(1).tickPadding(1).ticks(d3.timeYear.every(2)));
 
       
         this.yAxis = this.svg.append('g')
@@ -214,13 +294,13 @@ CarbonLineChart.prototype = {
         this.yAxis.append('text')
             .attr('class', 'axis-label')
             .attr('text-anchor','start')
-            .attr('transform', 'translate(-' + ( this.margin.left - 10 ) + ', -20)')
+            .attr('transform', 'translate(-' + ( this.margin.left - 2 )+ ', -3)')
             .text(function(){
                 console.log(chart.data[0][0][0]);
                 return chart.data[0][0][0].units;
             }); // TO DO: needs to be set programmatically.
 
-        this.yAxis.call(d3.axisLeft(chart.y));
+        this.yAxis.call(d3.axisLeft(chart.y).tickSizeInner(1).tickSizeOuter(1).tickPadding(1).ticks(chart.yAxisCount));
     },
     updateChart(userPrice,userRate){
         this.updateTrendline(userPrice,userRate);
@@ -229,12 +309,19 @@ CarbonLineChart.prototype = {
     },
     updateTrendline: function(userPrice,userRate){
         var chart = this;
+        chart.trendPoints.dispatch('mouseout');
         this.trendline.data(function(){
             return chart.data[userPrice][userRate];
         })
         .transition().duration(500)
         .attr('d', function(d){
            return chart.valueline(d.trend);
+        })
+        .on('end', function(){
+            if ( !chart.hasBeenUpdated ){
+                chart.trendPoints.dispatch('mouseover');
+                chart.hasBeenUpdated = true;
+            }
         });
     },
     updateTrendPoints: function(userPrice, userRate){
@@ -252,8 +339,9 @@ CarbonLineChart.prototype = {
     },
     updateTrendlineLabel: function(userPrice,userRate){
         var chart = this;
+        console.log(this.trendlineLabel);
         this.trendlineLabel.data(function(){
-                return [chart.data[userPrice][userRate][0].trend[7]];
+                return [chart.data[userPrice][userRate][0].trend[5]];
             })
             .classed('no-display', false)
             .transition().duration(500)
@@ -269,22 +357,25 @@ var carbonLineCharts = [];
 carbonLineCharts.push( 
     new CarbonLineChart(
         {
-            margin: { 
-                top: 40,
-                right: 20,
-                bottom: 40,
-                left: 50
+            margin: { // percentages
+                top: 6,
+                right: 4.5,
+                bottom: 10,
+                left: 10
             },
-            width:550,
-            height:380,
+            heightToWidth: 0.66,
             dataPath:'data/emissions.csv',
-            container:'#container', 
+            container:'#container',
+            trendLabelPosition: 'below', 
             baselineTooltip: function(d){
-                return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+                //return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+                return '<b>WITHOUT CARBON PRICE</b><br /><b>Year:</b> ' + d.date.getFullYear() + '<br /><br /><b>Emissions:</b> ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)';
             },
             trendlineTooltip: function(d){
-                return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + ':</b> ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
-            }
+                 return '<b>WITH CARBON PRICE</b><br />($' + d.price + '</b> at ' + d.growth_rate * 100 + '% growth rate)<br /><b>Year:</b> ' + d.date.getFullYear() + '<br /><b>Price:</b> $' + d3.format(",.2f")( globalPrice * Math.pow(1 + +globalRate, +d.date.getFullYear() - 2018) ) + ' per ton<br /><br /><b>Emissions:</b> ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)';
+                //return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + ':</b> ' + d.value + ' ' + d.units + '<br />(' +  Math.round(( d.value / 6 ) * 100 ) +'% of 2005 levels)'; 
+            },
+            yAxisCount: null
 
         }
     )
@@ -293,23 +384,24 @@ carbonLineCharts.push(
 carbonLineCharts.push( 
     new CarbonLineChart(
         {
-            margin: { 
-                top: 40,
-                right: 20,
-                bottom: 40,
-                left: 50
+            margin: { //percentages
+                top: 6,
+                right: 4.5,
+                bottom: 10,
+                left: 10
             },
-            width:550,
-            height:380,
+            heightToWidth: 0.66,
             dataPath:'data/revenue.csv',
             container:'#container-2',
-            trendLabelPosition: 'below', 
+            trendLabelPosition: 'above', 
             baselineTooltip: function(d){
-                return '<b>Without carbon price<br /></b>' + d.date.getFullYear() + '</b>: $' + d.value; 
+              //  return '<b>WITHOUT CARBON PRICE<br /></b>' + d.date.getFullYear() + '<br />$' + d.value; 
+               return '<b>WITHOUT CARBON PRICE</b><br /><b>Year:</b> ' + d.date.getFullYear() + '<br /><br /><b>Revenue:</b> $0'; 
             },
             trendlineTooltip: function(d){
-                return '<b>$' + d.price + '</b> at ' + d.growth_rate * 100 + '% annual increase<br /><b>' + d.date.getFullYear() + ':</b> $' + d3.format(".3n")(d.value) + ' billion'; 
-            }
+                return '<b>WITH CARBON PRICE</b><br />($' + d.price + '</b> at ' + d.growth_rate * 100 + '% growth rate)<br /><b>Year:</b> ' + d.date.getFullYear() + '<br /><b>Price:</b> $' + d3.format(",.2f")( globalPrice * Math.pow(1 + +globalRate, +d.date.getFullYear() - 2018) ) + ' per ton<br /><br /><b>Revenue:</b> $' + d3.format(".3n")(d.value) + ' billion'; 
+            },
+            yAxisCount: 7
 
         }
     )

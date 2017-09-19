@@ -4,29 +4,60 @@
 
 }
 
-body {
+/*body {
   padding: 0;
-  margin: 0 auto; /* TODO: RESET ALL MARGINS AND PADDING */
+  margin: 0 auto; 
   color: #58585b;
   font: 17.6px/23.1px calluna,Georgia,"Times New Roman","DejaVu Serif",serif;
-  max-width: 1280px;
+  max-width: 728px;
+}
+*/
+#carbon-calculator {
+  border: 1px solid #58585b;
+  margin-bottom: 0.78125em;
+}
+
+#carbon-calculator > h2 {
+  padding: 10px;
+  background: #58585b;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .margins {
-  padding: 0 50px;
-  margin: 0;
+  padding: 10px 10px 0;
 }
 
 .dropdowns {
   margin: 0 auto;
-  padding-left: 30px;
-  position: relative;
+}
+
+.dropdowns label {
+    padding-left: 30px;
+    position: relative;
+    width: 187px;
+    margin: 0;
+    display: inline;
+    font: inherit;
+    margin-bottom: 10px;
+
+}
+
+.dropdowns select {
+      position: relative;
+    top: -12px;
+    width: initial;
+}
+
+
+.dropdowns > div {
+  margin-bottom: 10px;
 }
 
 .attention:before {
    content: '!';
     position: absolute;
-    left: 13px;
+    left: 9px;
     color: #fff;
     z-index: 1;
     top: 2px;
@@ -35,10 +66,38 @@ body {
 .attention:after {
     content: '\025B2';
     position: absolute;
-    left: 0;
+    left: -4px;
     font-size: 181%;
     top: -1px;
 
+}
+
+#summary-stats .attention {
+    position: relative;
+    padding-left: 23px;
+    margin-left: 10px;
+}
+
+#summary-stats .attention:before {
+  color: #58585b;
+  top: -2px;
+}
+
+#summary-stats .attention:after {
+  top: -5px;
+  font-size: 187%;  
+}
+
+.not-calculated .bind-total {
+  visibility: hidden;
+}
+
+.question, .not-calculated .when-calculated-only {
+  display: none;
+}
+
+.not-calculated .question {
+  display: inline;
 }
 
 h2 {
@@ -54,6 +113,8 @@ h3 {
 #summary-stats {
   background-color: #58585b;
   margin-top: 20px;
+  color: #fff;
+  padding: 10px;
 }
 
 .summary div {
@@ -63,7 +124,7 @@ h3 {
   padding: 10px;
 }
 
-.summary div h2 { /* TO DO : RESET MARGIN AND PADDING ACROSS THE BOARD */
+#summary-stats h2 { /* TO DO : RESET MARGIN AND PADDING ACROSS THE BOARD */
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -79,14 +140,20 @@ h3 {
 .summary-icon img {
   margin: auto;
   display: block;
+  width: 80px;
 }
 
 .summary-data {
-  width: 170px;
+  width: 120px;
 }
 
 .no-display {
   display:none;
+}
+
+.no-margin {
+  margin: 0;
+
 }
 
 .flex-container {
@@ -95,8 +162,34 @@ h3 {
   justify-content: space-between;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .space-around {
   justify-content: space-around;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+
+.chart-wrapper {
+    width: 48%;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.chart-wrapper:first-child {
+  margin-right: 2%;
+}
+
+.chart-wrapper h3 {
+  margin-top: 0;
 }
 
 /*////////////////////
@@ -110,7 +203,7 @@ h3 {
 .line {
   fill: none;
   stroke: #051839;
-  stroke-width: 3px;
+  stroke-width: 0.5;
 }
 
 .baseline {
@@ -119,7 +212,7 @@ h3 {
 
 .data-point {
   stroke: #fff;
-  stroke-width: 3px;
+  stroke-width: 0.5;
   fill: #051839;
   cursor: pointer;
 }
@@ -133,23 +226,33 @@ h3 {
 }
 
 .axis text {
-  font: 17.6px/23.1px calluna,Georgia,"Times New Roman","DejaVu Serif",serif
+  font: 4px/5.3px calluna,Georgia,"Times New Roman","DejaVu Serif",serif
 }
 
 .y-axis {
-   transform: translate(-10px,0);
+   transform: translate(-2px,0);
 }
 
 .y-axis path {
   visibility: hidden;
 }
 
-.line-label {
-  font-size: 75%;
-  text-anchor: start;
+.x-axis path, .tick line {
+  stroke-width: 0.15;
 }
 
-.trendline-label {
+.x-axis .tick line {
+    transform: translate(0,0.5px);
+  
+}
+
+
+.line-label text {
+  font-size: 4px;
+ 
+}
+
+.trendline-label text {
   fill: #051839;
 }
 
@@ -162,17 +265,16 @@ h3 {
 
 .d3-tip {
   padding: 10px;
-  background: rgba(230,231,232,0.9);
-  border: 1px solid #58585b;
+  background: #58585b;
+  color: #fff;
+  letter-spacing: 1px;
   opacity: 0;
   transition: opacity 0.5s linear;
   font-size: 75%;
   line-height: 120%;
   z-index: 999999;
-   font-variant-numeric: lining-nums;
-  -moz-font-feature-settings: "lnum";
-  -webkit-font-feature-settings: "lnum";
-  font-feature-settings: "lnum";
+  max-width: 230px;
+  
 }
 
 /* Creates a small triangle extender for the tooltip */

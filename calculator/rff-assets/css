@@ -1,0 +1,48 @@
+/* hebrew */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Frank Ruhl Libre Regular'), local('FrankRuhlLibre-Regular'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/yDLloNqBpFmakCImLv4OJqDOv36KUEQwTAhlr3J8dcI.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Frank Ruhl Libre Regular'), local('FrankRuhlLibre-Regular'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/yDLloNqBpFmakCImLv4OJiZeWuxFnsmbBhXrwGDUaM8.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Frank Ruhl Libre Regular'), local('FrankRuhlLibre-Regular'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/yDLloNqBpFmakCImLv4OJmBqVY40gvEI-1ZS5GbhdpM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Frank Ruhl Libre Bold'), local('FrankRuhlLibre-Bold'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/y8NWif61iD8Hg8bGAmxFPJUk7Lhgl4bMdKBiBhpKYZ72Ot9t5h1GRSTIE78Whtoh.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Frank Ruhl Libre Bold'), local('FrankRuhlLibre-Bold'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/y8NWif61iD8Hg8bGAmxFPH2u7ViZx6-SfCvrYpBfNer2Ot9t5h1GRSTIE78Whtoh.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Frank Ruhl Libre Bold'), local('FrankRuhlLibre-Bold'), url(https://fonts.gstatic.com/s/frankruhllibre/v2/y8NWif61iD8Hg8bGAmxFPEItlVmVZw38lBle5sLqK80.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
