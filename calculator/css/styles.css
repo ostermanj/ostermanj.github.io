@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  color: #58585b;
+  font: 17.6px/23.1px calluna, "Calluna W01", Georgia, "Times New Roman", "DejaVu Serif", serif;
+  /*  max-width: 728px; */ }
+
+#carbon-calculator {
+  -webkit-text-size-adjust: 100%;
+  border: 1px solid #051839; }
+  #carbon-calculator > h2 {
+    padding: 10px;
+    background: #051839;
+    color: #fff;
+    margin-bottom: 10px; }
+
+.margins {
+  padding: 10px 10px 0; }
+
+.dropdowns {
+  margin: 0 auto; }
+  .dropdowns label {
+    padding-left: 30px;
+    position: relative;
+    width: 205px; }
+  .dropdowns select {
+    position: relative;
+    top: 3px; }
+  .dropdowns > div {
+    margin-bottom: 10px; }
+
+.attention:before {
+  content: '!';
+  position: absolute;
+  left: 9px;
+  color: #fff;
+  z-index: 1;
+  top: 2px; }
+.attention:after {
+  content: '\025B2';
+  position: absolute;
+  left: -4px;
+  font-size: 181%;
+  top: -1px;
+  color: #051839; }
+
+#summary-stats {
+  background-color: #051839;
+  margin-top: 20px;
+  color: #fff;
+  padding: 10px; }
+  #summary-stats .attention {
+    position: relative;
+    padding-left: 23px;
+    margin-left: 10px; }
+    #summary-stats .attention:before {
+      color: #051839;
+      top: -2px; }
+    #summary-stats .attention:after {
+      top: -5px;
+      color: #fff; }
+  #summary-stats h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 90%; }
+
+.not-calculated .bind-total {
+  visibility: hidden; }
+.not-calculated .when-calculated-only {
+  display: none; }
+.not-calculated .question {
+  display: inline; }
+
+.question {
+  display: none; }
+
+.credits {
+  color: #E6E7E8;
+  font-size: 60%; }
+
+h2 {
+  font: bold 25.3px/33px "Oswald", "Trade Gothic W01", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  letter-spacing: -0.32px; }
+
+h3 {
+  font: bold 21.12px/27.5px "Oswald", "Trade Gothic W01", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  letter-spacing: -0.264px; }
+
+.summary-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .summary-icon img {
+    margin: auto;
+    display: block;
+    width: 80px; }
+
+.summary-data {
+  width: 120px; }
+
+.no-display {
+  display: none; }
+
+.no-margin {
+  margin: 0; }
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.space-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.shrink {
+  -ms-flex-negative: 1;
+      flex-shrink: 1; }
+
+.chart-wrapper:first-child {
+  margin-right: 2%; }
+
+text {
+  fill: #58585b; }
+
+.line {
+  fill: none; }
+  .line.trendline {
+    stroke-width: 1;
+    stroke: #051839; }
+  .line.baseline {
+    stroke: #58585b;
+    stroke-width: 0.5; }
+
+.data-point {
+  stroke: #fff;
+  stroke-width: 0.5;
+  fill: #051839;
+  cursor: pointer; }
+  .data-point.baseline-point {
+    fill: #58585b; }
+
+.axis line {
+  stroke: #58585b; }
+.axis path {
+  stroke: #58585b; }
+.axis text {
+  font: 4px/5.3px calluna, "Calluna W01", Georgia, "Times New Roman", "DejaVu Serif", serif; }
+
+.y-axis {
+  -webkit-transform: translate(-2px, 0);
+          transform: translate(-2px, 0); }
+  .y-axis path {
+    visibility: hidden; }
+
+.x-axis path {
+  stroke-width: 0.15; }
+.x-axis .tick line {
+  -webkit-transform: translate(0, 0.5px);
+          transform: translate(0, 0.5px); }
+
+.summary div {
+  background-color: #051839;
+  color: #fff;
+  padding: 10px; }
+
+.tick line {
+  stroke-width: 0.15; }
+
+.line-label text {
+  font-size: 4px; }
+
+.trendline-label text {
+  fill: #051839; }
+
+.d3-tip {
+  padding: 10px;
+  background: #E6E7E8;
+  color: #58585b;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  font-size: 75%;
+  line-height: 120%;
+  z-index: 999999;
+  width: 33%;
+  max-width: 170px; }
+  .d3-tip.trendline {
+    background: #051839;
+    color: #fff; }
+    .d3-tip.trendline:after {
+      color: #051839; }
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: #E6E7E8;
+    position: absolute;
+    pointer-events: none; }
+  .d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center; }
+  .d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0;
+    top: 50%;
+    left: -8px; }
+  .d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center; }
+  .d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%; }
