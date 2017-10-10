@@ -15,12 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
     {% include header.html %}{% include ie-message.html %}
-    <div id="hero-spacer">
-      
-    </div>
-    <div id="hero"></div>
-       <section id="front-content-section" class="red">
-       <div id="tagline">Big picture, small details</div>
+          <section id="front-content-section" class="red">
          <div id="front-content" class="wrapper">
             <div id="front-content-inner">
               <div class="category-group">
@@ -50,7 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </div>
        </section>
-       <section class="latest">
+    <section class="latest">
           <div class="wrapper full-width">
 {% assign featured = site.posts | where: "featured", true %}              
       <h2>Featured project{% if featured.size > 1 %}s{% endif %}</h2>
@@ -82,13 +77,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
           </div>
       </section>
+
+
+       
       <section class="contact">
        <div class="wrapper">
            <h2>Looking for help? Get in touch today!</h2>
         {% include contact.html %}
           </div> 
       </section>
-     
+
     {% include footer.html %}
 <script src="/js/scripts.js" type="text/javascript"></script>
   </body>
