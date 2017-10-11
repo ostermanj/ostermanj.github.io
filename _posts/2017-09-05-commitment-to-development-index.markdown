@@ -1,16 +1,47 @@
 ---
 layout: post
 type: project
-title:  "The Commitment to Development Index"
-modified: 2017-01-16
+title:  "The 2017 Commitment to Development Index"
+modified: 2017-10-11
 categories: project
-image: "CDI-live-2016.gif"
-tags: ['dataviz','front-end',Backbone.js','MCV framework']
+image: "cdi-2017-example.png"
+tags: ['dataviz','front-end','Backbone.js','MCV framework']
 repo: 'commitment-development'
 featured: true
 contact: true
 redirect_from: "/project/2016/08/19/commitment-to-development-index/"
 ---
+<p></p>
+**Updated September 5, 2017**
+
+The [Commitment to Development Index][commitment-development-index] ranks the world's 27 richest countries on policies that affect the development prospects of poorer nations. The countries are ranked on seven components—aid, finance, technology, trade, environment, security, and migration—each with a variety of indicators. 
+
+## User-facing improvements
+
+The 2017 version is a modest update of the major revision I performed last year. These are  biggest user-facing improvements this year:
+
+* more informative bar graphs
+* better handling of null data
+* better visual explanation of indicators for which low scores are better than high
+
+I'll illustrate the first point. My colleagues at the Center for Global Development wanted the bar charts visualizing a country's performance on an indicator to do a better job showing how that country compared to others. Here's how they looked in the 2016 version:
+
+{% include figure.html src="/assets/cdi-denmark-aid-2016.png" alt="CDI bar charts from 2016"  caption="Two aid-indicator bar charts for Denmark from 2016" %}
+
+The bars faithfully show the country's indicator score and give some indication of where the scores fall within the range of worst to best score. But that indication is inexact at best; in some cases, it's misleading.
+
+Here are the same bar charts for the same country (Denmark) for 2017:
+
+{% include figure.html src="/assets/cdi-denmark-aid-2017.png" alt="CDI bar charts from 2017"  caption="Two aid-indicator bar charts for Denmark from 2017, with contextual information" %}
+
+Each bar chart now includes the median score and scores of all other countries as context, and that makes the charts much more informative. Imagine the *maximizing efficiency* chart without the contextual markings: you'd think that Denmark performed poorly since the bar extends only about 40 percent of the available space. But with the context, it's clear that Denmark's score is better than the median and, in fact, did relatively well.
+
+## Behind-the-scenes improvements
+
+There are several behind-the-scenes improvement as well, such as modifications of and additions to (from the researchers) some of the indicators behind the seven components. One improvement I'm excited about, and which will be important to future me and other maintainers of the CDI, is a change to how the data behind the tool is generated. The researchers behind the Commitment to Development Index use Google Sheets to store and calculate all the data for  subindicators, indicators, components, and final scores. The original tool, however, was built to read in data server-side from a long and hierarchical  XML document, and getting the data into that XML had been a painstaking task. To make that task much easier, I created a separate in-browser app to run locally that uses the Google Sheets API to read in data from a spreadsheet and generate the corresponding XML in the format the tool already expected. It took some time to create the app, but the time it saved in automatically responding to data changes more than made up for it.
+
+**Original post (January 16, 2017)**
+
 The [Commitment to Development Index][commitment-development-index] ranks the world's 27 richest countries on policies that affect the development prospects of poorer nations. The countries are ranked on seven components—aid, finance, technology, trade, environment, security, and migration—each with a variety of indicators. The results are communicated through a data-rich visualization, which I had the pleasure of developing, on top of the 2015 work of [Creative Science][creative-science].
 
 {% include figure.html src="/assets/cdi-2016-screenshot.png" alt="The 2016 Commitment to Development Index"  caption="The 2016 Commitment to Development Index." %}
