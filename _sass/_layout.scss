@@ -600,12 +600,12 @@ h2, .heading-2 {
 
 .contact {
     margin-bottom: 0;
-    background-color: $very-light-brand;
+    
 
   & input, & textarea {
     width: 96%;
     border: none;
-    background-color: #fff;
+    background-color: $very-light-brand;
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     padding: 10px 2%;
