@@ -4,10 +4,14 @@ title: About
 permalink: /about/
 ---
 
-I am a freelance consultant helping organizations gain influence and drive engagement with innovative reports, web- and mobile-first publications, data visualization, smart analytics, and clear language. 
+I am a freelance consultant helping organizations gain influence and drive engagement with innovative reports, web- and mobile-first publications, data visualization, smart analytics, and clear language.
+
+Before freelancing, I was the Director of Digital Communications at the [Center for Global Development](https://www.cgdev.org), a think tank in Washington DC.
+
+When I'm not resolving dependency chaos in my web-dev environment, I may be out on my bike, working on a sculpture (check them out at [www.johnsosterman.com](http://www.johnaosterman.com)), or cooking / doing dishes. 
 
 {:#about-image}
-![John Osterman]({{ site.url }}/assets/john-osterman.jpg){:width="200px"}
+![John Osterman]({{ site.url }}/assets/john-osterman-400.jpg){:width="200px"}
 
 **Skills:** 
 
@@ -20,8 +24,6 @@ I am a freelance consultant helping organizations gain influence and drive engag
 I'm most familar with Drupal and WordPress content management systems.
 
 My resume: [PDF](../assets/osterman-resume-Aug16.pdf).
-
-My other website (sculpture): [www.johnaosterman.com](http://www.johnaosterman.com)
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj)
 
