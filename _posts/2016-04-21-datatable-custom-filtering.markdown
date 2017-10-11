@@ -6,6 +6,7 @@ categories: project
 image: "datatable.png"
 link: 'http://www.cgdev.org/media/opic-scraped-portfolio-dataset'
 tags: ['datatable', 'jQuery','front-end']
+featured: true
 ---
 
 Researchers at the Center for Global Development had scraped data from the Overseas Private Investment Corporation and needed a way to make the data available and present it in a user-friendly way. No real visualization was needed, so we settled on a [datatable presentation]({{ page.link }}) that would allow users to sort the data and browse through it with custom filters.

@@ -3,12 +3,18 @@ layout: post
 type: project
 title:  "Housing Insights: Preserving Affordable Housing in Washington DC"
 categories: project
-image: "housing-insights.png"
-tags: ['D3','open data', 'dataviz','front-end']
-link: 'http://housinginsights.org/'
+image: "housing-insights-map.png"
+tags: ['D3','mapping', 'dataviz','front-end']
+link: 'http://housinginsights.org/tool'
 repo: 'housing-insights'
 featured: true
 ---
+<p></p>
+**Updated October 5, 2017**
+
+The Housing Insights tool is now launched, at [http://housinginsights.org/tool](http://housinginsights.org).
+
+**Original post (February 16, 2017)**
 
 Housing Insights is a [Code for DC](http://codefordc.org/) project to help the city government and affordable-housing analysts and advocates better prioritize their efforts and budget expenditure on preserving the existing stock of affordable housing. Like many cities, Washington is facing ever-rising rents that are forcing many long-time residents to flee the city for more affordable areas.
 
