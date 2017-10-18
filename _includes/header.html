@@ -20,6 +20,17 @@
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}
         {% endfor %}
+        <span id="header-icons">
+          {% if site.github_username %}
+              {% include icon-github-header.html username=site.github_username %}
+          {% endif %}
+          {% if site.twitter_username %}
+            {% include icon-twitter-header.html username=site.twitter_username %}
+          {% endif %}
+          {% if site.linkedin_username %}
+            {% include icon-linkedin-header.html username="John Osterman" %}
+          {% endif %}
+        </span>
       </div>
     </nav>
 

@@ -252,6 +252,12 @@ pre {
 /**
  * Icons
  */
+
+#header-icons {
+    bottom: 2px;
+    position: relative;
+}
+
 .icon {
     
     p.repo-link &, p.www-link &, p.demo & {
@@ -269,6 +275,22 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+.icon-header {
+  > svg {
+    width: 24px;
+    height: 24px;
+    &:hover {
+        path {
+            fill: $highlight_color;
+        }
+    }
+    path {
+        transition: fill 0.2s linear;
+        fill: $text_color;
+    }
+  }   
 }
 
 .icon--linkedin {
