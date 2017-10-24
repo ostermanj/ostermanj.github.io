@@ -4,10 +4,11 @@ type: project
 title:  "Housing Insights: Preserving Affordable Housing in Washington DC"
 categories: project
 image: "housing-insights-map.png"
-tags: ['D3','mapping', 'dataviz','front-end']
+tags: ['front-end development' ,'D3','mapping', 'dataviz']
 link: 'http://housinginsights.org/tool'
 repo: 'housing-insights'
 featured: true
+contact: true
 ---
 <p></p>
 **Updated October 5, 2017**

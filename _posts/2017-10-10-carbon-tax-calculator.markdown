@@ -4,10 +4,11 @@ type: project
 title:  "Interactive projections of greenhouse gas emissions and carbon tax revenue"
 categories: project
 image: "carbon-calculator.png"
-tags: ['D3', 'dataviz']
+tags: ['dataviz','D3']
 link: 'http://www.rff.org/blog/2017/introducing-e3-carbon-tax-calculator-estimating-future-co2-emissions-and-revenues'
 repo: 'carbon-price-calculator'
 featured: true
+contact: true
 ---
 
 <script src="https://d3js.org/d3.v4.min.js"></script>

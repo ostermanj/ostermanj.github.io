@@ -7,6 +7,7 @@ image: "annual-report.png"
 tags: ['publications','dataviz','D3','Drupal','PHP']
 link: 'https://www.cgdev.org/annual-report/2016'
 featured: true
+contact: true
 ---
 
 Annual reports cost a lot of money, and if your annual report is primarily a print product, you're going to have a hard time knowing whether all that paper, ink, and treasure was worth the expense.

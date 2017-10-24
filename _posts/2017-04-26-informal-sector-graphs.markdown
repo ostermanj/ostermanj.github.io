@@ -8,6 +8,7 @@ tags: ['dataviz','D3']
 link: 'https://www.cgdev.org/publication/note-informal-sector'
 featured: true
 custom_css: informality
+contact: true
 ---
 
 This is a suite of graphs I made for researchers at the Center for Global Development analyzing the differences between formal and informal businesses. The data is from World Bank Enterprise Surveys and CGD's analysis.
