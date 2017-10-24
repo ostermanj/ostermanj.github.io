@@ -6,7 +6,6 @@ categories: project
 image: "informal-sector.png"
 tags: ['dataviz','D3']
 link: 'https://www.cgdev.org/publication/note-informal-sector'
-featured: true
 custom_css: informality
 contact: true
 ---
