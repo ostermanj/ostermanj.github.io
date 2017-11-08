@@ -13,11 +13,11 @@ contact: true
 
 This app consists of a custom Drupal 7 module topped with an AngularJS single-page app for publishing multichapter reports. The Drupal module accomplishes two basic things:
 
-* it makes sure the report is presented in the normal Drupal theme of the website
+* it makes sure the report is embedded in the normal Drupal theme of the website, with site-wide navigation present
 * it passes data to the front end for the Angular app to use
 
 ## Why?
-Because the existing Drupal theme was designed for description pages that summarize the publication and link to its PDF, it was unable to meet the needs of digital-first publishing. This app allows content editors to create a complete multichapter publication using the CMS they're used to, presents that reports as a rich, interactive experience for users, and allows editors to spin-off a print-ready PDF from the digital content.
+Because the existing Drupal theme was designed for description pages that summarize the publication and link to its PDF, it was unable to meet the needs of digital-first publishing. This app allows content editors to create a complete multichapter publication using the CMS they're used to, presents that report as a rich, interactive experience for users, and allows editors to spin-off a print-ready PDF from the digital content.
 
 ## Features
 **Striking visuals** <br />
@@ -36,4 +36,4 @@ Because the existing Drupal theme was designed for description pages that summar
 ![Print first page](/assets/readme-3.png)
 
 ## Adaptable
-I built this application for [the Center for Global Development](https://www.cgdev.org), but it could be adapted for any organization running a Drupal 7 website. Drupal 8 would take a little more work.
+I built this application for [the Center for Global Development](https://www.cgdev.org), but it could be adapted for any organization running a Drupal 7 website. Drupal 8 would take a little more work. It could be built on top of other CMSs with the same technique.
