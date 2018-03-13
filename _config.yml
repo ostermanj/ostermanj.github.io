@@ -19,5 +19,5 @@ linkedin_username: john-osterman-32714012
 # Build settings
 markdown: kramdown
 #host: 0.0.0.0
-gems:
+plugins:
   - octopress-autoprefixer
