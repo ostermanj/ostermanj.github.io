@@ -6,7 +6,7 @@ categories: project
 image: "annual-report.png"
 tags: ['publications','dataviz','D3','Drupal','PHP']
 link: 'https://www.cgdev.org/annual-report/2016'
-featured: true
+featured: false
 contact: true
 ---
 
