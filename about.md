@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a freelance consultant helping organizations gain influence and drive engagement with digital-first publications, data visualization, smart analytics, and clear language.
+I am a freelance consultant helping organizations communicate effectively with digital-first publications, data visualization, smart analytics, and clear language.
 
 Before freelancing, I was the Director of Digital Communications at the [Center for Global Development](https://www.cgdev.org), a think tank in Washington DC.
 
