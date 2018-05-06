@@ -4,27 +4,22 @@ title: About
 permalink: /about/
 ---
 
-I am a freelance consultant helping organizations gain influence and drive engagement with innovative reports, web- and mobile-first publications, data visualization, smart analytics, and clear language.
+I am a freelance consultant helping organizations gain influence and drive engagement with digital-first publications, data visualization, smart analytics, and clear language.
 
 Before freelancing, I was the Director of Digital Communications at the [Center for Global Development](https://www.cgdev.org), a think tank in Washington DC.
 
-When I'm not resolving dependency chaos in my web-dev environment, I may be out on my bike, working on a sculpture (check them out at [www.johnsosterman.com](http://www.johnaosterman.com)), or cooking / doing dishes. 
-
-{:#about-image}
-![John Osterman]({{ site.url }}/assets/john-osterman-400.jpg){:width="200px"}
-
 **Skills:** 
 
-- JavaScript (plain-vanilla, D3, JQuery, Backbone, Angular, Chart.js, Highcharts.js), HTML, CSS, and PHP
+- JavaScript (ES6+, D3, Mapbox GL JS, Webpack, Angular, Highcharts.js), HTML, CSS, and PHP
+- Drupal, Wordpress
+- UI/UX prototyping
+- project management, Asana, Trello, Basecamp, and other tools
 - communications strategy, messaging, identifying targets, and setting SMART goals
 - writing, substantive editing, and copy editing (Chicago Manual of Style)
-- publication production and design 
-- project management, with proficiency in Asana, Trello, Basecamp, and other tools
-
-I'm most familar with Drupal and WordPress content management systems.
 
 My resume: [PDF](../assets/osterman-resume-Aug16.pdf).
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj)
 
-{% include figure.html src="/assets/chicago-manual.jpg" alt="Consulting the Chicago Manual of Style"  caption="Consulting the Chicago Manual of Style" %}
+{:#about-image}
+![John Osterman]({{ site.url }}/assets/john-osterman-400.jpg){:width="200px"}
