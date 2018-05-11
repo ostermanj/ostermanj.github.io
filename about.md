@@ -17,7 +17,7 @@ Before freelancing, I was the Director of Digital Communications at the [Center 
 - communications strategy, messaging, identifying targets, and setting SMART goals
 - writing, substantive editing, and copy editing (Chicago Manual of Style)
 
-My resume: [PDF](../assets/osterman-resume-050618.pdf).
+My resume: [PDF](../assets/osterman-resume-051118.pdf).
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj)
 
