@@ -7,7 +7,7 @@ image: "health-insurance-map.png"
 tags: ['maps', 'MapBox','data viz']
 repo: 'health-insurance-map'
 link: 'http://osterman.io/health-insurance-map/'
-featured: true
+featured: false
 contact: true
 ---
 <p></p>
