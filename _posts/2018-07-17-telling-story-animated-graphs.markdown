@@ -4,10 +4,9 @@ type: project
 title:  "Telling the story with animated graphs"
 categories: project
 image: "animate-highchart.png"
-tags: ['Highcharts','data viz']
+tags: ['Highcharts','dataviz']
 repo: 'carbonTaxResources'
 link: 'http://www.rff.org/research/publications/carbon-pricing-us-electricity-sector-now-more-effective-and-less-expensive'
-featured: true
 contact: true
 ---
 

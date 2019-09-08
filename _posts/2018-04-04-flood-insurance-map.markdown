@@ -4,7 +4,7 @@ type: project
 title:  "Mapping data from the National Flood Insurance Program"
 categories: project
 image: "flood-insurance-map.png"
-tags: ['maps', 'MapBox','data viz']
+tags: ['maps', 'MapBox','dataviz']
 repo: 'flood'
 link: 'http://www.rff.org/research/publications/how-do-homeowners-value-flood-insurance-examining-troubling-contradiction'
 featured: true

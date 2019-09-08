@@ -5,7 +5,7 @@ title:  "The 2017 Commitment to Development Index"
 modified: 2017-10-11
 categories: project
 image: "cdi-2017-example.png"
-tags: ['dataviz','front-end','Backbone.js','MCV framework']
+tags: ['dataviz','front-end','PHP', 'Chart.js']
 repo: 'commitment-development'
 featured: true
 contact: true

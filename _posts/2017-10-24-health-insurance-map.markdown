@@ -4,7 +4,7 @@ type: project
 title:  "Work in progress: Mapping ACS data on health insurance coverage"
 categories: project
 image: "health-insurance-map.png"
-tags: ['maps', 'MapBox','data viz']
+tags: ['maps', 'MapBox','dataviz']
 repo: 'health-insurance-map'
 link: 'http://osterman.io/health-insurance-map/'
 featured: false

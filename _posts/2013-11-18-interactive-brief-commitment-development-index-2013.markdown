@@ -4,7 +4,7 @@ type: project
 title:  "Interactive digital-first brief for the 2013 Commitment to Development Index"
 categories: project
 image: "cdi-2013.png"
-tags: ['dataviz','publication design','vanilla JavaScript']
+tags: ['dataviz','publication design']
 link: 'http://www.cgdev.org/sites/default/files/CDI2013/cdi-brief-2013.html'
 ---
 

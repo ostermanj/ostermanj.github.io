@@ -4,7 +4,7 @@ type: project
 title:  "Plotting countries' income, energy use, and population: highchart.js"
 categories: project
 image: "income-energy.png"
-tags: ['Highcharts.js', 'dataviz']
+tags: ['Highcharts', 'dataviz']
 link: 'http://www.cgdev.org/media/income-categories-and-proposed-energy-categories'
 fiddle: 21wrk5a5
 embed: [700, 872]
