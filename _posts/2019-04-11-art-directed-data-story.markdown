@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "Art Directed Data Story: 10 Trends in Philly over 10 Years (PEW)"
+title:  "Art directed data story: 10 trends in Philly over 10 years (PEW)"
 categories: project
 image: "philly.jpg"
 tags: ['Highcharts','data viz', 'digital first']

@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "A Tool for Better Debt Comparison: Data Viz of State Debt"
+title:  "A tool for better debt comparison: data viz of state debt (PEW)"
 categories: project
 image: "state-debt.png"
 tags: ['front-end development', 'data viz']

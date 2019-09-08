@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "Broadband Policy Explorer: Data Tool to Find State Laws about Broadband (PEW)"
+title:  "Broadband policy explorer: data tool to find state laws about broadband (PEW)"
 categories: project
 image: "broadband.png"
 tags: ['front-end development', 'data']

@@ -1,7 +1,7 @@
 ---
 layout: post
 type: project
-title:  "Three Treaties to End Illegal Fishing: Data Viz and Map"
+title:  "Three treaties to end illegal fishing: data viz and map (PEW)"
 categories: project
 image: "cape-town.png"
 tags: ['data viz', 'front-end development']
