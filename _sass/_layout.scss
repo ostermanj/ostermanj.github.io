@@ -10,7 +10,7 @@
     // Positioning context for the mobile navigation icon
     position: relative;
     & .wrapper {
-        max-width: 1910px;
+        max-width: 1495px;
         display: flex;
         justify-content: space-between;
         &::after{
@@ -99,7 +99,7 @@ body {
 }
 
 .site-title-wrapper {
-    background: url(/assets/ostercomms.png) no-repeat 0 4px;
+    background: url(/assets/johnosterman-name.png) no-repeat 0 10px;
     background-size: contain;
     display: inline-block;
     width: -webkit-calc(100% - 40px);
@@ -457,6 +457,29 @@ section {
 section.latest {
     max-width: 1575px;
     margin: 0 auto;
+    &.top {
+        max-width: 1555px;
+        & .wrapper {
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            > div:first-child {
+                width: 500px;
+                padding: 30px;
+                flex-shrink: 1;
+                flex-grow: 2;
+            }
+            > div:nth-child(2) {
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+                align-items: center;   
+                .featured {
+                    justify-content: flex-start;
+                } 
+            }
+        }
+    }
 }
 
 #front-content-section{
