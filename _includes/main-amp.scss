@@ -2,7 +2,7 @@
 
 // Our variables
 $base-font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
-$base-font-size:   1.8rem;
+$base-font-size:   1rem;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.55;
@@ -15,10 +15,10 @@ $spacing-unit:     30px;
 $text-color:       #171919;
 $background-color: #fdfdfd;
 $background-screen: transparentize($background-color, 0.05);
-$brand-color:      #ff5600;
+$brand-color:      #9E3500;
 $dark-brand:       darken($brand-color, 15%);
 $light-brand:      lighten((desaturate($brand-color, 70%)),20%);
-$very-light-brand: lighten((desaturate($brand-color, 70%)),40%);
+$very-light-brand: lighten((desaturate($brand-color, 70%)),60%);
 $dark-brand-desat: darken((desaturate($brand-color, 70%)),15%);
 
 $grey-color:       #828282;

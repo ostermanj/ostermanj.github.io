@@ -17,51 +17,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% include header.html %}{% include ie-message.html %}
     <section class="latest top">
       <div class="wrapper">
-        <div>
           <p>
             Hello. I am a front-end web developer specializing in data visualization and single-page apps. While most of my work now is as Senior Associate at <a href="//pewtrusts.org">the Pew Charitable Trusts,</a> I am available for side projects. Please reach out!
           </p>
-          <p>
-            Much of my latest work has involved data dashboards, data explorers, and interactive charts. I use a mix of D3 and Highcharts, depending on project needs, for data visualization and mix of vanilla JavaScript and libraries for the code. Lately I've been into Svelte for creating very lightweight, high-performance apps that load quickly and are easy to maintain. Even with vanilla JavaScript, I often include a build step, via Webpack, to prerender the page so that it can be delivered server-side, with rehydration scripts to provide the interactivity on the client. You get faster pages and better SEO.
-          </p>
-          <p>
-            Before coding for a living, I was more of a communications generalist with experience leading comms teams and devising digital strategy writ large. That experience influences my work now, such that I am focused not only on good code but on good products, measurable outcomes, and effective communications. My sweet spot is distilling policy-oriented writing into engaging digital-first content.
-          </p>
-        </div>
-        <div>
-          <h2>Check it out</h2>
-          <div class="featured">
-                 <div>
-                  <h2>
-                    <a class="post-link" href="/project/2019/04/11/art-directed-data-story/">Art directed data story: 10 trends in Philly over 10 years (PEW)</a>
-                  </h2>
-                  </div>
-                     <div> 
-                      
-              <a href="/project/2019/04/11/art-directed-data-story/"><img class="front-image project-image" src="/assets/philly.jpg"></a>
-                      
-                      
-                        <br>
-                          
-                  <span class="tag">Highcharts</span>    
-                          
-                  <span class="tag">dataviz</span>    
-                          
-                  <span class="tag">digital first</span>    
-                          
-                      
-                      
-                       <p class="read-more"><a title="Art directed data story: 10 trends in Philly over 10 years (PEW)" href="/project/2019/04/11/art-directed-data-story/">Read more</a></p>
-                                      </div>
-                       </div>
-        </div>
       </div>
     </section>      
     <section class="latest">
-          <div class="wrapper full-width">
+          <div class="wrapper">
 {% assign featured = site.posts | where: "featured", true %}              
-      <h2>Featured project{% if featured.size > 1 %}s{% endif %}</h2>
-        <div class="flex-box">
+      <h2 style="text-align: center;">Featured project{% if featured.size > 1 %}s{% endif %}</h2>
+        <div class="featured-grid">
     {% for feature in featured %}
               <div class="featured">
        <div>

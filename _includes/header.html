@@ -14,12 +14,7 @@
         </svg>
       </a>
 
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if !my_page.title and my_page.menu !=  'hide' %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
+      <div style="display: flex; flex-direction: column; align-items: center;">
         <span id="header-icons">
           {% if site.github_username %}
               {% include icon-github-header.html username=site.github_username %}
@@ -31,6 +26,14 @@
             {% include icon-linkedin-header.html username="John Osterman" %}
           {% endif %}
         </span>
+        <div>
+          
+          {% for my_page in site.pages %}
+            {% if !my_page.title and my_page.menu !=  'hide' %}
+            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </nav>
 

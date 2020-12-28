@@ -15,7 +15,6 @@
 }
 
 .page-content {
-   margin-top: -50px;
     position: relative;
     @include media-query($on-laptop) {
         margin-top: -79px;

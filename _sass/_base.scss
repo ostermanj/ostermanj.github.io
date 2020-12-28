@@ -13,16 +13,14 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
-html {
-    font-size: 62.5%;
-}
+
 // changed shorthand font to longhand because of lte IE10 bug won't parse it with rem unit present
 body {
     font-family: $base-font-family;
     font-weight: $base-font-weight;
     line-height: $base-line-height;
     font-size: 18px;
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     
     color: $text-color;
     background-color: $background-color;
@@ -43,7 +41,7 @@ body {
  */
 h1 {
     margin-bottom: 0.3em;
-    color: $dark-brand;
+    color: $brand-color;
     @include media-query($on-palm) {
        margin-bottom: 0.5em;   
     }
@@ -106,7 +104,7 @@ li {
 h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     font-weight: $base-font-weight;
-    color: $dark-brand;
+    color: $brand-color;
     letter-spacing: 0.5px;
 }
 
@@ -116,7 +114,7 @@ h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    transition: color 0.2s linear, border-bottom-color 0.2s linear;
+    transition: color 0.15s ease-in, border-bottom-color 0.2s ease-in;
     color: $brand-color;
     text-decoration: none;
     border-bottom: 2px solid rgba($brand-color, 0.3);
@@ -131,7 +129,7 @@ a {
   
 
     &:visited {
-        color: $dark-brand;
+        color: desaturate($brand-color,50%);
         border-bottom: 2px solid $grey-color;
         .site-footer &, .site-header & {
             border-width: 0;
@@ -140,15 +138,15 @@ a {
     }
 
     &:hover {
-        color: $highlight-color;
+        color: darken($brand-color, 20%);
         text-decoration: none;
-        border-bottom: 2px solid $highlight-color;
+        border-bottom: 2px solid darken($brand-color, 20%);
         
 
     }
     
     h2 & {
-        color: darken($brand-color, 15%);
+        color: $brand-color;
         border-width: 0;
         &:hover {
             border-width: 0;
@@ -283,11 +281,11 @@ pre {
     height: 24px;
     &:hover {
         path {
-            fill: $highlight_color;
+            fill: $brand-color;
         }
     }
     path {
-        transition: fill 0.2s linear;
+        transition: fill 0.2s ease-in;
         fill: $text_color;
     }
   }   

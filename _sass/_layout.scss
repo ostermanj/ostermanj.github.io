@@ -9,14 +9,12 @@
     z-index: 9;
     // Positioning context for the mobile navigation icon
     position: relative;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
     & .wrapper {
-        max-width: 1495px;
         display: flex;
-        justify-content: space-between;
-        &::after{
-            content:'';
-            display: none;
-        }
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -99,20 +97,15 @@ body {
 }
 
 .site-title-wrapper {
-    background: url(/assets/johnosterman-name.png) no-repeat 0 10px;
+    background: url(/assets/johnosterman-name.png) no-repeat center center;
     background-size: contain;
     display: inline-block;
     width: -webkit-calc(100% - 40px);
     width:         calc(100% - 40px);
-    max-width: 275px;
-    height:55px;
+    max-width: 400px;
     
-    @include media-query($on-palm) {
-        height: 35px;
-        top: 8px;
-        position: relative;
-        background-position: 0 0;
-    }
+    
+    
 }
 
 #sharer-outer-wrapper {
@@ -239,9 +232,7 @@ body {
         font-family: $heading-font-family;
         &:hover {
                 border-bottom-width: 0;
-                color: $highlight-color;
-            
-                
+                color: $brand_color;
             }
 
         // Gaps between nav items, but not on the last one
@@ -250,56 +241,7 @@ body {
         }
     }
 
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $brand-color;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &.open .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
-            
-        }
-        
-    }
+    
 }
 
 
@@ -328,8 +270,7 @@ body {
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
@@ -425,8 +366,7 @@ body {
 
 .post-link {
     display: block;
-    font-size: 24px;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
 }
 
 
@@ -435,7 +375,7 @@ body {
  */
 
 .red {
-    background-color: $dark-brand;
+    background-color: $brand-color;
     border-bottom: 60px solid $very-light-brand;
     border-top: 60px solid $very-light-brand;
     & p, & li, & blockquote {
@@ -454,33 +394,6 @@ section {
     margin-bottom: 30px;
 }
 
-section.latest {
-    max-width: 1575px;
-    margin: 0 auto;
-    &.top {
-        max-width: 1555px;
-        & .wrapper {
-            max-width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            > div:first-child {
-                width: 500px;
-                padding: 30px;
-                flex-shrink: 1;
-                flex-grow: 2;
-            }
-            > div:nth-child(2) {
-                display: flex;
-                flex-grow: 1;
-                flex-direction: column;
-                align-items: center;   
-                .featured {
-                    justify-content: flex-start;
-                } 
-            }
-        }
-    }
-}
 
 #front-content-section{
     padding: 0;
@@ -543,11 +456,11 @@ section.latest {
 
 
 h1, .heading-1 {    
-    font-size: 50px;
-    font-size: 5.0rem;
+    font-size: 2.778rem;
     font-family: $sans;
     line-height: 1.2;
     font-weight: 100;
+    text-align: center;
     @include media-query($on-palm) {
        font-size: 30px;
        font-size: 3.0rem;
@@ -559,7 +472,7 @@ h1, .heading-1 {
 
 h2, .heading-2 {
     font-size: 32px;
-    font-size: 3.2rem
+    font-size: 2rem
         
 }
 
@@ -568,8 +481,7 @@ h2, .heading-2 {
     margin: 0px auto 30px;
     letter-spacing: 2px;
     text-align: center;
-    font-size: 50px;
-    font-size: 5.0rem;
+    font-size: 2.778rem;
     position: absolute;
     
     .red & {
@@ -587,8 +499,7 @@ h2, .heading-2 {
     
     max-width: 1910px;
      @include media-query($on-palm) {
-       font-size: 20px;
-       font-size: 2.0rem;
+       
        -webkit-transform: skew(0deg);
        -moz-transform: skew(-0deg);
          -o-transform: skew(-0deg);
@@ -596,7 +507,7 @@ h2, .heading-2 {
 }
 
 #front-content-inner {
-    border-left: 10px solid #ede3de;
+    border-left: 10px solid $very-light-brand;
     border-top: 10px solid $very-light-brand;
     display: flex;
     flex-wrap: wrap;
@@ -678,14 +589,10 @@ button {
     }
 
 .featured {
-    flex-grow:1;
-    max-width:507px;
-    width: 340px;
+   
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    padding: 0 20px;
-    margin-bottom: 20px;
 
 }
 
@@ -699,8 +606,7 @@ p.read-more {
 
 button {
     font-family: $heading-font-family;
-    font-size: 23px;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
 }
 
@@ -729,7 +635,7 @@ button {
  * Posts
  */
 .post-header {
-    margin-bottom: $spacing-unit * 1.5;
+    margin-bottom: $spacing-unit * 1.875;
     z-index: 3;
     position: relative;
 }
@@ -757,8 +663,7 @@ button {
     }
 
     h2 {
-        font-size: 32px;
-        font-size: 3.2rem;
+        font-size: 2rem;
 
         @include media-query($on-laptop) {
             
@@ -850,25 +755,26 @@ figcaption {
   border-color: $highlight-color;   
 }
 
-.project-image {
-    max-width: 495px;
-}
+
 
 .tags-div {
         position: relative;
-    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .tag {
     border: 1px solid $highlight-color;
     background-color: $highlight-color;
     padding: $spacing-unit / 8;
-    color: #fff;
+    color: #000;
     border-radius: 4px;
-    font-size: 10px;
-    font-size: 1.0rem;
+    font-size: 0.625rem;
     white-space: nowrap;
     font-family: $sans;
+    text-transform: uppercase;
+    margin: 0 3px;
     
     .post-meta & {
         margin-right: $spacing-unit / 8;
@@ -895,4 +801,10 @@ figcaption {
 
 .display-none {
     display: none;
+}
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
