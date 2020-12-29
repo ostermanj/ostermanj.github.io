@@ -457,14 +457,13 @@ section {
 
 h1, .heading-1 {    
     font-size: 2.778rem;
+    font-size: clamp(2.125rem, 8.25vw, 2.778rem);
     font-family: $sans;
     line-height: 1.2;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     @include media-query($on-palm) {
-       font-size: 30px;
-       font-size: 3.0rem;
-        font-weight: 300;
+       
         position: relative;
         bottom: 3px;
     }
@@ -696,6 +695,7 @@ button {
         font-size: 8.5rem;
         line-height: 0.55em;
         margin-right: 0.5rem;
+        font-weight: 100;
       
     }
 }
@@ -758,10 +758,10 @@ figcaption {
 
 
 .tags-div {
-        position: relative;
+    position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .tag {
@@ -771,10 +771,13 @@ figcaption {
     color: #000;
     border-radius: 4px;
     font-size: 0.625rem;
+    font-size: clamp(0.5rem, 1.89vw, 0.625rem);
     white-space: nowrap;
     font-family: $sans;
     text-transform: uppercase;
     margin: 0 3px;
+    line-height: 1;
+    
     
     .post-meta & {
         margin-right: $spacing-unit / 8;

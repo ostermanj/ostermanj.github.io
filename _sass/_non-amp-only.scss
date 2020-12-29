@@ -16,11 +16,5 @@
 
 .page-content {
     position: relative;
-    @include media-query($on-laptop) {
-        margin-top: -79px;
-    }
-    @include media-query($on-palm) {
-        margin-top: -95px;
-    }
    
 }
