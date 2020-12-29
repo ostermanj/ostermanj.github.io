@@ -1,0 +1,61 @@
+---
+layout: post
+type: blog
+categories: blog
+title: "How I make using Mapbox easier, part one: async adding sources and layers"
+image: "mapbox.png"
+tags: ['dataviz', 'maps']
+contact: true
+featured: true
+---
+
+Mapbox (specifically, for me, [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/)) is a great platform for visualizing geographic data. I like that their documentation is thorough (though not always easy to digest). I like that they seem to have invested a lot of effort into making it a useful dataviz tool, in addition to all its other uses: navigation, geocoding, augmented vision. I like that they're headquartered here in DC. And I like that their pricing plans have a meaningful and useful free tier.
+
+Awesome.
+
+Over the three or four years I've been using it, though, I have come up against the same challenges. One is the difficulty of its expressions syntax for data-driven styling or interpolated values, which I have to look up every time. Another is accessing the full data behind map features that may not be fully rendered. Another—the topic of this post—is how to work with the async nature of adding sources and layers to a map.
+
+Adding sources and layers to a Mapbox map is pretty straighforward. The source is the data, and the layer is a visualization of the data. You can have multiple layers based on the same data. To [add a source](https://docs.mapbox.com/mapbox-gl-js/api/sources/), you use the `addSource()` method of the Map instance. It takes an `id` string and a config object as parameters. The underlying data can be geoJSON, or a vector source already uploaded to Mapbox, or others like raster images or video. To [add a layer](https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addlayer), you use the `addLayer()` method, which takes a config object and, optionally, the name of another layer to insert the new layer before.
+
+The trouble is your code may quite easily call the `addLayer()` method
+before `addSource()` really takes effect. Both methods are quietly asynchronous, handled by Mapbox outside the written sequence of your code. Mapbox could, perhaps should, make those methods explicity async or, in other words, make them Promises that resolve only after they have taken full effect. In fact, in this [Github issue](https://github.com/mapbox/mapbox-gl-js/issues/10192), it looks like that may be in the works.
+
+In the meantime, it simply takes time for `addSource()` and `addLayer()` to take effect, which means you have to ensure the map layers are ready before you try to do anything with them. My solution has been to wrap the native methods in my own Promises that test whether the layers are rendered before resolving. This way, I can add a source, add some layers, and then chain my next actions via `then()`.
+
+That solution is available as a small npm package, [mapbox-helper](https://www.npmjs.com/package/mapbox-helper). Give it a try. More info about how it works and how to use it is available there. The short version is this: the native `addSource()` and `addLayer()` methods are combined into one, `addSourceAndLayer()`, in which you specify the source you want to add and one or more layers that are based on it. Internally, adding the layers only occurs after the source is ready. The method returns a Promise to your code that resolves only after all layers have been rendered or, if a layer's visibility property is set to 'none', is ready to be rendered.
+
+For example:
+
+```javascript
+mbHelper.addSourceAndLayers.call(map,
+    { // source
+        "type": "vector",
+        "url": "mapbox://mapbox.us_census_states_2015",
+        "name": "states"
+    }, [ // layers
+        { // layer one
+            "id": "states-join",
+            "type": "fill",
+            "source-layer": 'states',
+            "paint": {
+              "fill-color": 'transparent'
+            },
+            "beforeLayer": "water" // <== this is different from mapbox native specs
+        },
+        { // layer two
+            "id": "states-join-hover",
+            "type": "line",
+            "source-layer": 'states',
+            "paint": {
+                "line-color": '#4D90FE',
+                "line-width": 4,
+                "line-blur": 2
+            },
+            "filter": ["==", "name", ""]
+        }
+    ]).then(() => {
+        // do some stuff
+        });
+```
+
+Thanks for reading. And, by the way, if you haven't checked out Mapbox's [version 2 release yet](https://www.mapbox.com/blog/mapbox-gl-js-v2-3d-maps-camera-api-sky-api-launch), you should. It has really great 3D rendering of elevation data and super hi-res satellite imagery, among other performance improvements.
