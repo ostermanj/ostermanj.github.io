@@ -8,6 +8,7 @@ autoplace: true
 tags: ['dataviz', 'maps']
 contact: true
 featured: true
+alt: Map of the San Diego area with colorful 3D buildings shown
 ---
 
 Mapbox (specifically, for me, [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/)) is a great platform for visualizing geographic data. I like that their documentation is thorough (though not always easy to digest). I like that they seem to have invested a lot of effort into making it a useful dataviz tool, in addition to all its other uses: navigation, geocoding, augmented vision. I like that they're headquartered here in DC. And I like that their pricing plans have a meaningful and useful free tier.
