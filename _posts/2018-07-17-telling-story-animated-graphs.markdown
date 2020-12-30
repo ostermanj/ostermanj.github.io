@@ -8,6 +8,7 @@ tags: ['Highcharts','dataviz']
 repo: 'carbonTaxResources'
 link: 'http://www.rff.org/research/publications/carbon-pricing-us-electricity-sector-now-more-effective-and-less-expensive'
 contact: true
+autoplace: true
 ---
 
 If you need your data viz to tell a story, animating it may be the best way to go. By breaking the graphic into sequential frames, each building off the other, you can help your audience understand what might have been a difficult message.

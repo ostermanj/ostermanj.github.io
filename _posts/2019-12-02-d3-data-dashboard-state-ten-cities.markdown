@@ -8,6 +8,7 @@ tags: ['dataviz', 'd3']
 repo: 'pri-multicity'
 link: 'https://www.pewtrusts.org/research-and-analysis/data-visualizations/2019/the-state-of-10-cities'
 featured: true
+autoplace: true
 ---
 
 "The State of 10 Cities . . . allows you to analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade. 

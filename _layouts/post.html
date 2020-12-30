@@ -2,7 +2,7 @@
 layout: default
 ---
 <article class="post">
-
+ 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
       <div class="tags-div">{% if page.tags %}{% for tag in page.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
@@ -11,6 +11,7 @@ layout: default
   </header>
 
   <div class="post-content" >
+  
     {{ content }}
   </div>
       {% endif %}{% if page.repo %}<p class="repo-link">
@@ -18,13 +19,6 @@ layout: default
 {% endif %}
     
     {% if page.link %}<p class="www-link"><span class="icon icon--www">{% include icon-www.svg %}</span> In situ: <a href="{{ page.link }}">{{ page.link | replace: 'http://', '' | truncate: 17 }}</a></p>{% endif %}  
-{% if page.embed == null %}
-{% if page.image %} 
-   {% if page.link %}<p><a href="{{ page.link }}">{% endif %}  
-    <img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
-   {% if page.link %}</a></p>{% endif %}
-{% endif %}
-{% endif %}
 {% if page.embed != null %}
     <p class="demo"><span class="icon icon--demo">{% include icon-demo.svg %}</span> Demo:</p>
 
@@ -36,7 +30,9 @@ layout: default
 
    
 {% endif %}
-
+{% if page.image and page.autoplace %} 
+<img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
+{% endif %}
 
 </article>
 {% if page.contact %}

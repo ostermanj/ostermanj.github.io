@@ -8,5 +8,6 @@ tags: ['Highcharts','dataviz', 'digital first']
 repo: 'philly'
 link: 'https://www.pewtrusts.org/en/research-and-analysis/reports/2019/04/11/10-trends-that-have-changed-philadelphia-in-10-years'
 featured: true
+autoplace: true
 ---
 

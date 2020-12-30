@@ -4,6 +4,7 @@ type: blog
 categories: blog
 title: "How I make using Mapbox easier, part one: async adding sources and layers"
 image: "mapbox.png"
+autoplace: true
 tags: ['dataviz', 'maps']
 contact: true
 featured: true
