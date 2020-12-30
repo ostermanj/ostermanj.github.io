@@ -31,7 +31,7 @@ layout: default
    
 {% endif %}
 {% if page.image and page.autoplace %} 
-<img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" />
+<img class="page-image {% if page.type == 'project' %}project-image{% endif %}" src="/assets/{{ page.image }}" {% if page.alt %} alt="{{page.alt}}" {% endif %} />
 {% endif %}
 
 </article>
