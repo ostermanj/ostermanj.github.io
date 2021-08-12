@@ -687,7 +687,7 @@ button {
         }
     }
     
-    p:first-child::first-letter {
+    p:not(.bigbig):first-child::first-letter {
         font-family: $heading-font-family;
         color: $brand-color;
         float: left;
@@ -696,6 +696,16 @@ button {
         line-height: 0.55em;
         margin-right: 0.5rem;
         font-weight: 100;
+      
+    }
+    .bigbig {
+        font-family: $heading-font-family;
+        color: $brand-color;
+        font-size: 85px;
+        font-size: 8.5rem;
+        margin-right: 0.5rem;
+        font-weight: 100;
+        line-height: 0.8;
       
     }
 }
