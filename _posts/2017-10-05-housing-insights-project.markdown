@@ -7,7 +7,6 @@ image: "housing-insights-map.png"
 tags: ['front-end' ,'D3','MapBpx', 'dataviz']
 link: 'http://housinginsights.org/tool'
 repo: 'housing-insights'
-featured: true
 contact: true
 ---
 <p></p>

@@ -7,7 +7,7 @@ image: "carbon-calculator.png"
 tags: ['dataviz','D3']
 link: 'http://www.rff.org/blog/2017/introducing-e3-carbon-tax-calculator-estimating-future-co2-emissions-and-revenues'
 repo: 'carbon-price-calculator'
-featured: true
+featured: false
 contact: true
 ---
 

@@ -233,7 +233,9 @@ pre {
     }
 }
 
-
+.latest:not(.top) .wrapper {
+    max-width: 1200px;
+}
 
 /**
  * Clearfix

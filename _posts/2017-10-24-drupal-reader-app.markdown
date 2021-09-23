@@ -7,7 +7,7 @@ image: "reader-app-front.png"
 tags: ['publications','digital first', 'Drupal','AngularJS','PHP']
 link: 'https://www.cgdev.org/reader/sewa-gitanjali-cooperative-social-enterprise-making'
 repo: 'reader_module'
-featured: true
+featured: false
 contact: true
 ---
 
