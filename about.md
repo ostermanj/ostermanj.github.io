@@ -22,6 +22,3 @@ Before coding for a living, I was more of a communications generalist with exper
 My resume: [PDF](../assets/osterman-resume-06-16-20.pdf).
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj)
-
-{:#about-image}
-![John Osterman]({{site.url}}/assets/john-osterman-400.jpg){:width="200px"}
