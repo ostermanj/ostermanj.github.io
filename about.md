@@ -18,6 +18,6 @@ Before coding for a living, I was a communications generalist with experience le
 - UI/UX prototyping
 - writing and editing
 
-My resume: [PDF](../assets/osterman-resume-06-16-20.pdf).
+[My resume (PDF)](../assets/osterman-resume-09-29-21.pdf).
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj) and [github.com/jostermanAtPEW](https://github.com/jostermanAtPEW)
