@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
            <div> 
             {% if feature.image %}
-    <a href="{{ feature.url | prepend: site.baseurl }}"><img class="front-image project-image" src="/assets/{{ feature.image }}" /></a>
+    <a href="{{ feature.url | prepend: site.baseurl }}"><img loading="lazy" class="front-image project-image" src="/assets/{{ feature.image }}" /></a>
             {% endif %}
             {% if feature.tags %}
               <br />
