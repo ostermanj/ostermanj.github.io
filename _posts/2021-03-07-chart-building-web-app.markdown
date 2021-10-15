@@ -24,7 +24,7 @@ There are off-the-shelf solutions not too different from this but none cross the
 * Branding and other specs are enforced effortlessly.
 * Advanced users can enter custom JSON configurations to extend and override standard settings.
 
-I built this for Pew and we're trying to roll it out. (Changing processes in hard.) Under the hood, though, this tool could be used by anyone by specifying brand colors, fonts, and other specs.
+I built this for Pew and we're trying to roll it out. (Changing processes is hard.) Under the hood, though, this tool could be used by anyone by specifying brand colors, fonts, and other specs.
 
 
 
