@@ -1,3 +1,8 @@
+@font-face {
+    font-family: karabine;
+    src: url('/assets/karabine.ttf');
+}
+
 /**
  * Reset some basic elements
  */
@@ -105,7 +110,7 @@ h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     font-weight: $base-font-weight;
     color: $brand-color;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     line-height: 1;
 
 }
@@ -233,9 +238,6 @@ pre {
     }
 }
 
-.latest:not(.top) .wrapper {
-    max-width: 1200px;
-}
 
 /**
  * Clearfix
