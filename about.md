@@ -3,8 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-I am a web developer specializing in data visualization and special web projects for the [Pew Charitable Trusts](https://www.pewtrusts.org). I am occasionally available for side projects.
+I am a full stack developer specializing in data visualization and data-driven web apps. I work full-time for <a href="//pewtrusts.org">the Pew Charitable Trusts</a> but am occasionally available for side projects.
 
 My latest projects have been map-based data dashboards, data explorers, interactive charts, and immersive storytelling features. 
 
@@ -12,12 +11,12 @@ Before coding for a living, I was a communications generalist with experience le
 
 **Skills:** 
 
-- JavaScript (ES6+, D3, Mapbox GL JS, Webpack, Svelte, Highcharts.js), HTML, CSS, and PHP
+- Python, JavaScript (ES6+, D3, Mapbox GL JS, Webpack, Svelte, Highcharts.js), HTML, CSS, and PHP
 - Drupal, Wordpress, Sitecore
 - AWS and MS Azure serverless functions, databases, and user authentication
 - UI/UX prototyping
 - writing and editing
 
-[My resume (PDF)](../assets/osterman-resume-09-29-21.pdf).
+[My resume (PDF)](../assets/osterman-resume-01-07-22.pdf).
 
 I'm on GitHub at [github.com/ostermanj](http://github.com/ostermanj) and [github.com/jostermanAtPEW](https://github.com/jostermanAtPEW)

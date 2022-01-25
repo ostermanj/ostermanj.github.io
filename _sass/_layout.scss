@@ -635,7 +635,7 @@ button {
     p {
         font-size: clamp(0.7rem, 1.7vw, 0.85rem);
         color: #4f4f4f;
-        margin-top: 0.225rem;
+        margin-top: 0.325rem;
         margin-bottom: 0;
         overflow: hidden;
         padding-right: 4em;
@@ -758,12 +758,11 @@ button {
         font-family: 'karabine', $heading-font-family;
         color: $brand-color;
         font-size: 85px;
-        font-size: 8.5rem;
+        font-size: 5.5rem;
         line-height: 0;
-        mix-blend-mode: hard-light;
-        float: left;
-        margin-right: 0.5rem;
+        margin-right: 0.2rem;
         font-weight: 400;
+        text-align: left;
       
     }
     .bigbig {
@@ -876,6 +875,10 @@ figcaption {
 
 .latest {
     padding-bottom: 0;
+    margin-top: -40px;
+    &.top {
+        margin-top: -20px;
+    }
 }
 
 

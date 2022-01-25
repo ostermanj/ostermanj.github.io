@@ -14,7 +14,7 @@ contact: true
 
 **Update Nov 7, 2017**
 
-The app now shows three separate mapBox maps so that the continental US, Hawaii, and Alaska all appear at the same time. Actions on one map are connected to reactions on the others. The code is now making use of some mapBox helper functions to simplify adding sources and layers and which return Promises when the desired mapBox action has completed. I may sping the helper functins into a separate repository.
+The app now shows three separate mapBox maps so that the continental US, Hawaii, and Alaska all appear at the same time. Actions on one map are connected to reactions on the others. The code is now making use of some mapBox helper functions to simplify adding sources and layers and which return Promises when the desired mapBox action has completed. 
 
 Next up: adding charts to the sidebar.
 
