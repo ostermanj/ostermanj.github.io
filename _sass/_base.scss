@@ -313,3 +313,28 @@ article {
   padding-bottom: 1em;
 
 }
+.profesh h2, .latest h2 {
+    color: #000;
+    font-size: 1.4rem;
+    margin-bottom: 2em;
+}
+.profesh dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    gap: 1.5em;
+}
+.profesh dl div {
+    background-color: whitesmoke;
+    border: 1px solid #828282;
+    padding: 1em;
+}
+.profesh dt {
+    font-weight: 900;
+    color: #772448;
+}
+.profesh dd {
+font-size: 0.85rem;
+color: #4f4f4f;
+margin-top: 0.325rem;
+margin-bottom: 0;
+}
