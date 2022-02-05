@@ -7,8 +7,8 @@
     background-color: $grey-color-light;
     min-height: 56px;
     z-index: 9;
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    position: sticky;
+    top: -150px;
     margin-bottom: 2rem;
     padding-top: 1.5rem;
     & .wrapper {
