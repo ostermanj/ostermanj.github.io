@@ -1,3 +1,7 @@
+<style global>
+    @import 'normalize.css';
+    @import '$static/global.css';
+</style>
 <header>
     <h1><a href="/">John Osterman</a></h1>
     <nav>

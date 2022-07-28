@@ -10,7 +10,9 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$utils: 'utils'
+			$utils: 'utils',
+			$pages: 'src/pages',
+			$static: 'static',
 		}
 		/*vite: {
 			define: {
