@@ -19,3 +19,7 @@ export function getPageContent(page: string){
         content_type: page
     }) as Promise<EntryCollection<JSONValue>>;
 }
+
+export function getAsset(id:string){
+    return client.getAsset(id);
+}

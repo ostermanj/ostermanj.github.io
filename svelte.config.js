@@ -13,6 +13,7 @@ const config = {
 			$utils: 'utils',
 			$pages: 'src/pages',
 			$static: 'static',
+			$components: 'src/components'
 		}
 		/*vite: {
 			define: {

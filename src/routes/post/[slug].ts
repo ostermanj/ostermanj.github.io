@@ -7,7 +7,6 @@ const slugsToIDs: Record<string, string> = _slugsToIDs
 export const GET:RequestHandler<ResponseBody> = async function _GET( {params} ) {
     const id:string = slugsToIDs[params.slug];
     const response = await getBlogById(id);
-    console.log(response);
     return {
         status: 200,
         body: response.fields
