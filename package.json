@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "env-cmd vite dev",
+		"dev:debug": "env-cmd node --inspect node_modules/.bin/vite dev",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
