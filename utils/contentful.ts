@@ -13,12 +13,14 @@ function tS(value: string | undefined){
 async function toHTML(md:string){
     let htmlTree = markdown.toHTMLTree(md);
     htmlTree = await sourceSetify(htmlTree);
-    return markdown.renderJsonML(htmlTree);
+    const html = markdown.renderJsonML(htmlTree);
+    return html;
 }
 function sourceSetify(htmlTree: []): Promise<[]> {
     return new Promise(function(resolve){
         const branchPromises = [];
         async function findImageTag(branch){
+            if (typeof branch == 'string') return branch;
             if ( branch[0] == 'img' ){
                 branch[0] = 'picture';
                 const attributes = Object.assign({}, branch[1]);
@@ -38,7 +40,6 @@ function sourceSetify(htmlTree: []): Promise<[]> {
                 return branch;
             }
         }
-        htmlTree = htmlTree.splice(1);
         htmlTree.forEach(branch => {
             branchPromises.push(findImageTag(branch));
         });
@@ -52,14 +53,15 @@ export async function getBlogById(id:string){
     // below asserts that return is not Promise<Entry<unknow>> but ... 
     const response = await client.getEntry(id) as Entry<JSONValue>;
     response.fields.body = await toHTML(response.fields.body);
-    console.log(response.fields.body);
     return response;
 }
-export function getPageContent(page: string){
-    console.log(page);
-    return client.getEntries({
+export async function getPageContent(page: string){
+    debugger;
+    const response = await client.getEntries({
         content_type: page
-    }) as Promise<EntryCollection<JSONValue>>;
+    }) as EntryCollection<JSONValue>;
+    response.items[0].fields.body = await toHTML(response.items[0].fields.body);
+    return response.items[0];
 }
 
 export function getAsset(id:string){

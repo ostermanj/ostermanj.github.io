@@ -1,11 +1,95 @@
 @import 'normalize.css';
-main {
-    width: 100%;
-    max-width: 800px;
+@import './variables.css';
+
+body {
+    color: var(--text-color);
+    font: var(--font-serif);
+    background-color: var(--color-background-1);
+}
+
+main, .wrapper {
+    box-sizing: content-box;
+    width: calc(100% - var(--padding) * 2);
+    max-width: 740px;
     margin: 0 auto;
+    padding-inline: var(--padding);
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.vsh {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+    
+}
+.lns {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.grid {
+    display: grid;
+}
+
+.fx {
+    display: flex
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.fd-c {
+    flex-direction: column;
+}
+
+.ai-c {
+    align-items: center;
+}
+.jc-sb {
+    justify-content: space-between;
+}
+.jc-even {
+    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+
+.li-inline li {
+    display: inline;
+}
+
+a {
+    transition: color 150ms ease-in-out;
+}
+
+a, a:active, a:visited {
+    color: var(--color-primary-1);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--color-primary-1);
+}
+
+.p1 {
+    padding-inline: var(--padding);
+}
+
+.bw-0 {
+    border-width: 0;
+}
+a.bw-0:focus, a.bw-0:hover {
+    border-width: 0;
 }

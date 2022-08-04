@@ -1,17 +1,25 @@
-<style global>
+<script>
+    import Header from '$components/Header.svelte';
+    import Footer from '$components/Footer.svelte';
+    import SpriteFile from '$components/SpriteFile.svelte';
+</script>
+<style>
     @import 'normalize.css';
     @import '$static/global.css';
+    .skip-nav {
+        position: absolute;
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+    }
+    .skip-nav:focus {
+        z-index: 1;
+    }
 </style>
-<header>
-    <h1><a href="/">John Osterman</a></h1>
-    <nav>
-        <a href="/about">About</a>
-        <a href="/resume">Resume</a>
-    </nav>
-</header>
-<main>
+<a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
+<Header />
+<main id="main-content">
     <slot></slot>
 </main>
-<footer>
-    footer
-</footer>
+<Footer />
+<SpriteFile />
