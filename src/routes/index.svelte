@@ -1,10 +1,11 @@
+<script context="module">
+    import FeaturedWork from '$components/FeaturedWork.svelte';
+</script>
 <script>
     export let fields = {};
 </script>
 <style>
     .overview {
-        font: var(--font-sans);
-        letter-spacing: 1px;
         border-bottom: 2px solid var(--text-color);
         padding-bottom: 20px;
         text-shadow: var(--fallback-text-shadow);
@@ -27,5 +28,8 @@
 <svelte:head>
     <title>Home | John Osterman</title>
 </svelte:head>
-<p class="overview">{fields.overview}</p>
+<p class="overview h2">{fields.overview}</p>
 {@html fields.body}
+{#if fields.featuredWorkExperience && fields.featuredWorkExperience.length }
+ <FeaturedWork featuredWork={fields.featuredWorkExperience}/>
+{/if}

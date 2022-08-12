@@ -23,8 +23,7 @@
     .tagline {
         margin: 0;
         flex-grow: 1;
-        font: var(--font-sans);
-        line-height: 1.47;
+        
     }
     .social {
         margin-top: 0.2em;
@@ -38,6 +37,6 @@
                 <Social />
             </div>
         </address>
-        <p class="tagline">Web apps and data visualization for mission-driven organizations.</p>
+        <p class="tagline h2">Web apps and data visualization for mission-driven organizations.</p>
     </div>
 </footer>

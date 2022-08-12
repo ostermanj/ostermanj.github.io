@@ -7,11 +7,10 @@ export const GET:RequestHandler<ResponseBody> = async function _GET() {
     const response = await getPageContent('homepage');
     const fields = response.fields
     /* try for of loop instead */
-    response.fields.featuredWorkExperience.forEach(async entry => {
-        const workPlace = await getEntry(entry.fields.workPlace.sys.id);
-        entry.fields.workPlaceName = workPlace.fields.name;
-        console.log(entry);
-    });
+    for (  const i in response.fields.featuredWorkExperience ){
+        let workPlace = await getEntry(response.fields.featuredWorkExperience[+i].fields.workPlace.sys.id);
+        response.fields.featuredWorkExperience[+i].fields.workPlaceName = workPlace.fields.name;
+    }
     return {
         body: {
             page: 'homepage',
