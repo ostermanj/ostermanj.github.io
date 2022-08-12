@@ -49,6 +49,9 @@ function sourceSetify(htmlTree: []): Promise<[]> {
     });
 
 }
+export async function getEntry(id:string){
+    return await client.getEntry(id) as Entry<JSONValue>;
+}
 export async function getBlogById(id:string){
     // below asserts that return is not Promise<Entry<unknow>> but ... 
     const response = await client.getEntry(id) as Entry<JSONValue>;

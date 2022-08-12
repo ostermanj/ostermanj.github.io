@@ -1,3 +1,7 @@
+<script context="module">
+    import Social from '$components/Social.svelte';
+
+</script>
 <style>
     footer {
         border-top: 1px solid #5c5c5c;
@@ -7,28 +11,33 @@
         position: sticky;
         top: 800px;
         margin-block-end: 2rem;
-        height: 162px;
         padding: 22px 0;
     }
     address {
-        flex-grow: 2;
+        font-style: normal;
+        
     }
-    address div {
+    address > div {
         flex-grow: 1;
     }
     .tagline {
+        margin: 0;
         flex-grow: 1;
-        margin: 0;;
+        font: var(--font-sans);
+        line-height: 1.47;
+    }
+    .social {
+        margin-top: 0.2em;
     }
 </style>
 <footer>
-    <div class="wrapper fx">
-        <address class="fx">
+    <div class="wrapper fx g2">
+        <address>
             <div>John Osterman<br /><a href="mailto:john@osterman.io">john@osterman.io</a></div>
-            <div>
-                social
+            <div class="social">
+                <Social />
             </div>
         </address>
-        <p class="tagline">tagline</p>
+        <p class="tagline">Web apps and data visualization for mission-driven organizations.</p>
     </div>
 </footer>

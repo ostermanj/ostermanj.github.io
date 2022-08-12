@@ -86,7 +86,12 @@ a:hover, a:focus {
 .p1 {
     padding-inline: var(--padding);
 }
-
+.g1 {
+    gap: var(--padding);
+}
+.g2 {
+    gap: calc(var(--padding) * 2);
+}
 .bw-0 {
     border-width: 0;
 }
