@@ -4,7 +4,7 @@
 </script>
 <style>
     footer {
-        border-top: 1px solid #5c5c5c;
+        border-top: 1px solid var(--color-secondary-1);
         border-bottom: 5px solid var(--color-primary-1);
         background-color: var(--color-background-2);
         min-height: 56px;

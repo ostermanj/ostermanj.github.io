@@ -82,9 +82,14 @@ a:hover, a:focus {
     color: var(--text-color);
     border-bottom: 2px solid var(--color-primary-1);
 }
-
 .p1 {
+    padding: var(--padding);
+}
+.pi1 {
     padding-inline: var(--padding);
+}
+.pb1 {
+    padding-block: var(--padding);
 }
 .g1 {
     gap: var(--padding);
@@ -102,5 +107,18 @@ a.bw-0:focus, a.bw-0:hover {
 h2, .h2 {
     font: var(--font-sans);
     letter-spacing: 1px;
+    
+}
+.h2 {
     line-height: 1.47;
+}
+h2, h1.h2, h3.h2 {
+    line-height: 1;
+}
+body.dark h2, body.dark .h2 {
+    color: var(--text-color-2);
+}
+.ts-s {
+    font-size: var(--text-size-small);
+    line-height: 1.8;   
 }

@@ -4,7 +4,7 @@ import Social from './Social.svelte';
 </script>
 <style>
     header {
-        border-top: 5px solid #5c5c5c;
+        border-top: 5px solid var(--color-secondary-1);
         border-bottom: 1px solid var(--color-primary-1);
         background-color: var(--color-background-2);
         min-height: 56px;
@@ -38,7 +38,7 @@ import Social from './Social.svelte';
     
 </style>
 <header class="fx jc-c">
-    <div class="fx fd-c ai-c jc-sb p1 inner">
+    <div class="fx fd-c ai-c jc-sb pi1 inner">
         <h1>
             <a class="bw-0" href="/">
                 <Name />

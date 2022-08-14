@@ -10,6 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
+			$src: 'src/',
 			$utils: 'utils',
 			$pages: 'src/pages',
 			$static: 'static',

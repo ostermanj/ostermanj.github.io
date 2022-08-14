@@ -10,6 +10,7 @@ export const GET:RequestHandler<ResponseBody> = async function _GET() {
     for (  const i in response.fields.featuredWorkExperience ){
         let workPlace = await getEntry(response.fields.featuredWorkExperience[+i].fields.workPlace.sys.id);
         response.fields.featuredWorkExperience[+i].fields.workPlaceName = workPlace.fields.name;
+        response.fields.featuredWorkExperience[+i].fields.url = workPlace.fields.url || '/';
     }
     return {
         body: {

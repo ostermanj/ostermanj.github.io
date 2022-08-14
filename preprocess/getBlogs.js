@@ -25,6 +25,13 @@ function getPaginatedCollection(skip = 0){
         }
     }).catch(console.error);
 }
+function reverse(obj){
+    const newObj = {};
+    Object.keys(obj).forEach(key => {
+        newObj[obj[key]] = key;
+    });
+    return newObj;
+}
 function mapSlugToId(blog, attempt = 0){
     const slug = slugify(blog.fields.title, {strict: true, lower: true});
     if (blogSlugsToId[slug] === undefined){
@@ -35,5 +42,6 @@ function mapSlugToId(blog, attempt = 0){
 }
 function writeToFile(){
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../utils/bloglist.json'), JSON.stringify(blogSlugsToId, null, 2));
+    fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(blogSlugsToId), null, 2));
 }
 getPaginatedCollection();

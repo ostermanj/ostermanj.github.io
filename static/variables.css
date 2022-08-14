@@ -1,6 +1,8 @@
 :root {
-    --color-primary-1: #9E3500;
-    --color-background: #fff;
+    /*--color-primary-1: #9E3500;*/
+    --color-primary-1: #852d00;
+    --color-secondary-1: #5c5c5c;
+    --color-background-1: #fff;
     --color-background-2: #faf8f8;
     --text-color: #181616;
     --font-family-sans: "Passion One", "Arial Narrow", Arial, sans-serif;
@@ -15,6 +17,7 @@
     --font-family-serif--test: Georgia, Times, "Times New Roman", serif;
     --font-serif--test: 1.3rem/1.6 var(--font-family-serif--test);
 
+    --text-size-small: 0.95rem;
     --padding: 1rem
 }
 
@@ -30,4 +33,5 @@ body.dark {
     --color-background-2: #000;
     --color-background-1: #181616;
     --text-color: #fff;
+    --text-color-2: #eee;
 }
