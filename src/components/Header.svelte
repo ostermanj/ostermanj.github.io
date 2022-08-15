@@ -13,6 +13,7 @@ import Social from './Social.svelte';
         margin-block-end: 2rem;
         height: 162px;
         padding: 22px 0;
+        z-index: 2;
     }
     h1 {
         margin: 0;
@@ -39,7 +40,7 @@ import Social from './Social.svelte';
 </style>
 <header class="fx jc-c">
     <div class="fx fd-c ai-c jc-sb pi1 inner">
-        <h1>
+        <h1 class="not-h1">
             <a class="bw-0" href="/">
                 <Name />
                 <span class="vsh">John Osterman</span>

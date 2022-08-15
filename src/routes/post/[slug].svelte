@@ -9,12 +9,15 @@
     export let datePublished: string;
     export let authors:[];
 </script>
-<article>
+<style>
+    
+</style>
+<article class="article-post">
     <header>
         <h1>{title}</h1>
         <Tags {tags} />
         <Authors {authors} />
-        <p>Published <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+        <p><span class="vsh">Published</span> <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
     </header>
-    {@html body}
+    <main>{@html body}</main>
 </article>

@@ -15,6 +15,8 @@
         }
     }
 </script>
+{#if authors.length > 1 || authors[0].fields.fullName !== 'John Osterman'}
 {#each authors as author, i}
     <a rel="author" href="/">{author.fields.fullName}</a>{connector(i)}
 {/each}
+{/if}

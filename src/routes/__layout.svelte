@@ -19,7 +19,7 @@
 </style>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />
-<main id="main-content">
+<main class="wrapper" id="main-content">
     <slot></slot>
 </main>
 <Footer />

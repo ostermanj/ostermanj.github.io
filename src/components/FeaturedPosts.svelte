@@ -1,5 +1,5 @@
 <script context="module">
-    import idsToSlugs from '$src/idlist.js';
+    import idsToSlugs from '$src/idlist.json';
     import PostThumb from '$components/PostThumb.svelte';
 </script>
 <script>
@@ -33,9 +33,11 @@
 <div class="container g2">
     {#each featuredPosts as feature}
     <article class="fx fd-c">
+      {#if feature.fields.heroImage}
        <PostThumb file="{feature.fields.heroImage.fields.file}" />
+       {/if}
         <div class="p1">
-            <h1 class="h2"><a href="/post/{idsToSlugs[feature.sys.id]}">{feature.fields.title}</a></h1>
+            <h1 class="not-h1 h2"><a href="/post/{idsToSlugs[feature.sys.id]}">{feature.fields.title}</a></h1>
             <p class="ts-s">{feature.fields.snippet}</p>
         </div>
     </article>
