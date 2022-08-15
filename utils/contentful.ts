@@ -1,6 +1,10 @@
 import type { JSONValue } from '@sveltejs/kit/types/private';
 import contentful, { type Entry, type EntryCollection } from 'contentful';
-import { markdown } from 'markdown';
+import MarkdownIt from 'markdown-it';
+const markdown = MarkdownIt({
+    html: true,
+    typographer: true
+});
 const client = contentful.createClient({
     space: tS(process.env.C_SPACE),
     //environment: 'master',
@@ -11,43 +15,32 @@ function tS(value: string | undefined){
     return '';
 }
 async function toHTML(md:string){
-    let htmlTree = markdown.toHTMLTree(md);
-    htmlTree = await sourceSetify(htmlTree);
-    const html = markdown.renderJsonML(htmlTree);
-    return html;
+    return sourceSetify(markdown.render(md));
 }
-function sourceSetify(htmlTree: []): Promise<[]> {
-    return new Promise(function(resolve){
-        const branchPromises = [];
-        async function findImageTag(branch){
-            if (typeof branch == 'string') return branch;
-            if ( branch[0] == 'img' ){
-                branch[0] = 'picture';
-                const attributes = Object.assign({}, branch[1]);
-                const imgID = attributes.src.split('/')[4];
-                const imageData = await getAsset(imgID);
-                attributes.width = `${imageData.fields.file.details.image?.width}px`;
-                attributes.height = `${imageData.fields.file.details.image?.height}px`;
-                branch.splice(1)
-                branch.push(...['avif', 'webp'].map(format => {
-                    return ['source', {srcset: attributes.src + `?fm=${format}`, type: `image/${format}`}]
-                }));
-                branch.push(['img', attributes]);
-                return branch;
-            } else if ( Array.isArray(branch[1]) ){
-                return findImageTag(branch[1]);
-            } else {
-                return branch;
-            }
-        }
-        htmlTree.forEach(branch => {
-            branchPromises.push(findImageTag(branch));
-        });
-        Promise.all(branchPromises).then(() => {
-            resolve(htmlTree);
-        });
+async function replaceAsync(str, regex, asyncFn) {
+    const promises = [];
+    str.replace(regex, (match, ...args) => {
+        const promise = asyncFn(match, ...args);
+        promises.push(promise);
     });
-
+    const data = await Promise.all(promises);
+    return str.replace(regex, () => data.shift());
+}
+async function addContentifyInfo(match, ...args){
+    const imgID = args[0].split('/')[4];
+    const imageData = await getAsset(imgID);
+    const width = imageData.fields.file.details.image?.width;
+    const height = imageData.fields.file.details.image?.height;
+    const hToW = height / width;
+    const sourceSets = ['avif','webp'].reduce(function(acc, cur){
+        return acc + `<source srcset="${args[0]}?fm=${cur}&w=1480&h=${Math.round(hToW * 1480)}&q=30 2x, ${args[0]}?fm=${cur}&w=740&h=${Math.round(hToW * 740)}&q=30 1x" type="image/${cur}" media="(min-width:632px)">
+                      <source srcset="${args[0]}?fm=${cur}&w=800&h=${Math.round(hToW * 800)}&q=30 2x, ${args[0]}?fm=${cur}&w=400&h=${Math.round(hToW * 400)}&q=30 1x" type="image/${cur}">`;
+    },'');
+    return `<picture>${sourceSets}<img src="${args[0]}${args[1]} width="${width}px" height="${height}px" /></picture>`;
+}
+async function sourceSetify(html){
+    const regex = /<img src="(.*?)"(.*?)>/g;
+    return replaceAsync(html, regex, addContentifyInfo);
 }
 export async function getEntry(id:string){
     return await client.getEntry(id) as Entry<JSONValue>;
@@ -60,7 +53,6 @@ export async function getBlogById(id:string){
     return response;
 }
 export async function getPageContent(page: string){
-    debugger;
     const response = await client.getEntries({
         content_type: page
     }) as EntryCollection<JSONValue>;

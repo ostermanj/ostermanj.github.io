@@ -170,3 +170,7 @@ body.dark h2, body.dark .h2 {
     color: transparent;*/
     filter: url(#noise)
 }
+
+body.dark .embedly-card iframe {
+    filter: invert(1) hue-rotate(180deg);
+}
