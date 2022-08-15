@@ -56,6 +56,7 @@ export async function getBlogById(id:string){
     // below asserts that return is not Promise<Entry<unknow>> but ... 
     const response = await client.getEntry(id) as Entry<JSONValue>;
     response.fields.body = await toHTML(response.fields.body);
+    response.fields.body = response.fields.body.replace(/<p>(\w)/,'<p><span class="first-letter">$1</span>');
     return response;
 }
 export async function getPageContent(page: string){

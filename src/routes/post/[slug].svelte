@@ -10,14 +10,17 @@
     export let authors:[];
 </script>
 <style>
-    
+    .date {
+        margin-bottom: 3em;
+        color: var(--text-color-light);
+    }
 </style>
 <article class="article-post">
     <header>
         <h1>{title}</h1>
         <Tags {tags} />
         <Authors {authors} />
-        <p><span class="vsh">Published</span> <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+        <p class="date"><span class="vsh">Published</span> <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
     </header>
     <main>{@html body}</main>
 </article>

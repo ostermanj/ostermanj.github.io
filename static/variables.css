@@ -6,18 +6,19 @@
     --color-background-1: #fff;
     --color-background-2: #faf8f8;
     --text-color: #181616;
+    --text-color-light: #767070;
     --font-family-sans: "Passion One", "Arial Narrow", Arial, sans-serif;
     --font-family-serif: "Libre Baskerville", Georgia, Times, "Times New Roman", serif;
     --font-sans: bold 1.37rem/1.72 var(--font-family-sans);
     --font-serif: 1.3rem/1.63 var(--font-family-serif);
     --fallback-text-shadow: 0.5px 0 var(--text-color), -0.5px 0 var(--text-color);
     --fallback-text-shadow--primary: 0.5px 0 var(--color-primary-1), -0.5px 0 var(--color-primary-1);
-
+    
     --font-family-sans--test: "Arial Narrow", Arial, sans-serif;
     --font-sans--test: bold 1.37rem/1.72 var(--font-family-sans--test);
     --font-family-serif--test: Georgia, Times, "Times New Roman", serif;
     --font-serif--test: 1.3rem/1.6 var(--font-family-serif--test);
-
+    
     --text-size-small: 0.95rem;
     --padding: 1rem
 }
@@ -35,4 +36,5 @@ body.dark {
     --color-background-1: #181616;
     --text-color: #fff;
     --text-color-2: #eee;
+    --text-color-light: #a6a0a0;
 }
