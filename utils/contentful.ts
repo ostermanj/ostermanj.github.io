@@ -42,6 +42,14 @@ async function sourceSetify(html){
     const regex = /<img src="(.*?)"(.*?)>/g;
     return replaceAsync(html, regex, addContentifyInfo);
 }
+export async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit = 100){
+    return await client.getEntries({
+        content_type,
+        skip,
+        limit,
+        order: '-fields.datePublished'
+    })
+}
 export async function getEntry(id:string){
     return await client.getEntry(id) as Entry<JSONValue>;
 }
@@ -49,7 +57,7 @@ export async function getBlogById(id:string){
     // below asserts that return is not Promise<Entry<unknow>> but ... 
     const response = await client.getEntry(id) as Entry<JSONValue>;
     response.fields.body = await toHTML(response.fields.body);
-    response.fields.body = response.fields.body.replace(/<p>(\w)/,'<p><span class="first-letter">$1</span>');
+    response.fields.body = response.fields.body.replace(/^<p>(\w)/,'<p><span class="first-letter">$1</span>');
     return response;
 }
 export async function getPageContent(page: string){

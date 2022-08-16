@@ -10,7 +10,6 @@
         min-height: 56px;
         position: sticky;
         top: 800px;
-        margin-block-end: 2rem;
         padding: 22px 0;
     }
     address {

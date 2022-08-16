@@ -49,7 +49,8 @@ import Social from './Social.svelte';
         <Social />
         <nav class="fx">
             <a class="bw-0 nav-link" href="/about">About</a>
-            <a class="bw-0 nav-link" href="/resume">Resume</a>
+            <a class="bw-0 nav-link" href="/list/blogPost">Blog posts</a>
+            <a class="bw-0 nav-link" href="/list/project">Projects</a>
         </nav>
     </div>
 </header>

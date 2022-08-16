@@ -4,24 +4,24 @@ import fs from 'fs';
 import path from 'path';
 import url from 'url';
 
-const blogSlugsToId = {};
+const entrySlugsToId = {};
 const client = contentful.createClient({
     space: process.env.C_SPACE,
     //environment: 'master',
     accessToken: process.env.C_TOKEN
 });
-function getPaginatedCollection(skip = 0){
-    client.getEntries({
-        content_type: 'blogPost',
-        skip
+async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit = 100){
+    return client.getEntries({
+        content_type,
+        skip,
+        limit,
+        order: '-fields.datePublished'
     }).then(response => {
         response.items.forEach(blog => {
             mapSlugToId(blog);
         })
         if ( response.total > skip + response.limit ){
-            getPaginatedCollection(skip + response.limit)
-        } else {
-            writeToFile();
+            return getPaginatedCollection(skip + response.limit)
         }
     }).catch(console.error);
 }
@@ -34,14 +34,17 @@ function reverse(obj){
 }
 function mapSlugToId(blog, attempt = 0){
     const slug = slugify(blog.fields.title, {strict: true, lower: true});
-    if (blogSlugsToId[slug] === undefined){
-        blogSlugsToId[slug + (attempt > 0 ? `-${attempt}` : '')] = blog.sys.id;
+    if (entrySlugsToId[attempt > 0 ? `${slug}-${attempt}` : attempt] === undefined){
+        entrySlugsToId[slug + (attempt > 0 ? `-${attempt}` : '')] = blog.sys.id;
     } else {
         mapSlugToId(blog, ++attempt)
     }
 }
 function writeToFile(){
-    fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../utils/bloglist.json'), JSON.stringify(blogSlugsToId, null, 2));
-    fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(blogSlugsToId), null, 2));
+    fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../utils/bloglist.json'), JSON.stringify(entrySlugsToId, null, 2));
+    fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(entrySlugsToId), null, 2));
 }
-getPaginatedCollection();
+Promise.all([getPaginatedCollection(), getPaginatedCollection('project')]).then(() => {
+     writeToFile();
+     process.exit(0);
+});
