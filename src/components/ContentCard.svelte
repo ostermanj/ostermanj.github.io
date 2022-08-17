@@ -44,7 +44,7 @@
        {/if}
        {/if}
         <div class="p1">
-            <h1 class="not-h1 h2"><a href="/post/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+            <h1 class="not-h1 h2"><a href="/{content.sys.contentType.sys.id}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             <p class="ts-s">{content.fields.snippet}</p>
             {#if style == 'small'}
             <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>

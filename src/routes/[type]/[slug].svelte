@@ -8,6 +8,9 @@
     export let tags:[];
     export let datePublished: string;
     export let authors:[];
+    export let contentType = '';
+    export let link = '';
+    export let repository = '';
 </script>
 <style>
     .date {
@@ -19,8 +22,18 @@
     <header>
         <h1>{title}</h1>
         <Tags {tags} />
+        {#if authors}
         <Authors {authors} />
+        {/if}
         <p class="date"><span class="vsh">Published</span> <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+        {#if contentType == 'project'}
+            {#if link}
+                <a href="{link}">{link}</a>
+            {/if}
+            {#if repository}
+                <a href="{repository}">{repository}</a>
+            {/if}
+        {/if}
     </header>
     <main>{@html body}</main>
 </article>
