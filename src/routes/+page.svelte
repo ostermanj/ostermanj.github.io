@@ -1,8 +1,12 @@
 <script context="module">
-    import FeaturedWork from '$components/FeaturedWork.svelte';
-    import FeaturedPosts from '$components/FeaturedPosts.svelte';
+    throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
+
+    // import FeaturedWork from '$components/FeaturedWork.svelte';
+    // import FeaturedPosts from '$components/FeaturedPosts.svelte';
 </script>
 <script>
+    throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
     export let fields = {};
 </script>
 <style>

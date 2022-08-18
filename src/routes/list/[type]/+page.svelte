@@ -1,8 +1,12 @@
 <script context="module">
-    import ContentCard from '$components/ContentCard.svelte';
-    import { paginate, LightPaginationNav } from 'svelte-paginate';
+    throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
+
+    // import ContentCard from '$components/ContentCard.svelte';
+    // import { paginate, LightPaginationNav } from 'svelte-paginate';
 </script>
 <script>
+    throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
     export let items;
     export let type;
     let currentPage = 1;

@@ -1,9 +1,9 @@
 
 import type { ResponseBody } from '@sveltejs/kit';
-import type { RequestHandler } from "./__types/[page]";
+import type { PageServerLoad } from "./$types";
 import { getPageContent, getEntry } from '$utils/contentful';
 
-export const GET:RequestHandler<ResponseBody> = async function _GET() {
+export const load:PageServerLoad<ResponseBody> = async function _GET() {
     const response = await getPageContent('homepage');
     const fields = response.fields
     /* try for of loop instead */
@@ -13,9 +13,7 @@ export const GET:RequestHandler<ResponseBody> = async function _GET() {
         response.fields.featuredWorkExperience[+i].fields.url = workPlace.fields.url || '/';
     }
     return {
-        body: {
-            page: 'homepage',
-            fields 
-        }
-    }
+    page: 'homepage',
+    fields 
+}
   }
