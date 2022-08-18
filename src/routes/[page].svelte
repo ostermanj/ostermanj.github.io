@@ -12,4 +12,3 @@
 {#if page == 'about'}
 <AboutPage {fields} />
 {/if}
-<pre>{JSON.stringify(fields.body, null, 2)}</pre>

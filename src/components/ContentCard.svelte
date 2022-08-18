@@ -6,6 +6,10 @@
 <script>
     export let contents;
     export let style = 'large';
+    let contentTypes = {
+      blogPost: 'Blog post',
+      project: 'Project'
+    };
 </script>
 <style>
   .container {
@@ -31,10 +35,19 @@
   h1 {
       margin-block: 0;
   }
-  
+  .content-type {
+    font-family: var(--font-family-sans-2);
+    margin: -0.5em 0 0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .card-text {
+    flex-grow: 1;
+  }
 </style>
 <div class:small="{style == 'small'}" class="container g2">
     {#each contents as content}
+    {@const contentType = contentTypes[content.sys.contentType.sys.id]}
     <article class="fx" class:fd-c="{style == 'large'}">
       {#if content.fields.heroImage}
         {#if style == 'small'}
@@ -43,12 +56,19 @@
        <PostThumbLarge file="{content.fields.heroImage.fields.file}" />
        {/if}
        {/if}
-        <div class="p1">
-            <h1 class="not-h1 h2"><a href="/{content.sys.contentType.sys.id}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
-            <p class="ts-s">{content.fields.snippet}</p>
-            {#if style == 'small'}
-            <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
-            {/if}
+        <div class="p1 fx fd-c card-text">
+          <header>
+          {#if style == 'large'}
+          <p class="content-type">{contentType}</p>
+          {/if}
+              <h1 class="not-h1 h2"><a href="/{content.sys.contentType.sys.id}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+            </header>
+            <main>
+              <p class="ts-s">{content.fields.snippet}</p>
+              {#if style == 'small'}
+              <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+              {/if}
+            </main>
         </div>
     </article>
     {/each}

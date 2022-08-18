@@ -8,7 +8,10 @@
         fill: var(--color-primary-1)
 	}
     :global(body.dark) svg {
-        fill: #fff;
+        filter: invert(1)
+    }
+    :global(body.dark) svg:hover, :global(body.dark) svg:focus {
+        filter: invert(0)
     }
 </style>
 <svg {width} {height}>

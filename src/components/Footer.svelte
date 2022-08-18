@@ -11,6 +11,7 @@
         position: sticky;
         top: 800px;
         padding: 22px 0;
+        margin-top: var(--padding-2);
     }
     address {
         font-style: normal;
