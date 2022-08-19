@@ -36,6 +36,6 @@
 	"type": "module",
 	"dependencies": {
 		"markdown-it": "^13.0.1",
-		"svelte-paginate": "^0.0.1"
+		"svelte-paginate": "github:ostermanj/svelte-paginate"
 	}
 }
