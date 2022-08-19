@@ -1,21 +1,20 @@
 <script context="module">
-    throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-    // import Tags from '$components/Tags.svelte';
-    // import Authors from '$components/Authors.svelte';
-    // import Sprite from '$components/Sprite.svelte';
+    import Tags from '$components/Tags.svelte';
+    import Authors from '$components/Authors.svelte';
+    import Sprite from '$components/Sprite.svelte';
 </script>
 <script lang="ts">
-    throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
-    export let title: string;
-    export let body: string;
-    export let tags:[];
-    export let datePublished: string;
-    export let authors:[];
-    export let contentType = '';
-    export let link = '';
-    export let repository = '';
+    export let data;
+    $: ({
+        title,
+        body,
+        tags,
+        datePublished,
+        authors,
+        contentType,
+        link,
+        repository
+    } = data);
 </script>
 <style>
     header {
