@@ -13,6 +13,7 @@ export const load:PageServerLoad<ResponseBody> = async function _GET({params}) {
             fields 
 }
     } catch(e){
-        throw error(400, e);
+        const errorMessage = JSON.parse(e.message);
+        throw error(errorMessage.status, errorMessage)
     }
   }

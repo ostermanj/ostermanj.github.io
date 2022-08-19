@@ -61,7 +61,7 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-              <h1 class="not-h1 h2"><a href="/{content.sys.contentType.sys.id}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+              <h1 class="not-h1 h2"><a href="/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>
