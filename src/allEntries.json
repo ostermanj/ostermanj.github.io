@@ -1,0 +1,169 @@
+[
+  {
+    "title": "Chart building web app",
+    "datePublished": "Sun, 07 Mar 2021 00:00:00 GMT",
+    "dateUpdated": "Sun, 07 Mar 2021 00:00:00 GMT",
+    "description": "There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href=\"https://osterman.io/content/chart-building-web-app\">Read more</a></p>",
+    "link": "https://osterman.io/content/chart-building-web-app",
+    "categories": [
+      "dataviz",
+      "productivity"
+    ]
+  },
+  {
+    "title": "Netting Billions 2020: Global Values and Trends for Tuna Fisheries",
+    "datePublished": "Sun, 28 Feb 2021 00:00:00 GMT",
+    "dateUpdated": "Sun, 28 Feb 2021 00:00:00 GMT",
+    "description": "This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href=\"https://osterman.io/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries\">Read more</a></p>",
+    "link": "https://osterman.io/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries",
+    "categories": [
+      "dataviz",
+      "d3"
+    ]
+  },
+  {
+    "title": "Pennsylvania retirement savings data viz",
+    "datePublished": "Sun, 01 Nov 2020 00:00:00 GMT",
+    "dateUpdated": "Sun, 01 Nov 2020 00:00:00 GMT",
+    "description": "Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href=\"https://osterman.io/content/pennsylvania-retirement-savings-data-viz\">Read more</a></p>",
+    "link": "https://osterman.io/content/pennsylvania-retirement-savings-data-viz",
+    "categories": [
+      "dataviz",
+      "maps"
+    ]
+  },
+  {
+    "title": "D3.js data dashboard: The State of 10 Cities",
+    "datePublished": "Mon, 02 Dec 2019 00:00:00 GMT",
+    "dateUpdated": "Mon, 02 Dec 2019 00:00:00 GMT",
+    "description": "Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href=\"https://osterman.io/content/d3js-data-dashboard-the-state-of-10-cities\">Read more</a></p>",
+    "link": "https://osterman.io/content/d3js-data-dashboard-the-state-of-10-cities",
+    "categories": [
+      "d3",
+      "dataviz"
+    ]
+  },
+  {
+    "title": "Broadband policy explorer: data tool to find state laws about broadband",
+    "datePublished": "Wed, 31 Jul 2019 00:00:00 GMT",
+    "dateUpdated": "Wed, 31 Jul 2019 00:00:00 GMT",
+    "description": "Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href=\"https://osterman.io/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband\">Read more</a></p>",
+    "link": "https://osterman.io/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband",
+    "categories": [
+      "data tools"
+    ]
+  },
+  {
+    "title": "Art directed data story: 10 trends in Philly over 10 years",
+    "datePublished": "Thu, 11 Apr 2019 00:00:00 GMT",
+    "dateUpdated": "Thu, 11 Apr 2019 00:00:00 GMT",
+    "description": "An art-directed digital-first report with animated graphs and immersive imagery.<p><a href=\"https://osterman.io/content/art-directed-data-story-10-trends-in-philly-over-10-years\">Read more</a></p>",
+    "link": "https://osterman.io/content/art-directed-data-story-10-trends-in-philly-over-10-years",
+    "categories": [
+      "dataviz",
+      "highcharts"
+    ]
+  },
+  {
+    "title": "A tool for better debt comparison: data viz of state debt",
+    "datePublished": "Tue, 02 Apr 2019 00:00:00 GMT",
+    "dateUpdated": "Tue, 02 Apr 2019 00:00:00 GMT",
+    "description": "Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href=\"https://osterman.io/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt\">Read more</a></p>",
+    "link": "https://osterman.io/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt",
+    "categories": [
+      "dataviz"
+    ]
+  },
+  {
+    "title": "Mapping data from the National Flood Insurance Program",
+    "datePublished": "Wed, 04 Apr 2018 00:00:00 GMT",
+    "dateUpdated": "Wed, 04 Apr 2018 00:00:00 GMT",
+    "description": "This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href=\"https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program\">Read more</a></p>",
+    "link": "https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program",
+    "categories": [
+      "maps",
+      "dataviz"
+    ]
+  },
+  {
+    "title": "Easing the pain with continuous deployment",
+    "datePublished": "Fri, 24 Sep 2021 00:00:00 GMT",
+    "dateUpdated": "Fri, 24 Sep 2021 00:00:00 GMT",
+    "description": "Setting up continuous deployment can really ease the pain of web development. <p><a href=\"https://osterman.io/content/easing-the-pain-with-continuous-deployment\">Read more</a></p>",
+    "link": "https://osterman.io/content/easing-the-pain-with-continuous-deployment",
+    "categories": [
+      "devops"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "How do you spell propagation?",
+    "datePublished": "Thu, 12 Aug 2021 00:00:00 GMT",
+    "dateUpdated": "Thu, 12 Aug 2021 00:00:00 GMT",
+    "description": "One of the things I look up all the time: how to spell \"propagation.\"<p><a href=\"https://osterman.io/content/how-do-you-spell-propagation\">Read more</a></p>",
+    "link": "https://osterman.io/content/how-do-you-spell-propagation",
+    "categories": [
+      "things I look up all the time"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "How I make using Mapbox easier, part two: accessing data with dummy features",
+    "datePublished": "Sun, 03 Jan 2021 00:00:00 GMT",
+    "dateUpdated": "Sun, 03 Jan 2021 00:00:00 GMT",
+    "description": "Accessing the entire dataset behind a Mapbox layer is hard; attach data to a dummy feature and use that instead.<p><a href=\"https://osterman.io/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features\">Read more</a></p>",
+    "link": "https://osterman.io/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features",
+    "categories": [
+      "dataviz",
+      "mapbox"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "How I make using Mapbox easier, part one: async adding sources and layers",
+    "datePublished": "Tue, 29 Dec 2020 00:00:00 GMT",
+    "dateUpdated": "Tue, 29 Dec 2020 00:00:00 GMT",
+    "description": "Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map.<p><a href=\"https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers\">Read more</a></p>",
+    "link": "https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers",
+    "categories": [
+      "mapbox",
+      "dataviz"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "Is viewBox camelCased?",
+    "datePublished": "Fri, 02 Oct 2020 00:00:00 GMT",
+    "dateUpdated": "Fri, 02 Oct 2020 00:00:00 GMT",
+    "description": "One of the things I look up all the time: viewbox or viewBox?<p><a href=\"https://osterman.io/content/is-viewbox-camelcased\">Read more</a></p>",
+    "link": "https://osterman.io/content/is-viewbox-camelcased",
+    "categories": [
+      "things I look up all the time"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "Four questions to ask about your data visualization",
+    "datePublished": "Wed, 30 Nov 2016 00:00:00 GMT",
+    "dateUpdated": "Wed, 30 Nov 2016 00:00:00 GMT",
+    "description": "There's a ton of advice out there about how to do data viz well. At the very least, you should ask yourself four questions about \"the AIMS\" of each piece.\n<p><a href=\"https://osterman.io/content/four-questions-to-ask-about-your-data-visualization\">Read more</a></p>",
+    "link": "https://osterman.io/content/four-questions-to-ask-about-your-data-visualization",
+    "categories": [
+      "dataviz",
+      "content"
+    ],
+    "author": "John Osterman"
+  },
+  {
+    "title": "Writing for the web: why you should encourage skimming and scanning",
+    "datePublished": "Wed, 09 Nov 2016 00:00:00 GMT",
+    "dateUpdated": "Wed, 09 Nov 2016 00:00:00 GMT",
+    "description": "Reading online usually involves a lot of skimming and scanning. Embrace it.<p><a href=\"https://osterman.io/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning\">Read more</a></p>",
+    "link": "https://osterman.io/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning",
+    "categories": [
+      "content",
+      "writing + editing"
+    ],
+    "author": "John Osterman"
+  }
+]
