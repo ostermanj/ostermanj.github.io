@@ -17,6 +17,20 @@
         z-index: 1;
     }
 </style>
+<svelte:head>
+    {#if import.meta.env.PROD }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P9T7XMGMD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8P9T7XMGMD');
+    </script>
+    {/if}
+    
+</svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />
 <main class="wrapper" id="main-content">
