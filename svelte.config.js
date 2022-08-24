@@ -15,6 +15,9 @@ const config = {
 			$pages: 'src/pages',
 			$static: 'static',
 			$components: 'src/components'
+		},
+		browser: {
+			router: false
 		}
 		/*vite: {
 			define: {

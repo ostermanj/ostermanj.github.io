@@ -5,6 +5,7 @@
 <script>
     export let data;
     $: ({items, type} = data);
+    let typeName = type == 'blogPost' ? 'Blog posts' : 'Projects';
     let currentPage = 1;
     let pageSize = 10;
     $: paginatedItems = paginate({ items, pageSize, currentPage })
@@ -15,11 +16,7 @@
     }
 </style>
 <section>
-    {#if type == 'blogPost'}
-    <h1>Blog posts</h1>
-    {:else}
-    <h1>Projects</h1>
-    {/if}
+    <h1>{typeName}</h1>
     <ContentCard contents="{paginatedItems}" style="small" />
     {#if items.length > pageSize }
     <LightPaginationNav

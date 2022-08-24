@@ -1,10 +1,11 @@
 <script context="module">
     import FeaturedWork from '$components/FeaturedWork.svelte';
     import FeaturedPosts from '$components/FeaturedPosts.svelte';
+    
 </script>
 <script>
     export let data;
-    $: ({ page, fields } = data);
+    $: ({ fields } = data);
 </script>
 <style>
     .overview {
@@ -27,9 +28,6 @@
         position: absolute;
     }
 </style>
-<svelte:head>
-    <title>Home | John Osterman</title>
-</svelte:head>
 <p class="overview h2">{fields.overview}</p>
 {@html fields.body}
 {#if fields.featuredBlogPosts && fields.featuredBlogPosts.length }

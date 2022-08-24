@@ -6,9 +6,6 @@
     export let data;
     $: ({ page, fields } = data)
 </script>
-<svelte:head>
-    <title>About | John Osterman</title>
-</svelte:head>
 {#if page == 'about'}
 <AboutPage {fields} />
 {/if}
