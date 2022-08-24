@@ -46,7 +46,9 @@ img {
 .fx {
     display: flex
 }
-
+.fx-wrap {
+    flex-wrap: wrap;
+}
 .jc-c {
     justify-content: center;
 }
@@ -122,6 +124,7 @@ h1:not(.not-h1), .h1 {
     font-weight: 300;
     color: var(--color-primary-1);
     text-align: center;
+    font-size: clamp(2.27rem, 8.205vw, 3rem);
     font-size: 3rem;
     margin-top: 0;
     line-height: 1.2;
@@ -130,11 +133,13 @@ h1:not(.not-h1), .h1 {
 
 html.wf-roboto-n3-active h1:not(.not-h1), html.wf-roboto-n3-active .h1 {
     font-size: 2.77rem;
+    font-size: clamp(2.1rem, 7.576vw, 2.77rem);
 }
 
 h2, .h2 {
     font: var(--font-sans);
     letter-spacing: 1px;
+    margin-top: 1.75em;
 
 }
 

@@ -23,6 +23,7 @@
     .date {
         color: var(--text-color-light);
         margin-bottom: 0;
+        font-family: var(--font-family-sans-2);
     }
     .external-link {
         

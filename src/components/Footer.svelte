@@ -21,6 +21,7 @@
         flex-grow: 1;
     }
     .tagline {
+        width: 335px;
         margin: 0;
         flex-grow: 1;
         
@@ -28,9 +29,12 @@
     .social {
         margin-top: 0.2em;
     }
+    .wrapper {
+        row-gap: 0;
+    }
 </style>
 <footer>
-    <div class="wrapper fx g2">
+    <div class="wrapper fx fx-wrap g2">
         <address>
             <div>John Osterman<br /><a href="mailto:john@osterman.io">john@osterman.io</a></div>
             <div class="social">

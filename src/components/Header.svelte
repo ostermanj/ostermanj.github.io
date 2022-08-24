@@ -11,12 +11,12 @@ import Social from './Social.svelte';
         position: sticky;
         top: -150px;
         margin-block-end: 2rem;
-        height: 162px;
         padding: 22px 0;
         z-index: 2;
     }
     h1 {
         margin: 0;
+        height: 80px;
     }
     nav {
         gap: 20px;
