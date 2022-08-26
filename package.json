@@ -4,7 +4,8 @@
 	"scripts": {
 		"dev": "env-cmd vite dev",
 		"dev:debug": "env-cmd node --inspect node_modules/.bin/vite dev",
-		"build": "cross-env NODE_ENV=production env-cmd vite build",
+		"build:local": "cross-env NODE_ENV=production env-cmd vite build",
+		"build": "cross-env NODE_ENV=production vite build",
 		"build:debug": "env-cmd node --inspect node_modules/.bin/vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
