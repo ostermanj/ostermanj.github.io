@@ -46,7 +46,7 @@ const config = {
 			base: process.env.IS_GITHUB ? '/ostermanj_io' : ''
 		},
 		appDir: 'app_',
-		trailingSlash: 'always'
+		trailingSlash: 'ignore'
 
 		/*vite: {
 			define: {
