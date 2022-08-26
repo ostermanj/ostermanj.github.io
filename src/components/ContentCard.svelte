@@ -2,6 +2,7 @@
     import idsToSlugs from '$src/idlist.json';
     import PostThumb from '$components/PostThumb.svelte';
     import PostThumbLarge from '$components/PostThumbLarge.svelte';
+    import { base } from '$app/paths';
 </script>
 <script>
     export let contents;
@@ -61,7 +62,7 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-              <h1 class="not-h1 h2"><a href="/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+              <h1 class="not-h1 h2"><a href="{base}/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>

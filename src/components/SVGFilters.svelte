@@ -1,4 +1,4 @@
-<svg style="display:none;" width="0" height="0">
+<svg class="vsh" width="0" height="0">
   <filter id="noise">
     <feTurbulence type="turbulence" baseFrequency="0.01 0.4"
         numOctaves="2" result="NOISE"/>

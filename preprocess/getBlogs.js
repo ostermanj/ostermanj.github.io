@@ -3,6 +3,7 @@ import slugify from 'slugify';
 import fs from 'fs';
 import path from 'path';
 import url from 'url';
+import { base } from '$app/paths';
 const allEntries = [];
 const entrySlugsToId = {};
 const client = contentful.createClient({
@@ -23,8 +24,8 @@ async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit
                 title: blog.fields.title,
                 datePublished: new Date(blog.fields.datePublished).toUTCString(),
                 dateUpdated: new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString(),
-                description: blog.fields.snippet + `<p><a href="https://osterman.io/content/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
-                link: `https://osterman.io/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
+                description: blog.fields.snippet + `<p><a href="${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
+                link: `${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
                 categories: blog.fields.tags.map(tag => tag.fields.tag)
             };
             if (content_type == 'blogPost'){

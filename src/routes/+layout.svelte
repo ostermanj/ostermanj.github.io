@@ -21,7 +21,6 @@
         }
     }
     function metaDescription(){
-        console.log($page);
         return $page.data.fields?.overview 
         || $page.data.overview 
         || $page.data.fields?.snippet 
