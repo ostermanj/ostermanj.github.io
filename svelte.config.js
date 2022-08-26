@@ -18,7 +18,7 @@ const config = {
 		},
 		browser: {
 			router: true,
-			hydrate: true
+			hydrate: false
 		},
 		prerender: {
 			default: true,
