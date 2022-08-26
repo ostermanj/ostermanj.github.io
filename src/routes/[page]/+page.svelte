@@ -8,4 +8,6 @@
 </script>
 {#if page == 'about'}
 <AboutPage {fields} />
+{:else}
+{@html fields.body}
 {/if}
