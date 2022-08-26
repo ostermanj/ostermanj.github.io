@@ -17,8 +17,8 @@ const config = {
 			$components: 'src/components'
 		},
 		browser: {
-			router: false,
-			hydrate: false
+			router: true,
+			hydrate: true
 		},
 		prerender: {
 			default: true,
