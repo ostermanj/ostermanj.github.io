@@ -5,7 +5,7 @@
 <script>
     export let data;
     $: ({items, type} = data);
-    let typeName = type == 'blogPost' ? 'Blog posts' : 'Projects';
+    $: typeName = type == 'blogPost' ? 'Blog posts' : 'Projects';
     let currentPage = 1;
     let pageSize = 10;
     $: paginatedItems = paginate({ items, pageSize, currentPage })
@@ -21,7 +21,7 @@
     {#if items.length > pageSize }
     <LightPaginationNav
         totalItems="{items.length}"
-        pageSize="{pageSize}"
+        pageSize="{pageSize}" 
         currentPage="{currentPage}"
         limit="{1}"
         showStepOptions="{true}"
