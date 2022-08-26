@@ -24,8 +24,9 @@ const config = {
 			default: true
 		},
 		paths: {
-			base: process.env.isGitHub ? '/ostermanj_io' : ''
-		}
+			base: process.env.IS_GITHUB ? '/ostermanj_io' : ''
+		},
+		appDir: 'app_'
 
 		/*vite: {
 			define: {

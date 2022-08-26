@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push: 
+    branches: [ main ]
+
+
+jobs: 
+  build_main: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - name: Checkout   
+      uses: actions/checkout@v2
+      with: 
+        persist-credentials: false
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - run: npm install
+    
+    - run: npm run build
+      env:
+        CI: true
+        C_SPACE: ${{ secrets.C_SPACE }}
+        C_TOKEN: ${{ secrets.C_TOKEN }}
+        IS_GITHUB: true
+   
+    - name: Deploy to prod branch
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: main # The branch the action should deploy to.
+        FOLDER: build # The folder the action should deploy.
+        CLEAN: true # Automatically remove deleted files from the deploy branch
