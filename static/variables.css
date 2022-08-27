@@ -10,10 +10,10 @@
     --font-family-sans: "Passion One", "Arial Narrow", Arial, sans-serif;
     --font-family-sans-2: Roboto, "Arial Narrow", Arial, sans-serif;
     --font-family-serif: "Libre Baskerville", Georgia, Times, "Times New Roman", serif;
-    --font-sans: bold 1.37rem/1.72 var(--font-family-sans);
-    --font-serif: 1.3rem/1.63 var(--font-family-serif);
-    --fallback-text-shadow: 0.5px 0 var(--text-color), -0.5px 0 var(--text-color);
-    --fallback-text-shadow--primary: 0.5px 0 var(--color-primary-1), -0.5px 0 var(--color-primary-1);
+    --font-sans: bold 1.45rem/1.6 var(--font-family-sans);
+    --font-serif: 1.125rem/1.9 var(--font-family-serif);
+    --fallback-text-shadow: none;
+    --fallback-text-shadow--primary: none;
 
     --font-family-sans--test: "Arial Narrow", Arial, sans-serif;
     --font-sans--test: bold 1.37rem/1.72 var(--font-family-sans--test);
@@ -25,12 +25,6 @@
     --padding-2: calc(var(--padding) * 2);
 }
 
-html.wf-active {
-    --fallback-text-shadow: none;
-    --fallback-text-shadow--primary: none;
-    --font-sans: bold 1.45rem/1.6 var(--font-family-sans);
-    --font-serif: 1.125rem/1.9 var(--font-family-serif);
-}
 
 body.dark {
     --color-primary-1: #E64D00;
