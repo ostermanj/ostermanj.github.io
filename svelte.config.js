@@ -43,9 +43,6 @@ const config = {
 				'/project/2019/08/02/state-debt/',
 				]
 		},
-		paths: {
-			base: process.env.IS_GITHUB ? '/ostermanj_io' : ''
-		},
 		appDir: 'app_',
 		trailingSlash: 'always'
 
