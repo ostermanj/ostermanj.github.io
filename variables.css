@@ -1,0 +1,36 @@
+:root {
+    /*--color-primary-1: #9E3500;*/
+    --color-primary-1: #852d00;
+    --color-primary-2: #56D7DB;
+    --color-secondary-1: #5c5c5c;
+    --color-background-1: #fff;
+    --color-background-2: #faf8f8;
+    --text-color: #181616;
+    --text-color-light: #767070;
+    --font-family-sans: "Passion One", "Arial Narrow", Arial, sans-serif;
+    --font-family-sans-2: Roboto, "Arial Narrow", Arial, sans-serif;
+    --font-family-serif: "Libre Baskerville", Georgia, Times, "Times New Roman", serif;
+    --font-sans: bold 1.45rem/1.6 var(--font-family-sans);
+    --font-serif: 1.125rem/1.9 var(--font-family-serif);
+    --fallback-text-shadow: none;
+    --fallback-text-shadow--primary: none;
+
+    --font-family-sans--test: "Arial Narrow", Arial, sans-serif;
+    --font-sans--test: bold 1.37rem/1.72 var(--font-family-sans--test);
+    --font-family-serif--test: Georgia, Times, "Times New Roman", serif;
+    --font-serif--test: 1.3rem/1.6 var(--font-family-serif--test);
+
+    --text-size-small: 0.95rem;
+    --padding: 1rem;
+    --padding-2: calc(var(--padding) * 2);
+}
+
+
+body.dark {
+    --color-primary-1: #E64D00;
+    --color-background-2: #000;
+    --color-background-1: #181616;
+    --text-color: #fff;
+    --text-color-2: #eee;
+    --text-color-light: #a6a0a0;
+}

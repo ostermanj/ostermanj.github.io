@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+            <atom:link href="http://osterman.io/rss" rel="self" type="application/rss+xml" />
+            <title>John Osterman</title>
+            <link>https://osterman.io</link>
+            <description>Web apps and data visualization for mission-driven organizations. Python, JavaScript, HTML, CSS; Svelte, D3.js, Mapbox, NodeJS; AWS, Azure, Google.</description>
+            <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+            <lastBuildDate>Sat, 27 Aug 2022 00:25:08 GMT</lastBuildDate>
+            
+    <item>
+        <title>Chart building web app</title>
+        <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="https://osterman.io/content/chart-building-web-app">Read more</a></p> ]]></description>
+        <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 07 Mar 2021 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>productivity</category>
+        <link>https://osterman.io/content/chart-building-web-app</link>
+        <guid isPermaLink="true">https://osterman.io/content/chart-building-web-app</guid>
+    </item>
+    <item>
+        <title>Netting Billions 2020: Global Values and Trends for Tuna Fisheries</title>
+        <description><![CDATA[This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href="https://osterman.io/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries">Read more</a></p> ]]></description>
+        <pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 28 Feb 2021 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>d3</category>
+        <link>https://osterman.io/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</link>
+        <guid isPermaLink="true">https://osterman.io/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</guid>
+    </item>
+    <item>
+        <title>Pennsylvania retirement savings data viz</title>
+        <description><![CDATA[Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href="https://osterman.io/content/pennsylvania-retirement-savings-data-viz">Read more</a></p> ]]></description>
+        <pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate>
+        <updated>Sun, 01 Nov 2020 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>maps</category>
+        <link>https://osterman.io/content/pennsylvania-retirement-savings-data-viz</link>
+        <guid isPermaLink="true">https://osterman.io/content/pennsylvania-retirement-savings-data-viz</guid>
+    </item>
+    <item>
+        <title>D3.js data dashboard: The State of 10 Cities</title>
+        <description><![CDATA[Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href="https://osterman.io/content/d3js-data-dashboard-the-state-of-10-cities">Read more</a></p> ]]></description>
+        <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
+        <updated>Mon, 02 Dec 2019 00:00:00 GMT</updated>
+        
+        <category>d3</category>
+        <category>dataviz</category>
+        <link>https://osterman.io/content/d3js-data-dashboard-the-state-of-10-cities</link>
+        <guid isPermaLink="true">https://osterman.io/content/d3js-data-dashboard-the-state-of-10-cities</guid>
+    </item>
+    <item>
+        <title>Broadband policy explorer: data tool to find state laws about broadband</title>
+        <description><![CDATA[Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href="https://osterman.io/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband">Read more</a></p> ]]></description>
+        <pubDate>Wed, 31 Jul 2019 00:00:00 GMT</pubDate>
+        <updated>Wed, 31 Jul 2019 00:00:00 GMT</updated>
+        
+        <category>data tools</category>
+        <link>https://osterman.io/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</link>
+        <guid isPermaLink="true">https://osterman.io/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</guid>
+    </item>
+    <item>
+        <title>Art directed data story: 10 trends in Philly over 10 years</title>
+        <description><![CDATA[An art-directed digital-first report with animated graphs and immersive imagery.<p><a href="https://osterman.io/content/art-directed-data-story-10-trends-in-philly-over-10-years">Read more</a></p> ]]></description>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Thu, 11 Apr 2019 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>highcharts</category>
+        <link>https://osterman.io/content/art-directed-data-story-10-trends-in-philly-over-10-years</link>
+        <guid isPermaLink="true">https://osterman.io/content/art-directed-data-story-10-trends-in-philly-over-10-years</guid>
+    </item>
+    <item>
+        <title>A tool for better debt comparison: data viz of state debt</title>
+        <description><![CDATA[Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href="https://osterman.io/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt">Read more</a></p> ]]></description>
+        <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Tue, 02 Apr 2019 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <link>https://osterman.io/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</link>
+        <guid isPermaLink="true">https://osterman.io/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</guid>
+    </item>
+    <item>
+        <title>Mapping data from the National Flood Insurance Program</title>
+        <description><![CDATA[This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href="https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program">Read more</a></p> ]]></description>
+        <pubDate>Wed, 04 Apr 2018 00:00:00 GMT</pubDate>
+        <updated>Wed, 04 Apr 2018 00:00:00 GMT</updated>
+        
+        <category>maps</category>
+        <category>dataviz</category>
+        <link>https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program</link>
+        <guid isPermaLink="true">https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program</guid>
+    </item>
+    <item>
+        <title>Easing the pain with continuous deployment</title>
+        <description><![CDATA[Setting up continuous deployment can really ease the pain of web development. <p><a href="https://osterman.io/content/easing-the-pain-with-continuous-deployment">Read more</a></p> ]]></description>
+        <pubDate>Fri, 24 Sep 2021 00:00:00 GMT</pubDate>
+        <updated>Fri, 24 Sep 2021 00:00:00 GMT</updated>
+        
+        <category>devops</category>
+        <link>https://osterman.io/content/easing-the-pain-with-continuous-deployment</link>
+        <guid isPermaLink="true">https://osterman.io/content/easing-the-pain-with-continuous-deployment</guid>
+    </item>
+    <item>
+        <title>How do you spell propagation?</title>
+        <description><![CDATA[One of the things I look up all the time: how to spell "propagation."<p><a href="https://osterman.io/content/how-do-you-spell-propagation">Read more</a></p> ]]></description>
+        <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
+        <updated>Thu, 12 Aug 2021 00:00:00 GMT</updated>
+        
+        <category>things I look up all the time</category>
+        <link>https://osterman.io/content/how-do-you-spell-propagation</link>
+        <guid isPermaLink="true">https://osterman.io/content/how-do-you-spell-propagation</guid>
+    </item>
+    <item>
+        <title>How I make using Mapbox easier, part two: accessing data with dummy features</title>
+        <description><![CDATA[Accessing the entire dataset behind a Mapbox layer is hard; attach data to a dummy feature and use that instead.<p><a href="https://osterman.io/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features">Read more</a></p> ]]></description>
+        <pubDate>Sun, 03 Jan 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 03 Jan 2021 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>mapbox</category>
+        <link>https://osterman.io/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</link>
+        <guid isPermaLink="true">https://osterman.io/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</guid>
+    </item>
+    <item>
+        <title>How I make using Mapbox easier, part one: async adding sources and layers</title>
+        <description><![CDATA[Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map.<p><a href="https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers">Read more</a></p> ]]></description>
+        <pubDate>Tue, 29 Dec 2020 00:00:00 GMT</pubDate>
+        <updated>Tue, 29 Dec 2020 00:00:00 GMT</updated>
+        
+        <category>mapbox</category>
+        <category>dataviz</category>
+        <link>https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</link>
+        <guid isPermaLink="true">https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</guid>
+    </item>
+    <item>
+        <title>Is viewBox camelCased?</title>
+        <description><![CDATA[One of the things I look up all the time: viewbox or viewBox?<p><a href="https://osterman.io/content/is-viewbox-camelcased">Read more</a></p> ]]></description>
+        <pubDate>Fri, 02 Oct 2020 00:00:00 GMT</pubDate>
+        <updated>Fri, 02 Oct 2020 00:00:00 GMT</updated>
+        
+        <category>things I look up all the time</category>
+        <link>https://osterman.io/content/is-viewbox-camelcased</link>
+        <guid isPermaLink="true">https://osterman.io/content/is-viewbox-camelcased</guid>
+    </item>
+    <item>
+        <title>Four questions to ask about your data visualization</title>
+        <description><![CDATA[There's a ton of advice out there about how to do data viz well. At the very least, you should ask yourself four questions about "the AIMS" of each piece.
+<p><a href="https://osterman.io/content/four-questions-to-ask-about-your-data-visualization">Read more</a></p> ]]></description>
+        <pubDate>Wed, 30 Nov 2016 00:00:00 GMT</pubDate>
+        <updated>Wed, 30 Nov 2016 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>content</category>
+        <link>https://osterman.io/content/four-questions-to-ask-about-your-data-visualization</link>
+        <guid isPermaLink="true">https://osterman.io/content/four-questions-to-ask-about-your-data-visualization</guid>
+    </item>
+    <item>
+        <title>Writing for the web: why you should encourage skimming and scanning</title>
+        <description><![CDATA[Reading online usually involves a lot of skimming and scanning. Embrace it.<p><a href="https://osterman.io/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning">Read more</a></p> ]]></description>
+        <pubDate>Wed, 09 Nov 2016 00:00:00 GMT</pubDate>
+        <updated>Wed, 09 Nov 2016 00:00:00 GMT</updated>
+        
+        <category>content</category>
+        <category>writing + editing</category>
+        <link>https://osterman.io/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</link>
+        <guid isPermaLink="true">https://osterman.io/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
+    </item>
+        </channel>
+    </rss>
