@@ -1,7 +1,6 @@
 <script context="module">
     import FeaturedWork from '$components/FeaturedWork.svelte';
     import FeaturedPosts from '$components/FeaturedPosts.svelte';
-    
 </script>
 <script>
     export let data;

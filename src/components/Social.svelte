@@ -30,6 +30,6 @@
 			><span class="vsh">LinkedIn</span> <Sprite id="linkedin" /></a
 		>
 	</li>
-	<li><a sveltekit:reload class="bw-0" title="RSS" href="{base}/rss"><span class="vsh">RSS</span> <Sprite width="{18}" height="{18}" id="rss" /></a></li>
+	<li><a data-sveltekit-reload class="bw-0" title="RSS" href="{base}/rss"><span class="vsh">RSS</span> <Sprite width="{18}" height="{18}" id="rss" /></a></li>
 </ul>
 

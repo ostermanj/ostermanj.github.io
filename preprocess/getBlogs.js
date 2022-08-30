@@ -3,7 +3,6 @@ import slugify from 'slugify';
 import fs from 'fs';
 import path from 'path';
 import url from 'url';
-import { base } from '$app/paths';
 const allEntries = [];
 const entrySlugsToId = {};
 const client = contentful.createClient({
@@ -11,7 +10,7 @@ const client = contentful.createClient({
     //environment: 'master',
     accessToken: process.env.C_TOKEN
 });
-async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit = 100){
+async function getPaginatedCollection({content_type = "blogPost", skip = 0, limit = 100, base = ''}){
     return client.getEntries({
         content_type,
         skip,
@@ -34,7 +33,7 @@ async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit
             allEntries.push(fields);
         })
         if ( response.total > skip + response.limit ){
-            return getPaginatedCollection(skip + response.limit)
+            return getPaginatedCollection({content_type, skip: skip + response.limit, limit, base})
         }
     }).catch(console.error);
 }
@@ -58,7 +57,7 @@ function writeToFile(){
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(entrySlugsToId), null, 2));
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/allEntries.json'), JSON.stringify(allEntries, null, 2));
 }
-Promise.all([getPaginatedCollection(), getPaginatedCollection('project')]).then(() => {
+Promise.all([getPaginatedCollection({}), getPaginatedCollection({content_type: 'project'})]).then(() => {
      writeToFile();
      process.exit(0);
 });

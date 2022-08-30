@@ -5,11 +5,14 @@ const markdown = MarkdownIt({
     html: true,
     typographer: true
 });
-const client = contentful.createClient({
-    space: tS(process.env.C_SPACE),
-    //environment: 'master',
-    accessToken: tS(process.env.C_TOKEN)
-});
+let client;
+export function initContentful(C_SPACE, C_TOKEN){
+    client = contentful.createClient({
+        space: C_SPACE,
+        //environment: 'master',
+        accessToken: C_TOKEN
+    });
+}
 function tS(value: string | undefined){
     if ( typeof value == 'string') return value;
     return '';
