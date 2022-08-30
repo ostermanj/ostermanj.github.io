@@ -1,0 +1,1 @@
+import{default as i}from"../components/pages/list/_type_/_page.svelte-1bf19d57.js";import"./index-619dd36b.js";import"./ContentCard-12b15218.js";import"./paths-9b83c8fd.js";const e=!0;export{i as component,e as server};
