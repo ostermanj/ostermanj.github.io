@@ -20,7 +20,6 @@
     img {
         width: 100%;
         aspect-ratio: 352 /247;
-        object-fit: cover;
         max-width: 400px;
         margin: 0 auto;
         z-index: 1;
