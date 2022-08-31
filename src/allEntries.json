@@ -86,6 +86,18 @@
     ]
   },
   {
+    "title": "How to use environment variables in Sveltekit (process.env)",
+    "datePublished": "Tue, 30 Aug 2022 00:00:00 GMT",
+    "dateUpdated": "Tue, 30 Aug 2022 00:00:00 GMT",
+    "description": "SvelteKit has a new way to bring environment variables into your code.<p><a href=\"https://osterman.io/content/how-to-use-environment-variables-in-sveltekit-processenv\">Read more</a></p>",
+    "link": "https://osterman.io/content/how-to-use-environment-variables-in-sveltekit-processenv",
+    "categories": [
+      "frameworks",
+      "sveltekit"
+    ],
+    "author": "John Osterman"
+  },
+  {
     "title": "Easing the pain with continuous deployment",
     "datePublished": "Fri, 24 Sep 2021 00:00:00 GMT",
     "dateUpdated": "Fri, 24 Sep 2021 00:00:00 GMT",
