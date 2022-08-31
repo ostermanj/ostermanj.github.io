@@ -23,6 +23,8 @@
     --text-size-small: 0.95rem;
     --padding: 1rem;
     --padding-2: calc(var(--padding) * 2);
+    --padding-0-5: calc(var(--padding) / 2);
+    --padding-0-25: calc(var(--padding) / 4);
 }
 
 
