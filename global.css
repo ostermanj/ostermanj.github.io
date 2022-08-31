@@ -178,3 +178,29 @@ body.dark h2, body.dark .h2 {
 body.dark .embedly-card iframe {
     filter: invert(1) hue-rotate(180deg);
 }
+
+.notice {
+    background-color: var(--color-background-2);
+    border: 1px solid var(--color-primary-1);
+    padding: var(--padding);
+    position: relative;
+    margin-top: 2rem;
+}
+
+.notice::before {
+    content: 'Notice';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 5px));
+    font-weight: bold;
+    color: var(--color-primary-1);
+    background-color: inherit;
+    border: inherit;
+    padding: var(--padding-0-25) var(--padding-0-5);
+    font: var(--font-sans);
+    line-height: 1;
+    letter-spacing: 1px;
+
+}

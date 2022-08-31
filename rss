@@ -6,7 +6,7 @@
             <link>https://osterman.io</link>
             <description>Web apps and data visualization for mission-driven organizations. Python, JavaScript, HTML, CSS; Svelte, D3.js, Mapbox, NodeJS; AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Tue, 30 Aug 2022 19:53:26 GMT</lastBuildDate>
+            <lastBuildDate>Wed, 31 Aug 2022 01:00:24 GMT</lastBuildDate>
             
     <item>
         <title>Chart building web app</title>
@@ -93,6 +93,17 @@
         <category>dataviz</category>
         <link>https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program</link>
         <guid isPermaLink="true">https://osterman.io/content/mapping-data-from-the-national-flood-insurance-program</guid>
+    </item>
+    <item>
+        <title>How to use environment variables in Sveltekit (process.env)</title>
+        <description><![CDATA[SvelteKit has a new way to bring environment variables into your code.<p><a href="https://osterman.io/content/how-to-use-environment-variables-in-sveltekit-processenv">Read more</a></p> ]]></description>
+        <pubDate>Tue, 30 Aug 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 30 Aug 2022 00:00:00 GMT</updated>
+        
+        <category>frameworks</category>
+        <category>sveltekit</category>
+        <link>https://osterman.io/content/how-to-use-environment-variables-in-sveltekit-processenv</link>
+        <guid isPermaLink="true">https://osterman.io/content/how-to-use-environment-variables-in-sveltekit-processenv</guid>
     </item>
     <item>
         <title>Easing the pain with continuous deployment</title>
