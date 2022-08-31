@@ -7,6 +7,7 @@
     export let data;
     $: ({
         title,
+        subtitle,
         body,
         tags,
         datePublished,
@@ -40,10 +41,18 @@
        position: relative;
        top: 2px;
     }
+    .subtitle {
+        text-align: center;
+    }
 </style>
 <article class="article-post">
     <header>
-        <h1>{title}</h1>
+        <hgroup>
+            <h1>{title}</h1>
+            {#if subtitle}
+            <p class="subtitle">{subtitle}</p>
+            {/if}
+        </hgroup>
         <Tags {tags} />
         {#if authors}
         <Authors {authors} />
