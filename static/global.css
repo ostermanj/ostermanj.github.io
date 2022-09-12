@@ -46,11 +46,9 @@ img {
 .fx {
     display: flex
 }
-
 .fx-wrap {
     flex-wrap: wrap;
 }
-
 .jc-c {
     justify-content: center;
 }
@@ -102,11 +100,9 @@ a:hover, a:focus {
 .pb1 {
     padding-block: var(--padding);
 }
-
 .g0-5 {
     gap: calc(var(--padding) / 2);
 }
-
 .g1 {
     gap: var(--padding);
 }
@@ -128,11 +124,16 @@ h1:not(.not-h1), .h1 {
     font-weight: 300;
     color: var(--color-primary-1);
     text-align: center;
-    font-size: 2.77rem;
-    font-size: clamp(2.1rem, 7.576vw, 2.77rem);
+    font-size: clamp(2.27rem, 8.205vw, 3rem);
+    font-size: 3rem;
     margin-top: 0;
     line-height: 1.2;
     margin-bottom: 0.3em;
+}
+
+html.wf-roboto-n3-active h1:not(.not-h1), html.wf-roboto-n3-active .h1 {
+    font-size: 2.77rem;
+    font-size: clamp(2.1rem, 7.576vw, 2.77rem);
 }
 
 h2, .h2 {
@@ -169,7 +170,7 @@ body.dark h2, body.dark .h2 {
     position: relative;
     /*background: url('../src/static.jpg');*/
     float: left;
-    /*  background-clip: text;
+  /*  background-clip: text;
     -webkit-background-clip: text;
     color: transparent;*/
     filter: url(#noise)
