@@ -5,15 +5,16 @@
     --color-secondary-1: #5c5c5c;
     --color-background-1: #fff;
     --color-background-2: #faf8f8;
+    --color-background-3: #f4f0f0;
     --text-color: #181616;
     --text-color-light: #767070;
-    --font-family-sans: "Passion One", "Arial Narrow", Arial, sans-serif;
-    --font-family-sans-2: Roboto, "Arial Narrow", Arial, sans-serif;
-    --font-family-serif: "Libre Baskerville", Georgia, Times, "Times New Roman", serif;
+    --font-family-sans: "Arial Narrow", Arial, sans-serif;
+    --font-family-sans-2: "Arial Narrow", Arial, sans-serif;
+    --font-family-serif: Georgia, Times, "Times New Roman", serif;
     --font-sans: bold 1.37rem/1.72 var(--font-family-sans);
-    --font-serif: 1.3rem/1.63 var(--font-family-serif);
-    --fallback-text-shadow: 0.5px 0 var(--text-color), -0.5px 0 var(--text-color);
-    --fallback-text-shadow--primary: 0.5px 0 var(--color-primary-1), -0.5px 0 var(--color-primary-1);
+    --font-serif: 1.24rem/1.7 var(--font-family-serif);
+    /* --fallback-text-shadow: 0.5px 0 var(--text-color), -0.5px 0 var(--text-color); */
+    /* --fallback-text-shadow--primary: 0.5px 0 var(--color-primary-1), -0.5px 0 var(--color-primary-1); */
 
     --font-family-sans--test: "Arial Narrow", Arial, sans-serif;
     --font-sans--test: bold 1.37rem/1.72 var(--font-family-sans--test);
@@ -25,13 +26,37 @@
     --padding-2: calc(var(--padding) * 2);
     --padding-0-5: calc(var(--padding) / 2);
     --padding-0-25: calc(var(--padding) / 4);
+
+    --default-letter-spacing: 0.38px;
 }
 
-html.wf-active {
-    --fallback-text-shadow: none;
-    --fallback-text-shadow--primary: none;
-    --font-sans: bold 1.45rem/1.6 var(--font-family-sans);
+code {
+    font-size: 0.907em;
+    padding: 0.1em 0.2em;
+    border-radius: 6px;
+}
+
+html.wf-librebaskerville-n7-active {
+    --font-family-serif: "Libre Baskerville";
     --font-serif: 1.125rem/1.9 var(--font-family-serif);
+    --default-letter-spacing: 0;
+}
+code {
+    background-color: var(--color-background-3);
+}
+html.wf-librebaskerville-n7-active code {
+    font-size: 1em;
+}
+
+html.wf-roboto-n3-active {
+    --font-family-sans-2: Roboto;
+}
+
+html.wf-passionone-n4-active {
+    --font-family-sans: "Passion One";
+    /* --fallback-text-shadow: none; */
+    /* --fallback-text-shadow--primary: none; */
+    --font-sans: bold 1.45rem/1.6 var(--font-family-sans);
 }
 
 body.dark {
