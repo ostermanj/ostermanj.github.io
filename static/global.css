@@ -118,9 +118,11 @@ a:hover, a:focus {
 a.bw-0:focus, a.bw-0:hover {
     border-width: 0;
 }
-
+/**
+* to do: only put in the active  ff when the class is active
+*/
 h1:not(.not-h1), .h1 {
-    font-family: Roboto, "Arial Narrow", Arial, sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     font-weight: 300;
     color: var(--color-primary-1);
     text-align: center;
@@ -132,6 +134,7 @@ h1:not(.not-h1), .h1 {
 }
 
 html.wf-roboto-n3-active h1:not(.not-h1), html.wf-roboto-n3-active .h1 {
+    font-family: Roboto;
     font-size: 2.77rem;
     font-size: clamp(2.1rem, 7.576vw, 2.77rem);
 }

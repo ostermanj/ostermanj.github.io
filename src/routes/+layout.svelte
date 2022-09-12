@@ -6,6 +6,12 @@
     import { page } from '$app/stores';
     import { base } from '$app/paths';
     import { firstParagraphStripped } from '$src/scripts';
+    let fontClassName = '';
+    function toggleFonts(){
+        const temp = document.documentElement.className;
+        document.documentElement.className = fontClassName;
+        fontClassName = temp;
+    }
     $:metaImage = $page.data?.heroImage?.fields.file.url ||
         'https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png';
     
@@ -84,6 +90,8 @@
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />
+<button on:click="{toggleFonts}">toggle fonts</button>
+
 <main class="wrapper" id="main-content">
     <slot></slot>
 </main>

@@ -6,14 +6,14 @@
 		<script async>
 			var WebFontConfig = {
 				google: { families: ['Passion One','Libre Baskerville:400,400i,700','Roboto:300'] },
-				loading(){
-					console.log('loading');
+				fontloading(){
+					console.log('fontloading', arguments);
 				},
-				active(){
-					console.log('active');
+				fontactive(){
+					console.log('fontactive', arguments);
 				},
-				inactive(){
-					console.log('inactive');
+				fontinactive(){
+					console.log('fontinactive', arguments);
 				}
 			};
 			(function(d) {
