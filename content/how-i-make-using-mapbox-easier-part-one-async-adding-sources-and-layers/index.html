@@ -3,17 +3,29 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
-			integrity="sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w=="
-			crossOrigin="anonymous"
-			referrerPolicy="no-referrer"
-		></script>
 		<script>
-			WebFont.load({
-				google: { families: ['Passion One','Libre Baskerville:400,400i,700','Roboto:300'] },
-			});
+			if (window.sessionStorage.getItem('wf-active') == 'true'){
+				document.documentElement.className = 'wf-librebaskerville-n7-active wf-librebaskerville-i4-active wf-passionone-n4-active wf-librebaskerville-n4-active wf-roboto-n3-active wf-active';
+			}
 		</script>
-		<script>
+		<script async>
+			var WebFontConfig = {
+				google: { families: ['Passion One','Libre Baskerville:400,400i,700','Roboto:300'] },
+				active(){
+					window.sessionStorage.setItem('wf-active', 'true');
+				}
+			};
+			(function(d) {
+				var wf = d.createElement('script'), s = d.scripts[0];
+				wf.src = 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js';
+				wf.async = true;
+				wf.integrity = 'sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w==';
+				wf.crossOrigin = 'anonymous';
+				wf.referrerPolicy = 'no-referrer';
+				s.parentNode.insertBefore(wf, s);
+			})(document);
+		</script>
+		<script async>
 			(function(w, d){
 			var id='embedly-platform', n = 'script';
 			if (!d.getElementById(id)){
@@ -69,24 +81,24 @@
 
         gtag('config', 'G-8P9T7XMGMD');
         </script><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-xtt5uo"><meta name="twitter:site" content="@johnaosterman" data-svelte="svelte-xtt5uo"><meta name="twitter:url" content="https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers/" data-svelte="svelte-xtt5uo"><meta name="twitter:description" content="Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map." data-svelte="svelte-xtt5uo"><meta name="twitter:title" content="How I make using Mapbox easier, part one: async adding sources and layers" data-svelte="svelte-xtt5uo"><meta name="twitter:image" content="//images.ctfassets.net/3qr5d6sj491p/3KfGz5kmTI4dkz0l98oHY3/777fd2648aaab56363a79c818dc3d1c2/mapbox.png" data-svelte="svelte-xtt5uo"><meta property="og:title" content="How I make using Mapbox easier, part one: async adding sources and layers" data-svelte="svelte-xtt5uo"><meta property="og:type" content="website" data-svelte="svelte-xtt5uo"><meta property="og:url" content="https://osterman.io/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers/" data-svelte="svelte-xtt5uo"><meta property="og:image" content="//images.ctfassets.net/3qr5d6sj491p/3KfGz5kmTI4dkz0l98oHY3/777fd2648aaab56363a79c818dc3d1c2/mapbox.png" data-svelte="svelte-xtt5uo"><meta property="og:site_name" content="John Osterman" data-svelte="svelte-xtt5uo"><meta property="og:description" content="Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map." data-svelte="svelte-xtt5uo"><link rel="alternate" type="application/rss+xml" title="John Osterman" href="/rss" data-svelte="svelte-xtt5uo">
-	<link href="../../app_/immutable/assets/_layout-39e1b6a3.css" rel="stylesheet">
+	<link href="../../app_/immutable/assets/_layout-c036a996.css" rel="stylesheet">
 	<link href="../../app_/immutable/assets/Sprite-cf769916.css" rel="stylesheet">
 	<link href="../../app_/immutable/assets/_page-417a0eb3.css" rel="stylesheet">
-	<link rel="modulepreload" href="../../app_/immutable/start-7b1b895c.js">
-	<link rel="modulepreload" href="../../app_/immutable/chunks/index-619dd36b.js">
-	<link rel="modulepreload" href="../../app_/immutable/chunks/singletons-b7eeebc2.js">
+	<link rel="modulepreload" href="../../app_/immutable/start-0b23345d.js">
+	<link rel="modulepreload" href="../../app_/immutable/chunks/index-c7c7623e.js">
+	<link rel="modulepreload" href="../../app_/immutable/chunks/singletons-c16ed076.js">
 	<link rel="modulepreload" href="../../app_/immutable/chunks/paths-9b83c8fd.js">
-	<link rel="modulepreload" href="../../app_/immutable/components/pages/_layout.svelte-4da58b09.js">
-	<link rel="modulepreload" href="../../app_/immutable/chunks/Sprite-8190543c.js">
-	<link rel="modulepreload" href="../../app_/immutable/chunks/stores-5e3ec2ca.js">
-	<link rel="modulepreload" href="../../app_/immutable/components/pages/content/_slug_/_page.svelte-5dd9ef55.js">
+	<link rel="modulepreload" href="../../app_/immutable/components/pages/_layout.svelte-e3d30e5e.js">
+	<link rel="modulepreload" href="../../app_/immutable/chunks/Sprite-d8995a4d.js">
+	<link rel="modulepreload" href="../../app_/immutable/chunks/stores-1289b39f.js">
+	<link rel="modulepreload" href="../../app_/immutable/components/pages/content/_slug_/_page.svelte-e7c9162a.js">
 	</head>
 	<body>
 		<div>
 
 
 
-<a tabindex="0" class="skip-nav svelte-13kotke" href="#main-content">Skip to main content</a>
+<a tabindex="0" class="skip-nav svelte-1ioldim" href="#main-content">Skip to main content</a>
 <header class="fx jc-c svelte-tjh11i"><div class="fx fd-c ai-c jc-sb pi1 inner svelte-tjh11i"><h1 class="not-h1 svelte-tjh11i"><a class="bw-0" href="/"><picture aria-hidden="true" class="svelte-bu93ei"><source srcset="//images.ctfassets.net/3qr5d6sj491p/4DetEYoICVAqoeHwktW9PU/03a8c166be8c43899e1be9aa8d6991ac/johnosterman-name.png?q=50&fm=avif&w=700&h=118 2x, //images.ctfassets.net/3qr5d6sj491p/4DetEYoICVAqoeHwktW9PU/03a8c166be8c43899e1be9aa8d6991ac/johnosterman-name.png?q=50&fm=avif&w=350&h=59 1x" type="image/avif">
     <source srcset="//images.ctfassets.net/3qr5d6sj491p/4DetEYoICVAqoeHwktW9PU/03a8c166be8c43899e1be9aa8d6991ac/johnosterman-name.png?q=50&fm=webp&w=700&h=118 2x, //images.ctfassets.net/3qr5d6sj491p/4DetEYoICVAqoeHwktW9PU/03a8c166be8c43899e1be9aa8d6991ac/johnosterman-name.png?q=50&fm=webp&w=350&h=59 1x" type="image/webp">
     <img width="350px" height="59px" src="//images.ctfassets.net/3qr5d6sj491p/4DetEYoICVAqoeHwktW9PU/03a8c166be8c43899e1be9aa8d6991ac/johnosterman-name.png?w=350&h=59" alt=""></picture>
@@ -99,6 +111,8 @@
         <nav class="fx svelte-tjh11i"><a class="bw-0 nav-link svelte-tjh11i" href="/about">About</a>
             <a class="bw-0 nav-link svelte-tjh11i" href="/list/blogPost">Blog posts</a>
             <a class="bw-0 nav-link svelte-tjh11i" href="/list/project">Projects</a></nav></div></header>
+
+
 <main class="wrapper" id="main-content"><article class="article-post"><header class="svelte-ocfnl1"><hgroup><h1>How I make using Mapbox easier, part one: async adding sources and layers</h1>
             </hgroup>
         <p class="vsh">Tags:</p>
@@ -137,13 +151,13 @@ before <code>addSource()</code> really takes effect. Both methods are quietly as
 <svg class="vsh" width="0" height="0"><filter id="noise"><feTurbulence type="turbulence" baseFrequency="0.01 0.4" numOctaves="2" result="NOISE"></feTurbulence><feDisplacementMap in2="NOISE" in="SourceGraphic" scale="15" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter></svg>
 
 
-		<script type="module" data-sveltekit-hydrate="sbao5p">
-		import { set_public_env, start } from "../../app_/immutable/start-7b1b895c.js";
+		<script type="module" data-sveltekit-hydrate="nbrcei">
+		import { set_public_env, start } from "../../app_/immutable/start-0b23345d.js";
 
 		set_public_env({});
 
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="sbao5p"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="nbrcei"]').parentNode,
 			paths: {"base":"","assets":""},
 			route: true,
 			spa: false,

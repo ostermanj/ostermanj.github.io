@@ -5,6 +5,7 @@ body {
     color: var(--text-color);
     font: var(--font-serif);
     background-color: var(--color-background-1);
+    letter-spacing: var(--default-letter-spacing);
 }
 
 .wrapper {
@@ -123,16 +124,27 @@ a.bw-0:focus, a.bw-0:hover {
     border-width: 0;
 }
 
+/**
+* to do: only put in the active  ff when the class is active
+*/
 h1:not(.not-h1), .h1 {
-    font-family: Roboto, "Arial Narrow", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: 300;
     color: var(--color-primary-1);
     text-align: center;
+    font-size: 2.72rem;
+    font-size: clamp(2.06rem, 7.439vw, 2.72rem);
+    margin-top: 0;
+    line-height: 1.25;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.4px;
+}
+
+html.wf-roboto-n3-active h1:not(.not-h1), html.wf-roboto-n3-active .h1 {
+    font-family: Roboto;
     font-size: 2.77rem;
     font-size: clamp(2.1rem, 7.576vw, 2.77rem);
-    margin-top: 0;
     line-height: 1.2;
-    margin-bottom: 0.3em;
 }
 
 h2, .h2 {
@@ -161,9 +173,9 @@ body.dark h2, body.dark .h2 {
 
 .first-letter {
     color: var(--color-primary-1);
-    font-size: 5.5rem;
+    font-size: 6rem;
     line-height: 0.5;
-    margin-right: 0.2em;
+    margin-right: 0.23em;
     font-weight: 400;
     text-align: left;
     position: relative;
@@ -173,6 +185,11 @@ body.dark h2, body.dark .h2 {
     -webkit-background-clip: text;
     color: transparent;*/
     filter: url(#noise)
+}
+
+html.wf-librebaskerville-n7-active .first-letter {
+    margin-right: 0.2em;
+    font-size: 5.5rem;
 }
 
 body.dark .embedly-card iframe {
