@@ -3,15 +3,33 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
-			integrity="sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w=="
-			crossOrigin="anonymous"
-			referrerPolicy="no-referrer"
-		></script>
-		<script>
-			WebFont.load({
+		<script async>
+			var WebFontConfig = {
 				google: { families: ['Passion One','Libre Baskerville:400,400i,700','Roboto:300'] },
-			});
+				loading(){
+					console.log('loading');
+				},
+				active(){
+					console.log('active');
+				},
+				inactive(){
+					console.log('inactive');
+				}
+			};
+			(function(d) {
+				var wf = d.createElement('script'), s = d.scripts[0];
+				wf.src = 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js';
+				wf.async = true;
+				wf.integrity = 'sha512-v/wOVTkoU7mXEJC3hXnw9AA6v32qzpknvuUF6J2Lbkasxaxn2nYcl+HGB7fr/kChGfCqubVr1n2sq1UFu3Gh1w==';
+				wf.crossOrigin = 'anonymous';
+				wf.referrerPolicy = 'no-referrer';
+				s.parentNode.insertBefore(wf, s);
+			})(document);
+			/*WebFont.load({
+				google: {
+					families: ['Passion One']
+				}
+			});*/
 		</script>
 		<script>
 			(function(w, d){
