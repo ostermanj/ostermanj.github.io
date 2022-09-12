@@ -78,6 +78,7 @@
         </script>
     {/if}
     <title>{metaTitle} | John Osterman</title>
+    <meta name="description" content="{metaDescription}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@johnaosterman" />
     <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
