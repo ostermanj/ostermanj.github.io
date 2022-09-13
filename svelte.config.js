@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
-console.log(JSON.stringify(import.meta));
+console.log(process.env.NODE_ENV);
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -18,8 +18,8 @@ const config = {
 			$components: 'src/components'
 		},
 		browser: {
-			router: import.meta.env !== 'PROD',
-			hydrate:import.meta.env !== 'PROD'
+			router: process.env.NODE_ENV !== 'production',
+			hydrate: process.env.NODE_ENV !== 'production'
 		},
 		prerender: {
 			default: true,
