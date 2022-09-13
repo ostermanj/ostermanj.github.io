@@ -18,8 +18,8 @@ const config = {
 			$components: 'src/components'
 		},
 		browser: {
-			router: false,
-			hydrate: false
+			router: import.meta.env !== 'PROD',
+			hydrate:import.meta.env !== 'PROD'
 		},
 		prerender: {
 			default: true,

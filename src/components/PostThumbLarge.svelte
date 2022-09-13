@@ -37,7 +37,7 @@
     }
 </style>
 <div class="container">
-    <picture class="fx bg-image">
+    <picture aria-hidden="true" class="fx bg-image">
         <source srcset="{file.url}?w=482&h=338&fm=avif&q=30 2x, {file.url}?w=241&h=169&fm=avif&q=30 1x" type="image/avif">
         <source srcset="{file.url}?w=482&h=338&fm=webp&q=30 2x, {file.url}?w=241&h=169&fm=webp&q=30 1x" type="image/webp">
         <source srcset="{file.url}?w=482&h=338&fm=png&q=30 2x, {file.url}?w=241&h=169&fm=png&q=30 1x" type="image/png">

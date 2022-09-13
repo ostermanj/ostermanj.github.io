@@ -27,8 +27,10 @@
         position: absolute;
     }
 </style>
-<p class="overview h2">{fields.overview}</p>
-{@html fields.body}
+<section title="introduction">
+    <p class="overview h2">{fields.overview}</p>
+    {@html fields.body}
+</section>
 {#if fields.featuredBlogPosts && fields.featuredBlogPosts.length }
  <FeaturedPosts featuredPosts={fields.featuredBlogPosts}/>
 {/if}

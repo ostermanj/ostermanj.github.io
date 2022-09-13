@@ -1,8 +1,6 @@
 <script>
     import Header from '$components/Header.svelte';
     import Footer from '$components/Footer.svelte';
-    import SpriteFile from '$components/SpriteFile.svelte';
-    import SVGFilters from '$components/SVGFilters.svelte';
     import { page } from '$app/stores';
     import { base } from '$app/paths';
     import { firstParagraphStripped } from '$src/scripts';
@@ -103,5 +101,3 @@
     <slot></slot>
 </main>
 <Footer />
-<SpriteFile />
-<SVGFilters />
