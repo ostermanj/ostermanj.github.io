@@ -60,6 +60,10 @@
     .skip-nav:focus {
         z-index: 1;
     }
+    .toggle-font {
+        position: sticky;
+        top: 90px;
+    }
 </style>
 <svelte:head>
     {#if import.meta.env.PROD }
@@ -90,7 +94,9 @@
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />
-<button on:click="{toggleFonts}">toggle fonts</button>
+{#if import.meta.env.DEV }
+<button class="toggle-font" on:click="{toggleFonts}">toggle fonts</button>
+{/if}
 
 <main class="wrapper" id="main-content">
     <slot></slot>

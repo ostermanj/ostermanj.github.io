@@ -3,17 +3,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			if (window.sessionStorage.getItem('wf-active') == 'true'){
+				document.documentElement.className = 'wf-librebaskerville-n7-active wf-librebaskerville-i4-active wf-passionone-n4-active wf-librebaskerville-n4-active wf-roboto-n3-active wf-active';
+			}
+		</script>
 		<script async>
 			var WebFontConfig = {
 				google: { families: ['Passion One','Libre Baskerville:400,400i,700','Roboto:300'] },
-				fontloading(){
-					console.log('fontloading', arguments);
-				},
-				fontactive(){
-					console.log('fontactive', arguments);
-				},
-				fontinactive(){
-					console.log('fontinactive', arguments);
+				active(){
+					window.sessionStorage.setItem('wf-active', 'true');
 				}
 			};
 			(function(d) {
@@ -25,13 +24,8 @@
 				wf.referrerPolicy = 'no-referrer';
 				s.parentNode.insertBefore(wf, s);
 			})(document);
-			/*WebFont.load({
-				google: {
-					families: ['Passion One']
-				}
-			});*/
 		</script>
-		<script>
+		<script async>
 			(function(w, d){
 			var id='embedly-platform', n = 'script';
 			if (!d.getElementById(id)){
