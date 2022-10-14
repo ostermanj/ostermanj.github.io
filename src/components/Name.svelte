@@ -13,6 +13,9 @@
         background: var(--color-primary-1);
         mix-blend-mode: screen;
     }
+    :global(.pc) picture:hover::after, :global(.pc) picture:focus::after {
+        display: none;
+    }
     :global(body.dark) picture {
         filter: brightness(200);
     }

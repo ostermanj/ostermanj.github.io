@@ -64,6 +64,10 @@ img {
     align-items: center;
 }
 
+.as-s {
+    align-self: stretch;
+}
+
 .jc-sb {
     justify-content: space-between;
 }
@@ -102,6 +106,10 @@ a:hover, a:focus {
 
 .pb1 {
     padding-block: var(--padding);
+}
+
+.pb0-5 {
+    padding-block: calc(var(--padding) / 2);
 }
 
 .g0-5 {
@@ -220,4 +228,11 @@ body.dark .embedly-card iframe {
     line-height: 1;
     letter-spacing: 1px;
 
+}
+
+.m0 {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }

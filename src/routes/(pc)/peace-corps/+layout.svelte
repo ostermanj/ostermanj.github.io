@@ -43,10 +43,17 @@
         position: absolute;
         left: 50%;
         top: 5px;
-        transform: translateX(-50%);
+        z-index: -1;
+        /* transform: translateX(-50%); */
     }
     .skip-nav:focus {
         z-index: 1;
+    }
+    .hero-image {
+        width: 100%;
+        max-height: 275px;
+        object-fit: cover;
+        object-position: top;
     }
 </style>
 <svelte:head>
@@ -77,10 +84,13 @@
     <link rel="alternate" type="application/rss+xml" title="John Osterman" href="{base}/rss">
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
-<Header />
+<div class="pc">
+    <Header />
+</div>
 {#if import.meta.env.PROD }
 <button on:click="{toggleFonts}">toggle fonts</button>
 {/if}
+<img class="hero-image" src="/1600px-Mauritania_banner.jpg" alt="">
 <main class="wrapper" id="main-content">
     <slot></slot>
 </main>
