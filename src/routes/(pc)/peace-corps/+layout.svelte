@@ -35,6 +35,11 @@
         return 'Peace Corps Journals';
     })()
     $:metaTitle = $page.data.title || ( $page.data.page ? $page.data.page.charAt(0).toUpperCase() + $page.data.page.slice(1) : undefined) || fallbackMetaTitle;
+
+    export let data;
+    $: ({
+        hero
+    } = data);
 </script>
 <style>
     @import 'normalize.css';
@@ -53,7 +58,7 @@
         width: 100%;
         max-height: 275px;
         object-fit: cover;
-        object-position: top;
+        object-position: center;
     }
 </style>
 <svelte:head>
@@ -90,8 +95,13 @@
 {#if import.meta.env.PROD }
 <button on:click="{toggleFonts}">toggle fonts</button>
 {/if}
-<img class="hero-image" src="/1600px-Mauritania_banner.jpg" alt="">
-<main class="wrapper" id="main-content">
+<picture>
+    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=avif&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=avif&q=80 1x" type="image/avif">
+    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=webp&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=webp&q=80 1x" type="image/webp">
+    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=png&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=png&q=80 1x" type="image/png">
+    <img class="hero-image" width="{hero.fields.file.details.image.width / 2}" height="{hero.fields.file.details.image.height / 2}" src="{hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&q=80" alt="{hero.fields.description}">
+</picture>
+<main class="wrapper wrapper--peace-corps" id="main-content">
     <slot></slot>
 </main>
 <Footer />

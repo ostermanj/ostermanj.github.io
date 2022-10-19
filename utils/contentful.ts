@@ -29,17 +29,32 @@ async function replaceAsync(str, regex, asyncFn) {
     const data = await Promise.all(promises);
     return str.replace(regex, () => data.shift());
 }
+function escapeQuotes(str){
+    str = str.replace(/"/g, "'");
+    return str;
+}
+
 async function addContentifyInfo(match, ...args){
+
+    const sizeFactor = args[1].indexOf('#half') !== -1 ? 0.5 : 1;
     const imgID = args[0].split('/')[4];
     const imageData = await getAsset(imgID);
     const width = imageData.fields.file.details.image?.width;
     const height = imageData.fields.file.details.image?.height;
+    const desc = escapeQuotes(imageData.fields.description);
     const hToW = height / width;
     const sourceSets = ['avif','webp'].reduce(function(acc, cur){
-        return acc + `<source srcset="${args[0]}?fm=${cur}&w=1480&h=${Math.round(hToW * 1480)}&q=30 2x, ${args[0]}?fm=${cur}&w=740&h=${Math.round(hToW * 740)}&q=30 1x" type="image/${cur}" media="(min-width:632px)">
-                      <source srcset="${args[0]}?fm=${cur}&w=800&h=${Math.round(hToW * 800)}&q=30 2x, ${args[0]}?fm=${cur}&w=400&h=${Math.round(hToW * 400)}&q=30 1x" type="image/${cur}">`;
+        if (sizeFactor == 1){
+            return acc + `<source srcset="${args[0]}?fm=${cur}&w=${1480}&h=${Math.round(hToW * 1480)}&q=30 2x, ${args[0]}?fm=${cur}&w=${740}&h=${Math.round(hToW * 740)}&q=30 1x" type="image/${cur}" media="(min-width:632px)">
+                          <source srcset="${args[0]}?fm=${cur}&w=${800}&h=${Math.round(hToW * 800)}&q=30 2x, ${args[0]}?fm=${cur}&w=${400}&h=${Math.round(hToW * 400)}&q=30 1x" type="image/${cur}">`;
+        } else {
+            return acc + `<source srcset="${args[0]}?fm=${cur}&w=${680}&h=${Math.round(hToW * 680)}&q=30 2x, ${args[0]}?fm=${cur}&w=${340}&h=${Math.round(hToW * 340)}&q=30 1x" type="image/${cur}">`;
+        }
     },'');
-    return `<picture>${sourceSets}<img src="${args[0]}${args[1]} width="${width}px" height="${height}px" /></picture>`;
+    return `<picture>
+        ${sourceSets}
+        <img load="lazy" class="${sizeFactor == 0.5 ? 'half' : 'full'}" src="${args[0]}" width="${width}px" height="${height}px" alt="${desc}" />
+    </picture>`;
 }
 async function sourceSetify(html){
     const regex = /<img src="(.*?)"(.*?)>/g;
@@ -62,6 +77,8 @@ export async function getBlogById(id:string){
     const response = await client.getEntry(id) as Entry<JSONValue>;
     response.fields.body = await toHTML(response.fields.body);
     response.fields.body = response.fields.body.replace(/^<p>(\w)/,'<p><span class="first-letter">$1</span>');
+    response.fields.body = response.fields.body.replace(/<p><picture>/g,'<picture>');
+    response.fields.body = response.fields.body.replace(/<\/picture><\/p>/g,'</picture>');
     return response;
 }
 export async function getPageContent(page: string){

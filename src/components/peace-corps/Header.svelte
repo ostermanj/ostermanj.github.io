@@ -5,8 +5,8 @@
 </script>
 
 <header class="fx jc-sb ai-c">
-	<div class="header-side fx as-s ai-s">
-		<a class="back-link pi1 fx ai-c" href="/"> <span>Work stuff</span></a>
+	<div class="header-side header-side--left fx as-s ai-s">
+		<a class="back-link fx ai-c" href="/"> <span>Work stuff</span></a>
 	</div>
 	
 	<div class="header-side fx pb0-5">
@@ -34,13 +34,17 @@
 		z-index: 2;
 	}
 	.header-side {
-		flex: 0 0 260px;
+		flex: 0 1 260px;
 	}
+    .header-side--left {
+        flex-shrink: 2;
+    }
 	.back-link {
 		background-color: #767676;
 		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 		color: #fff;
-		font-size: 1rem;
+		font-size: clamp(12px, 3.2vw, 1rem);
+        padding-inline: clamp(10px, 3.125vw, 1rem);
 	}
 	.back-link:focus,
 	.back-link:hover {

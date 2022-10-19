@@ -236,3 +236,9 @@ body.dark .embedly-card iframe {
     margin-bottom: 0;
     margin-left: 0;
 }
+
+figure.half {
+    width: 100%;
+    max-width: 370px;
+    box-sizing: border-box;
+}

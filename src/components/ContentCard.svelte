@@ -7,9 +7,11 @@
 <script>
     export let contents;
     export let style = 'large';
+    export let parent = '';
     let contentTypes = {
       blogPost: 'Blog post',
-      project: 'Project'
+      project: 'Project',
+      peaceCorpsPost: 'Blog post',
     };
 </script>
 <style>
@@ -25,6 +27,10 @@
     background-color: var(--color-background-2);
    
   }
+  .peace-corps article {
+    border-width: 0;
+    background-color: transparent;
+  }
   article p {
     margin-block: 0.5em 0;
     line-height: 1.6;
@@ -32,6 +38,9 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+  }
+  .peace-corps article p {
+    line-height: 1.8;
   }
   h1 {
       margin-block: 0;
@@ -43,16 +52,25 @@
     font-size: 0.85rem;
   }
   .card-text {
-    flex-grow: 1;
+    flex: 1 0 370px;
+  }
+  .peace-corps .card-text {
+    padding-block: 0;
+  }
+  .peace-corps .date {
+    color: #767676;
+    /* font-size: 0.85rem; */
+    /* font-weight: bold; */
+    font-family: var(--font-family-sans);
   }
 </style>
-<div class:small="{style == 'small'}" class="container g2">
+<div class:peace-corps="{parent == 'peace-corps'}" class:small="{style == 'small'}" class="container g2">
     {#each contents as content}
     {@const contentType = contentTypes[content.sys.contentType.sys.id]}
     <article class="fx" class:fd-c="{style == 'large'}">
       {#if content.fields.heroImage}
         {#if style == 'small'}
-       <PostThumb file="{content.fields.heroImage.fields.file}" />
+       <PostThumb file="{content.fields.heroImage.fields.file}" {parent} />
        {:else}
        <PostThumbLarge file="{content.fields.heroImage.fields.file}" />
        {/if}
@@ -62,7 +80,8 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-              <h1 class="not-h1 h2"><a href="{base}/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+          <pre>{content.sys.id}</pre>
+              <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>

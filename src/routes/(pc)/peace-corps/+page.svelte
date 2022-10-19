@@ -1,2 +1,66 @@
-<h1 class="not-h1 h2">Peace Corps, Mauritania 2001–2003</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi mollitia at doloribus placeat aspernatur, repudiandae, harum molestias cum libero, sapiente officia natus rem quas provident commodi facere. Optio, in, voluptates ipsa quos, eligendi tempora quasi fugiat cumque officiis mollitia aliquam corporis minima ab veniam? Tenetur illum eligendi ullam id fugit, quaerat beatae non quam culpa nihil nemo optio repudiandae ut qui eum praesentium cupiditate molestiae tempore quisquam distinctio officiis esse. Nostrum debitis repellat alias, soluta libero error quasi quis obcaecati labore, mollitia perspiciatis iure ipsam sequi dignissimos beatae, maxime deserunt pariatur tempore commodi ea quos maiores dolore itaque? Possimus, consequuntur.   </p>
+<script context="module">
+    import ContentCard from '$components/ContentCard.svelte';
+    import { paginate, LightPaginationNav } from 'svelte-paginate';
+</script>
+<script>
+ export let data;
+    $: ({
+        title,
+        body,
+        posts,
+    } = data);
+    $:items = posts.items;
+    let currentPage = 1;
+    let pageSize = 10;
+    $: paginatedItems = paginate({ items, pageSize, currentPage })
+</script>
+<section>
+    <h1 class="not-h1 h2">{title}</h1>
+    {@html body}
+    <hr>
+    <ContentCard contents="{paginatedItems}" style="small" parent="peace-corps"/>
+        {#if items.length > pageSize }
+        <LightPaginationNav
+            totalItems="{items.length}"
+            pageSize="{pageSize}"
+            currentPage="{currentPage}"
+            limit="{1}"
+            showStepOptions="{true}"
+            on:setPage="{(e) => currentPage = e.detail.page}"
+            />
+            {/if}
+   
+</section>
+<style>
+    h1 {
+        font-size: 2.6rem;
+        text-align: center;
+        margin-block-start: 1em;
+        margin-block-end: 1.5em;
+    }
+    :global(.wrapper--peace-corps figure) {
+        margin-inline: 0;
+        display: inline-block;
+        padding: 15px;
+        box-shadow: var(--box-shadow);
+        border-radius: 2px;
+        font-family: 'Passion One', sans-serif;
+        flex: 1 3 250px;
+        align-self: flex-start;
+    }
+    :global(.wrapper--peace-corps figcaption){
+        padding-inline: calc(var(--padding) / 2);
+        letter-spacing: 0.5px; 
+    }
+    :global(.wrapper--peace-corps .fx) {
+        flex-wrap: wrap;
+        row-gap: 0;
+    }
+    :global(.wrapper--peace-corps .fx > div.fx-item){
+        flex: 3 1 300px;
+    }
+    hr {
+        margin-block-end: 1em;
+    }
+    
+</style>

@@ -1,13 +1,16 @@
 <script>
     export let file = {};
+    export let parent = '';
 </script>
 <style>
     .container {
-        width: 25%;
-        flex-shrink: 0;
+        flex: 0 0 25%;
         overflow: hidden;
         position: relative;
         background-color: var(--color-secondary-1)
+    }
+    .container.peace-corps {
+        background-color: transparent;
     }
     picture {
         line-height: 0;
@@ -33,15 +36,20 @@
         border: 5px solid transparent;
         box-sizing: border-box;
     }
+    .peace-corps img {
+        object-position: top;
+    }
     
 </style>
-<div class="container fx">
+<div class:peace-corps="{parent == 'peace-corps'}" class="container fx">
+    {#if parent !== 'peace-corps'}
     <picture class="fx bg-image">
         <source srcset="{file.url}?w=482&h=338&fm=avif&q=30 2x, {file.url}?w=241&h=169&fm=avif&q=30 1x" type="image/avif">
         <source srcset="{file.url}?w=482&h=338&fm=webp&q=30 2x, {file.url}?w=241&h=169&fm=webp&q=30 1x" type="image/webp">
         <source srcset="{file.url}?w=482&h=338&fm=png&q=30 2x, {file.url}?w=241&h=169&fm=png&q=30 1x" type="image/png">
         <img loading="lazy" width="241" height="169" src="{file.url}?w=241&h=169" alt="">
     </picture>
+    {/if}
     <picture class="fx">
         <source srcset="{file.url}?w=482&h=338&fm=avif&q=30 2x, {file.url}?w=241&h=169&fm=avif&q=30 1x" type="image/avif">
         <source srcset="{file.url}?w=482&h=338&fm=webp&q=30 2x, {file.url}?w=241&h=169&fm=webp&q=30 1x" type="image/webp">

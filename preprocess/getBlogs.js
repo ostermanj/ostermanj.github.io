@@ -15,22 +15,28 @@ async function getPaginatedCollection({content_type = "blogPost", skip = 0, limi
         content_type,
         skip,
         limit,
-        order: '-fields.datePublished'
+        order: content_type == 'page' ? 'sys.createdAt' : '-fields.datePublished'
     }).then(response => {
         response.items.forEach(blog => {
             mapSlugToId(blog);
-            const fields = {
+            const fields = content_type !== 'page' ? {
                 title: blog.fields.title,
                 datePublished: new Date(blog.fields.datePublished).toUTCString(),
                 dateUpdated: new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString(),
                 description: blog.fields.snippet + `<p><a href="${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
                 link: `${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
-                categories: blog.fields.tags.map(tag => tag.fields.tag)
+                
+            } : {
+                title: blog.fields.title,
+                link: `${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
             };
             if (content_type == 'blogPost'){
                 fields.author = blog.fields.authors.map(author => author.fields.fullName).join(', ');
+                fields.categories = blog.fields.tags.map(tag => tag.fields.tag);
             }
-            allEntries.push(fields);
+            if ( content_type !== 'page'){
+                allEntries.push(fields);
+            }
         })
         if ( response.total > skip + response.limit ){
             return getPaginatedCollection({content_type, skip: skip + response.limit, limit, base})
@@ -57,7 +63,7 @@ function writeToFile(){
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(entrySlugsToId), null, 2));
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/allEntries.json'), JSON.stringify(allEntries, null, 2));
 }
-Promise.all([getPaginatedCollection({}), getPaginatedCollection({content_type: 'project'})]).then(() => {
+Promise.all([getPaginatedCollection({}), getPaginatedCollection({ content_type: 'project' }), getPaginatedCollection({ content_type: 'page' }), getPaginatedCollection({ content_type: 'peaceCorpsPost' })]).then(() => {
      writeToFile();
      process.exit(0);
 });
