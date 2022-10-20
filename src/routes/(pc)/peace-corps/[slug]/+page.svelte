@@ -5,29 +5,34 @@
     export let data;
     $: ({
         title,
+        seriesTitle,
         subtitle,
         body,
         datePublished,
-        contentType,
-        link,
     } = data);
 
 </script>
 <style>
     header {
         margin-bottom: 4rem;
+        font-family: 'Passion One';
+        /* display: flex;
+        justify-content: center; */
     }
     h1 {
         font-size: 2.5rem;
-        text-align: center;
-        margin-block-start: 1em;
+        margin-block-start: 0;
         margin-block-end: 0
+    }
+    .series-name {
+        margin-block-end: 0;
+    }
+    .series-name::before {
+        content: '< '
     }
     .date {
         color: var(--text-color-light);
         margin-block: 0;
-        font-family: var(--font-family-sans-2);
-        text-align: center;
     }
     .external-link {
         
@@ -52,25 +57,22 @@
         font-size: 1.3rem;
         padding: var(--padding);
         box-shadow: var(--box-shadow);
+        background-color: var(--color-background-2);
     }
 </style>
-<svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
-</svelte:head>
 <article class="article-post">
     <header>
-        <hgroup>
+        <div>
+            <p class="series-name"><a href="./..">{seriesTitle}</a></p>
             <h1 class="not-h1 h2">{title}</h1>
             {#if subtitle}
             <p class="subtitle">{subtitle}</p>
             {/if}
-        </hgroup>
-        <p class="date">
-            <span>Posted</span>
-            <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-        </p>
+            <p class="date">
+                <span>Posted</span>
+                <time datetime={datePublished}>{new Date(datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            </p>
+        </div>
     </header>
     <main>{@html body}</main>
 </article>

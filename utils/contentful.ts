@@ -36,7 +36,7 @@ function escapeQuotes(str){
 
 async function addContentifyInfo(match, ...args){
 
-    const sizeFactor = args[1].indexOf('#half') !== -1 ? 0.5 : 1;
+    const sizeFactor = args[1].indexOf('#half') !== -1 ? 0.5 : args[1].indexOf('#two-thirds') !== -1 ? 0.667 : 1;
     const imgID = args[0].split('/')[4];
     const imageData = await getAsset(imgID);
     const width = imageData.fields.file.details.image?.width;
@@ -47,13 +47,15 @@ async function addContentifyInfo(match, ...args){
         if (sizeFactor == 1){
             return acc + `<source srcset="${args[0]}?fm=${cur}&w=${1480}&h=${Math.round(hToW * 1480)}&q=30 2x, ${args[0]}?fm=${cur}&w=${740}&h=${Math.round(hToW * 740)}&q=30 1x" type="image/${cur}" media="(min-width:632px)">
                           <source srcset="${args[0]}?fm=${cur}&w=${800}&h=${Math.round(hToW * 800)}&q=30 2x, ${args[0]}?fm=${cur}&w=${400}&h=${Math.round(hToW * 400)}&q=30 1x" type="image/${cur}">`;
+        } else if (sizeFactor == 0.667){
+            return acc + `<source srcset="${args[0]}?fm=${cur}&w=${988}&h=${Math.round(hToW * 988)}&q=30 2x, ${args[0]}?fm=${cur}&w=${494}&h=${Math.round(hToW * 494)}&q=30 1x" type="image/${cur}">`;
         } else {
             return acc + `<source srcset="${args[0]}?fm=${cur}&w=${680}&h=${Math.round(hToW * 680)}&q=30 2x, ${args[0]}?fm=${cur}&w=${340}&h=${Math.round(hToW * 340)}&q=30 1x" type="image/${cur}">`;
         }
     },'');
     return `<picture>
         ${sourceSets}
-        <img load="lazy" class="${sizeFactor == 0.5 ? 'half' : 'full'}" src="${args[0]}" width="${width}px" height="${height}px" alt="${desc}" />
+        <img load="lazy" class="${sizeFactor == 0.5 ? 'half' : sizeFactor == 0.667 ? 'two-thirds' : 'full'}" src="${args[0]}" width="${width}px" height="${height}px" alt="${desc}" />
     </picture>`;
 }
 async function sourceSetify(html){

@@ -15,7 +15,7 @@
     };
 </script>
 <style>
-  .container {
+   .container {
       display: grid;
        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
@@ -51,14 +51,15 @@
     text-transform: uppercase;
     font-size: 0.85rem;
   }
-  .card-text {
-    flex: 1 0 370px;
+  .small .card-text {
+    flex: 1 1 370px;
   }
   .peace-corps .card-text {
     padding-block: 0;
   }
   .peace-corps .date {
     color: #767676;
+    margin-block-start: 0;
     /* font-size: 0.85rem; */
     /* font-weight: bold; */
     font-family: var(--font-family-sans);
@@ -80,12 +81,14 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-          <pre>{content.sys.id}</pre>
-              <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+          <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+          {#if parent == 'peace-corps'}
+          <p class="ts-s date">Posted <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+          {/if}
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>
-              {#if style == 'small'}
+              {#if style == 'small' && parent !== 'peace-corps'}
               <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
               {/if}
             </main>

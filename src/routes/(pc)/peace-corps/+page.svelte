@@ -5,7 +5,8 @@
 <script>
  export let data;
     $: ({
-        title,
+        seriesTitle,
+        secondaryTitle,
         body,
         posts,
     } = data);
@@ -15,7 +16,10 @@
     $: paginatedItems = paginate({ items, pageSize, currentPage })
 </script>
 <section>
-    <h1 class="not-h1 h2">{title}</h1>
+    <header>
+        <h1 class="not-h1">{seriesTitle}</h1>
+        <p class="h2">{secondaryTitle}</p>
+    </header>
     {@html body}
     <hr>
     <ContentCard contents="{paginatedItems}" style="small" parent="peace-corps"/>
@@ -33,32 +37,22 @@
 </section>
 <style>
     h1 {
-        font-size: 2.6rem;
+        font-size: clamp(34px, 10.625vw, 5rem);
+        font-family: 'Cavet', cursive;
+        /* filter: url('#noise-liter'); */
         text-align: center;
-        margin-block-start: 1em;
-        margin-block-end: 1.5em;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.2em;
+        line-height: 1;
+        color: var(--color-primary-1);
     }
-    :global(.wrapper--peace-corps figure) {
-        margin-inline: 0;
-        display: inline-block;
-        padding: 15px;
-        box-shadow: var(--box-shadow);
-        border-radius: 2px;
-        font-family: 'Passion One', sans-serif;
-        flex: 1 3 250px;
-        align-self: flex-start;
+    .h2 {
+        margin: 0;
+        text-align: center;
+        margin-block-end: 2em;
+        font-size: clamp(1.1rem, 5vw, 1.45rem);
     }
-    :global(.wrapper--peace-corps figcaption){
-        padding-inline: calc(var(--padding) / 2);
-        letter-spacing: 0.5px; 
-    }
-    :global(.wrapper--peace-corps .fx) {
-        flex-wrap: wrap;
-        row-gap: 0;
-    }
-    :global(.wrapper--peace-corps .fx > div.fx-item){
-        flex: 3 1 300px;
-    }
+    
     hr {
         margin-block-end: 1em;
     }

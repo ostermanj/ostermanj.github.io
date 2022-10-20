@@ -38,6 +38,7 @@
     }
     .peace-corps img {
         object-position: top;
+        border-width:0 ;
     }
     
 </style>
