@@ -22,8 +22,9 @@
     h1 {
         font-size: 2.5rem;
         margin-block-start: 0;
-        margin-block-end: 0
+        margin-block-end: 0;
     }
+        
     .series-name {
         margin-block-end: 0;
     }

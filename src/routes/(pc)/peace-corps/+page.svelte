@@ -45,6 +45,12 @@
         margin-block-end: 0.2em;
         line-height: 1;
         color: var(--color-primary-1);
+        filter: url('#noise-liter');
+    }
+    @media screen and (min-width: 515px){
+        h1 {
+            filter: url('#noise-lite');
+        }
     }
     .h2 {
         margin: 0;
