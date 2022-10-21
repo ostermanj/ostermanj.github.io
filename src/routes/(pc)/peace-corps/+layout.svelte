@@ -1,6 +1,6 @@
 <script>
     import Header from '$components/peace-corps/Header.svelte';
-    import Footer from '$components/Footer.svelte';
+    import Footer from '$components/peace-corps/Footer.svelte';
     import SpriteFile from '$components/SpriteFile.svelte';
     import SVGFilters from '$components/SVGFilters.svelte';
     import { page } from '$app/stores';
