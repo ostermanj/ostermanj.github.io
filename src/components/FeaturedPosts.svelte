@@ -4,5 +4,7 @@
 <script>
     export let featuredPosts;
 </script>
-<h2>Featured</h2>
-<ContentCard contents="{featuredPosts}" />
+<section>
+    <h2>Featured posts and projects</h2>
+    <ContentCard contents="{featuredPosts}" />
+</section>

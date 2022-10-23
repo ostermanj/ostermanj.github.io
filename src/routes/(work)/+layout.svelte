@@ -1,8 +1,6 @@
 <script>
     import Header from '$components/Header.svelte';
     import Footer from '$components/Footer.svelte';
-    import SpriteFile from '$components/SpriteFile.svelte';
-    import SVGFilters from '$components/SVGFilters.svelte';
     import { page } from '$app/stores';
     import { base } from '$app/paths';
     import { firstParagraphStripped } from '$src/scripts';
@@ -78,6 +76,7 @@
         </script>
     {/if}
     <title>{metaTitle} | John Osterman</title>
+    <meta name="description" content="{metaDescription}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@johnaosterman" />
     <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
@@ -147,5 +146,3 @@
     <slot></slot>
 </main>
 <Footer />
-<SpriteFile />
-<SVGFilters />

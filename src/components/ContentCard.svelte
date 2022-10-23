@@ -22,7 +22,7 @@
   .small.container {
     grid-template-columns: 1fr;
   }
-  article {
+  li {
     border: 1px solid var(--color-secondary-1);
     background-color: var(--color-background-2);
    
@@ -39,11 +39,9 @@
   -webkit-box-orient: vertical;  
   overflow: hidden;
   }
-  .peace-corps article p {
-    line-height: 1.8;
-  }
   h1 {
       margin-block: 0;
+      line-height: 1;
   }
   .content-type {
     font-family: var(--font-family-sans-2);
@@ -65,13 +63,13 @@
     font-family: var(--font-family-sans);
   }
 </style>
-<div class:peace-corps="{parent == 'peace-corps'}" class:small="{style == 'small'}" class="container g2">
+<div class:small="{style == 'small'}" class="container g2">
     {#each contents as content}
     {@const contentType = contentTypes[content.sys.contentType.sys.id]}
     <article class="fx" class:fd-c="{style == 'large'}">
       {#if content.fields.heroImage}
         {#if style == 'small'}
-       <PostThumb file="{content.fields.heroImage.fields.file}" {parent} />
+       <PostThumb file="{content.fields.heroImage.fields.file}" />
        {:else}
        <PostThumbLarge file="{content.fields.heroImage.fields.file}" />
        {/if}
@@ -81,18 +79,14 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-          <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
-          {#if parent == 'peace-corps'}
-          <p class="ts-s date">Posted <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
-          {/if}
+              <h1 class="not-h1 h2"><a href="{base}/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>
               {#if style == 'small' && parent !== 'peace-corps'}
               <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
               {/if}
-            </main>
-        </div>
-    </article>
+          </div>
+      </article>
     {/each}
 </div>

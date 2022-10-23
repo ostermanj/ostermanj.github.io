@@ -64,6 +64,9 @@ picture {
 .fd-c {
     flex-direction: column;
 }
+.fd-c-r {
+    flex-direction: column-reverse;
+}
 
 .ai-c {
     align-items: center;

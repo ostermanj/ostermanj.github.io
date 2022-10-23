@@ -2,34 +2,37 @@
     export let featuredWork;
 </script>
 <style>
-    dl {
+    ol {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
-    dl div {
+    li {
         border: 1px solid var(--color-secondary-1);
         background-color: var(--color-background-2);
+        line-height: 1.6;
     }
-    dt, dd {
+    p {
         padding: 0;
         margin: 0;
     }
-    dt {
-        color: var(--color-primary-1);
+    a {
         font-weight: bold;
+        display: inline-block;
     }
     
 </style>
-<h2>Jobs</h2>
-<dl class="g2">
-    {#each featuredWork as feature}
-    <div class="p1">
-        <dt>
-            <a href="{feature.fields.url}">{feature.fields.workPlaceName}</a>
-        </dt>
-        <dd class="ts-s">
-            {feature.fields.title}, {feature.fields.startDate.split('-')[0]}–{feature.fields.endDate ? feature.fields.endDate.split('-')[0] : 'present'}
-        </dd>
-    </div>
-    {/each}
-</dl>
+<section>
+    <h2>Jobs</h2>
+    <ol class="g2">
+        {#each featuredWork as feature}
+        <li class="p1">
+            <p><a href="{feature.fields.url}">{feature.fields.workPlaceName}</a>
+                <span class="ts-s">{feature.fields.title}, {feature.fields.startDate.split('-')[0]}–{feature.fields.endDate ? feature.fields.endDate.split('-')[0] : 'present'}</span>
+            </p>
+        </li>
+        {/each}
+    </ol>
+</section>
