@@ -24,11 +24,11 @@ async function getPaginatedCollection({content_type = "blogPost", skip = 0, limi
                 datePublished: new Date(blog.fields.datePublished).toUTCString(),
                 dateUpdated: new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString(),
                 description: blog.fields.snippet + `<p><a href="${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
-                link: `${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
+                link: `${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}`,
                 
             } : {
-                title: blog.fields.title,
-                link: `${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}`,
+                    title: blog.fields.title || blog.fields.seriestitle,
+                    link: `${base}/${slugify((blog.fields.title || blog.fields.seriesTitle), {strict: true, lower: true})}`,
             };
             if (content_type == 'blogPost'){
                 fields.author = blog.fields.authors.map(author => author.fields.fullName).join(', ');
@@ -51,7 +51,7 @@ function reverse(obj){
     return newObj;
 }
 function mapSlugToId(blog, attempt = 0){
-    const slug = slugify(blog.fields.title, {strict: true, lower: true});
+    const slug = slugify((blog.fields.title || blog.fields.seriesTitle), {strict: true, lower: true});
     if (entrySlugsToId[attempt > 0 ? `${slug}-${attempt}` : attempt] === undefined){
         entrySlugsToId[slug + (attempt > 0 ? `-${attempt}` : '')] = blog.sys.id;
     } else {

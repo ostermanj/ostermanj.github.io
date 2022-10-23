@@ -6,7 +6,7 @@ const slugsToIDs: Record<string, string> = _slugsToIDs;
 export async function load(){
     let fields;
     let posts;
-    const id: string = slugsToIDs['peace-corps-mauritania-2001-2003'];
+    const id: string = slugsToIDs['peace-corps'];
     if (id === undefined) {
         throw error(404, { statusText: "Not Found" });
     }

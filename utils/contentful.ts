@@ -30,6 +30,9 @@ async function replaceAsync(str, regex, asyncFn) {
     return str.replace(regex, () => data.shift());
 }
 function escapeQuotes(str){
+    if (!str){
+        return '';
+    }
     str = str.replace(/"/g, "'");
     return str;
 }

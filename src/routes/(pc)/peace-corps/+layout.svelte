@@ -1,5 +1,6 @@
 <script>
     import Header from '$components/peace-corps/Header.svelte';
+    import Meta from '$components/Meta.svelte';
     import Footer from '$components/peace-corps/Footer.svelte';
     import SpriteFile from '$components/SpriteFile.svelte';
     import SVGFilters from '$components/SVGFilters.svelte';
@@ -12,7 +13,17 @@
         document.documentElement.className = fontClassName;
         fontClassName = temp;
     }
-    $:metaImage = $page.data?.socialImage?.fields.file.url ||
+    // function ampersand(str){
+    //     str = str.replace(/&amp;/g, '&');
+    //     return decodeURIComponent(str);
+    // }
+    function returnHeroImageCrop(){
+        if ($page.data?.hero){
+            return `${$page.data.hero.fields.file.url}?w=${$page.data.hero.fields.file.details.image.height}&h=${$page.data.hero.fields.file.details.image.height}&fit=crop`;
+        }
+        return undefined;
+    }
+    $:metaImage = $page.data?.socialImage?.fields.file.url || returnHeroImageCrop() || 
         'https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png';
     
     $:fallbackMetaDescription = (function(){
@@ -34,7 +45,7 @@
     $:fallbackMetaTitle = (function(){
         return 'Peace Corps Journals';
     })()
-    $:metaTitle = $page.data.title || ( $page.data.page ? $page.data.page.charAt(0).toUpperCase() + $page.data.page.slice(1) : undefined) || fallbackMetaTitle;
+    $:metaTitle = $page.data.title || $page.data.seriesTitle || ( $page.data.page ? $page.data.page.charAt(0).toUpperCase() + $page.data.page.slice(1) : undefined) || fallbackMetaTitle;
 
     export let data;
     $: ({
@@ -79,7 +90,7 @@
     <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
     <meta name="twitter:description" content="{metaDescription}" />
     <meta name="twitter:title" content="{metaTitle}" />    
-    <meta name="twitter:image" content="{metaImage}" />
+    <Meta name="twitter:image" _content={metaImage} />
     <meta property="og:title" content="{metaTitle}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://osterman.io{$page.url.pathname}" />
@@ -90,12 +101,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <div class="pc">
     <Header />
 </div>
-{#if import.meta.env.PROD }
+{#if import.meta.env.DEV }
 <button on:click="{toggleFonts}">toggle fonts</button>
 {/if}
 <picture>

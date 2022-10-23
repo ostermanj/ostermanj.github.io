@@ -46,7 +46,7 @@
         }
         return 'John Osterman';
     })()
-    $:metaTitle = $page.data.title || ( $page.data.page ? $page.data.page.charAt(0).toUpperCase() + $page.data.page.slice(1) : undefined) || fallbackMetaTitle;
+    $:metaTitle = $page.data.title || $page.data.seriesTitle || ( $page.data.page ? $page.data.page.charAt(0).toUpperCase() + $page.data.page.slice(1) : undefined) || fallbackMetaTitle;
 </script>
 <style>
     @import 'normalize.css';
@@ -91,6 +91,51 @@
     <meta property="og:site_name" content="John Osterman" />
     <meta property="og:description" content="{metaDescription}" />
     <link rel="alternate" type="application/rss+xml" title="John Osterman" href="{base}/rss">
+    <script async>
+			(function(w, d){
+			var id='embedly-platform', n = 'script';
+			if (!d.getElementById(id)){
+				w.embedly = w.embedly || function() {(w.embedly.q = w.embedly.q || []).push(arguments);};
+				var e = d.createElement(n); e.id = id; e.async=1;
+				e.src = ('https:' === document.location.protocol ? 'https' : 'http') + '://cdn.embedly.com/widgets/platform.js';
+				var s = d.getElementsByTagName(n)[0];
+				s.parentNode.insertBefore(e, s);
+			}
+			})(window, document);
+    </script>
+    <script type="application/ld+json">
+  
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "mainEntityOfPage": "http://osterman.io/",
+    "headline": "John Osterman",
+    "datePublished": "",
+    "dateModified": "",
+    "description": "Web apps and data visualization for mission-driven organizations."
+    "author": {
+      "@type": "Person",
+      "name": "John Osterman"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "John Osterman Communications",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png",
+        "width": 1904,
+        "height": 996
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png",
+      "width": 1904,
+      "height": 996
+    }
+  }
+  
+  </script>
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />

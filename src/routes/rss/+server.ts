@@ -4,6 +4,9 @@ import { getPageContent } from '$utils/contentful';
 import allEntries from '$src/allEntries.json' assert {type: 'json'};
 export const prerender = false;
 function categoriesToXML(categories){
+    if (!categories){
+        return '';
+    }
     return categories.reduce(function(acc,cur){
         acc = acc + `
         <category>${cur}</category>`;
