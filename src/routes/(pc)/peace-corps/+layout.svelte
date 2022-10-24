@@ -102,7 +102,7 @@
     <meta property="og:image" content="{metaImage}" />
     <meta property="og:site_name" content="John Osterman" />
     <meta property="og:description" content="{metaDescription}" />
-    <meta property="description" content="{metaDescription}" />
+    <meta name="description" content="{metaDescription}" />
     <link rel="alternate" type="application/rss+xml" title="John Osterman" href="{base}/rss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
