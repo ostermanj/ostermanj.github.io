@@ -116,10 +116,16 @@
 <button on:click="{toggleFonts}">toggle fonts</button>
 {/if}
 <picture>
-    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=avif&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=avif&q=80 1x" type="image/avif">
-    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=webp&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=webp&q=80 1x" type="image/webp">
-    <source srcset="{hero.fields.file.url}?w={hero.fields.file.details.image.width}&h={hero.fields.file.details.image.height}&fm=png&q=80 2x, {hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&fm=png&q=80 1x" type="image/png">
-    <img class="hero-image" width="{hero.fields.file.details.image.width / 2}" height="{hero.fields.file.details.image.height / 2}" src="{hero.fields.file.url}?w={hero.fields.file.details.image.width / 2}&h={hero.fields.file.details.image.height / 2}&q=80" alt="{hero.fields.description}">
+     <source media="(min-width: 1441px)" srcset="{hero.fields.file.url}?w={3840}&h={1322}&fm=avif&q=80 2x, {hero.fields.file.url}?w={3840 / 2}&h={1322 / 2}&fm=avif&q=80 1x" type="image/avif">
+    <source media="(min-width: 1441px)" srcset="{hero.fields.file.url}?w={3840}&h={1322}&fm=webp&q=80 2x, {hero.fields.file.url}?w={3840 / 2}&h={1322 / 2}&fm=webp&q=80 1x" type="image/webp">
+    <source media="(min-width: 1441px)" srcset="{hero.fields.file.url}?w={3840}&h={1322}&fm=png&q=80 2x, {hero.fields.file.url}?w={3840 / 2}&h={1322 / 2}&fm=png&q=80 1x" type="image/png">
+    <source media="(min-width: 501px)" srcset="{hero.fields.file.url}?w={2880}&h={992}&fm=avif&q=80 2x, {hero.fields.file.url}?w={2880 / 2}&h={992 / 2}&fm=avif&q=80 1x" type="image/avif">
+    <source media="(min-width: 501px)" srcset="{hero.fields.file.url}?w={2880}&h={992}&fm=webp&q=80 2x, {hero.fields.file.url}?w={2880 / 2}&h={992 / 2}&fm=webp&q=80 1x" type="image/webp">
+    <source media="(min-width: 501px)" srcset="{hero.fields.file.url}?w={2880}&h={992}&fm=png&q=80 2x, {hero.fields.file.url}?w={2880 / 2}&h={992 / 2}&fm=png&q=80 1x" type="image/png">
+    <source srcset="{hero.fields.file.url}?w={830}&h={286}&fm=avif&q=80 2x, {hero.fields.file.url}?w={830 / 2}&h={286 / 2}&fm=avif&q=80 1x" type="image/avif">
+    <source srcset="{hero.fields.file.url}?w={830}&h={286}&fm=webp&q=80 2x, {hero.fields.file.url}?w={830 / 2}&h={286 / 2}&fm=webp&q=80 1x" type="image/webp">
+    <source srcset="{hero.fields.file.url}?w={830}&h={286}&fm=png&q=80 2x, {hero.fields.file.url}?w={830 / 2}&h={286 / 2}&fm=png&q=80 1x" type="image/png">
+    <img class="hero-image" width="{2880 / 2}" height="{992 / 2}" src="{hero.fields.file.url}?w={2880 / 2}&h={992 / 2}&q=80" alt="{hero.fields.description}">
 </picture>
 <main class="wrapper wrapper--peace-corps" id="main-content">
     <slot></slot>
