@@ -26,10 +26,12 @@
         mapboxgl.accessToken = 'pk.eyJ1Ijoib3N0ZXJtYW5qIiwiYSI6ImNsOWl5NmF5ZTA4ODgzd28wczZ3bm9oYm0ifQ.qLNG2qiKlw8RkjFlHwsHhQ';
             window._map = new mapboxgl.Map({
             container: 'map-cont--inner', // container ID
-            style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+            style: 'mapbox://styles/mapbox/satellite-streets-v11?optimize=true', // style URL
             center: [-100.4544, 37.0351], // starting position [lng, lat]
             // center: [-11.0813, 21.1456], // starting position [lng, lat]
             zoom: 1.256, // starting zoom
+            minzoom: 1.256,
+            maxzoom: 3.9,
             // zoom: 3.9, // starting zoom
             projection: 'globe' // display the map as a 3D globe
             });
