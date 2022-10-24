@@ -3,10 +3,9 @@
     import ContentCard from '$components/ContentCard.svelte';
     import { paginate, LightPaginationNav } from 'svelte-paginate';
     import { onMount } from 'svelte';
+    export const hydrate = true;
 </script>
 <script>
-export const router = false;
-export const hydrate = false;
  export let data;
     $: ({
         seriesTitle,
@@ -32,10 +31,13 @@ export const hydrate = false;
         })
     }
     onMount(() => {
+        console.log('onMount!');
         const container = document.getElementById('map-cont');
         container?.insertAdjacentHTML('afterbegin','<div id="map-cont--inner"></div>');
         const timeout = setInterval(() => {
-            if (mapboxgl){
+            console.log('nope');
+            if (window.mapboxgl){
+                console.log('yep');
                 initMap()
             }
         })
@@ -63,6 +65,10 @@ export const hydrate = false;
         }
     })
 </script>
+<svelte:head>
+    <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+</svelte:head>
 <section>
     <header>
         <h1 class="not-h1">{seriesTitle}</h1>
