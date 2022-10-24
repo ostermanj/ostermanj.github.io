@@ -20,7 +20,7 @@
     function returnHeroImageCrop(platform){
         if ($page.data?.hero){
             if (platform == 'twitter'){
-                return `https:${$page.data.hero.fields.file.url}?w=${Math.round($page.data.hero.fields.file.details.image.height)}&h=${Math.round($page.data.hero.fields.file.details.image.height)}&fit=crop`;
+                return `https:${$page.data.hero.fields.file.url}`;//?w=${Math.round($page.data.hero.fields.file.details.image.height)}&h=${Math.round($page.data.hero.fields.file.details.image.height)}&fit=crop`;
             }
             return `https:${$page.data.hero.fields.file.url}?w=${Math.round($page.data.hero.fields.file.details.image.height * 1.778)}&h=${Math.round($page.data.hero.fields.file.details.image.height)}&fit=crop`;
         }
