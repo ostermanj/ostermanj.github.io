@@ -17,12 +17,17 @@
     //     str = str.replace(/&amp;/g, '&');
     //     return decodeURIComponent(str);
     // }
-    function returnHeroImageCrop(){
+    function returnHeroImageCrop(platform){
         if ($page.data?.hero){
-            return `${$page.data.hero.fields.file.url}?w=${$page.data.hero.fields.file.details.image.height}&h=${$page.data.hero.fields.file.details.image.height}&fit=crop`;
+            if (platform == 'twitter'){
+                return `${$page.data.hero.fields.file.url}?w=${$page.data.hero.fields.file.details.image.height}&h=${$page.data.hero.fields.file.details.image.height}&fit=crop`;
+            }
+            return `${$page.data.hero.fields.file.url}?w=${$page.data.hero.fields.file.details.image.height * 1.778}&h=${$page.data.hero.fields.file.details.image.height}&fit=crop`;
         }
         return undefined;
     }
+    $:metaImageTwitter = $page.data?.socialImage?.fields.file.url || returnHeroImageCrop('twitter') || 
+        'https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png';
     $:metaImage = $page.data?.socialImage?.fields.file.url || returnHeroImageCrop() || 
         'https://images.ctfassets.net/3qr5d6sj491p/3hsUVFnQRMUJBECqvgw7y1/55fdac88ce3fd3159a506f119625a982/Screen_Shot_2022-08-23_at_11.53.20_AM.png';
     
@@ -85,18 +90,19 @@
         </script>
     {/if}
     <title>{metaTitle} | John Osterman</title>
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@johnaosterman" />
     <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
     <meta name="twitter:description" content="{metaDescription}" />
     <meta name="twitter:title" content="{metaTitle}" />    
-    <Meta name="twitter:image" _content={metaImage} />
+    <Meta name="twitter:image" _content={metaImageTwitter} />
     <meta property="og:title" content="{metaTitle}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://osterman.io{$page.url.pathname}" />
     <meta property="og:image" content="{metaImage}" />
     <meta property="og:site_name" content="John Osterman" />
     <meta property="og:description" content="{metaDescription}" />
+    <meta property="description" content="{metaDescription}" />
     <link rel="alternate" type="application/rss+xml" title="John Osterman" href="{base}/rss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
