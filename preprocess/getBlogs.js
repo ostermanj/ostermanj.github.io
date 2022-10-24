@@ -23,7 +23,7 @@ async function getPaginatedCollection({content_type = "blogPost", skip = 0, limi
                 title: blog.fields.title,
                 datePublished: new Date(blog.fields.datePublished).toUTCString(),
                 dateUpdated: new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString(),
-                description: blog.fields.snippet + `<p><a href="${base}/content/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
+                description: blog.fields.snippet + `<p><a href="${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
                 link: `${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}`,
                 
             } : {

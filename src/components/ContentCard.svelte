@@ -63,7 +63,7 @@
     font-family: var(--font-family-sans);
   }
 </style>
-<div class:small="{style == 'small'}" class="container g2">
+<div class:small="{style == 'small'}" class="container g2 {parent}">
     {#each contents as content}
     {@const contentType = contentTypes[content.sys.contentType.sys.id]}
     <article class="fx" class:fd-c="{style == 'large'}">
@@ -79,11 +79,11 @@
           {#if style == 'large'}
           <p class="content-type">{contentType}</p>
           {/if}
-              <h1 class="not-h1 h2"><a href="{base}/content/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+              <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
             </header>
             <main>
               <p class="ts-s">{content.fields.snippet}</p>
-              {#if style == 'small' && parent !== 'peace-corps'}
+              {#if style == 'small'}
               <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(content.fields.datePublished).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
               {/if}
           </div>
