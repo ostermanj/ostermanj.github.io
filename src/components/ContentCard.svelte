@@ -22,7 +22,7 @@
   .small.container {
     grid-template-columns: 1fr;
   }
-  li {
+  article {
     border: 1px solid var(--color-secondary-1);
     background-color: var(--color-background-2);
    
