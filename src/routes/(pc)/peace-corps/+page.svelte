@@ -2,7 +2,6 @@
     /* global mapboxgl */
     import ContentCard from '$components/ContentCard.svelte';
     import { paginate, LightPaginationNav } from 'svelte-paginate';
-    import { onMount } from 'svelte';
     export const hydrate = true;
 </script>
 <script>
@@ -21,7 +20,11 @@
 <svelte:head>
     <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
     <script defer src='/init-map.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <link
+        rel="preload"
+        as="style"
+        href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css'
+        onload="this.rel = 'stylesheet'" />
 </svelte:head>
 <section>
     <header>
