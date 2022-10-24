@@ -1,1 +1,1 @@
-window.__sveltekit_data = (function(a,b){return {type:b,nodes:[null,{type:b,data:{redirect:"\u002Fcontent\u002Fa-tool-for-better-debt-comparison-data-viz-of-state-debt"},uses:{dependencies:a,params:["slug"],parent:a,url:a}}]}}(void 0,"data"))
+window.__sveltekit_data = (function(a,b,c){return {type:b,nodes:[c,c,{type:b,data:{redirect:"\u002Fcontent\u002Fa-tool-for-better-debt-comparison-data-viz-of-state-debt"},uses:{dependencies:a,params:["slug"],parent:a,url:a}}]}}(void 0,"data",null))
