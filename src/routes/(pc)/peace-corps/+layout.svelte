@@ -18,6 +18,12 @@
     //     return decodeURIComponent(str);
     // }
     function returnHeroImageCrop(platform){
+        if ($page.data?.heroImage){
+            if (platform == 'twitter'){
+                return `https:${$page.data.heroImage.fields.file.url}`;//;?${`w=${Math.round($page.data.heroImage.fields.file.details.image.height)}&h=${Math.round($page.data.heroImage.fields.file.details.image.height)}&fit=crop`   }`;
+            }
+            return `https:${$page.data.heroImage.fields.file.url}`;//?w=${Math.round($page.data.heroImage.fields.file.details.image.height * 1.778)}&h=${Math.round($page.data.heroImage.fields.file.details.image.height)}&fit=crop`;
+        }
         if ($page.data?.hero){
             if (platform == 'twitter'){
                 return `https:${$page.data.hero.fields.file.url}`;//;?${`w=${Math.round($page.data.hero.fields.file.details.image.height)}&h=${Math.round($page.data.hero.fields.file.details.image.height)}&fit=crop`   }`;
@@ -90,7 +96,7 @@
         </script>
     {/if}
     <title>{metaTitle} | John Osterman</title>
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_card_large" />
     <meta name="twitter:site" content="@johnaosterman" />
     <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
     <meta name="twitter:description" content="{metaDescription}" />
