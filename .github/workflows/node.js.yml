@@ -33,7 +33,7 @@ jobs:
         IS_GITHUB: true
    
     - name: Deploy to prod branch
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+      uses: JamesIves/github-pages-deploy-action@4.4.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: PROD # The branch the action should deploy to.
