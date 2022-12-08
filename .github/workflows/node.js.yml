@@ -32,8 +32,8 @@ jobs:
         C_TOKEN: ${{ secrets.C_TOKEN }}
         IS_GITHUB: true
    
-    - name: Deploy to prod branch
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: PROD # The branch the action should deploy to.
