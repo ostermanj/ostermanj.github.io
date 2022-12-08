@@ -6,8 +6,44 @@
             <link>https://osterman.io</link>
             <description>Web apps and data visualization for mission-driven organizations. Python, JavaScript, HTML, CSS; Svelte, D3.js, Mapbox, NodeJS; AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Wed, 23 Nov 2022 01:12:55 GMT</lastBuildDate>
+            <lastBuildDate>Thu, 08 Dec 2022 01:54:53 GMT</lastBuildDate>
             
+    <item>
+        <title>Desert (no island) books</title>
+        <description><![CDATA[Reading books in Mauritania was better than it was before or has been since. I had enough time to become immersed in the stories. But more than that, books just seemed more vivid somehow.<p><a href="/peace-corps/desert-no-island-books">Read more</a></p> ]]></description>
+        <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
+        <updated>Wed, 07 Dec 2022 00:00:00 GMT</updated>
+        
+        <link>/peace-corps/desert-no-island-books</link>
+        <guid isPermaLink="true">/peace-corps/desert-no-island-books</guid>
+    </item>
+    <item>
+        <title>Thanksgiving 2001</title>
+        <description><![CDATA[Thanksgiving 2001 was in the midst of what might have been my hardest stretch in Mauritania. My second journal actually opens on November 18 with this admonishment to myself: “avoid cataloging mood swings—your last journal is not very flattering.”<p><a href="/peace-corps/thanksgiving-2001">Read more</a></p> ]]></description>
+        <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
+        <updated>Mon, 21 Nov 2022 00:00:00 GMT</updated>
+        
+        <link>/peace-corps/thanksgiving-2001</link>
+        <guid isPermaLink="true">/peace-corps/thanksgiving-2001</guid>
+    </item>
+    <item>
+        <title>Learning Hassaniya</title>
+        <description><![CDATA[One of the first phrases I learned in Hassaniya was "mnayn makaresh," which can be best translated as "where's the butt pot?"<p><a href="/peace-corps/learning-hassaniya">Read more</a></p> ]]></description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 08 Nov 2022 00:00:00 GMT</updated>
+        
+        <link>/peace-corps/learning-hassaniya</link>
+        <guid isPermaLink="true">/peace-corps/learning-hassaniya</guid>
+    </item>
+    <item>
+        <title>My second school year starts</title>
+        <description><![CDATA[My second year teaching started in late October, when the annual rains were all but done and the “cool” season was around the corner.<p><a href="/peace-corps/my-second-school-year-starts">Read more</a></p> ]]></description>
+        <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+        <updated>Sat, 22 Oct 2022 00:00:00 GMT</updated>
+        
+        <link>/peace-corps/my-second-school-year-starts</link>
+        <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
+    </item>
     <item>
         <title>Chart building web app</title>
         <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="/content/chart-building-web-app">Read more</a></p> ]]></description>
@@ -165,33 +201,6 @@
         <category>writing + editing</category>
         <link>/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</link>
         <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
-    </item>
-    <item>
-        <title>Thanksgiving 2001</title>
-        <description><![CDATA[Thanksgiving 2001 fell on November 22. I was in the midst of what might have been my hardest stretch in Mauritania. My second journal actually opens on November 18 with this admonishment to myself: “avoid cataloging mood swings—your last journal is not very flattering.”<p><a href="/peace-corps/thanksgiving-2001">Read more</a></p> ]]></description>
-        <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
-        <updated>Mon, 21 Nov 2022 00:00:00 GMT</updated>
-        
-        <link>/peace-corps/thanksgiving-2001</link>
-        <guid isPermaLink="true">/peace-corps/thanksgiving-2001</guid>
-    </item>
-    <item>
-        <title>Learning Hassaniya</title>
-        <description><![CDATA[One of the first phrases I learned in Hassaniya was "mnayn makaresh," which can be best translated as "where's the butt pot?"<p><a href="/peace-corps/learning-hassaniya">Read more</a></p> ]]></description>
-        <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
-        <updated>Tue, 08 Nov 2022 00:00:00 GMT</updated>
-        
-        <link>/peace-corps/learning-hassaniya</link>
-        <guid isPermaLink="true">/peace-corps/learning-hassaniya</guid>
-    </item>
-    <item>
-        <title>My second school year starts</title>
-        <description><![CDATA[My second year teaching started in late October, when the annual rains were all but done and the “cool” season was around the corner.<p><a href="/peace-corps/my-second-school-year-starts">Read more</a></p> ]]></description>
-        <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
-        <updated>Sat, 22 Oct 2022 00:00:00 GMT</updated>
-        
-        <link>/peace-corps/my-second-school-year-starts</link>
-        <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
     </item>
         </channel>
     </rss>
