@@ -17,7 +17,7 @@
 <style>
    .container {
       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+       grid-template-columns: repeat(auto-fit, minmax(calc(320px - var(--padding) * 2), 1fr));
   }
   .small.container {
     grid-template-columns: 1fr;
@@ -25,11 +25,14 @@
   article {
     border: 1px solid var(--color-secondary-1);
     background-color: var(--color-background-2);
+    row-gap: 10px;
+    column-gap: 20px;
    
   }
   .peace-corps article {
     border-width: 0;
     background-color: transparent;
+
   }
   article p {
     margin-block: 0.5em 0;
@@ -50,7 +53,8 @@
     font-size: 0.85rem;
   }
   .small .card-text {
-    flex: 1 1 370px;
+    flex: 30 1 370px;
+    padding: 0;
   }
   .peace-corps .card-text {
     padding-block: 0;

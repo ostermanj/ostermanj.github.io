@@ -4,10 +4,11 @@
 </script>
 <style>
     .container {
-        flex: 0 0 25%;
+        flex: 1 0 25%;
         overflow: hidden;
         position: relative;
-        background-color: var(--color-secondary-1)
+        background-color: var(--color-secondary-1);
+        align-self: flex-start;
     }
     .container.peace-corps {
         background-color: transparent;
@@ -15,6 +16,7 @@
     picture {
         line-height: 0;
         background-color: transparent;
+        width: 100%;
     }
     picture.bg-image {
         filter: blur(5px) opacity(0.7);

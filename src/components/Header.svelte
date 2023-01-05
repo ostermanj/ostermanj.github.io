@@ -20,7 +20,7 @@
         height: 80px;
     }
     nav {
-        gap: 20px;
+        gap: clamp(15px, 4.6vw, 20px);
     }
     .nav-link {
         color: var(--text-color);

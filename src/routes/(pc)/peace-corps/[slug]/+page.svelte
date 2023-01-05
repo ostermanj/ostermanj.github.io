@@ -59,6 +59,8 @@
         padding: var(--padding);
         box-shadow: var(--box-shadow);
         background-color: var(--color-background-2);
+        margin-inline: auto;
+        max-width: 635px;
     }
 </style>
 <article class="article-post">

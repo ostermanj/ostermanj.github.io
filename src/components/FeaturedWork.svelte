@@ -4,7 +4,7 @@
 <style>
     ol {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(calc(320px - var(--padding) * 2), 1fr));
         list-style: none;
         margin: 0;
         padding: 0;
