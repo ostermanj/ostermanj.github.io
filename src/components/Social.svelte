@@ -21,9 +21,9 @@
 		>
 	</li>
 	<li>
-		<a class="bw-0" title="Twitter" href="//twitter.com/JohnAOsterman"
-			><span class="vsh">Twitter</span> <Sprite id="twitter" /></a
-		>
+		<a rel="me" class="bw-0" title="Mastadon" href="https://uiuxdev.social/@ostermoster">
+			<span class="vsh">Mastadon</span> <Sprite id="mastodon" /></a>
+		
 	</li>
 	<li>
 		<a class="bw-0" title="LinkedIn" href="//www.linkedin.com/in/john-osterman-32714012/"
