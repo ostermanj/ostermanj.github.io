@@ -4,13 +4,13 @@
             <atom:link href="http://osterman.io/rss" rel="self" type="application/rss+xml" />
             <title>John Osterman</title>
             <link>https://osterman.io</link>
-            <description>Web apps and data visualization for mission-driven organizations. Python, JavaScript, HTML, CSS; Svelte, D3.js, Mapbox, NodeJS; AWS, Azure, Google.</description>
+            <description>Web development and data visualization for mission-driven orgs. HTML, CSS, JavaScript; Svelte, Vue.js; D3.js, Mapbox; NodeJS, AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Mon, 09 Jan 2023 19:06:25 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 13 Jan 2023 20:58:56 GMT</lastBuildDate>
             
     <item>
         <title>Christmas in Kankossa</title>
-        <description><![CDATA[In December 2001 I managed to get three days off from teaching to travel to Kiffa and then to Kankossa to spend Christmas with friends, far from Tintane.<p><a href="/peace-corps/christmas-in-kankossa">Read more</a></p> ]]></description>
+        <description><![CDATA[The contrast with Tintane was stark. I’d been forming a theory about it: too big to be a village and too small to be a town, Tintane had the benefits of neither. Kankossa had the charm of a small village.<p><a href="/peace-corps/christmas-in-kankossa">Read more</a></p> ]]></description>
         <pubDate>Thu, 05 Jan 2023 00:00:00 GMT</pubDate>
         <updated>Thu, 05 Jan 2023 00:00:00 GMT</updated>
         
@@ -124,6 +124,17 @@
         
         <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
         <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
+    </item>
+    <item>
+        <title>CSS container queries are here!</title>
+        <description><![CDATA[Container queries are coming, and they will make reusing responsive components in different contexts much easier.<p><a href="/content/css-container-queries-are-here">Read more</a></p> ]]></description>
+        <pubDate>Thu, 12 Jan 2023 00:00:00 GMT</pubDate>
+        <updated>Thu, 12 Jan 2023 00:00:00 GMT</updated>
+        
+        <category>CSS</category>
+        <category>design</category>
+        <link>/content/css-container-queries-are-here</link>
+        <guid isPermaLink="true">/content/css-container-queries-are-here</guid>
     </item>
     <item>
         <title>How to use environment variables in SvelteKit (process.env)</title>
