@@ -21,6 +21,7 @@
     a {
         font-weight: bold;
         display: inline-block;
+        border-bottom-width: 0;
     }
     
 </style>

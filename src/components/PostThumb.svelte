@@ -8,7 +8,7 @@
         overflow: hidden;
         position: relative;
         background-color: var(--color-secondary-1);
-        align-self: flex-start;
+        /* align-self: flex-start; */
     }
     .container.peace-corps {
         background-color: transparent;

@@ -27,6 +27,7 @@
     background-color: var(--color-background-2);
     row-gap: 10px;
     column-gap: 20px;
+    align-items: stretch;
    
   }
   .peace-corps article {
@@ -52,9 +53,15 @@
     text-transform: uppercase;
     font-size: 0.85rem;
   }
+  .card-text p:not(.date){
+    hyphens: auto;
+  }
   .small .card-text {
     flex: 30 1 370px;
-    padding: 0;
+    padding-inline-start: 0;
+  }
+  .small .card-text p {
+    hyphens: none;
   }
   .peace-corps .card-text {
     padding-block: 0;

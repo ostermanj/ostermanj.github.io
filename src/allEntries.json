@@ -3,7 +3,7 @@
     "title": "Christmas in Kankossa",
     "datePublished": "Thu, 05 Jan 2023 00:00:00 GMT",
     "dateUpdated": "Thu, 05 Jan 2023 00:00:00 GMT",
-    "description": "In December 2001 I managed to get three days off from teaching to travel to Kiffa and then to Kankossa to spend Christmas with friends, far from Tintane.<p><a href=\"/peace-corps/christmas-in-kankossa\">Read more</a></p>",
+    "description": "The contrast with Tintane was stark. I’d been forming a theory about it: too big to be a village and too small to be a town, Tintane had the benefits of neither. Kankossa had the charm of a small village.<p><a href=\"/peace-corps/christmas-in-kankossa\">Read more</a></p>",
     "link": "/peace-corps/christmas-in-kankossa"
   },
   {
@@ -89,6 +89,18 @@
     "dateUpdated": "Wed, 04 Apr 2018 00:00:00 GMT",
     "description": "This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href=\"/content/mapping-data-from-the-national-flood-insurance-program\">Read more</a></p>",
     "link": "/content/mapping-data-from-the-national-flood-insurance-program"
+  },
+  {
+    "title": "CSS container queries are here!",
+    "datePublished": "Thu, 12 Jan 2023 00:00:00 GMT",
+    "dateUpdated": "Thu, 12 Jan 2023 00:00:00 GMT",
+    "description": "Container queries are coming, and they will make reusing responsive components in different contexts much easier.<p><a href=\"/content/css-container-queries-are-here\">Read more</a></p>",
+    "link": "/content/css-container-queries-are-here",
+    "author": "John Osterman",
+    "categories": [
+      "CSS",
+      "design"
+    ]
   },
   {
     "title": "How to use environment variables in SvelteKit (process.env)",
