@@ -1,0 +1,1 @@
+import{default as a}from"../components/pages/(pc)/peace-corps/_layout.svelte-b3ec4ade.js";import"./index-43d95a4d.js";import"./scripts-8116a80b.js";/* empty css                                             */import"./stores-9c239b6b.js";import"./singletons-319c4e79.js";import"./paths-9b83c8fd.js";const i=!0;export{a as component,i as server};
