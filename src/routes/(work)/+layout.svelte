@@ -102,7 +102,7 @@
 			}
 			})(window, document);
     </script>
-    <script type="application/ld+json">
+    <!-- <script type="application/ld+json">
   
   {
     "@context": "http://schema.org",
@@ -134,12 +134,13 @@
     }
   }
   
-  </script>
+  </script> -->
 </svelte:head>
 <a tabindex="0" class="skip-nav" href="#main-content">Skip to main content</a>
 <Header />
 {#if import.meta.env.DEV }
 <button class="toggle-font" on:click="{toggleFonts}">toggle fonts</button>
+{$page.data.type || $page.data.fields?.type}
 {/if}
 
 <main class="wrapper" id="main-content">
