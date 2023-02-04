@@ -5,11 +5,7 @@
 </script>
 <style>
     header {
-        border-top: 5px solid var(--color-secondary-1);
-        /* border-bottom: 1px solid var(--color-primary-1); */
         background: linear-gradient(to right, var(--color-primary-1-dark), var(--color-primary-1-bright), var(--color-primary-1-dark) );
-        position: sticky;
-        top: -150px;
         margin-block-end: 2rem;
         z-index: 2;
         --mask:
@@ -18,22 +14,20 @@
         -webkit-mask: var(--mask);
         mask: var(--mask);
         padding-block-end: 2px;
-        backdrop-filter: blur(5px);
-        
-        
     }
     .first-inner {
-        padding: 22px 0;
+        padding: 15px 0 32px;
         min-height: 56px;
         width: 100%;
         -webkit-mask: var(--mask);
         mask: var(--mask);
         background-color: var(--color-background-2);
-        transform: scale(1.01)
+        transform: scale(1.01);
+        
     }
     h1 {
         margin: 0;
-        height: 80px;
+        height: 72px;
     }
     nav {
         gap: clamp(15px, 4.6vw, 20px);

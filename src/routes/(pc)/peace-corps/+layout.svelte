@@ -66,6 +66,13 @@
 <style>
     @import 'normalize.css';
     @import '$static/global.css';
+    picture {
+         --mask:
+        radial-gradient(31.30px at 50% calc(100% - 42.00px),#000 99%,#0000 101%) calc(50% - 28px) 0/56px 100%,
+        radial-gradient(31.30px at 50% calc(100% + 28.00px),#0000 99%,#000 101%) 50% calc(100% - 14px)/56px 100% repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
     .skip-nav {
         position: absolute;
         left: 50%;

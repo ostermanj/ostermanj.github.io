@@ -8,9 +8,10 @@
 </script>
 <style>
     .overview {
-        border-bottom: 2px solid var(--text-color);
         padding-bottom: 20px;
         text-shadow: var(--fallback-text-shadow);
+        margin-block-start: 0;
+        margin-block-end: 0;
     }
     .overview--test {
         font: var(--font-sans--test);
@@ -26,9 +27,16 @@
     div.test div {
         position: absolute;
     }
+    hr {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, var(--color-primary-1-dark), var(--color-primary-1-bright), var(--color-primary-1-dark));
+        border-radius: 2px;
+    }
 </style>
 <section title="introduction">
     <p class="overview h2">{fields.overview}</p>
+    <hr>
     {@html fields.body}
 </section>
 {#if fields.featuredBlogPosts && fields.featuredBlogPosts.length }

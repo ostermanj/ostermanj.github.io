@@ -52,7 +52,7 @@
         font-family: 'Cavet', cursive;
         /* filter: url('#noise-liter'); */
         text-align: center;
-        margin-block-start: 0.5em;
+        margin-block-start: 0.4em;
         margin-block-end: 0.2em;
         line-height: 1;
         color: var(--color-primary-1);

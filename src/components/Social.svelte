@@ -6,7 +6,7 @@
 <style>
 	ul {
 		width: 170px;
-		margin-bottom: 22px;
+		margin-bottom: 10px;
 	}
 	:global(body.dark) ul {
 		opacity: 0.8;

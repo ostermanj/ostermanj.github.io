@@ -23,17 +23,36 @@
     grid-template-columns: 1fr;
   }
   article {
-    border: 1px solid var(--color-secondary-1);
-    background-color: var(--color-background-2);
+    padding: 4px;
+    border-radius: 2px;
+  }
+  article:nth-of-type(4n + 1){
+    background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  }
+  article:nth-of-type(4n + 2){
+    background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  }
+  article:nth-of-type(4n + 3){
+    background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  }
+  article:nth-of-type(4n + 4){
+    background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  }
+  .article-inner {
     row-gap: 10px;
     column-gap: 20px;
     align-items: stretch;
-   
+    background-color: var(--color-background-2);
+    align-self: stretch;
   }
-  .peace-corps article {
+  .small.container article {
+    padding: 0;
     border-width: 0;
     background-color: transparent;
-
+    
+  }
+  .small.container .article-inner {
+    background-color: var(--color-background-1);
   }
   article p {
     margin-block: 0.5em 0;
@@ -63,10 +82,10 @@
   .small .card-text p {
     hyphens: none;
   }
-  .peace-corps .card-text {
+  .small .card-text {
     padding-block: 0;
   }
-  .peace-corps .date {
+  .small .date {
     color: #767676;
     margin-block-start: 0;
     /* font-size: 0.85rem; */
@@ -77,27 +96,29 @@
 <div class:small="{style == 'small'}" class="container g2 {parent}">
     {#each contents as content}
     {@const contentType = contentTypes[content.sys.contentType.sys.id]}
-    <article class="fx" class:fd-c="{style == 'large'}">
-      {#if content.fields.heroImage}
-        {#if style == 'small'}
-       <PostThumb file="{content.fields.heroImage.fields.file}" />
-       {:else}
-       <PostThumbLarge file="{content.fields.heroImage.fields.file}" />
-       {/if}
-       {/if}
-        <div class="p1 fx fd-c card-text">
-          <header>
-          {#if style == 'large'}
-          <p class="content-type">{contentType}</p>
-          {/if}
-              <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
-            </header>
-            <main>
-              <p class="ts-s">{content.fields.snippet}</p>
-              {#if style == 'small'}
-              <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(  content.fields.datePublished  ).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
-              {/if}
-          </div>
+    <article class="fx">
+      <div  class="article-inner fx" class:fd-c="{style == 'large'}">
+        {#if content.fields.heroImage}
+          {#if style == 'small'}
+         <PostThumb file="{content.fields.heroImage.fields.file}" />
+         {:else}
+         <PostThumbLarge file="{content.fields.heroImage.fields.file}" />
+         {/if}
+         {/if}
+          <div class="p1 fx fd-c card-text">
+            <header>
+            {#if style == 'large'}
+            <p class="content-type">{contentType}</p>
+            {/if}
+                <h1 class="not-h1 h2"><a href="{base}/{parent == 'peace-corps' ? 'peace-corps' : 'content'}/{idsToSlugs[content.sys.id]}">{content.fields.title}</a></h1>
+              </header>
+              <main>
+                <p class="ts-s">{content.fields.snippet}</p>
+                {#if style == 'small'}
+                <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(  content.fields.datePublished  ).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
+                {/if}
+            </div>
+      </div>
       </article>
     {/each}
 </div>

@@ -11,9 +11,6 @@
     $: paginatedItems = paginate({ items, pageSize, currentPage })
 </script>
 <style>
-    h1 {
-        margin-bottom: 0.5em;
-    }
 </style>
 <section>
     <h1>{typeName}</h1>
