@@ -1,1 +1,0 @@
-import{default as n}from"../components/pages/(work)/_layout.svelte-a1f30e06.js";import"./index-43d95a4d.js";import"./scripts-8116a80b.js";import"./paths-9b83c8fd.js";import"./Sprite-dc7090b3.js";/* empty css                                             */import"./stores-73135032.js";import"./singletons-6b4c09df.js";export{n as component};
