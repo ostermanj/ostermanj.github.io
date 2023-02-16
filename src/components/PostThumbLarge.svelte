@@ -5,7 +5,8 @@
     .container {
         position: relative;
         overflow: hidden;
-        background-color: var(--color-secondary-1)
+        background-color: transparent;
+        border-radius: 16.5px 16.5px 0 0;
     }
     picture {
         line-height: 0;
