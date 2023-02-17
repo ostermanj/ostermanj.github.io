@@ -24,7 +24,9 @@
     .date {
         color: var(--text-color-light);
         margin-bottom: 0;
-        font-family: var(--font-family-sans-2);
+        font-family: var(--font-family-sans);
+        text-align: center;
+        margin-block-start: -20px;
     }
     .external-link {
         
@@ -42,6 +44,7 @@
        top: 2px;
     }
     .subtitle {
+        margin-block-start: -20px;
         text-align: center;
     }
 </style>
@@ -53,7 +56,6 @@
             <p class="subtitle">{subtitle}</p>
             {/if}
         </hgroup>
-        <Tags {tags} />
         {#if authors}
         <Authors {authors} />
         {/if}

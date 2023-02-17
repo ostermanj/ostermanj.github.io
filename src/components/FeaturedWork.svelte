@@ -18,10 +18,13 @@
         background-color: var(--color-background-2);
         line-height: 1.6;
         padding: 3px;
+        background-size: 125% 125%;
+        background-position: 0 0;
+        transition: background-position 0.15s ease-in-out
     }
     // TODO: use better logic  here or also in HTML template to avoid needing to specify 1,2,3,4
     li:nth-of-type(4n + 1){
-        background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+        background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
         border-radius: 20px 20px 0 0;
         .inner {
             border-radius: 16.5px 16.5px 0 0;
@@ -34,7 +37,7 @@
         }
     }
     li:nth-of-type(4n + 2){
-        background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+        background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
         @media screen and (min-width:571px) {
             border-radius:  0 20px 0 10px;
             .inner {
@@ -43,7 +46,7 @@
         }
     }
     li:nth-of-type(4n + 3){
-        background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+        background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
         @media screen and (min-width:571px) {
             border-radius:  0 10px 0 20px;
             .inner {
@@ -52,7 +55,7 @@
         }
     }
     li:nth-of-type(4n + 4){
-        background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+        background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
         border-radius:  0 0 20px 20px;
         .inner {
             border-radius:  0 0 16.5px 16.5px;
@@ -87,6 +90,9 @@
         background: var(--color-background-1);
         cursor: pointer;
         
+    }
+    li:has(a:hover), li:has(a:focus) {
+        background-position: 100% 0;
     }
     .title {
         color: var(--text-color);

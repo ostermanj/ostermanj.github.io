@@ -29,28 +29,31 @@
     article {
       padding: 4px;
       border-radius: 2px;
+      background-size: 125% 125%;
+      background-position: 0 0;
+      transition: background-position 0.15s ease-in-out;
     }
     article:nth-of-type(4n + 1){
-      background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+      background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
       border-radius: 20px 20px 0 0;
       @media screen and (min-width:571px) {
         border-radius: 20px 0 0 0;
       }
     }
     article:nth-of-type(4n + 2){
-      background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+      background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
       @media screen and (min-width:571px) {
         border-radius: 0 20px 0 0;
       }
     }
     article:nth-of-type(4n + 3){
-      background: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+      background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
       @media screen and (min-width:571px) {
         border-radius: 0 0 0 20px;
       }
     }
     article:nth-of-type(4n + 4){
-      background: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+      background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
       border-radius: 0 0 20px 20px;
       @media screen and (min-width:571px) {
         border-radius: 0 0 20px 0;
@@ -133,6 +136,9 @@
   a:hover h1, a:focus h1 {
     color: var(--color-primary-1-dark);
     text-decoration: underline;
+  }
+  article:has(a:hover), article:has(a:focus) {
+      background-position: 100% 0;
   }
 </style>
 <div class:small="{style == 'small'}" class="container g2 {parent}">
