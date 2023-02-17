@@ -41,7 +41,10 @@
         display: block;
         margin-block-start: -20px;
         margin-block-end: 20px;
+        border: 3px solid transparent;
+        background: linear-gradient(to bottom, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
     }
+    
 </style>
 <section title="introduction">
     <img
