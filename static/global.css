@@ -6,8 +6,8 @@ body {
     font: var(--font-serif);
     background-color: var(--color-background-1);
     letter-spacing: var(--default-letter-spacing);
+    overflow-x: hidden;
 }
-
 .wrapper {
     box-sizing: content-box;
     width: calc(100% - var(--padding) * 2);

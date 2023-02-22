@@ -3,6 +3,7 @@
     export let width = 24;
     export let height = 24;
     export let offset = 0;
+    export let variant = 'default';
 </script>
 <style>
     svg {
@@ -18,6 +19,6 @@
         filter: invert(0)
     }
 </style>
-<svg {width} {height} style:top={offset}px>
-    <use xlink:href="#svg-{id}"></use>
+<svg aria-hidden="true" {width} {height} style:top={offset}px>
+    <use xlink:href="#svg-{id}" fill="{variant == 'gradient' ? 'url(#linearGradient)' : null}"></use>
 </svg>

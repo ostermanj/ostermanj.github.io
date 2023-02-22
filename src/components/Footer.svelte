@@ -42,7 +42,7 @@
                 <Social />
             </div>
         </address>
-        <p class="tagline h2">Web apps and data visualization for mission-driven organizations.</p>
+        <p class="tagline h2">Web development and data visualization for mission-driven organizations.</p>
     </div>
     <SpriteFile />
     <SVGFilters />

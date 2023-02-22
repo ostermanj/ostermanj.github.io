@@ -52,11 +52,13 @@
     }
 </style>
 <section title="introduction">
-    <img
-        srcset="https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=250&h=250&fit=fill&fm=webp 2x, https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=125&h=125&fit=fill&fm=webp 1x"
-        src="https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=125&h=125&fit=fill&fm=webp"
-        alt="John Osterman. Physical description: a White man with short brown hair and a graying beard, smiling outside in front of a brick wall with ivy on it."
-    >
+    <a href="/about/" title="About page">
+        <img
+            srcset="https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=250&h=250&fit=fill&fm=webp 2x, https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=125&h=125&fit=fill&fm=webp 1x"
+            src="https://images.ctfassets.net/3qr5d6sj491p/6E2Gh0TS2hrqafgOY1NlHr/68804563485dfdb3f0cb50fb38e3e3fa/osterman-photo.jpg?f=face&w=125&h=125&fit=fill&fm=webp"
+            alt="John Osterman. Physical description: a White man with short brown hair and a graying beard, smiling outside in front of a brick wall with ivy on it."
+        >
+    </a>
     <p class="overview h2">{fields.overview}</p>
     <hr>
     {@html fields.body}
