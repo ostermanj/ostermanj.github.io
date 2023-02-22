@@ -1,0 +1,10 @@
+@import 'normalize.css';
+@import './variables.css';
+
+@page {
+    margin-top: 0.25;
+    margin-bottom: 0.5in;
+}
+@page :left {
+    margin-top: 1in;
+}
