@@ -43,6 +43,7 @@ const config = {
 				'/project/2019/12/02/d3-data-dashboard-state-ten-cities/',
 				'/project/2019/07/31/broadband-policy-explorer/',
 				'/project/2019/08/02/state-debt/',
+				'/resume/',
 				]
 		},
 		appDir: 'app_',
