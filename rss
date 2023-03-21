@@ -6,80 +6,8 @@
             <link>https://osterman.io</link>
             <description>Web development and data visualization for mission-driven orgs. HTML, CSS, JavaScript; Svelte, Vue.js; D3.js, Mapbox; NodeJS, AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Wed, 01 Mar 2023 13:49:43 GMT</lastBuildDate>
+            <lastBuildDate>Tue, 21 Mar 2023 01:16:02 GMT</lastBuildDate>
             
-    <item>
-        <title>Chart building web app</title>
-        <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="/content/chart-building-web-app">Read more</a></p> ]]></description>
-        <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
-        <updated>Sun, 07 Mar 2021 00:00:00 GMT</updated>
-        
-        <link>/content/chart-building-web-app</link>
-        <guid isPermaLink="true">/content/chart-building-web-app</guid>
-    </item>
-    <item>
-        <title>Netting Billions 2020: Global Values and Trends for Tuna Fisheries</title>
-        <description><![CDATA[This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href="/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries">Read more</a></p> ]]></description>
-        <pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate>
-        <updated>Sun, 28 Feb 2021 00:00:00 GMT</updated>
-        
-        <link>/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</link>
-        <guid isPermaLink="true">/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</guid>
-    </item>
-    <item>
-        <title>Pennsylvania retirement savings data viz</title>
-        <description><![CDATA[Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href="/content/pennsylvania-retirement-savings-data-viz">Read more</a></p> ]]></description>
-        <pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate>
-        <updated>Sun, 01 Nov 2020 00:00:00 GMT</updated>
-        
-        <link>/content/pennsylvania-retirement-savings-data-viz</link>
-        <guid isPermaLink="true">/content/pennsylvania-retirement-savings-data-viz</guid>
-    </item>
-    <item>
-        <title>D3.js data dashboard: The State of 10 Cities</title>
-        <description><![CDATA[Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href="/content/d3js-data-dashboard-the-state-of-10-cities">Read more</a></p> ]]></description>
-        <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
-        <updated>Mon, 02 Dec 2019 00:00:00 GMT</updated>
-        
-        <link>/content/d3js-data-dashboard-the-state-of-10-cities</link>
-        <guid isPermaLink="true">/content/d3js-data-dashboard-the-state-of-10-cities</guid>
-    </item>
-    <item>
-        <title>Broadband policy explorer: data tool to find state laws about broadband</title>
-        <description><![CDATA[Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href="/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband">Read more</a></p> ]]></description>
-        <pubDate>Wed, 31 Jul 2019 00:00:00 GMT</pubDate>
-        <updated>Wed, 31 Jul 2019 00:00:00 GMT</updated>
-        
-        <link>/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</link>
-        <guid isPermaLink="true">/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</guid>
-    </item>
-    <item>
-        <title>Art directed data story: 10 trends in Philly over 10 years</title>
-        <description><![CDATA[An art-directed digital-first report with animated graphs and immersive imagery.<p><a href="/content/art-directed-data-story-10-trends-in-philly-over-10-years">Read more</a></p> ]]></description>
-        <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
-        <updated>Thu, 11 Apr 2019 00:00:00 GMT</updated>
-        
-        <link>/content/art-directed-data-story-10-trends-in-philly-over-10-years</link>
-        <guid isPermaLink="true">/content/art-directed-data-story-10-trends-in-philly-over-10-years</guid>
-    </item>
-    <item>
-        <title>A tool for better debt comparison: data viz of state debt</title>
-        <description><![CDATA[Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href="/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt">Read more</a></p> ]]></description>
-        <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
-        <updated>Tue, 02 Apr 2019 00:00:00 GMT</updated>
-        
-        <link>/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</link>
-        <guid isPermaLink="true">/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</guid>
-    </item>
-    <item>
-        <title>Mapping data from the National Flood Insurance Program</title>
-        <description><![CDATA[This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href="/content/mapping-data-from-the-national-flood-insurance-program">Read more</a></p> ]]></description>
-        <pubDate>Wed, 04 Apr 2018 00:00:00 GMT</pubDate>
-        <updated>Wed, 04 Apr 2018 00:00:00 GMT</updated>
-        
-        <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
-        <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
-    </item>
     <item>
         <title>CSS container queries are here!</title>
         <description><![CDATA[Container queries are coming, and they will make reusing responsive components in different contexts much easier.<p><a href="/content/css-container-queries-are-here">Read more</a></p> ]]></description>
@@ -178,6 +106,15 @@
         <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
     </item>
     <item>
+        <title>(WashPost) Mauritania's ancient libraries could be lost to the expanding desert</title>
+        <description><![CDATA[It's not everyday that Mauritania makes it into the Washington Post, which today has a beautiful photo essay about the town Chinguetti and its libraries.<p><a href="/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert">Read more</a></p> ]]></description>
+        <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
+        <updated>Mon, 20 Mar 2023 00:00:00 GMT</updated>
+        
+        <link>/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</link>
+        <guid isPermaLink="true">/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</guid>
+    </item>
+    <item>
         <title>February 28, 2002, was a good day</title>
         <description><![CDATA[February 28, 2002, was one of those good days when I had time to just sit and think about how incredible and satisfying it felt to be so far from home, still alive, still breathing, still myself.<p><a href="/peace-corps/february-28-2002-was-a-good-day">Read more</a></p> ]]></description>
         <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
@@ -239,6 +176,78 @@
         
         <link>/peace-corps/my-second-school-year-starts</link>
         <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
+    </item>
+    <item>
+        <title>Chart building web app</title>
+        <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="/content/chart-building-web-app">Read more</a></p> ]]></description>
+        <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 07 Mar 2021 00:00:00 GMT</updated>
+        
+        <link>/content/chart-building-web-app</link>
+        <guid isPermaLink="true">/content/chart-building-web-app</guid>
+    </item>
+    <item>
+        <title>Netting Billions 2020: Global Values and Trends for Tuna Fisheries</title>
+        <description><![CDATA[This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href="/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries">Read more</a></p> ]]></description>
+        <pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 28 Feb 2021 00:00:00 GMT</updated>
+        
+        <link>/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</link>
+        <guid isPermaLink="true">/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</guid>
+    </item>
+    <item>
+        <title>Pennsylvania retirement savings data viz</title>
+        <description><![CDATA[Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href="/content/pennsylvania-retirement-savings-data-viz">Read more</a></p> ]]></description>
+        <pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate>
+        <updated>Sun, 01 Nov 2020 00:00:00 GMT</updated>
+        
+        <link>/content/pennsylvania-retirement-savings-data-viz</link>
+        <guid isPermaLink="true">/content/pennsylvania-retirement-savings-data-viz</guid>
+    </item>
+    <item>
+        <title>D3.js data dashboard: The State of 10 Cities</title>
+        <description><![CDATA[Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href="/content/d3js-data-dashboard-the-state-of-10-cities">Read more</a></p> ]]></description>
+        <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
+        <updated>Mon, 02 Dec 2019 00:00:00 GMT</updated>
+        
+        <link>/content/d3js-data-dashboard-the-state-of-10-cities</link>
+        <guid isPermaLink="true">/content/d3js-data-dashboard-the-state-of-10-cities</guid>
+    </item>
+    <item>
+        <title>Broadband policy explorer: data tool to find state laws about broadband</title>
+        <description><![CDATA[Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href="/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband">Read more</a></p> ]]></description>
+        <pubDate>Wed, 31 Jul 2019 00:00:00 GMT</pubDate>
+        <updated>Wed, 31 Jul 2019 00:00:00 GMT</updated>
+        
+        <link>/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</link>
+        <guid isPermaLink="true">/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</guid>
+    </item>
+    <item>
+        <title>Art directed data story: 10 trends in Philly over 10 years</title>
+        <description><![CDATA[An art-directed digital-first report with animated graphs and immersive imagery.<p><a href="/content/art-directed-data-story-10-trends-in-philly-over-10-years">Read more</a></p> ]]></description>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Thu, 11 Apr 2019 00:00:00 GMT</updated>
+        
+        <link>/content/art-directed-data-story-10-trends-in-philly-over-10-years</link>
+        <guid isPermaLink="true">/content/art-directed-data-story-10-trends-in-philly-over-10-years</guid>
+    </item>
+    <item>
+        <title>A tool for better debt comparison: data viz of state debt</title>
+        <description><![CDATA[Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href="/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt">Read more</a></p> ]]></description>
+        <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Tue, 02 Apr 2019 00:00:00 GMT</updated>
+        
+        <link>/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</link>
+        <guid isPermaLink="true">/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</guid>
+    </item>
+    <item>
+        <title>Mapping data from the National Flood Insurance Program</title>
+        <description><![CDATA[This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href="/content/mapping-data-from-the-national-flood-insurance-program">Read more</a></p> ]]></description>
+        <pubDate>Wed, 04 Apr 2018 00:00:00 GMT</pubDate>
+        <updated>Wed, 04 Apr 2018 00:00:00 GMT</updated>
+        
+        <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
+        <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
     </item>
         </channel>
     </rss>
