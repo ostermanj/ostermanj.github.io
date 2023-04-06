@@ -1,0 +1,1 @@
+import{default as c}from"../components/pages/(work)/_layout.svelte-5db2ce34.js";import"./index-43d95a4d.js";import"./scripts-2b78f342.js";import"./paths-9b83c8fd.js";import"./Sprite-17de5be9.js";/* empty css                                             */import"./SpriteFile-17b847cc.js";import"./stores-685d1093.js";import"./singletons-8a639817.js";export{c as component};
