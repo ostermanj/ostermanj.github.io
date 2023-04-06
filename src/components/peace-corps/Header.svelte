@@ -1,7 +1,6 @@
 <script>
 	import Name from '$components/Name.svelte';
-	import Social from '../Social.svelte';
-	import { base } from '$app/paths';
+	import Sprite from "$components/Sprite.svelte";
 </script>
 
 <header class="fx jc-sb ai-c">
@@ -10,6 +9,8 @@
 	</div>
 	
 	<div class="header-side fx pb0-5">
+		<a rel="me" class="bw-0" title="Mastadon" href="https://indieweb.social/@ostermoster">
+			<span class="vsh">Mastodon</span> <Sprite id="mastodon" offset={6} /></a>
 		<div class="fx fd-c ai-c jc-sb pi1 inner">
 			<Name />
 			<span class="vsh">John Osterman</span>
