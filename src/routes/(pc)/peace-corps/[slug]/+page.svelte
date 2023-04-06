@@ -51,7 +51,8 @@
        top: 2px;
     }
     .subtitle {
-        text-align: center;
+        text-align: start;
+        font-size: 1.4rem;
     }
     :global(.wrapper--peace-corps blockquote) {
         font-family: 'Caveat', serif;
@@ -69,7 +70,7 @@
             <p class="series-name"><a href="./..">{seriesTitle}</a></p>
             <h1 class="not-h1 h2">{title}</h1>
             {#if subtitle}
-            <p class="subtitle">{subtitle}</p>
+            <div class="subtitle">{subtitle}</div>
             {/if}
             <p class="date">
                 <span>Posted</span>
