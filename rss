@@ -6,7 +6,7 @@
             <link>https://osterman.io</link>
             <description>Web development and data visualization for mission-driven orgs. HTML, CSS, JavaScript; Svelte, Vue.js; D3.js, Mapbox; NodeJS, AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Thu, 06 Apr 2023 17:57:08 GMT</lastBuildDate>
+            <lastBuildDate>Wed, 26 Apr 2023 19:46:57 GMT</lastBuildDate>
             
     <item>
         <title>Peace Corps in a time of war</title>
@@ -185,6 +185,15 @@
         <category>writing + editing</category>
         <link>/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</link>
         <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
+    </item>
+    <item>
+        <title>Interactive dashboard of Philadelphia’s post-COVID economy</title>
+        <description><![CDATA[This project to chart Philadelphia's economic recovery was one of my last while at Pew, and one of the hardest.<p><a href="/content/interactive-dashboard-of-philadelphias-post-covid-economy">Read more</a></p> ]]></description>
+        <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 03 May 2022 00:00:00 GMT</updated>
+        
+        <link>/content/interactive-dashboard-of-philadelphias-post-covid-economy</link>
+        <guid isPermaLink="true">/content/interactive-dashboard-of-philadelphias-post-covid-economy</guid>
     </item>
     <item>
         <title>Chart building web app</title>

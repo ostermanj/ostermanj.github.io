@@ -1,1 +1,0 @@
-import{default as n}from"../components/pages/(work)/list/_type_/_page.svelte-0aebfb1e.js";import"./index-43d95a4d.js";import"./DarkPaginationNav.svelte_svelte_type_style_lang-2ff62ee7.js";import"./ContentCard-2b2506f2.js";import"./paths-9b83c8fd.js";const p=!0;export{n as component,p as server};
