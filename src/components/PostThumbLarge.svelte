@@ -6,7 +6,18 @@
         position: relative;
         overflow: hidden;
         background-color: transparent;
+        /* border-radius: 16.5px 16.5px 0 0; */
+    }
+    :global(article:first-of-type) .container {
         border-radius: 16.5px 16.5px 0 0;
+    }
+    @media screen and (min-width:571px) {
+        :global(article:first-of-type) .container {
+            border-radius: 16.5px 0 0 0;
+        }
+        :global(article:nth-of-type(2)) .container {
+            border-radius: 0 16.5px 0 0;
+        }
     }
     picture {
         line-height: 0;

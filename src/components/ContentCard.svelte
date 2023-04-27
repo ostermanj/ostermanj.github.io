@@ -18,7 +18,7 @@
    .container {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 5cqw;
+      gap: 3cqw;
       @media screen and (min-width:571px) {
         grid-template-columns: 1fr 1fr;
       }
@@ -29,43 +29,93 @@
     article {
       padding: 4px;
       border-radius: 2px;
-      background-size: 125% 125%;
+      // background-size: 125% 125%;
       background-position: 0 0;
+      background-color:var(--color-primary-1-bright);
       transition: background-position 0.15s ease-in-out;
-    }
-    article:nth-of-type(4n + 1){
-      background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
-      border-radius: 20px 20px 0 0;
+      // &:nth-of-type(odd){
+      //   background-image: linear-gradient(to top, var(--color-primary-1-bright), var(--color-primary-1-dark));
+      // }
+      // &:nth-of-type(even){
+        //   background-image: linear-gradient(to bottom, var(--color-primary-1-bright), var(--color-primary-1-dark));
+        // }
+      &:first-of-type {
+        background-image: linear-gradient(to top, var(--color-primary-1-bright), var(--color-primary-1-dark));
+        border-radius: 20px 20px 0 0;
+        @media screen and (min-width:571px) {
+          border-radius: 20px 0 0;
+        }
+      }
+      &:last-of-type {
+        background-image: linear-gradient(to bottom, var(--color-primary-1-bright), var(--color-primary-1-dark));
+        border-radius:  0 0 20px 20px;
+        @media screen and (min-width:571px) {
+          border-radius: 0 0 20px 0;
+        }
+      }
       @media screen and (min-width:571px) {
-        border-radius: 20px 0 0 0;
+        &:nth-of-type(2){
+          background-image: linear-gradient(to top, var(--color-primary-1-bright), var(--color-primary-1-dark));
+          border-radius: 0 20px 0 0;
+        }
+        &:nth-last-of-type(2){
+          background-image: linear-gradient(to bottom, var(--color-primary-1-bright), var(--color-primary-1-dark));
+          border-radius: 0 0 0 20px;
+        }
       }
     }
-    article:nth-of-type(4n + 2){
-      background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
-      @media screen and (min-width:571px) {
-        border-radius: 0 20px 0 0;
-      }
-    }
-    article:nth-of-type(4n + 3){
-      background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
-      @media screen and (min-width:571px) {
-        border-radius: 0 0 0 20px;
-      }
-    }
-    article:nth-of-type(4n + 4){
-      background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
-      border-radius: 0 0 20px 20px;
-      @media screen and (min-width:571px) {
-        border-radius: 0 0 20px 0;
-      }
-  }
+  //   article:nth-of-type(4n + 1){
+  //     background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  //     border-radius: 20px 20px 0 0;
+  //     @media screen and (min-width:571px) {
+  //       border-radius: 20px 0 0 0;
+  //     }
+  //   }
+  //   article:nth-of-type(4n + 2){
+  //     background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  //     @media screen and (min-width:571px) {
+  //       border-radius: 0 20px 0 0;
+  //     }
+  //   }
+  //   article:nth-of-type(4n + 3){
+  //     background-image: linear-gradient(to top left, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  //     @media screen and (min-width:571px) {
+  //       border-radius: 0 0 0 20px;
+  //     }
+  //   }
+  //   article:nth-of-type(4n + 4){
+  //     background-image: linear-gradient(to top right, var(--color-primary-1-bright), var(--color-primary-1-dark), var(--color-primary-1-bright));
+  //     border-radius: 0 0 20px 20px;
+  //     @media screen and (min-width:571px) {
+  //       border-radius: 0 0 20px 0;
+  //     }
+  // }
   .article-inner {
     row-gap: 10px;
     column-gap: 20px;
     align-items: stretch;
     background-color: var(--color-background-2);
     transition: background-color 0.15s ease-in-out;
-    border-radius: 16.5px;
+    article:first-of-type & {
+      border-radius: 16.5px 16.5px 0 0;
+      @media screen and (min-width:571px) {
+        border-radius: 16.5px 0 0 0;
+      }
+    }
+    article:last-of-type & {
+      border-radius: 0 0 16.5px 16.5px;
+    }
+    @media screen and (min-width:571px) {
+      article:nth-of-type(2) & {
+        border-radius: 0 16.5px 0 0;
+      }
+      article:nth-last-of-type(2) & {
+        border-radius: 0 0 0 16.5px;
+      }
+      article:last-of-type & {
+        border-radius: 0 0 16.5px 0;
+      }
+    }
   }
   .small.container article {
     padding: 0;
