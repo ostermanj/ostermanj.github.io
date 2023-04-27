@@ -6,88 +6,97 @@
             <link>https://osterman.io</link>
             <description>Web development and data visualization for mission-driven orgs. HTML, CSS, JavaScript; Svelte, Vue.js; D3.js, Mapbox; NodeJS, AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Wed, 26 Apr 2023 19:46:57 GMT</lastBuildDate>
+            <lastBuildDate>Thu, 27 Apr 2023 01:48:16 GMT</lastBuildDate>
             
     <item>
-        <title>Peace Corps in a time of war</title>
-        <description><![CDATA[In early 2003, the drumbeat of a war was reaching a fever pitch and things in Mauritania were getting tense. We'd been preparing mentally to be evacuated ever since September 11.<p><a href="/peace-corps/peace-corps-in-a-time-of-war">Read more</a></p> ]]></description>
-        <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
-        <updated>Thu, 06 Apr 2023 00:00:00 GMT</updated>
+        <title>Energy use intensity of multifamily dwellings: map and data visualization</title>
+        <description><![CDATA[TK<p><a href="/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization">Read more</a></p> ]]></description>
+        <pubDate>Wed, 26 Apr 2023 00:00:00 GMT</pubDate>
+        <updated>Wed, 26 Apr 2023 00:00:00 GMT</updated>
         
-        <link>/peace-corps/peace-corps-in-a-time-of-war</link>
-        <guid isPermaLink="true">/peace-corps/peace-corps-in-a-time-of-war</guid>
+        <link>/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization</link>
+        <guid isPermaLink="true">/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization</guid>
     </item>
     <item>
-        <title>(WashPost) Mauritania's ancient libraries could be lost to the expanding desert</title>
-        <description><![CDATA[It's not everyday that Mauritania makes it into the Washington Post, which today has a beautiful photo essay about the town Chinguetti and its libraries.<p><a href="/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert">Read more</a></p> ]]></description>
-        <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
-        <updated>Mon, 20 Mar 2023 00:00:00 GMT</updated>
+        <title>Interactive dashboard of Philadelphia’s post-COVID economy</title>
+        <description><![CDATA[This project to chart Philadelphia's economic recovery was one of my last while at Pew, and one of the hardest.<p><a href="/content/interactive-dashboard-of-philadelphias-post-covid-economy">Read more</a></p> ]]></description>
+        <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 03 May 2022 00:00:00 GMT</updated>
         
-        <link>/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</link>
-        <guid isPermaLink="true">/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</guid>
+        <link>/content/interactive-dashboard-of-philadelphias-post-covid-economy</link>
+        <guid isPermaLink="true">/content/interactive-dashboard-of-philadelphias-post-covid-economy</guid>
     </item>
     <item>
-        <title>February 28, 2002, was a good day</title>
-        <description><![CDATA[February 28, 2002, was one of those good days when I had time to just sit and think about how incredible and satisfying it felt to be so far from home, still alive, still breathing, still myself.<p><a href="/peace-corps/february-28-2002-was-a-good-day">Read more</a></p> ]]></description>
-        <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
-        <updated>Tue, 28 Feb 2023 00:00:00 GMT</updated>
+        <title>Chart building web app</title>
+        <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="/content/chart-building-web-app">Read more</a></p> ]]></description>
+        <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 07 Mar 2021 00:00:00 GMT</updated>
         
-        <link>/peace-corps/february-28-2002-was-a-good-day</link>
-        <guid isPermaLink="true">/peace-corps/february-28-2002-was-a-good-day</guid>
+        <link>/content/chart-building-web-app</link>
+        <guid isPermaLink="true">/content/chart-building-web-app</guid>
     </item>
     <item>
-        <title>ETR and phone home</title>
-        <description><![CDATA[It was during my Peace Corps service that mobile phones really spread through Mauritania. At first, my town had no phones, fixed or cellular, and no access to the internet. <p><a href="/peace-corps/etr-and-phone-home">Read more</a></p> ]]></description>
-        <pubDate>Wed, 18 Jan 2023 00:00:00 GMT</pubDate>
-        <updated>Wed, 18 Jan 2023 00:00:00 GMT</updated>
+        <title>Netting Billions 2020: Global Values and Trends for Tuna Fisheries</title>
+        <description><![CDATA[This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href="/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries">Read more</a></p> ]]></description>
+        <pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 28 Feb 2021 00:00:00 GMT</updated>
         
-        <link>/peace-corps/etr-and-phone-home</link>
-        <guid isPermaLink="true">/peace-corps/etr-and-phone-home</guid>
+        <link>/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</link>
+        <guid isPermaLink="true">/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</guid>
     </item>
     <item>
-        <title>Christmas in Kankossa</title>
-        <description><![CDATA[The contrast with Tintane was stark. I’d been forming a theory about it: too big to be a village and too small to be a town, Tintane had the benefits of neither. Kankossa had the charm of a small village.<p><a href="/peace-corps/christmas-in-kankossa">Read more</a></p> ]]></description>
-        <pubDate>Thu, 05 Jan 2023 00:00:00 GMT</pubDate>
-        <updated>Thu, 05 Jan 2023 00:00:00 GMT</updated>
+        <title>Pennsylvania retirement savings data viz</title>
+        <description><![CDATA[Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href="/content/pennsylvania-retirement-savings-data-viz">Read more</a></p> ]]></description>
+        <pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate>
+        <updated>Sun, 01 Nov 2020 00:00:00 GMT</updated>
         
-        <link>/peace-corps/christmas-in-kankossa</link>
-        <guid isPermaLink="true">/peace-corps/christmas-in-kankossa</guid>
+        <link>/content/pennsylvania-retirement-savings-data-viz</link>
+        <guid isPermaLink="true">/content/pennsylvania-retirement-savings-data-viz</guid>
     </item>
     <item>
-        <title>Desert (no island) books</title>
-        <description><![CDATA[Reading books in Mauritania was better than it was before or has been since. I had enough time to become immersed in the stories. But more than that, books just seemed more vivid somehow.<p><a href="/peace-corps/desert-no-island-books">Read more</a></p> ]]></description>
-        <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
-        <updated>Wed, 07 Dec 2022 00:00:00 GMT</updated>
+        <title>D3.js data dashboard: The State of 10 Cities</title>
+        <description><![CDATA[Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href="/content/d3js-data-dashboard-the-state-of-10-cities">Read more</a></p> ]]></description>
+        <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
+        <updated>Mon, 02 Dec 2019 00:00:00 GMT</updated>
         
-        <link>/peace-corps/desert-no-island-books</link>
-        <guid isPermaLink="true">/peace-corps/desert-no-island-books</guid>
+        <link>/content/d3js-data-dashboard-the-state-of-10-cities</link>
+        <guid isPermaLink="true">/content/d3js-data-dashboard-the-state-of-10-cities</guid>
     </item>
     <item>
-        <title>Thanksgiving 2001</title>
-        <description><![CDATA[Thanksgiving 2001 was in the midst of what might have been my hardest stretch in Mauritania. My second journal actually opens on November 18 with this admonishment to myself: “avoid cataloging mood swings—your last journal is not very flattering.”<p><a href="/peace-corps/thanksgiving-2001">Read more</a></p> ]]></description>
-        <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
-        <updated>Mon, 21 Nov 2022 00:00:00 GMT</updated>
+        <title>Broadband policy explorer: data tool to find state laws about broadband</title>
+        <description><![CDATA[Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href="/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband">Read more</a></p> ]]></description>
+        <pubDate>Wed, 31 Jul 2019 00:00:00 GMT</pubDate>
+        <updated>Wed, 31 Jul 2019 00:00:00 GMT</updated>
         
-        <link>/peace-corps/thanksgiving-2001</link>
-        <guid isPermaLink="true">/peace-corps/thanksgiving-2001</guid>
+        <link>/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</link>
+        <guid isPermaLink="true">/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</guid>
     </item>
     <item>
-        <title>Learning Hassaniya</title>
-        <description><![CDATA[One of the first phrases I learned in Hassaniya was "mnayn makaresh," which can be best translated as "where's the butt pot?"<p><a href="/peace-corps/learning-hassaniya">Read more</a></p> ]]></description>
-        <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
-        <updated>Tue, 08 Nov 2022 00:00:00 GMT</updated>
+        <title>Art directed data story: 10 trends in Philly over 10 years</title>
+        <description><![CDATA[An art-directed digital-first report with animated graphs and immersive imagery.<p><a href="/content/art-directed-data-story-10-trends-in-philly-over-10-years">Read more</a></p> ]]></description>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Thu, 11 Apr 2019 00:00:00 GMT</updated>
         
-        <link>/peace-corps/learning-hassaniya</link>
-        <guid isPermaLink="true">/peace-corps/learning-hassaniya</guid>
+        <link>/content/art-directed-data-story-10-trends-in-philly-over-10-years</link>
+        <guid isPermaLink="true">/content/art-directed-data-story-10-trends-in-philly-over-10-years</guid>
     </item>
     <item>
-        <title>My second school year starts</title>
-        <description><![CDATA[My second year teaching started in late October, when the annual rains were all but done and the “cool” season was around the corner.<p><a href="/peace-corps/my-second-school-year-starts">Read more</a></p> ]]></description>
-        <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
-        <updated>Sat, 22 Oct 2022 00:00:00 GMT</updated>
+        <title>A tool for better debt comparison: data viz of state debt</title>
+        <description><![CDATA[Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href="/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt">Read more</a></p> ]]></description>
+        <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
+        <updated>Tue, 02 Apr 2019 00:00:00 GMT</updated>
         
-        <link>/peace-corps/my-second-school-year-starts</link>
-        <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
+        <link>/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</link>
+        <guid isPermaLink="true">/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</guid>
+    </item>
+    <item>
+        <title>Mapping data from the National Flood Insurance Program</title>
+        <description><![CDATA[This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href="/content/mapping-data-from-the-national-flood-insurance-program">Read more</a></p> ]]></description>
+        <pubDate>Wed, 04 Apr 2018 00:00:00 GMT</pubDate>
+        <updated>Wed, 04 Apr 2018 00:00:00 GMT</updated>
+        
+        <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
+        <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
     </item>
     <item>
         <title>CSS container queries are here!</title>
@@ -187,85 +196,85 @@
         <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
     </item>
     <item>
-        <title>Interactive dashboard of Philadelphia’s post-COVID economy</title>
-        <description><![CDATA[This project to chart Philadelphia's economic recovery was one of my last while at Pew, and one of the hardest.<p><a href="/content/interactive-dashboard-of-philadelphias-post-covid-economy">Read more</a></p> ]]></description>
-        <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
-        <updated>Tue, 03 May 2022 00:00:00 GMT</updated>
+        <title>Peace Corps in a time of war</title>
+        <description><![CDATA[In early 2003, the drumbeat of a war was reaching a fever pitch and things in Mauritania were getting tense. We'd been preparing mentally to be evacuated ever since September 11.<p><a href="/peace-corps/peace-corps-in-a-time-of-war">Read more</a></p> ]]></description>
+        <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
+        <updated>Thu, 06 Apr 2023 00:00:00 GMT</updated>
         
-        <link>/content/interactive-dashboard-of-philadelphias-post-covid-economy</link>
-        <guid isPermaLink="true">/content/interactive-dashboard-of-philadelphias-post-covid-economy</guid>
+        <link>/peace-corps/peace-corps-in-a-time-of-war</link>
+        <guid isPermaLink="true">/peace-corps/peace-corps-in-a-time-of-war</guid>
     </item>
     <item>
-        <title>Chart building web app</title>
-        <description><![CDATA[There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href="/content/chart-building-web-app">Read more</a></p> ]]></description>
-        <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
-        <updated>Sun, 07 Mar 2021 00:00:00 GMT</updated>
+        <title>(WashPost) Mauritania's ancient libraries could be lost to the expanding desert</title>
+        <description><![CDATA[It's not everyday that Mauritania makes it into the Washington Post, which today has a beautiful photo essay about the town Chinguetti and its libraries.<p><a href="/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert">Read more</a></p> ]]></description>
+        <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
+        <updated>Mon, 20 Mar 2023 00:00:00 GMT</updated>
         
-        <link>/content/chart-building-web-app</link>
-        <guid isPermaLink="true">/content/chart-building-web-app</guid>
+        <link>/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</link>
+        <guid isPermaLink="true">/peace-corps/washpost-mauritanias-ancient-libraries-could-be-lost-to-the-expanding-desert</guid>
     </item>
     <item>
-        <title>Netting Billions 2020: Global Values and Trends for Tuna Fisheries</title>
-        <description><![CDATA[This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href="/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries">Read more</a></p> ]]></description>
-        <pubDate>Sun, 28 Feb 2021 00:00:00 GMT</pubDate>
-        <updated>Sun, 28 Feb 2021 00:00:00 GMT</updated>
+        <title>February 28, 2002, was a good day</title>
+        <description><![CDATA[February 28, 2002, was one of those good days when I had time to just sit and think about how incredible and satisfying it felt to be so far from home, still alive, still breathing, still myself.<p><a href="/peace-corps/february-28-2002-was-a-good-day">Read more</a></p> ]]></description>
+        <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
+        <updated>Tue, 28 Feb 2023 00:00:00 GMT</updated>
         
-        <link>/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</link>
-        <guid isPermaLink="true">/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries</guid>
+        <link>/peace-corps/february-28-2002-was-a-good-day</link>
+        <guid isPermaLink="true">/peace-corps/february-28-2002-was-a-good-day</guid>
     </item>
     <item>
-        <title>Pennsylvania retirement savings data viz</title>
-        <description><![CDATA[Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href="/content/pennsylvania-retirement-savings-data-viz">Read more</a></p> ]]></description>
-        <pubDate>Sun, 01 Nov 2020 00:00:00 GMT</pubDate>
-        <updated>Sun, 01 Nov 2020 00:00:00 GMT</updated>
+        <title>ETR and phone home</title>
+        <description><![CDATA[It was during my Peace Corps service that mobile phones really spread through Mauritania. At first, my town had no phones, fixed or cellular, and no access to the internet. <p><a href="/peace-corps/etr-and-phone-home">Read more</a></p> ]]></description>
+        <pubDate>Wed, 18 Jan 2023 00:00:00 GMT</pubDate>
+        <updated>Wed, 18 Jan 2023 00:00:00 GMT</updated>
         
-        <link>/content/pennsylvania-retirement-savings-data-viz</link>
-        <guid isPermaLink="true">/content/pennsylvania-retirement-savings-data-viz</guid>
+        <link>/peace-corps/etr-and-phone-home</link>
+        <guid isPermaLink="true">/peace-corps/etr-and-phone-home</guid>
     </item>
     <item>
-        <title>D3.js data dashboard: The State of 10 Cities</title>
-        <description><![CDATA[Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href="/content/d3js-data-dashboard-the-state-of-10-cities">Read more</a></p> ]]></description>
-        <pubDate>Mon, 02 Dec 2019 00:00:00 GMT</pubDate>
-        <updated>Mon, 02 Dec 2019 00:00:00 GMT</updated>
+        <title>Christmas in Kankossa</title>
+        <description><![CDATA[The contrast with Tintane was stark. I’d been forming a theory about it: too big to be a village and too small to be a town, Tintane had the benefits of neither. Kankossa had the charm of a small village.<p><a href="/peace-corps/christmas-in-kankossa">Read more</a></p> ]]></description>
+        <pubDate>Thu, 05 Jan 2023 00:00:00 GMT</pubDate>
+        <updated>Thu, 05 Jan 2023 00:00:00 GMT</updated>
         
-        <link>/content/d3js-data-dashboard-the-state-of-10-cities</link>
-        <guid isPermaLink="true">/content/d3js-data-dashboard-the-state-of-10-cities</guid>
+        <link>/peace-corps/christmas-in-kankossa</link>
+        <guid isPermaLink="true">/peace-corps/christmas-in-kankossa</guid>
     </item>
     <item>
-        <title>Broadband policy explorer: data tool to find state laws about broadband</title>
-        <description><![CDATA[Learn how states are expanding access to broadband by exploring broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href="/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband">Read more</a></p> ]]></description>
-        <pubDate>Wed, 31 Jul 2019 00:00:00 GMT</pubDate>
-        <updated>Wed, 31 Jul 2019 00:00:00 GMT</updated>
+        <title>Desert (no island) books</title>
+        <description><![CDATA[Reading books in Mauritania was better than it was before or has been since. I had enough time to become immersed in the stories. But more than that, books just seemed more vivid somehow.<p><a href="/peace-corps/desert-no-island-books">Read more</a></p> ]]></description>
+        <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
+        <updated>Wed, 07 Dec 2022 00:00:00 GMT</updated>
         
-        <link>/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</link>
-        <guid isPermaLink="true">/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband</guid>
+        <link>/peace-corps/desert-no-island-books</link>
+        <guid isPermaLink="true">/peace-corps/desert-no-island-books</guid>
     </item>
     <item>
-        <title>Art directed data story: 10 trends in Philly over 10 years</title>
-        <description><![CDATA[An art-directed digital-first report with animated graphs and immersive imagery.<p><a href="/content/art-directed-data-story-10-trends-in-philly-over-10-years">Read more</a></p> ]]></description>
-        <pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate>
-        <updated>Thu, 11 Apr 2019 00:00:00 GMT</updated>
+        <title>Thanksgiving 2001</title>
+        <description><![CDATA[Thanksgiving 2001 was in the midst of what might have been my hardest stretch in Mauritania. My second journal actually opens on November 18 with this admonishment to myself: “avoid cataloging mood swings—your last journal is not very flattering.”<p><a href="/peace-corps/thanksgiving-2001">Read more</a></p> ]]></description>
+        <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
+        <updated>Mon, 21 Nov 2022 00:00:00 GMT</updated>
         
-        <link>/content/art-directed-data-story-10-trends-in-philly-over-10-years</link>
-        <guid isPermaLink="true">/content/art-directed-data-story-10-trends-in-philly-over-10-years</guid>
+        <link>/peace-corps/thanksgiving-2001</link>
+        <guid isPermaLink="true">/peace-corps/thanksgiving-2001</guid>
     </item>
     <item>
-        <title>A tool for better debt comparison: data viz of state debt</title>
-        <description><![CDATA[Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href="/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt">Read more</a></p> ]]></description>
-        <pubDate>Tue, 02 Apr 2019 00:00:00 GMT</pubDate>
-        <updated>Tue, 02 Apr 2019 00:00:00 GMT</updated>
+        <title>Learning Hassaniya</title>
+        <description><![CDATA[One of the first phrases I learned in Hassaniya was "mnayn makaresh," which can be best translated as "where's the butt pot?"<p><a href="/peace-corps/learning-hassaniya">Read more</a></p> ]]></description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 08 Nov 2022 00:00:00 GMT</updated>
         
-        <link>/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</link>
-        <guid isPermaLink="true">/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt</guid>
+        <link>/peace-corps/learning-hassaniya</link>
+        <guid isPermaLink="true">/peace-corps/learning-hassaniya</guid>
     </item>
     <item>
-        <title>Mapping data from the National Flood Insurance Program</title>
-        <description><![CDATA[This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href="/content/mapping-data-from-the-national-flood-insurance-program">Read more</a></p> ]]></description>
-        <pubDate>Wed, 04 Apr 2018 00:00:00 GMT</pubDate>
-        <updated>Wed, 04 Apr 2018 00:00:00 GMT</updated>
+        <title>My second school year starts</title>
+        <description><![CDATA[My second year teaching started in late October, when the annual rains were all but done and the “cool” season was around the corner.<p><a href="/peace-corps/my-second-school-year-starts">Read more</a></p> ]]></description>
+        <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+        <updated>Sat, 22 Oct 2022 00:00:00 GMT</updated>
         
-        <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
-        <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
+        <link>/peace-corps/my-second-school-year-starts</link>
+        <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
     </item>
         </channel>
     </rss>
