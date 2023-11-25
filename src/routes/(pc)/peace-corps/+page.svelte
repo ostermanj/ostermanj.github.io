@@ -14,7 +14,7 @@
     } = data);
     $:items = posts.items;
     let currentPage = 1;
-    let pageSize = 10;
+    let pageSize = 20;
     $: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 <svelte:head>
