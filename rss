@@ -6,7 +6,7 @@
             <link>https://osterman.io</link>
             <description>Web development and data visualization for mission-driven orgs. HTML, CSS, JavaScript; Svelte, Vue.js; D3.js, Mapbox; NodeJS, AWS, Azure, Google.</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-            <lastBuildDate>Sat, 25 Nov 2023 02:26:27 GMT</lastBuildDate>
+            <lastBuildDate>Wed, 03 Jan 2024 14:46:57 GMT</lastBuildDate>
             
     <item>
         <title>Energy use intensity of multifamily dwellings: map and data visualization</title>
@@ -97,113 +97,6 @@
         
         <link>/content/mapping-data-from-the-national-flood-insurance-program</link>
         <guid isPermaLink="true">/content/mapping-data-from-the-national-flood-insurance-program</guid>
-    </item>
-    <item>
-        <title>Auto image sizes are coming—rejoice!</title>
-        <description><![CDATA[Auto sizes for lazy-loaded images will greatly simplify providing the right size native image for the target display size and resolution.<p><a href="/content/auto-image-sizes-are-comingrejoice">Read more</a></p> ]]></description>
-        <pubDate>Mon, 26 Jun 2023 00:00:00 GMT</pubDate>
-        <updated>Mon, 26 Jun 2023 00:00:00 GMT</updated>
-        
-        <category>HTML</category>
-        <link>/content/auto-image-sizes-are-comingrejoice</link>
-        <guid isPermaLink="true">/content/auto-image-sizes-are-comingrejoice</guid>
-    </item>
-    <item>
-        <title>CSS container queries are here!</title>
-        <description><![CDATA[Container queries are coming, and they will make reusing responsive components in different contexts much easier.<p><a href="/content/css-container-queries-are-here">Read more</a></p> ]]></description>
-        <pubDate>Thu, 12 Jan 2023 00:00:00 GMT</pubDate>
-        <updated>Thu, 16 Feb 2023 00:00:00 GMT</updated>
-        
-        <category>CSS</category>
-        <category>design</category>
-        <link>/content/css-container-queries-are-here</link>
-        <guid isPermaLink="true">/content/css-container-queries-are-here</guid>
-    </item>
-    <item>
-        <title>How to use environment variables in SvelteKit (process.env)</title>
-        <description><![CDATA[SvelteKit has a new way to bring environment variables into your code.<p><a href="/content/how-to-use-environment-variables-in-sveltekit-processenv">Read more</a></p> ]]></description>
-        <pubDate>Tue, 30 Aug 2022 00:00:00 GMT</pubDate>
-        <updated>Tue, 30 Aug 2022 00:00:00 GMT</updated>
-        
-        <category>frameworks</category>
-        <category>sveltekit</category>
-        <link>/content/how-to-use-environment-variables-in-sveltekit-processenv</link>
-        <guid isPermaLink="true">/content/how-to-use-environment-variables-in-sveltekit-processenv</guid>
-    </item>
-    <item>
-        <title>Easing the pain with continuous deployment</title>
-        <description><![CDATA[Setting up continuous deployment can really ease the pain of web development. <p><a href="/content/easing-the-pain-with-continuous-deployment">Read more</a></p> ]]></description>
-        <pubDate>Fri, 24 Sep 2021 00:00:00 GMT</pubDate>
-        <updated>Fri, 24 Sep 2021 00:00:00 GMT</updated>
-        
-        <category>devops</category>
-        <link>/content/easing-the-pain-with-continuous-deployment</link>
-        <guid isPermaLink="true">/content/easing-the-pain-with-continuous-deployment</guid>
-    </item>
-    <item>
-        <title>How do you spell propagation?</title>
-        <description><![CDATA[One of the things I look up all the time: how to spell "propagation."<p><a href="/content/how-do-you-spell-propagation">Read more</a></p> ]]></description>
-        <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
-        <updated>Thu, 12 Aug 2021 00:00:00 GMT</updated>
-        
-        <category>things I look up all the time</category>
-        <link>/content/how-do-you-spell-propagation</link>
-        <guid isPermaLink="true">/content/how-do-you-spell-propagation</guid>
-    </item>
-    <item>
-        <title>How I make using Mapbox easier, part two: accessing data with dummy features</title>
-        <description><![CDATA[Accessing the entire dataset behind a Mapbox layer is hard; attach data to a dummy feature and use that instead.<p><a href="/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features">Read more</a></p> ]]></description>
-        <pubDate>Sun, 03 Jan 2021 00:00:00 GMT</pubDate>
-        <updated>Sun, 03 Jan 2021 00:00:00 GMT</updated>
-        
-        <category>dataviz</category>
-        <category>mapbox</category>
-        <link>/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</link>
-        <guid isPermaLink="true">/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</guid>
-    </item>
-    <item>
-        <title>How I make using Mapbox easier, part one: async adding sources and layers</title>
-        <description><![CDATA[Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map.<p><a href="/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers">Read more</a></p> ]]></description>
-        <pubDate>Tue, 29 Dec 2020 00:00:00 GMT</pubDate>
-        <updated>Tue, 29 Dec 2020 00:00:00 GMT</updated>
-        
-        <category>mapbox</category>
-        <category>dataviz</category>
-        <link>/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</link>
-        <guid isPermaLink="true">/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</guid>
-    </item>
-    <item>
-        <title>Is viewBox camelCased?</title>
-        <description><![CDATA[One of the things I look up all the time: viewbox or viewBox?<p><a href="/content/is-viewbox-camelcased">Read more</a></p> ]]></description>
-        <pubDate>Fri, 02 Oct 2020 00:00:00 GMT</pubDate>
-        <updated>Fri, 02 Oct 2020 00:00:00 GMT</updated>
-        
-        <category>things I look up all the time</category>
-        <link>/content/is-viewbox-camelcased</link>
-        <guid isPermaLink="true">/content/is-viewbox-camelcased</guid>
-    </item>
-    <item>
-        <title>Four questions to ask about your data visualization</title>
-        <description><![CDATA[There's a ton of advice out there about how to do data viz well. At the very least, you should ask yourself four questions about "the AIMS" of each piece.
-<p><a href="/content/four-questions-to-ask-about-your-data-visualization">Read more</a></p> ]]></description>
-        <pubDate>Wed, 30 Nov 2016 00:00:00 GMT</pubDate>
-        <updated>Wed, 30 Nov 2016 00:00:00 GMT</updated>
-        
-        <category>dataviz</category>
-        <category>content</category>
-        <link>/content/four-questions-to-ask-about-your-data-visualization</link>
-        <guid isPermaLink="true">/content/four-questions-to-ask-about-your-data-visualization</guid>
-    </item>
-    <item>
-        <title>Writing for the web: why you should encourage skimming and scanning</title>
-        <description><![CDATA[Reading online usually involves a lot of skimming and scanning. Embrace it.<p><a href="/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning">Read more</a></p> ]]></description>
-        <pubDate>Wed, 09 Nov 2016 00:00:00 GMT</pubDate>
-        <updated>Wed, 09 Nov 2016 00:00:00 GMT</updated>
-        
-        <category>content</category>
-        <category>writing + editing</category>
-        <link>/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</link>
-        <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
     </item>
     <item>
         <title>The barren expectations of American male friendship</title>
@@ -312,6 +205,124 @@
         
         <link>/peace-corps/my-second-school-year-starts</link>
         <guid isPermaLink="true">/peace-corps/my-second-school-year-starts</guid>
+    </item>
+    <item>
+        <title>2023 in Review: Embracing Subgrid, <dialog>, and Container Queries</title>
+        <description><![CDATA[Check out the features I reached for in 2023. Major browsers have been implementing new features at a decent pace, semantic HTML elements with native methods have had some big wins, and CSS is exploding with good new syntax and features. <p><a href="/content/2023-in-review-embracing-subgrid-lessdialoggreater-and-container-queries">Read more</a></p> ]]></description>
+        <pubDate>Tue, 02 Jan 2024 00:00:00 GMT</pubDate>
+        <updated>Tue, 02 Jan 2024 00:00:00 GMT</updated>
+        
+        <category>HTML</category>
+        <category>CSS</category>
+        <link>/content/2023-in-review-embracing-subgrid-lessdialoggreater-and-container-queries</link>
+        <guid isPermaLink="true">/content/2023-in-review-embracing-subgrid-lessdialoggreater-and-container-queries</guid>
+    </item>
+    <item>
+        <title>Auto image sizes are coming—rejoice!</title>
+        <description><![CDATA[Auto sizes for lazy-loaded images will greatly simplify providing the right size native image for the target display size and resolution.<p><a href="/content/auto-image-sizes-are-comingrejoice">Read more</a></p> ]]></description>
+        <pubDate>Mon, 26 Jun 2023 00:00:00 GMT</pubDate>
+        <updated>Mon, 26 Jun 2023 00:00:00 GMT</updated>
+        
+        <category>HTML</category>
+        <link>/content/auto-image-sizes-are-comingrejoice</link>
+        <guid isPermaLink="true">/content/auto-image-sizes-are-comingrejoice</guid>
+    </item>
+    <item>
+        <title>CSS container queries are here!</title>
+        <description><![CDATA[Container queries are coming, and they will make reusing responsive components in different contexts much easier.<p><a href="/content/css-container-queries-are-here">Read more</a></p> ]]></description>
+        <pubDate>Thu, 12 Jan 2023 00:00:00 GMT</pubDate>
+        <updated>Thu, 16 Feb 2023 00:00:00 GMT</updated>
+        
+        <category>CSS</category>
+        <category>design</category>
+        <link>/content/css-container-queries-are-here</link>
+        <guid isPermaLink="true">/content/css-container-queries-are-here</guid>
+    </item>
+    <item>
+        <title>How to use environment variables in SvelteKit (process.env)</title>
+        <description><![CDATA[SvelteKit has a new way to bring environment variables into your code.<p><a href="/content/how-to-use-environment-variables-in-sveltekit-processenv">Read more</a></p> ]]></description>
+        <pubDate>Tue, 30 Aug 2022 00:00:00 GMT</pubDate>
+        <updated>Tue, 30 Aug 2022 00:00:00 GMT</updated>
+        
+        <category>frameworks</category>
+        <category>sveltekit</category>
+        <link>/content/how-to-use-environment-variables-in-sveltekit-processenv</link>
+        <guid isPermaLink="true">/content/how-to-use-environment-variables-in-sveltekit-processenv</guid>
+    </item>
+    <item>
+        <title>Easing the pain with continuous deployment</title>
+        <description><![CDATA[Setting up continuous deployment can really ease the pain of web development. <p><a href="/content/easing-the-pain-with-continuous-deployment">Read more</a></p> ]]></description>
+        <pubDate>Fri, 24 Sep 2021 00:00:00 GMT</pubDate>
+        <updated>Fri, 24 Sep 2021 00:00:00 GMT</updated>
+        
+        <category>devops</category>
+        <link>/content/easing-the-pain-with-continuous-deployment</link>
+        <guid isPermaLink="true">/content/easing-the-pain-with-continuous-deployment</guid>
+    </item>
+    <item>
+        <title>How do you spell propagation?</title>
+        <description><![CDATA[One of the things I look up all the time: how to spell "propagation."<p><a href="/content/how-do-you-spell-propagation">Read more</a></p> ]]></description>
+        <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
+        <updated>Thu, 12 Aug 2021 00:00:00 GMT</updated>
+        
+        <category>things I look up all the time</category>
+        <link>/content/how-do-you-spell-propagation</link>
+        <guid isPermaLink="true">/content/how-do-you-spell-propagation</guid>
+    </item>
+    <item>
+        <title>How I make using Mapbox easier, part two: accessing data with dummy features</title>
+        <description><![CDATA[Accessing the entire dataset behind a Mapbox layer is hard; attach data to a dummy feature and use that instead.<p><a href="/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features">Read more</a></p> ]]></description>
+        <pubDate>Sun, 03 Jan 2021 00:00:00 GMT</pubDate>
+        <updated>Sun, 03 Jan 2021 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>mapbox</category>
+        <link>/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</link>
+        <guid isPermaLink="true">/content/how-i-make-using-mapbox-easier-part-two-accessing-data-with-dummy-features</guid>
+    </item>
+    <item>
+        <title>How I make using Mapbox easier, part one: async adding sources and layers</title>
+        <description><![CDATA[Use a small npm package to work with the async nature of adding sources and layers to a Mapbox map.<p><a href="/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers">Read more</a></p> ]]></description>
+        <pubDate>Tue, 29 Dec 2020 00:00:00 GMT</pubDate>
+        <updated>Tue, 29 Dec 2020 00:00:00 GMT</updated>
+        
+        <category>mapbox</category>
+        <category>dataviz</category>
+        <link>/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</link>
+        <guid isPermaLink="true">/content/how-i-make-using-mapbox-easier-part-one-async-adding-sources-and-layers</guid>
+    </item>
+    <item>
+        <title>Is viewBox camelCased?</title>
+        <description><![CDATA[One of the things I look up all the time: viewbox or viewBox?<p><a href="/content/is-viewbox-camelcased">Read more</a></p> ]]></description>
+        <pubDate>Fri, 02 Oct 2020 00:00:00 GMT</pubDate>
+        <updated>Fri, 02 Oct 2020 00:00:00 GMT</updated>
+        
+        <category>things I look up all the time</category>
+        <link>/content/is-viewbox-camelcased</link>
+        <guid isPermaLink="true">/content/is-viewbox-camelcased</guid>
+    </item>
+    <item>
+        <title>Four questions to ask about your data visualization</title>
+        <description><![CDATA[There's a ton of advice out there about how to do data viz well. At the very least, you should ask yourself four questions about "the AIMS" of each piece.
+<p><a href="/content/four-questions-to-ask-about-your-data-visualization">Read more</a></p> ]]></description>
+        <pubDate>Wed, 30 Nov 2016 00:00:00 GMT</pubDate>
+        <updated>Wed, 30 Nov 2016 00:00:00 GMT</updated>
+        
+        <category>dataviz</category>
+        <category>content</category>
+        <link>/content/four-questions-to-ask-about-your-data-visualization</link>
+        <guid isPermaLink="true">/content/four-questions-to-ask-about-your-data-visualization</guid>
+    </item>
+    <item>
+        <title>Writing for the web: why you should encourage skimming and scanning</title>
+        <description><![CDATA[Reading online usually involves a lot of skimming and scanning. Embrace it.<p><a href="/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning">Read more</a></p> ]]></description>
+        <pubDate>Wed, 09 Nov 2016 00:00:00 GMT</pubDate>
+        <updated>Wed, 09 Nov 2016 00:00:00 GMT</updated>
+        
+        <category>content</category>
+        <category>writing + editing</category>
+        <link>/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</link>
+        <guid isPermaLink="true">/content/writing-for-the-web-why-you-should-encourage-skimming-and-scanning</guid>
     </item>
         </channel>
     </rss>

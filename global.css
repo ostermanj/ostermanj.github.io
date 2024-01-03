@@ -178,7 +178,7 @@ html.wf-roboto-n3-active h1:not(.not-h1), html.wf-roboto-n3-active .h1 {
     line-height: 1.2;
 }
 
-h2, .h2 {
+h2, .h2, h3, .h3 {
     font: var(--font-sans);
     letter-spacing: 1px;
     margin-top: 1.75em;
@@ -188,6 +188,10 @@ h2, .h2 {
 
 .h2 {
     line-height: 1.47;
+}
+
+h3, .h3 {
+    font-size: 1.2rem;
 }
 
 h2, h1.h2, h3.h2 {
