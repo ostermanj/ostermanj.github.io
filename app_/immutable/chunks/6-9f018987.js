@@ -1,0 +1,1 @@
+import{default as m}from"../components/pages/(pc)/peace-corps/_slug_/_page.svelte-86c6691f.js";import"./index-43d95a4d.js";/* empty css                                             */const t=!0;export{m as component,t as server};
