@@ -15,15 +15,16 @@ async function getPaginatedCollection({content_type = "blogPost", skip = 0, limi
         content_type,
         skip,
         limit,
-        order: content_type == 'page' ? 'sys.createdAt' : '-fields.datePublished'
+        order: ['page','poem'].includes(content_type) ? 'sys.createdAt' : '-fields.datePublished'
     }).then(response => {
+        // need to either change the fields in Poem to match or set up another fn to handle
         response.items.forEach(blog => {
             mapSlugToId(blog);
             const fields = content_type !== 'page' ? {
                 title: blog.fields.title,
-                datePublished: new Date(blog.fields.datePublished).toUTCString(),
-                dateUpdated: new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString(),
-                description: blog.fields.snippet + `<p><a href="${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
+                datePublished: blog.fields.datePublished ? new Date(blog.fields.datePublished).toUTCString() : undefined,
+                dateUpdated: blog.fields.dateUpdated || blog.fields.datePublished ? new Date(blog.fields.dateUpdated || blog.fields.datePublished).toUTCString() : undefined,
+                description: (blog.fields.snippet ?? '' )+ `<p><a href="${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}">Read more</a></p>`,
                 link: `${base}/${content_type == 'blogPost' || content_type == 'project' ? 'content' : 'peace-corps'}/${slugify(blog.fields.title, {strict: true, lower: true})}`,
                 
             } : {
@@ -63,7 +64,13 @@ function writeToFile(){
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/idlist.json'), JSON.stringify(reverse(entrySlugsToId), null, 2));
     fs.writeFileSync(path.join(path.dirname(url.fileURLToPath(import.meta.url)), '/../src/allEntries.json'), JSON.stringify(allEntries, null, 2));
 }
-Promise.all([getPaginatedCollection({}), getPaginatedCollection({ content_type: 'project' }), getPaginatedCollection({ content_type: 'page' }), getPaginatedCollection({ content_type: 'peaceCorpsPost' })]).then(() => {
+Promise.all([
+    getPaginatedCollection({}),
+    getPaginatedCollection({ content_type: 'project' }),
+    getPaginatedCollection({ content_type: 'page' }),
+    getPaginatedCollection({ content_type: 'peaceCorpsPost' }),
+    getPaginatedCollection({ content_type: 'poem' })
+]).then(() => {
      writeToFile();
      process.exit(0);
 });

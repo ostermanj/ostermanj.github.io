@@ -123,7 +123,7 @@
     <Header />
 </div>
 {#if import.meta.env.DEV }
-<button on:click="{toggleFonts}">toggle fonts</button>
+<!-- <button on:click="{toggleFonts}">toggle fonts</button> -->
 {/if}
 <picture>
      <source media="(min-width: 1441px)" srcset="{hero.fields.file.url}?w={3840}&h={1322}&fm=avif&q=80 2x, {hero.fields.file.url}?w={3840 / 2}&h={1322 / 2}&fm=avif&q=80 1x" type="image/avif">

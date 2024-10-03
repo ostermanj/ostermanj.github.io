@@ -66,6 +66,7 @@ async function sourceSetify(html){
     return replaceAsync(html, regex, addContentifyInfo);
 }
 export async function getPaginatedCollection(content_type = "blogPost", skip = 0, limit = 100){
+    console.log(content_type);
     return await client.getEntries({
         content_type,
         skip,

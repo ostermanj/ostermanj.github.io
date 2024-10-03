@@ -1,5 +1,6 @@
 <script context="module">
     import Sprite from '$components/Sprite.svelte';
+    import Poem from '$components/Poem.svelte';
 </script>
 <script lang="ts">
     export let data;
@@ -9,6 +10,7 @@
         subtitle,
         body,
         datePublished,
+        isPoem,
     } = data);
 
 </script>
@@ -64,6 +66,9 @@
         max-width: 635px;
     }
 </style>
+{#if isPoem }
+<Poem data={data} />
+{:else}
 <article class="article-post">
     <header>
         <div>
@@ -80,3 +85,4 @@
     </header>
     <main>{@html body}</main>
 </article>
+{/if}

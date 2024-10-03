@@ -16,6 +16,7 @@ export async function load(){
         response.fields.body = response.fields.body.replace(/href="\/(?!\/)/g, `href="${base}/`);
         fields = response.fields;
     } catch (e) {
+        console.error(e);
         const errorMessage = JSON.parse(e.message);
         throw error(errorMessage.status, errorMessage)
     }

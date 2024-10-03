@@ -129,6 +129,7 @@
   }
   .small.container .article-inner {
     background-color: var(--color-background-1);
+    flex-grow: 1;
   }
   a:hover .article-inner, a:focus .article-inner {
     background-color: var(--color-background-1);
@@ -181,6 +182,7 @@
     color: inherit;
     align-self: stretch;
     display: flex;
+    flex-grow: 1;
 
   }
   a:hover h1, a:focus h1 {
@@ -212,7 +214,7 @@
                   <h1 class="not-h1 h2">{content.fields.title}</h1>
                 </header>
                 <main>
-                  <p class="ts-s">{content.fields.snippet}</p>
+                  <p class="ts-s">{content.fields.snippet ?? ''}</p>
                   {#if style == 'small'}
                   <p class="ts-s date"><span class="vsh">Published</span> <time datetime={content.fields.datePublished}>{new Date(  content.fields.datePublished  ).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
                   {/if}
