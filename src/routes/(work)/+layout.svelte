@@ -79,13 +79,13 @@
     <meta name="description" content="{metaDescription}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@johnaosterman" />
-    <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
+    <meta name="twitter:url" content="https://osterman.blog{$page.url.pathname}" />
     <meta name="twitter:description" content="{metaDescription}" />
     <meta name="twitter:title" content="{metaTitle}" />    
     <meta name="twitter:image" content="{metaImage}" />
     <meta property="og:title" content="{metaTitle}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://osterman.io{$page.url.pathname}" />
+    <meta property="og:url" content="https://osterman.blog{$page.url.pathname}" />
     <meta property="og:image" content="{metaImage}" />
     <meta property="og:site_name" content="John Osterman" />
     <meta property="og:description" content="{metaDescription}" />
@@ -107,7 +107,7 @@
   {
     "@context": "http://schema.org",
     "@type": "WebPage",
-    "mainEntityOfPage": "http://osterman.io/",
+    "mainEntityOfPage": "http://osterman.blog/",
     "headline": "John Osterman",
     "datePublished": "",
     "dateModified": "",

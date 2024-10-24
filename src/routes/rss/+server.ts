@@ -31,9 +31,9 @@ export const GET: RequestHandler = async function GET({url}){
     const code = `<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
-            <atom:link href="http://osterman.io/rss" rel="self" type="application/rss+xml" />
+            <atom:link href="http://osterman.blog/rss" rel="self" type="application/rss+xml" />
             <title>John Osterman</title>
-            <link>https://osterman.io</link>
+            <link>https://osterman.blog</link>
             <description>${tagline}</description>
             <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
             <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

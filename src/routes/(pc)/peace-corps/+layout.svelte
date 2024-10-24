@@ -105,13 +105,13 @@
     <title>{metaTitle} | John Osterman</title>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@johnaosterman" />
-    <meta name="twitter:url" content="https://osterman.io{$page.url.pathname}" />
+    <meta name="twitter:url" content="https://osterman.blog{$page.url.pathname}" />
     <meta name="twitter:description" content="{metaDescription}" />
     <meta name="twitter:title" content="{metaTitle}" />    
     <Meta name="twitter:image" _content={metaImageTwitter} />
     <meta property="og:title" content="{metaTitle}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://osterman.io{$page.url.pathname}" />
+    <meta property="og:url" content="https://osterman.blog{$page.url.pathname}" />
     <meta property="og:image" content="{metaImage}" />
     <meta property="og:site_name" content="John Osterman" />
     <meta property="og:description" content="{metaDescription}" />

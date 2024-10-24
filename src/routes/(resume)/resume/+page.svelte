@@ -15,7 +15,7 @@
             <a href="https://github.com/ostermanj">ostermanj</a></div>
         <div aria-label="website" class="contact website">
             <Sprite id="globe" width="{16}" height="{16}" />
-            <a href="http://www.osterman.io">www.osterman.io</a></div>
+            <a href="http://www.osterman.blog">www.osterman.blog</a></div>
             <!-- <div aria-label="mastodon" class="contact mastadon">@ostermoster@uiuxdev.social</div> -->
         <div aria-label="city" class="contact city">
             <Sprite id="location" width="{16}" height="{16}" />
@@ -194,7 +194,7 @@
     </section>
 </main>
 <footer>
-    <p>Generated from <a href="https://osterman.io/resume/">https://osterman.io/resume/</a></p>
+    <p>Generated from <a href="https://osterman.blog/resume/">https://osterman.blog/resume/</a></p>
     <div class="vsh">
         <SpriteFile />
     </div>
