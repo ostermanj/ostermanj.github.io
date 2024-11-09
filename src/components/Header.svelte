@@ -60,10 +60,10 @@
             </h1>
             <Social />
             <nav class="fx">
-                <a class="bw-0 nav-link" href="{base}/about">About</a>
-                <a class="bw-0 nav-link" href="{base}/list/blogPost">Blog posts</a>
-                <a class="bw-0 nav-link" href="{base}/list/project">Projects</a>
-                <a class="bw-0 nav-link" href="{base}/peace-corps">Peace Corps</a>
+                <a class="bw-0 nav-link" href="{base}/about/">About</a>
+                <a class="bw-0 nav-link" href="{base}/list/blogPost/">Blog posts</a>
+                <a class="bw-0 nav-link" href="{base}/list/project/">Projects</a>
+                <a class="bw-0 nav-link" href="{base}/peace-corps/">Peace Corps</a>
             </nav>
         </div>
     </div>
