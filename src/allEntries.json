@@ -3,7 +3,7 @@
     "title": "The sand in moonlight seems like snow",
     "datePublished": "Wed, 02 Oct 2024 00:00:00 GMT",
     "dateUpdated": "Wed, 02 Oct 2024 00:00:00 GMT",
-    "description": "<p><a href=\"/peace-corps/the-sand-in-moonlight-seems-like-snow\">Read more</a></p>",
+    "description": "A poem.<p><a href=\"/peace-corps/the-sand-in-moonlight-seems-like-snow\">Read more</a></p>",
     "link": "/peace-corps/the-sand-in-moonlight-seems-like-snow"
   },
   {
@@ -89,6 +89,87 @@
     "dateUpdated": "Sat, 22 Oct 2022 00:00:00 GMT",
     "description": "My second year teaching started in late October, when the annual rains were all but done and the “cool” season was around the corner.<p><a href=\"/peace-corps/my-second-school-year-starts\">Read more</a></p>",
     "link": "/peace-corps/my-second-school-year-starts"
+  },
+  {
+    "title": "Energy use intensity of multifamily dwellings: map and data visualization",
+    "datePublished": "Wed, 26 Apr 2023 00:00:00 GMT",
+    "dateUpdated": "Wed, 26 Apr 2023 00:00:00 GMT",
+    "description": "What began as a request for some data viz help from a former colleague turned into a full-fledged web app for multiple clients.<p><a href=\"/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization\">Read more</a></p>",
+    "link": "/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization"
+  },
+  {
+    "title": "Interactive dashboard of Philadelphia’s post-COVID economy",
+    "datePublished": "Tue, 03 May 2022 00:00:00 GMT",
+    "dateUpdated": "Tue, 03 May 2022 00:00:00 GMT",
+    "description": "This project to chart Philadelphia's economic recovery was one of my last while at Pew, and one of the hardest.<p><a href=\"/content/interactive-dashboard-of-philadelphias-post-covid-economy\">Read more</a></p>",
+    "link": "/content/interactive-dashboard-of-philadelphias-post-covid-economy"
+  },
+  {
+    "title": "Chart building web app",
+    "datePublished": "Sun, 07 Mar 2021 00:00:00 GMT",
+    "dateUpdated": "Sun, 07 Mar 2021 00:00:00 GMT",
+    "description": "There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href=\"/content/chart-building-web-app\">Read more</a></p>",
+    "link": "/content/chart-building-web-app"
+  },
+  {
+    "title": "Netting Billions 2020: Global Values and Trends for Tuna Fisheries",
+    "datePublished": "Sun, 28 Feb 2021 00:00:00 GMT",
+    "dateUpdated": "Sun, 28 Feb 2021 00:00:00 GMT",
+    "description": "This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href=\"/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries\">Read more</a></p>",
+    "link": "/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries"
+  },
+  {
+    "title": "Pennsylvania retirement savings data viz",
+    "datePublished": "Sun, 01 Nov 2020 00:00:00 GMT",
+    "dateUpdated": "Sun, 01 Nov 2020 00:00:00 GMT",
+    "description": "Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href=\"/content/pennsylvania-retirement-savings-data-viz\">Read more</a></p>",
+    "link": "/content/pennsylvania-retirement-savings-data-viz"
+  },
+  {
+    "title": "D3.js data dashboard: The State of 10 Cities",
+    "datePublished": "Mon, 02 Dec 2019 00:00:00 GMT",
+    "dateUpdated": "Mon, 02 Dec 2019 00:00:00 GMT",
+    "description": "Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href=\"/content/d3js-data-dashboard-the-state-of-10-cities\">Read more</a></p>",
+    "link": "/content/d3js-data-dashboard-the-state-of-10-cities"
+  },
+  {
+    "title": "Broadband policy explorer: data tool to find state laws about broadband",
+    "datePublished": "Wed, 31 Jul 2019 00:00:00 GMT",
+    "dateUpdated": "Wed, 31 Jul 2019 00:00:00 GMT",
+    "description": "Explore broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href=\"/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband\">Read more</a></p>",
+    "link": "/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband"
+  },
+  {
+    "title": "Art directed data story: 10 trends in Philly over 10 years",
+    "datePublished": "Thu, 11 Apr 2019 00:00:00 GMT",
+    "dateUpdated": "Thu, 11 Apr 2019 00:00:00 GMT",
+    "description": "An art-directed digital-first report with animated graphs and immersive imagery.<p><a href=\"/content/art-directed-data-story-10-trends-in-philly-over-10-years\">Read more</a></p>",
+    "link": "/content/art-directed-data-story-10-trends-in-philly-over-10-years"
+  },
+  {
+    "title": "A tool for better debt comparison: data viz of state debt",
+    "datePublished": "Tue, 02 Apr 2019 00:00:00 GMT",
+    "dateUpdated": "Tue, 02 Apr 2019 00:00:00 GMT",
+    "description": "Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href=\"/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt\">Read more</a></p>",
+    "link": "/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt"
+  },
+  {
+    "title": "Mapping data from the National Flood Insurance Program",
+    "datePublished": "Wed, 04 Apr 2018 00:00:00 GMT",
+    "dateUpdated": "Wed, 04 Apr 2018 00:00:00 GMT",
+    "description": "This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href=\"/content/mapping-data-from-the-national-flood-insurance-program\">Read more</a></p>",
+    "link": "/content/mapping-data-from-the-national-flood-insurance-program"
+  },
+  {
+    "title": "I'm trying BlueSky",
+    "datePublished": "Sun, 17 Nov 2024 00:00:00 GMT",
+    "dateUpdated": "Sun, 17 Nov 2024 00:00:00 GMT",
+    "description": "I wish I didn't have to hitch my wagon to a tech platform feel connected, but the BlueSky vibes so far feel good.<p><a href=\"/content/im-trying-bluesky\">Read more</a></p>",
+    "link": "/content/im-trying-bluesky",
+    "author": "John Osterman",
+    "categories": [
+      "tech"
+    ]
   },
   {
     "title": "2023 in Review: Embracing Subgrid, <dialog>, and Container Queries",
@@ -217,75 +298,5 @@
       "content",
       "writing + editing"
     ]
-  },
-  {
-    "title": "Energy use intensity of multifamily dwellings: map and data visualization",
-    "datePublished": "Wed, 26 Apr 2023 00:00:00 GMT",
-    "dateUpdated": "Wed, 26 Apr 2023 00:00:00 GMT",
-    "description": "What began as a request for some data viz help from a former colleague turned into a full-fledged web app for multiple clients.<p><a href=\"/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization\">Read more</a></p>",
-    "link": "/content/energy-use-intensity-of-multifamily-dwellings-map-and-data-visualization"
-  },
-  {
-    "title": "Interactive dashboard of Philadelphia’s post-COVID economy",
-    "datePublished": "Tue, 03 May 2022 00:00:00 GMT",
-    "dateUpdated": "Tue, 03 May 2022 00:00:00 GMT",
-    "description": "This project to chart Philadelphia's economic recovery was one of my last while at Pew, and one of the hardest.<p><a href=\"/content/interactive-dashboard-of-philadelphias-post-covid-economy\">Read more</a></p>",
-    "link": "/content/interactive-dashboard-of-philadelphias-post-covid-economy"
-  },
-  {
-    "title": "Chart building web app",
-    "datePublished": "Sun, 07 Mar 2021 00:00:00 GMT",
-    "dateUpdated": "Sun, 07 Mar 2021 00:00:00 GMT",
-    "description": "There are off-the-shelf charting solutions not too different from this but none cross the print-web divide as well.<p><a href=\"/content/chart-building-web-app\">Read more</a></p>",
-    "link": "/content/chart-building-web-app"
-  },
-  {
-    "title": "Netting Billions 2020: Global Values and Trends for Tuna Fisheries",
-    "datePublished": "Sun, 28 Feb 2021 00:00:00 GMT",
-    "dateUpdated": "Sun, 28 Feb 2021 00:00:00 GMT",
-    "description": "This data viz illustrates commercial tuna catch and value from 2012 to 2018 compiled by Pew researchers.<p><a href=\"/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries\">Read more</a></p>",
-    "link": "/content/netting-billions-2020-global-values-and-trends-for-tuna-fisheries"
-  },
-  {
-    "title": "Pennsylvania retirement savings data viz",
-    "datePublished": "Sun, 01 Nov 2020 00:00:00 GMT",
-    "dateUpdated": "Sun, 01 Nov 2020 00:00:00 GMT",
-    "description": "Charts and maps documenting the health of Pennsylvania's retirement savings.<p><a href=\"/content/pennsylvania-retirement-savings-data-viz\">Read more</a></p>",
-    "link": "/content/pennsylvania-retirement-savings-data-viz"
-  },
-  {
-    "title": "D3.js data dashboard: The State of 10 Cities",
-    "datePublished": "Mon, 02 Dec 2019 00:00:00 GMT",
-    "dateUpdated": "Mon, 02 Dec 2019 00:00:00 GMT",
-    "description": "Analyze data from 10 U.S. cities on key economic, social, and demographic indicators over the past decade.<p><a href=\"/content/d3js-data-dashboard-the-state-of-10-cities\">Read more</a></p>",
-    "link": "/content/d3js-data-dashboard-the-state-of-10-cities"
-  },
-  {
-    "title": "Broadband policy explorer: data tool to find state laws about broadband",
-    "datePublished": "Wed, 31 Jul 2019 00:00:00 GMT",
-    "dateUpdated": "Wed, 31 Jul 2019 00:00:00 GMT",
-    "description": "Explore broadband programs, competition and regulation, definitions, funding and financing, and infrastructure access.<p><a href=\"/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband\">Read more</a></p>",
-    "link": "/content/broadband-policy-explorer-data-tool-to-find-state-laws-about-broadband"
-  },
-  {
-    "title": "Art directed data story: 10 trends in Philly over 10 years",
-    "datePublished": "Thu, 11 Apr 2019 00:00:00 GMT",
-    "dateUpdated": "Thu, 11 Apr 2019 00:00:00 GMT",
-    "description": "An art-directed digital-first report with animated graphs and immersive imagery.<p><a href=\"/content/art-directed-data-story-10-trends-in-philly-over-10-years\">Read more</a></p>",
-    "link": "/content/art-directed-data-story-10-trends-in-philly-over-10-years"
-  },
-  {
-    "title": "A tool for better debt comparison: data viz of state debt",
-    "datePublished": "Tue, 02 Apr 2019 00:00:00 GMT",
-    "dateUpdated": "Tue, 02 Apr 2019 00:00:00 GMT",
-    "description": "Compare debt levels across tailored peer groups, including comparing states with similar borrowing practices, constraints, and needs.<p><a href=\"/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt\">Read more</a></p>",
-    "link": "/content/a-tool-for-better-debt-comparison-data-viz-of-state-debt"
-  },
-  {
-    "title": "Mapping data from the National Flood Insurance Program",
-    "datePublished": "Wed, 04 Apr 2018 00:00:00 GMT",
-    "dateUpdated": "Wed, 04 Apr 2018 00:00:00 GMT",
-    "description": "This map plots 93,541 flood policies and characterizes them as either high- or low-deductible plans.<p><a href=\"/content/mapping-data-from-the-national-flood-insurance-program\">Read more</a></p>",
-    "link": "/content/mapping-data-from-the-national-flood-insurance-program"
   }
 ]
